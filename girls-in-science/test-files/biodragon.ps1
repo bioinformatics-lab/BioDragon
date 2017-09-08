@@ -18,18 +18,18 @@ $RCodes = @("R1", "R2")
 
 
 
-function makeFastqR1 () {
+function makeFastqR1 ($file) {
                 foreach ($genome in $allFileNames) {
                                 if ($genome.Contains("_R1_")) {
                                                #Write-Host $genome 
-                                               Get-Content $genome | Out-File -Append -NoNewline R1.txt
+                                               Get-Content $genome | Out-File -Append -NoNewline $file
 
                                 }
                 }
 
 }
 
-makeFastqR1 
+makeFastqR1 ("name.txt")
 
 function makeFastqR2 () {
                 
