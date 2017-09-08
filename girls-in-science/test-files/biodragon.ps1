@@ -18,23 +18,28 @@ $RCodes = @("R1", "R2")
 
 
 
+function makeFastqR1 () {
+                foreach ($genome in $allFileNames) {
+                                if ($genome.Contains("_R1_")) {
+                                               #Write-Host $genome 
+                                               Get-Content $genome | Out-File -Append -NoNewline R1.txt
+
+                                }
+                }
+
+}
+
+makeFastqR1 
+
+function makeFastqR2 () {
+                
+}
 # print out proper genome name 
 
 # print out the corresponding R-string 
 
 
-
-
 ## generate the corresponding name for the output-file
-
-$arr = Get-ChildItem -Filter *R1* -Name
-
-
-foreach ($a in $arr) {
-                Get-Content $a | Out-File -Append -NoNewline out.txt
-
-}
-
 
 
 
