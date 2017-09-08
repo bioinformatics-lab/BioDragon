@@ -14,11 +14,10 @@ foreach ($fileName in $allFileNames) {
 $uniqueGenomeNames =  $allGenomeNames | Select-Object -Unique
 
 
-$RCodes = @("R1", "R2")
 
+$RCodes = @("_R1_", "_R2_")
 
-
-function makeFastqR1 ($file) {
+function makeFastqR1 ($file ) {
                 foreach ($genome in $allFileNames) {
                                 if ($genome.Contains("_R1_")) {
                                                #Write-Host $genome 
@@ -29,11 +28,24 @@ function makeFastqR1 ($file) {
 
 }
 
-makeFastqR1 ("name.txt")
+#makeFastqR1 ("r1.txt")
 
-function makeFastqR2 () {
-                
+
+function makeFastqR2 ($file ) {
+                foreach ($genome in $allFileNames) {
+                                if ($genome.Contains("_R2_")) {
+                                               #Write-Host $genome 
+                                               Get-Content $genome | Out-File -Append -NoNewline $file
+
+                                }
+                }
+
 }
+
+makeFastqR2 ("r2.txt")
+
+
+
 # print out proper genome name 
 
 # print out the corresponding R-string 
