@@ -34,7 +34,7 @@ function findUniqueGenomes {
 
 
 
-
+# Generates the associated << FASTQ >> files for a particular genome
 function allFilesForAGenome($genome) {
                 $genomeRegExp = "*_" + $genome + "_*" 
                 Get-ChildItem -Name  -Filter $genomeRegExp
@@ -43,18 +43,15 @@ function allFilesForAGenome($genome) {
 
 
 # A function that returns the list of << R1 >> files associated with a genome
-
 function combineAllR2ForGenome ($genome ) {
 
 
                 $outputFileName = ($genome).ToString() + "_R2.txt"
                 $filesForAGenome = allFilesForAGenome($genome)
                 $R2FilesForAGenome = $filesForAGenome -like "*_R2_*"
-                #$R2FilesForAGenome
 
                  
                 foreach ($anR2File in $R2FilesForAGenome) {
-                                #Write-Host $genome 
                                 Get-Content $anR2File | Out-File -Append -NoNewline $outputFileName
 
                 }
@@ -62,13 +59,15 @@ function combineAllR2ForGenome ($genome ) {
 
 
 
-combineAllR2ForGenome("G04869")
+#combineAllR2ForGenome("G04869")
 
 
 # Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
-$uniqueGenomeNames = findUniqueGenomes 
+$uniqueGenomeNames = findUniqueGenomes
 
 
+# Show time, baby!
 foreach ($genome in $uniqueGenomeNames) {
-                
+               
+                combineAllR2ForGenome($genome)
 }
