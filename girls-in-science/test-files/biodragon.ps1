@@ -75,7 +75,10 @@ $uniqueGenomeNames = findUniqueGenomes
 
 # Show time, baby!
 foreach ($genome in $uniqueGenomeNames) {
-               
+                Write-Host "Working on the $genome files"
                 combineAllRCodeFilesForGenome $genome "R1" 
                 combineAllRCodeFilesForGenome $genome "R2"
 }
+
+
+Write-Host "All Done"
