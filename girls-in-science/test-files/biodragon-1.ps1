@@ -141,3 +141,14 @@ makeFastqR1 ("r1.txt")
 
 
 ##########
+
+
+$x = @(1,2,3,4)
+
+
+
+function show-x  {
+               Write-Host $x 
+}
+
+show-x 
