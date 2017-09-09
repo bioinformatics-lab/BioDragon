@@ -34,10 +34,6 @@ function findUniqueGenomes {
 
 
 
-# Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
-$uniqueGenomeNames = findUniqueGenomes 
-
-
 
 function allFilesForAGenome($genome) {
                 $genomeRegExp = "*_" + $genome + "_*" 
@@ -50,26 +46,29 @@ function allFilesForAGenome($genome) {
 
 function combineAllR2ForGenome ($genome ) {
 
+
+                $outputFileName = ($genome).ToString() + "_R2.txt"
                 $filesForAGenome = allFilesForAGenome($genome)
                 $R2FilesForAGenome = $filesForAGenome -like "*_R2_*"
+                #$R2FilesForAGenome
 
-                $R2FilesForAGenome
+                 
+                foreach ($anR2File in $R2FilesForAGenome) {
+                                #Write-Host $genome 
+                                Get-Content $anR2File | Out-File -Append -NoNewline $outputFileName
 
-                <#
-                foreach ($genome in $uniqueGenomeNames) {
-                                if ($genome.Contains("_R2_")) {
-                                                #Write-Host $genome 
-                                                Get-Content $genome | Out-File -Append -NoNewline $file
-
-                                }
                 }
-#>
-
-
 }
+
+
 
 combineAllR2ForGenome("G04869")
 
 
+# Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
+$uniqueGenomeNames = findUniqueGenomes 
 
 
+foreach ($genome in $uniqueGenomeNames) {
+                
+}
