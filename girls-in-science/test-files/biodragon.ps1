@@ -1,7 +1,5 @@
 <#
 
-I'm assuming that you'd be using << Windows >> here
-
 How to use this powershell script:
 
 1. Save this file in the << EAI Genome_Emilyn >> folder - along with the basic genome files to be merged.
@@ -17,10 +15,9 @@ How to use this powershell script:
 
 
 # First we generate a list of all files whose names end with << fastq >> 
-
 $allFastqFiles = Get-ChildItem -Name -Filter "*fastq*" 
 
-
+# This function finds the names of the unique Genomes within the folder
 function findUniqueGenomes {
  
                 # initialize an empty array
