@@ -62,7 +62,7 @@ function combineAllRCodeFilesForGenome {
 
                  
                 foreach ($anRCodeFile in $RCodeFilesForAGenome) {
-                                Get-Content $anRCodeFile | Out-File -Append -NoNewline $outputFileName
+                                Get-Content $anRCodeFile | Out-File -Append -NoNewline -Encoding ASCII $outputFileName
 
                 }
 }
