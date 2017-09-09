@@ -24,6 +24,30 @@ foreach ($g in $uniqueGenomeNames) {
 }
 
 
+
+
+
+
+# Convert this to two parameters! 
+
+function makeFastqR1 ($file ,  $r) {
+                foreach ($genome in $allFileNames) {
+                                               Write-Host $r
+                                if ($genome.Contains($r)) {
+                                               Write-Host $genome 
+                                               #Get-Content $genome | Out-File -Append -NoNewline $file
+
+                                }
+                }
+
+}
+
+makeFastqR1 ("r1.txt", "_R1_")
+
+
+
+
+
 function makeFastqR2 ($file ) {
                 foreach ($genome in $allFileNames) {
                                 if ($genome.Contains("_R2_")) {
@@ -47,16 +71,22 @@ makeFastqR2 ("r2.txt")
 ## generate the corresponding name for the output-file
 
 
-function makeFastqR1 ($file ,  $Local:r) {
+
+
+
+function makeFastqR1 ($file ) {
                 foreach ($genome in $allFileNames) {
-                                if ($genome.Contains($r)) {
-                                               Write-Host $genome 
-                                               #Get-Content $genome | Out-File -Append -NoNewline $file
+                                if ($genome.Contains("_R1_")) {
+                                               #Write-Host $genome 
+                                               Get-Content $genome | Out-File -Append -NoNewline $file
 
                                 }
                 }
 
 }
 
-makeFastqR1 ("r1.txt", "_R1_")
+makeFastqR1 ("r1.txt")
+
+
+##########
 
