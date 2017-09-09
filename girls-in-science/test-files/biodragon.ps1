@@ -56,7 +56,7 @@ function combineAllRCodeFilesForGenome {
 
                 ) 
 
-                $outputFileName = ($genome).ToString() + "_" + $RCode + ".txt"
+                $outputFileName = ($genome).ToString() + "_" + $RCode + ".fastq"
                 $filesForAGenome = allFilesForAGenome($genome)
                 $RCodeFilesForAGenome = $filesForAGenome -like "*_" + $RCode + "_*"
 
