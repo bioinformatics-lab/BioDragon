@@ -59,9 +59,6 @@ function combineAllR2ForGenome ($genome ) {
 
 
 
-#combineAllR2ForGenome("G04869")
-
-
 # Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
 $uniqueGenomeNames = findUniqueGenomes
 
