@@ -35,7 +35,14 @@ function findUniqueGenomes {
 
 
 # Generates the associated << FASTQ >> files for a particular genome
-function allFilesForAGenome($genome) {
+function allFilesForAGenome {
+
+                Param(
+                                [parameter(Mandatory = $true)] [String] $genome
+
+
+                ) 
+
                 $genomeRegExp = "*_" + $genome + "_*" 
                 Get-ChildItem -Name  -Filter $genomeRegExp
 
@@ -43,8 +50,12 @@ function allFilesForAGenome($genome) {
 
 
 # A function that returns the list of << R1 >> files associated with a genome
-function combineAllR2ForGenome ($genome ) {
+function combineAllR2ForGenome {
+                Param(
+                                [parameter(Mandatory = $true)] [String] $genome
 
+
+                ) 
 
                 $outputFileName = ($genome).ToString() + "_R2.txt"
                 $filesForAGenome = allFilesForAGenome($genome)
