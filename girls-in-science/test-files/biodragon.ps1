@@ -1,7 +1,7 @@
 Set-Location /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/girls-in-science/test-files
 
 
-$allFileNames =  Get-ChildItem -Name -Filter "*fastq*"
+$allFileNames =  Get-ChildItem -Name -Filter "*fastq*" 
 
 #  Get-ChildItem -Name -Filter "*LRu*.*R1*"
 
@@ -17,18 +17,11 @@ $uniqueGenomeNames =  $allGenomeNames | Select-Object -Unique
 
 $RCodes = @("_R1_", "_R2_")
 
-function makeFastqR1 ($file ) {
-                foreach ($genome in $allFileNames) {
-                                if ($genome.Contains("_R1_")) {
-                                               #Write-Host $genome 
-                                               Get-Content $genome | Out-File -Append -NoNewline $file
 
-                                }
-                }
-
+foreach ($g in $uniqueGenomeNames) {
+                #Get-ChildItem -Name -Filter $g | Select-String -Pattern "_R1_"
+               Get-ChildItem -Name  -Filter "*G04868*"
 }
-
-#makeFastqR1 ("r1.txt")
 
 
 function makeFastqR2 ($file ) {
@@ -54,5 +47,16 @@ makeFastqR2 ("r2.txt")
 ## generate the corresponding name for the output-file
 
 
+function makeFastqR1 ($file ,  $Local:r) {
+                foreach ($genome in $allFileNames) {
+                                if ($genome.Contains($r)) {
+                                               Write-Host $genome 
+                                               #Get-Content $genome | Out-File -Append -NoNewline $file
 
+                                }
+                }
+
+}
+
+makeFastqR1 ("r1.txt", "_R1_")
 
