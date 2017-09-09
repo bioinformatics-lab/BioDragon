@@ -40,7 +40,7 @@ $uniqueGenomeNames = findUniqueGenomes
 
 
 function allFilesForAGenome($genome) {
-                $genomeRegExp = "*" + $genome + "*" 
+                $genomeRegExp = "*_" + $genome + "_*" 
                 Get-ChildItem -Name  -Filter $genomeRegExp
 
 }
@@ -50,7 +50,12 @@ function allFilesForAGenome($genome) {
 
 function combineAllR2ForGenome ($genome ) {
 
+                $filesForAGenome = allFilesForAGenome($genome)
+                $R2FilesForAGenome = $filesForAGenome -like "*_R2_*"
 
+                $R2FilesForAGenome
+
+                <#
                 foreach ($genome in $uniqueGenomeNames) {
                                 if ($genome.Contains("_R2_")) {
                                                 #Write-Host $genome 
@@ -58,8 +63,13 @@ function combineAllR2ForGenome ($genome ) {
 
                                 }
                 }
+#>
+
 
 }
 
-makeFastqR2 ("biodragon-r2.txt")
+combineAllR2ForGenome("G04869")
+
+
+
 
