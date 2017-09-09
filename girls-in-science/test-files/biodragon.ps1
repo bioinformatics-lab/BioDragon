@@ -50,20 +50,21 @@ function allFilesForAGenome {
 
 
 # A function that returns the list of << R1 >> files associated with a genome
-function combineAllR2ForGenome {
+function combineAllRCodeFilesForGenome {
                 Param(
-                                [parameter(Mandatory = $true)] [String] $genome
+                                [parameter(Mandatory = $true, Position = 0)] [String] $genome,
 
+                                [parameter(Mandatory = $true, Position = 1)] [String] $RCode
 
                 ) 
 
-                $outputFileName = ($genome).ToString() + "_R2.txt"
+                $outputFileName = ($genome).ToString() + "_" + $RCode + ".txt"
                 $filesForAGenome = allFilesForAGenome($genome)
-                $R2FilesForAGenome = $filesForAGenome -like "*_R2_*"
+                $RCodeFilesForAGenome = $filesForAGenome -like "*_" + $RCode + "_*"
 
                  
-                foreach ($anR2File in $R2FilesForAGenome) {
-                                Get-Content $anR2File | Out-File -Append -NoNewline $outputFileName
+                foreach ($anRCodeFile in $RCodeFilesForAGenome) {
+                                Get-Content $anRCodeFile | Out-File -Append -NoNewline $outputFileName
 
                 }
 }
@@ -77,5 +78,6 @@ $uniqueGenomeNames = findUniqueGenomes
 # Show time, baby!
 foreach ($genome in $uniqueGenomeNames) {
                
-                combineAllR2ForGenome($genome)
+                combineAllRCodeFilesForGenome $genome "R1" 
+                combineAllRCodeFilesForGenome $genome "R2"
 }
