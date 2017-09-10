@@ -3,6 +3,7 @@
 A simple usage can be checked from here
 https://vimeo.com/233094262
 
+( This has changed slightly from 10 September onwards - but it's still quite similar )
 
 
 
