@@ -1,11 +1,11 @@
-# How to use this powershell script:
+# How to use this ruby script:
 
 # 1. Save this file in the << EAI Genome_Emilyn >> folder - along with the basic genome files to be merged.
 # ( NOTE: Make sure of this with << Get-Location >> )
 
 # 2. Move to the directory using << terminal >>
 
-# 3. Next, type << biodragon.rb >>
+# 3. Next, type << ruby biodragon.rb >>
 
 # 4. You should see the desired files merged and saved properly
 
@@ -69,15 +69,23 @@ def combineAllRCodeFilesForGenome(genome, rCode)
 
 cmd += " > #{outputFileName}"
 puts cmd
+system(cmd)
 end
 
 # Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
 uniqueGenomeList = findUniqueGenomes(allFastqFiles)
 
 for genome in uniqueGenomeList
-  puts "Working on the #{genome} files"
+
+  puts "\n\n ~~~~~~~~~~~~~~~~~~~~~ "
+  puts "\nWorking on the #{genome} files\n\n"
+  puts "\n>>>>       R1      <<<<\n\n"
   combineAllRCodeFilesForGenome(genome,"R1")
+  puts "\n\n"
+  puts "\n>>>>       R2      <<<<\n\n"
   combineAllRCodeFilesForGenome(genome,"R2")
 end
 
-puts "All Done!"
+puts "\n\n\n@@@@@@@@@@@@@@@@@@@@@@@@"
+
+puts "\n\nAll Done!"
