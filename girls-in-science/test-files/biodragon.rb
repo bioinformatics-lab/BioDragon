@@ -13,6 +13,7 @@
 
 allFastqFiles = Dir["*.fastq"]
 
+# Usage
 #findUniqueGenomes(allFastqFiles)
 
 def findUniqueGenomes(allFastqFiles)
@@ -36,6 +37,10 @@ def allFilesForAGenome (genome)
   return Dir[genomeRegExp]
 end
 
+
+
+# Usage
+# combineAllRCodeFilesForGenome("G04868","R1")
 def combineAllRCodeFilesForGenome(genome, rCode)
   outputFileName = (genome).to_s + "_" + rCode + ".fastq"
 
@@ -51,7 +56,19 @@ def combineAllRCodeFilesForGenome(genome, rCode)
     end
   end
 
-  return rCodeFilesForAGenome
+  #return rCodeFilesForAGenome
+
+  cmd = "cat "
+# combine the names of the files into a fingle string
+ for file in rCodeFilesForAGenome 
+
+  cmd += file + " "
+
+ end
+
+
+cmd += " > #{outputFileName}"
+puts cmd
 end
 
 # Here we call the << findUniqueFenomes >> function to store the unique genomes in another array.
