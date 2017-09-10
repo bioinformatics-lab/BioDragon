@@ -5,3 +5,12 @@ girls-in-science/test-files/_resources/power-cat.fastq
 girls-in-science/test-files/_resources/G04868_R2.fastq
 girls-in-science/test-files/_resources/G04868_R1.fastq
 girls-in-science/test-files/biodragon.ps1
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_4_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_4_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_5_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq
+girls-in-science/test-files/_experiments/BSSE_QGF_40813_C898AANXX_5_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq
+girls-in-science/test-files/_experiments/G04868_R1.fastq
+girls-in-science/test-files/_experiments/G04868_R2.fastq
+girls-in-science/test-files/_experiments/biodragon.rb

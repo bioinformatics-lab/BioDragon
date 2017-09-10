@@ -1,0 +1,81 @@
+emilyn@EmilynPC[emilyn] cd Desktop                                                                                                      [ 4:06]
+emilyn@EmilynPC[Desktop] cd Trimmomatic                                                                                                 [ 4:08]
+emilyn@EmilynPC[Trimmomatic] cd trimmomatic-0.36                                                                                        [ 4:08]
+emilyn@EmilynPC[trimmomatic-0.36] ls                                                                                                    [ 4:08]
+adapters                   G04868_Fourth_R2.fastq.gz  G04868_R2.fastq.gz        G04868_Third_R2.fastq.gz              LICENSE
+G04868_Fourth_R1.fastq.gz  G04868_R1.fastq.gz         G04868_Third_R1.fastq.gz  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10  trimmomatic-0.36.jar
+emilyn@EmilynPC[trimmomatic-0.36] java -jar trimmomatic-0.36.jar PE -phred33 G04868_R1.fastq.gz G04868_R2.fastq.gz G04868_R1_paired.fq.gz G04868_R1_unpaired.fq.gz G04868_R2_paired.fq.gz G04868_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+TrimmomaticPE: Started with arguments:
+ -phred33 G04868_R1.fastq.gz G04868_R2.fastq.gz G04868_R1_paired.fq.gz G04868_R1_unpaired.fq.gz G04868_R2_paired.fq.gz G04868_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Multiple cores found: Using 4 threads
+java.io.FileNotFoundException: /home/emilyn/Desktop/Trimmomatic/trimmomatic-0.36/NexteraPE-PE.fa (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.usadellab.trimmomatic.fasta.FastaParser.parse(FastaParser.java:54)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.loadSequences(IlluminaClippingTrimmer.java:110)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.makeIlluminaClippingTrimmer(IlluminaClippingTrimmer.java:71)
+	at org.usadellab.trimmomatic.trim.TrimmerFactory.makeTrimmer(TrimmerFactory.java:32)
+	at org.usadellab.trimmomatic.Trimmomatic.createTrimmers(Trimmomatic.java:59)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:536)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+Input Read Pairs: 4835549 Both Surviving: 4617354 (95,49%) Forward Only Surviving: 75959 (1,57%) Reverse Only Surviving: 89694 (1,85%) Dropped: 52542 (1,09%)
+TrimmomaticPE: Completed successfully
+emilyn@EmilynPC[trimmomatic-0.36] ls                                                                                                    [ 4:11]
+adapters                   G04868_R1.fastq.gz        G04868_R2.fastq.gz        G04868_Third_R1.fastq.gz              LICENSE
+G04868_Fourth_R1.fastq.gz  G04868_R1_paired.fq.gz    G04868_R2_paired.fq.gz    G04868_Third_R2.fastq.gz              trimmomatic-0.36.jar
+G04868_Fourth_R2.fastq.gz  G04868_R1_unpaired.fq.gz  G04868_R2_unpaired.fq.gz  ILLUMINACLIP:NexteraPE-PE.fa:2:30:10
+emilyn@EmilynPC[trimmomatic-0.36] java -jar trimmomatic-0.36.jar PE -phred33 G04868_Third_R1.fastq.gz G04868_Third_R2.fastq.gz G04868_Third_R1_paired.fq.gz G04868_Third_R1_unpaired.fq.gz G04868_Third_R2_paired.fq.gz G04868_Third_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+TrimmomaticPE: Started with arguments:
+ -phred33 G04868_Third_R1.fastq.gz G04868_Third_R2.fastq.gz G04868_Third_R1_paired.fq.gz G04868_Third_R1_unpaired.fq.gz G04868_Third_R2_paired.fq.gz G04868_Third_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Multiple cores found: Using 4 threads
+java.io.FileNotFoundException: /home/emilyn/Desktop/Trimmomatic/trimmomatic-0.36/NexteraPE-PE.fa (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.usadellab.trimmomatic.fasta.FastaParser.parse(FastaParser.java:54)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.loadSequences(IlluminaClippingTrimmer.java:110)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.makeIlluminaClippingTrimmer(IlluminaClippingTrimmer.java:71)
+	at org.usadellab.trimmomatic.trim.TrimmerFactory.makeTrimmer(TrimmerFactory.java:32)
+	at org.usadellab.trimmomatic.Trimmomatic.createTrimmers(Trimmomatic.java:59)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:536)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:535)
+	at java.lang.StringBuffer.append(StringBuffer.java:322)
+	at java.io.BufferedReader.readLine(BufferedReader.java:363)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parseOne(FastqParser.java:59)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parse(FastqParser.java:164)
+	at org.usadellab.trimmomatic.TrimmomaticPE.process(TrimmomaticPE.java:264)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:539)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+emilyn@EmilynPC[trimmomatic-0.36] java -jar trimmomatic-0.36.jar PE -phred33 G04868_Fourth_R1.fastq.gz G04868_Fourth_R2.fastq.gz G04868_Fourth_R1_paired.fq.gz G04868_Fourth_R1_unpaired.fq.gz G04868_Fourth_R2_paired.fq.gz G04868_Fourth_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+TrimmomaticPE: Started with arguments:
+ -phred33 G04868_Fourth_R1.fastq.gz G04868_Fourth_R2.fastq.gz G04868_Fourth_R1_paired.fq.gz G04868_Fourth_R1_unpaired.fq.gz G04868_Fourth_R2_paired.fq.gz G04868_Fourth_R2_unpaired.fq.gz ILLUMINACLIP:NexteraPE-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+Multiple cores found: Using 4 threads
+java.io.FileNotFoundException: /home/emilyn/Desktop/Trimmomatic/trimmomatic-0.36/NexteraPE-PE.fa (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.usadellab.trimmomatic.fasta.FastaParser.parse(FastaParser.java:54)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.loadSequences(IlluminaClippingTrimmer.java:110)
+	at org.usadellab.trimmomatic.trim.IlluminaClippingTrimmer.makeIlluminaClippingTrimmer(IlluminaClippingTrimmer.java:71)
+	at org.usadellab.trimmomatic.trim.TrimmerFactory.makeTrimmer(TrimmerFactory.java:32)
+	at org.usadellab.trimmomatic.Trimmomatic.createTrimmers(Trimmomatic.java:59)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:536)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:2367)
+	at java.lang.AbstractStringBuilder.expandCapacity(AbstractStringBuilder.java:130)
+	at java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:114)
+	at java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:535)
+	at java.lang.StringBuffer.append(StringBuffer.java:322)
+	at java.io.BufferedReader.readLine(BufferedReader.java:363)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parseOne(FastqParser.java:59)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parse(FastqParser.java:164)
+	at org.usadellab.trimmomatic.TrimmomaticPE.process(TrimmomaticPE.java:264)
+	at org.usadellab.trimmomatic.TrimmomaticPE.run(TrimmomaticPE.java:539)
+	at org.usadellab.trimmomatic.Trimmomatic.main(Trimmomatic.java:80)
+emilyn@EmilynPC[trimmomatic-0.36]  
