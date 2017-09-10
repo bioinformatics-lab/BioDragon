@@ -11,6 +11,9 @@ https://vimeo.com/233094262
 
 
 We have changed the implementation to just run the exact commands which She enters manually.
+The script is located here 
+
+https://github.com/abhi18av/BioDragon/blob/master/girls-in-science/test-files/biodragon.rb
 
 ####
 Resource for installing `ruby-2.3` in `Ubuntu-14.04`
