@@ -71,6 +71,10 @@ end
 # Here we call the << findUniqueGenomes >> function to store the unique genomes in another array.
 uniqueGenomeList = findUniqueGenomes(allFastqFiles)
 
+
+# Show time baby!
+# Calling the << combineAllRCodeFilesForGenome >> functions per genome for both << R >> files
+# The << puts >> is used for a well informed user experience while running the script
 for genome in uniqueGenomeList
   puts "\n\n ~~~~~~~~~~~~~~~~~~~~~ "
   puts "\nWorking on the #{genome} files\n\n"
