@@ -37,8 +37,6 @@ def allFilesForAGenome (genome)
   return Dir[genomeRegExp]
 end
 
-
-
 # Usage
 # combineAllRCodeFilesForGenome("G04868","R1")
 def combineAllRCodeFilesForGenome(genome, rCode)
@@ -58,28 +56,22 @@ def combineAllRCodeFilesForGenome(genome, rCode)
 
   #return rCodeFilesForAGenome
 
-
-
-# construct the string to be executed by the shell
+  # construct the string to be executed by the shell
   cmd = "cat "
-# combine the names of the files into a single string
- for file in rCodeFilesForAGenome 
+  # combine the names of the files into a single string
+  for file in rCodeFilesForAGenome
+    cmd += file + " "
+  end
 
-  cmd += file + " "
-
- end
-
-
-cmd += " > #{outputFileName}"
-puts cmd
-system(cmd)
+  cmd += " > #{outputFileName}"
+  puts cmd
+  system(cmd)
 end
 
 # Here we call the << findUniqueGenomes >> function to store the unique genomes in another array.
 uniqueGenomeList = findUniqueGenomes(allFastqFiles)
 
 for genome in uniqueGenomeList
-
   puts "\n\n ~~~~~~~~~~~~~~~~~~~~~ "
   puts "\nWorking on the #{genome} files\n\n"
   puts "\n>>>>       R1      <<<<\n\n"
