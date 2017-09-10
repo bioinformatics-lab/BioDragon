@@ -1,7 +1,7 @@
 # How to use this ruby script:
 
 # 1. Save this file in the << EAI Genome_Emilyn >> folder - along with the basic genome files to be merged.
-# ( NOTE: Make sure of this with << Get-Location >> )
+# ( NOTE: Make sure of this with << pwd >> )
 
 # 2. Move to the directory using << terminal >>
 
