@@ -12,7 +12,7 @@ https://vimeo.com/233094262
 
 We have changed the implementation to just run the exact commands which She enters manually.
 
-######
+####
 Resource for installing `ruby-2.3` in `Ubuntu-14.04`
 
 https://www.brightbox.com/blog/2016/01/06/ruby-2-3-ubuntu-packages/
@@ -40,7 +40,7 @@ The output should be similar to ( just check ruby 2.3 in beginning)
 `ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-darwin16]`
 
 
-###### Instructions for running the ruby script for automated file conversions and merging
+#### Instructions for running the ruby script for automated file conversions and merging
 
 
  1. Save this file in the << EAI Genome_Emilyn >> folder - along with the basic genome files to be merged.
