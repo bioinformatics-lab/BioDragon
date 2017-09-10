@@ -50,7 +50,11 @@ The output should be similar to ( just check ruby 2.3 in beginning)
 
  2. Move to the directory using << terminal >>
 
- 3. Next, type << ruby biodragon.rb >>
+ 3. Next, type 
+ 
+```sh
+$ ruby biodragon.rb
+```
 
  4. You should see the desired files merged and saved properly
 
