@@ -21,7 +21,6 @@ allFastqFiles = Dir["*.fastq"]
 
 
 
-
 # This function finds the names of the unique Genomes within the folder
 # function findUniqueGenomes {
 
