@@ -62,4 +62,4 @@ The output should be similar to ( just check ruby 2.3 in beginning)
 
 The `script` is located here
 
-https://github.com/abhi18av/BioDragon/blob/master/girls-in-science/test-files/biodragon.ps1
+https://github.com/abhi18av/BioDragon/blob/master/girls-in-science/test-files/_archive/biodragon.ps1
