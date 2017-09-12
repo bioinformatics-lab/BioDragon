@@ -1,4 +1,8 @@
 # TODO: Create a MindMap
+Resources
+- http://fmgdata.kinja.com/using-docker-with-conda-environments-1790901398
+- https://beenje.github.io/blog/posts/docker-and-conda/
+- https://stackoverflow.com/questions/37140874/how-to-install-a-python-package-with-all-the-dependencies-into-a-docker-image
 
 ## The machines for Next Generation Sequecing (which perfom Whole Genome Sequecing) must give us 2 files: 
 
