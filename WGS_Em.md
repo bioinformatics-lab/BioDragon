@@ -1,3 +1,4 @@
+# TODO: Create a MindMap
 
 ## The machines for Next Generation Sequecing (which perfom Whole Genome Sequecing) must give us 2 files: 
 
@@ -50,11 +51,17 @@ We can use the files "R1_paired.fq.gz and R2_paired.fq.gz" for others sofwares: 
 
 
 ### SNIPPY
---> **SNIPPY**: this software goes into the NCBI database (the one which I've shared to you) and it will see cat up the mutations into the genomes. When the mutation is only in one base, like A>C, we call it as SNP (Single Nucleotide Polymorphism)... Some of them are synonimous (when this mutation won't give a different protein) and non-synonimous (well, when the protein will be different)... Notice that it is important SNP information to evaluate Drug resistance mutation, phylogenetic assingment, etc. We already know that many diseases (speaking about the human organism) are related to some already known SNPs mutations. This analysis is going to give us 1 folder and 17 files. We just need (so far) the one called "snps.csv" (for each genome).
+--> **SNIPPY**: This software goes into the NCBI database (the one which I've shared to you) and it will see cat up the mutations into the genomes. When the mutation is only in one base, like A>C, we call it as SNP (Single Nucleotide Polymorphism). 
+
+Some of them are synonimous (when this mutation won't give a different protein) and non-synonimous (well, when the protein will be different).
+
+Notice that it is important SNP information to evaluate Drug resistance mutation, phylogenetic assingment, etc. We already know that many diseases (speaking about the human organism) are related to some already known SNPs mutations. This analysis is going to give us 1 folder and 17 files. We just need (so far) the one called "snps.csv" (for each genome).
 
 An important information is that... The SNPs are generated based in a reference. This reference file must be in ".gb" extension (we get this reference from NCBI and choose the format as "GeneBank full" format, instead "Fasta" one). The gb format is from "GeneBank".
 
-Well, here we go to the Snippy and find the folder called "bin" (we paste here the two paired files R1 and R2 for all genomes as well the reference file - I've attached in this email the reference file)... So, here we run the follow command...
+Well, here we go to the Snippy and find the folder called "bin" (we paste here the two paired files R1 and R2 for all genomes as well the reference file - I've attached in this email the reference file).
+
+So, here we run the follow command.
 
 ```
 perl snippy --cpus 5 --outdir G04868 --ref H37Rv_AL123456.3.gb --R1 G04868_R1_paired.fq.gz --R2 G04868_R2_paired.fq.gz && perl snippy --cpus 5 --outdir G04868 --ref H37Rv_AL123456.3.gb --R1 G04868_R1_paired.fq.gz --R2 G04868_R2_paired.fq.gz && perl snippy --cpus 5 --outdir G04869 --ref H37Rv_AL123456.3.gb --R1 G04869_R1_paired.fq.gz --R2 G04869_R2_paired.fq.gz && perl snippy --cpus 5 --outdir G04869 --ref H37Rv_AL123456.3.gb --R1 G04869_R1_paired.fq.gz --R2 G04869_R2_paired.fq.gz
@@ -66,9 +73,13 @@ We also use "&&" for going to the next genome analysis...
 
 ## SPADE
 
--- > SPADEs (which will perform the genome assembling... It means that all genomes will be "organized" one by one based in themselves sequences. We call it as "De novo Assembling". There is another way to perform that. When we have a reference genome (in my case it is called H37Rv: we already know all genes position and their effects) we can perform an assembling by reference (also called as "Mapping"), but it is not done by Spades (I still don't know how to perform it using Linux, just by Bionumerics software). This analysis will give us 7 folders and 11 files, we just need (so far) the one called "contigs.fasta" (for each genome).
+-- > SPADEs (which will perform the genome assembling... It means that all genomes will be "organized" one by one based in themselves sequences. We call it as "De novo Assembling". There is another way to perform that. When we have a reference genome (in my case it is called H37Rv: we already know all genes position and their effects) we can perform an assembling by reference (also called as "Mapping"), but it is not done by Spades (I still don't know how to perform it using Linux, just by Bionumerics software). 
 
-The good point of Spades analysis is that we don't have to copy and paste the Trimmomatic paired files into the Spades folder... We give the follow command:
+This analysis will give us 7 folders and 11 files, we just need (so far) the one called "contigs.fasta" (for each genome).
+
+The good point of Spades analysis is that we don't have to copy and paste the Trimmomatic paired files into the Spades folder.
+
+We give the follow command:
 
 ```
 python spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 /home/bioinfo/Desktop/Emilyn/Results/Trimmomatic/G04868/G04868_R1_paired.fq.gz --pe1-2 /home/bioinfo/Desktop/Emilyn/Results/Trimmomatic/G04868/G04868_R2_paired.fq.gz -o /home/bioinfo/Desktop/Emilyn/Results/SPades/G04868 && python spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 /home/bioinfo/Desktop/Emilyn/Results/Trimmomatic/G04869/G04869_R1_paired.fq.gz --pe1-2 /home/bioinfo/Desktop/Emilyn/Results/Trimmomatic/G04869/G04869_R2_paired.fq.gz -o /home/bioinfo/Desktop/Emilyn/Results/SPades/G04869 
@@ -77,7 +88,9 @@ python spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 /home/bioinfo
 We also use "&&" for going to the next genome analysis... (we must write genome per genome line command).
 
 
-Last, but not less important, we can perform the genome annotation using Prokka software... For that we will use the files "contigs.fasta" generated by SPADEs. Annotation gives us information about the genes function (see how it is amazing?!). So far I haven't used Prokkas data. I will learn in next week...
+Last, but not less important, we can perform the genome annotation using Prokka software... For that we will use the files "contigs.fasta" generated by SPADEs. Annotation gives us information about the genes function (see how it is amazing?!). 
+
+So far I haven't used Prokkas data.
 
 ## PROKKA
 
@@ -98,4 +111,4 @@ I've shared by Dropbox my results for each software for one genome (G04868).
 
 ----------------------------------------
 
-Now I need to learn how to use the website called CIPRES to perform phylogenetic analysis and then it will give me a file which I will be able to open in MEGA or FigTree software. 
+Now I need to learn how to use the website called CIPRES to perform phylogenetic analysis and then it will give me a file which I will be able to open in `MEGA` or `FigTree` software. 
