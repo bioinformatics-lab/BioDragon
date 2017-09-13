@@ -1,5 +1,10 @@
 
+## Conda for managing the softwares required for the BioDragon
 
+
+
+
+```
 conda config --add channels r
 conda config --add channels defaults
 conda config --add channels conda-forge
@@ -19,9 +24,10 @@ conda env export > environment.yml
 
 conda remove --name CondaGenetics --all
 
+conda install ruby=2.3.3
 
 
-
+```
 
 
 https://conda.io/docs/user-guide/tasks/manage-environments.html
