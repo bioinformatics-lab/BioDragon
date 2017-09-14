@@ -11,6 +11,7 @@ dependencies:
 - freebayes=1.1.0=py35_0
 - hmmer=3.1b2=3
 - infernal=1.1.2=0
+- jemalloc=4.5.0=0
 - libidn=7.45.0=1
 - minced=0.2.0=1
 - parallel=20170422=pl5.22.0_0
@@ -66,6 +67,7 @@ dependencies:
 - krb5=1.14.2=0
 - libssh2=1.8.0=1
 - ncurses=5.9=10
+- nodejs=6.11.0=0
 - openssl=1.0.2l=0
 - perl=5.22.0.1=0
 - pip=9.0.1=py35_0
