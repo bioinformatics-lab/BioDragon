@@ -886,6 +886,10 @@
   886  sudo mv ./phyloviz/ /opt/
   887  sudo ln -s /opt/phyloviz/bin/phyloviz /home/centos/Desktop/Phyloviz
   888  sudo nautilus .
+
+
+;; BIODRAGON - GENESIS
+
   889  sudo usermod -aG vboxsf $(whoami)
   892  cd Desktop/
   894  mkdir Genesis
