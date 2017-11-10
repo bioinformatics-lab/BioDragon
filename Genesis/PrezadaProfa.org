@@ -13,4 +13,18 @@
 
 ** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
 ** https://linuxconfig.org/how-to-change-system-keyboard-keymap-layout-on-centos-7-linux
+** Scala script to generate the history file
 
+
+```scala 
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+%%('history, "> history.txt")
+
+```
+** Change the keyboard layout
+
+```sh
+settings > keyboard > input layout > US Keyboard
+```
