@@ -1,0 +1,18 @@
+* <2017-11-05 Sun>
+
+
+
+** Install "virtualbox guest additions"
+
+*** https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-centos-7
+
+
+* <2017-11-06 Mon>
+
+** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
+
+
+* <2017-11-10 Fri> 
+
+** https://gist.github.com/larsar/1687725
+

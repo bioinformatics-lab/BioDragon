@@ -15,3 +15,9 @@ girls-in-science/test-files/_experiments/G04868_R1.fastq
 girls-in-science/test-files/_experiments/G04868_R2.fastq
 girls-in-science/test-files/_experiments/biodragon.rb
 CondaGenetics/_resources
+
+*.fasta
+
+*.pdf
+
+*.zip

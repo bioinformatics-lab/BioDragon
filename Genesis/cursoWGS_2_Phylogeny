@@ -1,0 +1,1000 @@
+    7  perl -e "print @INC;"
+    8  su
+    9  wget ftp://ftp.sanger.ac.uk/pub/resources/software/artemis/artemis.tar.gz
+   10  su
+   11  snippy
+   12  ls
+   13  cd /opt
+   14  ls
+   15  cd ~
+   16  cd snippy
+   17  cd bin
+   18  ./snippy
+   19  cd..
+   20  cd /opt
+   21  su
+   22  su
+   23  snippy
+   24  samtools
+   25  ls
+   26  rm -rf snippy
+   27  ls
+   28  mkdir Lesson1
+   29  ls
+   30  rmdir Lesson1/
+   31  ls
+   32  which R
+   33  Rscript
+   34  nano
+   35  ls
+   36  Rscript test.R
+   37  ls
+   38  nano test.R
+   39  ls
+   40  cp test.R ./test.sh
+   41  ls
+   42  test.sh
+   43  ./test.sh
+   44  ./test.R
+   45  ./test.Rexec
+   46  su
+   47  velvetg
+   48  fastqc
+   49  which fastqc
+   50  ln -sv /opt/FastQC/fastqc ~/Desktop/
+   51  ln -s /opt/FastQC/fastqc ~/Desktop/
+   52  Rstudio
+   53  rstudio
+   54  which rstudio
+   55  ln -sv /usr/bin/rstudio ~/Desktop/
+   56  which kate
+   57  ln -sv /usr/bin/kate ~/Desktop/
+   58  which art
+   59  ln -sv /opt/artemis/art ~/Desktop/
+   60  cd Desktop/
+   61  chmod 755 ./art
+   62  sudo chmod 755 ./art
+   63  art
+   64  which tablet
+   65  ln -sv /usr/local/bin/tablet ~/Desktop/
+   66  ln -h
+   67  ln --help
+   68  cd Desktop/
+   69  rm ./tablet
+   70  sudo ln -sv /usr/local/bin/tablet ~/Desktop/
+   71  which seaview
+   72  sudo ln -sv /opt/seaview/seaview ~/Desktop/
+   73  which runjmodeltest-gui.sh
+   74  sudo ln -sv /opt/jmodeltest2-2.1.9r20160115/dist/runjmodeltest-gui.sh ~/Desktop/
+   75  su
+   76  java -jar GenomeAnalysisTK.jar
+   77  java -jar /opt/GenomeAnalysisTK-3.8-0-ge9d806836/GenomeAnalysisTK.jar
+   78  runjmodeltest-gui.sh
+   79  cd /opt
+   80  ls
+   81  cd jmodeltest2-2.1.9r20160115/
+   82  ls
+   83  cd dist
+   84  ls
+   85  ./runjmodeltest-gui.sh
+   86  pwd
+   87  cd ..
+   88  ls
+   89  cd GenomeAnalysisTK-3.8-0-ge9d806836/
+   90  ls
+   91  pwd
+   92  cd Desktop/
+   93  su
+   94  cd /opt
+   95  ls
+   96  cd Trimmomatic-0.36/
+   97  ls
+   98  java -jar trimmomatic-0.36.jar
+   99  cd..
+  100  cd ..
+  101  java -jar trimmomatic-0.36.jar
+  102  nano ~/.bashrc
+  103  source ~/.bashrc
+  104  java -jar trimmomatic-0.36.jar
+  105  nano ~/.bashrc
+  106  source ~/.bashrc
+  107  java -classpath -jar trimmomatic-0.36.jar
+  108  nano ~/.bashrc
+  109  source ~/.bashrc
+  110  java -classpath -jar trimmomatic-0.36.jar
+  111  nano ~/.bashrc
+  112  source ~/.bashrc
+  113  ls
+  114  cd fastq_files/
+  115  ls
+  116  gzip -d *.gz
+  117  ls
+  118  java -jar trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  119  source ~/.bashrc
+  120  cd Trimmomatic-0.36/
+  121  pwd
+  122  java -jar trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  123  source ~/.bashrc
+  124  java -jar trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  125  java -classpath trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  126  java -classpath -jar trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  127  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_1.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  128  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50
+  129  NC000962_3.fasta PT000033_1_trimmed_paired.fastq
+  130  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  131  bwa index -a is NC0000962_3.fasta
+  132  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  133  ls
+  134  bwa index NC0000962_3.fasta
+  135  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  136  bwa mem
+  137  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 NC000962_3 PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  138  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  139  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 ./NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  140  ls
+  141  bwa index -a is NC0000962_3.fasta
+  142  bwa mem -c 100 -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M -T 50 ./NC0000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  143  samtools
+  144  samtools faidx
+  145  samtools faidx NC0000962_3.fasta
+  146  ls
+  147  ls -l
+  148  ls -lm
+  149  ls -l
+  150  samtools view -bt NC0000962_3.fasta.fai PT000033.sam > PT000033.bam
+  151  samtools sort PT000033.bam PT000033.sorted
+  152  samtools sort PT000033.bam PT000033.sorted.bam
+  153  samtools sort PT000033.bam PT000033.sorted
+  154  ls
+  155  ls -l
+  156  samtools sort PT000033.bam PT000033.sorted
+  157  samtools sort -T PT000033.bam -o PT000033.sorted
+  158  samtools sort -l 0 -T PT000033.bam -o PT000033.sorted
+  159  samtools
+  160  samtools sort
+  161  which samtools
+  162  /opt/samtools/samtools
+  163  /opt/samtools/samtools sort PT000033.bam PT000033.sorted
+  164  /opt/samtools/samtools sort PT000033.bam
+  165  /opt/samtools/samtools sort PT000033.bam -o PT000033.sorted
+  166  ls
+  167  mv PT000033.sorted PT000033.sorted.bam
+  168  ls -l
+  169  samtools index PT000033.sorted.bam
+  170  tablet
+  171  grep -v "CDS" sequence.gff3 > sequence2.gff3 
+  172  cd Trimmomatic-0.36/
+  173  sudo ln -s ./trimmomatic-0.36.jar /usr/local/bin/
+  174  java -classpath -jar trimmomatic-0.36.jar
+  175  java -jar trimmomatic-0.36.jar
+  176  nano ~/.bashrc
+  177  java -jar trimmomatic-0.36.jar
+  178  pwd
+  179  samtools
+  180  cd ..
+  181  su
+  182  bwa mem
+  183  man bwa
+  184  man bwa mem
+  185  ls
+  186  samtools flagstat PT000033.sorted.bam
+  187  samtools flagstat PT000033.sorted.bam > PT000033_stats.txt
+  188  velveth PT000033_51 51 -fastq -shortPaired PT000033_1.fastq PT000033_1.fastq
+  189  ls
+  190  velvetg PT000033_51 –cov_cutoff 2 –ins_length 280 –ins_length_sd 80 –read_trkg no –min_contig_lgth 150 –exp_cov auto –scaffolding yes –min_pair_count 20 –unused_reads yes
+  191  velvetg PT000033_51 -cov_cutoff 2 -ins_length 280 -ins_length_sd 80 -read_trkg no -min_contig_lgth 150 -exp_cov auto -scaffolding yes -min_pair_count 20 -unused_reads yes
+  192  head -10000 PT000033.sam | awk '{if ($9 > 0) {S+=$9; T+=1}}END{print "Mean: " S/T}'
+  193  head -10000 mappings.sam | awk 'M=899560{if ($9 > 0) {S+=($9-M)*($9-M); T+=1}}END{print "StdDev: " sqrt(S/T)}'
+  194  head -10000 mappings.sam | awk '{ if ($9 > 0) { N+=1; S+=$9; S2+=$9*$9 }} END { M=S/N; print "n="N", mean="M", stdev="sqrt ((S2-M*M*N)/(N-1))}
+  195  est
+  196  eee
+  197  eee
+  198  q
+  199  \q
+  200  head -10000 PT000033.sam | awk '{if ($9 > 0) {S+=$9; T+=1}}END{print "Mean: " S/T}'
+  201  head -10000 mappings.sam | awk 'M=899560{if ($9 > 0) {S+=($9-M)*($9-M); T+=1}}END{print "StdDev: " sqrt(S/T)}'
+  202  head -10000 PT000033.sam | awk 'M=899560{if ($9 > 0) {S+=($9-M)*($9-M); T+=1}}END{print "StdDev: " sqrt(S/T)}'
+  203  java -jar /opt/picard/picard.jar CollectInsertSizeMetrics I=PT000033.sorted.bam O=insert_size.txt H=hist.pdf M=0.5
+  204  /opt/velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl --s 35 --e 51 -f '-fastq -shortPaired PT000033_1.fastq PT000033_1.fastq'
+  205  ls
+  206  rm -rf auto*
+  207  ls
+  208  rm -rf PT000033_51
+  209  spades.py -o PT000033_spades -1 PT000033_1_trimmed_paired.fastq -2 PT000033_2_trimmed_paired.fastq -k 35,37,41
+  210  VelvetOptimiser.pl --s 35 --e 51 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  211  /opt/velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl --s 35 --e 51 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  212  /opt/velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl --s 51 --e 71 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  213  /opt/velvet/contrib/VelvetOptimiser-2.2.4/VelvetOptimiser.pl --s 31 --e 31 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  214  cd /opt/velvet/
+  215  ls
+  216  cd third-party/
+  217  ls
+  218  cd ..
+  219  cd contrib/
+  220  ls
+  221  cd VelvetOptimiser-2.2.4/
+  222  ls
+  223  ./VelvetOptimiser.pl
+  224  pwd
+  225  cd ~/test/
+  226  ls
+  227  cd /opt
+  228  mkdir picard
+  229  su
+  230  gzip -h
+  231  for file in *.fastq; do gzip -c $file > "$file".gz; done
+  232  ls
+  233  more PT0000033.fastq
+  234  more ./PT0000033.fastq
+  235  ls
+  236  nano PT000033.fastq
+  237  ls
+  238  more PT000033_1.fastq
+  239  more PT000033_2.fastq
+  240  more PT000033_1.fastq
+  241  fastqc
+  242  cd ..
+  243  ls
+  244  cd centos/
+  245  cd test
+  246  ls
+  247  more PT000033.sam
+  248  clear
+  249  more PT000033.sam
+  250  wc -l PT000033.sam
+  251  grep "CGCCGGAGCTGCGTGAGCGGGCGGTGCGGATGGTCGCAGAGATCCGCGGTC" PT000033_1.fastq
+  252  grep -l "CGCCGGAGCTGCGTGAGCGGGCGGTGCGGATGGTCGCAGAGATCCGCGGTC" PT000033_1.fastq
+  253  grep -h
+  254  grep --help
+  255  grep -n "CGCCGGAGCTGCGTGAGCGGGCGGTGCGGATGGTCGCAGAGATCCGCGGTC" PT000033_1.fastq
+  256  sed -n '5601381,5601382p' PT000033_1.fastq
+  257  more PT000033.sam
+  258  grep "@HWI-ST854:130:D17TLACXX:8:2308:7952:91389" PT000033.sam
+  259  grep "HWI-ST854:130:D17TLACXX:8:2308:7952:91389" PT000033.sam
+  260  sed -n '5409741,5409742p' PT000033_1.fastq
+  261  grep "HWI-ST854:130:D17TLACXX:8:2307:10097:25763" PT000033.sam
+  262  bwa index NC000962_3.fasta
+  263  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  264  bwa mem -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  265  ls
+  266  bwa index
+  267  bwa index NC000962_3.fasta
+  268  bwa mem -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  269  more PT000033.sam
+  270  wc -l PT000033.sam
+  271  wc -l PT000033_1.fastq 
+  272  art
+  273  samtools faidx NC000962_3.fasta
+  274  samtools view -bt NC000962_3.fasta.fai PT000033.sam > PT000033.bam
+  275  samtools sort PT000033.bam -o PT000033.sorted.bam
+  276  samtools index PT000033.sorted.bam
+  277  art
+  278  vcfutils.pl
+  279  cd /opt
+  280  ls
+  281  cd bcftools/
+  282  ls
+  283  cd misc
+  284  ls
+  285  pwd
+  286  ./vcfutils.pl
+  287  nano ~/.bashrc
+  288  cd ~
+  289  source ~/.bashrc
+  290  samtools flagstat PT000033.sorted.bam
+  291  samtools mpileup
+  292  bcftools
+  293  bcftools call
+  294  cd ..
+  295  ls
+  296  cd test
+  297  ls
+  298  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam > temp.bcf
+  299  samtools faidx NC0000962_3.fasta
+  300  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC0000962_3.fasta PT000033.sorted.bam > temp.bcf
+  301  more temp.bcf
+  302  bcftools
+  303  which bcftools
+  304  vcfutils
+  305  bcftools call
+  306  samtools faidx NC000962_3.fasta
+  307  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam | bcftools call -O v -vm -o PT000033.raw.vcf
+  308  more PT000033.raw.vcf
+  309  cd ../Module1
+  310  ls
+  311  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam | bcftools call -O v -vm -o PT000033.raw.vcf
+  312  more PT000033.raw.vcf
+  313  cd ../test/
+  314  ls
+  315  more PT000033.raw.vcf
+  316  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam | bcftools call -O v -vm -o PT000033.raw.vcf
+  317  more PT000033.raw.vcf
+  318  samtools index PT000033.sorted.bam
+  319  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam | bcftools call -O v -vm -o PT000033.raw.vcf
+  320  more PT000033.raw.vcf 
+  321  cd ../Module1/
+  322  vcfutils varFilter -d 10 -D 2000 PT000033.raw.vcf > PT000033.filt.vcf
+  323  vcfutils.pl varFilter -d 10 -D 2000 PT000033.raw.vcf > PT000033.filt.vcf
+  324  source ~/.bashrc
+  325  vcfutils.pl
+  326  vcfutils.pl varFilter -d 10 -D 2000 PT000033.raw.vcf > PT000033.filt.vcf
+  327  more PT000033.filt.vcf
+  328  bgzip -c PT000033.filt.vcf > PT000033.filt.vcf.gz
+  329  tabix -p vcf PT000033.filt.vcf.gz
+  330  art
+  331  ls
+  332  mkdir vcfs
+  333  samtools
+  334  bam stats
+  335  samtools stats
+  336  samtools stats PT000033.sorted.bam
+  337  samtools
+  338  samtools depth PT000033.sorted.bam
+  339  samtools depth
+  340  samtools depth -a PT000033.sorted.bam
+  341  samtools depth
+  342  vcfutils.pl varFilter
+  343  samtools view PT000033.sorted.bam | more
+  344  samtools mpileup PT000033.sorted.bam | more
+  345  samtools mpileup -f NC000962_3.fasta PT000033.sorted.bam | more
+  346  more PT000033.filt.vcf
+  347  art
+  348  more PT000033.filt.vcf
+  349  su
+  350  cd ..
+  351  ls
+  352  cd test
+  353  cp ../course_files/PT000049_*.fastq ./
+  354  java -jar trimmomatic-0.36.jar PE -phred33 PT000049_1.fastq PT000049_2.fastq PT000049_1_trimmed_paired.fastq PT000049_1_trimmed_unpaired.fastq PT000049_2_trimmed_paired.fastq PT000049_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  355  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000049_1.fastq PT000049_2.fastq PT000049_1_trimmed_paired.fastq PT000049_1_trimmed_unpaired.fastq PT000049_2_trimmed_paired.fastq PT000049_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  356  bwa index NC000962_3.fasta
+  357  bwa mem -c 100 -R "@RG\tID:PT000049\tSM:PT000049\tPL:Illumina" -M -T 50 NC000962_3.fasta PT000049_1_trimmed_paired.fastq PT000049_2_trimmed_paired.fastq > PT000049.sam
+  358  ls
+  359  sh commands.sh
+  360  ls
+  361  cp ../course_files/PT000271_*.fastq ./
+  362  ls
+  363  sh commands.sh
+  364  cp ../course_files/PT000279_*.fastq ./
+  365  ls
+  366  sh commands.sh
+  367  cd ../Module1/
+  368  art
+  369  cd /opt
+  370  git clone https://github.com/pcingola/SnpEff.git
+  371  su
+  372  cd ~/Module1/
+  373  ls
+  374  java -Xmx4g /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config Mycobacterium_tuberculosis_h37rv PT000033.filt.vcf > PT000033.ann.vcf
+  375  java -Xmx4g -jar /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config Mycobacterium_tuberculosis_h37rv PT000033.filt.vcf > PT000033.ann.vcf
+  376  ls
+  377  more PT000033.ann.vcf
+  378  java -Xmx4g -jar /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+  379  more PT000033.ann.vcf
+  380  grep "katG" PT000033.ann.vcf
+  381  java -Xmx4g -jar /opt/snpEff/snpEff.jar
+  382  java -Xmx4g -jar /opt/snpEff/snpEff.jar ann
+  383  java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-intergenic -no-upstream -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+  384  grep "katG" PT000033.ann.vcf
+  385  java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-intergenic -no-upstream -v -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+  386  grep "katG" PT000033.ann.vcf
+  387  java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+  388  more PT000033.ann.vcf
+  389  art
+  390  grep "katG" PT000033.ann.vcf
+  391  bgzip -c PT000033.ann.vcf > PT000033.ann.vcf.gz
+  392  tabix -p vcf PT000033.ann.vcf.gz
+  393  grep “katG” PT000033.ann.vcf
+  394  grep “KatG” PT000033.ann.vcf
+  395  grep “katG” PT000033.ann.vcf
+  396  grep "katG" PT000033.ann.vcf
+  397  grep ‘katG’ PT000033.ann.vcf
+  398  abacas
+  399  abacas.pl
+  400  cd /opt/PAGIT/
+  401  ls
+  402  cd ABACAS/
+  403  ls
+  404  abacas.pl
+  405  ./abacas.pl
+  406  ls
+  407  cd ..
+  408  ls
+  409  nano installpart.txt 
+  410  nano sourceme.pagit
+  411  nano ~/.bashrc
+  412  source ~/.bashrc
+  413  cd ~
+  414  abacas.pl
+  415  VelvetOptimiser.pl
+  416  nano ~/.bashrc
+  417  source ~/.bashrc
+  418  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  419  velveth
+  420  ls
+  421  velveth PT000033_51 51 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  422  velvetg PT000033_51 -cov_cutoff 2 -ins_length 280 -ins_length_sd 80 -read_trkg no -min_contig_lgth 150 -exp_cov auto -scaffolding yes -min_pair_count 20 -unused_reads yes
+  423  velveth PT000033_51 51 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq
+  424  velvetg PT000033_51 -cov_cutoff 2 -ins_length 280 -ins_length_sd 80 -read_trkg no -min_contig_lgth 150 -exp_cov auto -scaffolding yes -min_pair_count 20 -unused_reads yes
+  425  VelvetOptimiser.pl --s 51 --e 51 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  426  source ~/.bashrc
+  427  cd /opt/velvet/contrib/VelvetOptimiser-2.2.4/
+  428  pwd
+  429  ls
+  430  VelvetOptimiser.pl --s 51 --e 51 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq'
+  431  abacas.pl
+  432  abacas.pl -h
+  433  abacas.pl -r NC000962_3.fasta -q contigs.fa -p nucmer -b -d -a
+  434  act
+  435  VelvetOptimiser.pl 
+  436  velvetg
+  437  velvetg PT000033_31 -clean yes -exp_cov auto -cov_cutoff auto
+  438  velvetg PT000033_53 -clean yes -exp_cov auto -cov_cutoff auto
+  439  velveth PT000033_31 31 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  440  VelvetOptimiser.pl --s 31 --e 31 -f '-fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq'
+  441  grep ">" ./auto_data_31/contigs.fa
+  442  velveth PT000033_31 31 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  443  velvetg
+  444  velvetg -vanilla
+  445  velvetg PT000033_31 -clean yes -exp_cov 29 -cov_cutoff 14.5272307131629
+  446  velveth PT000033_31 31 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  447  velveth PT000033_51 51 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  448  velvetg PT000033_51 -clean yes -exp_cov auto -cov_cutoff auto
+  449  velveth PT000033_53 53 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  450  velveth PT000033_21 21 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  451  velvetg PT000033_21 -clean yes -exp_cov auto -cov_cutoff auto
+  452  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  453  velvetg PT000033_61 -clean yes -exp_cov auto -cov_cutoff auto
+  454  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  455  velveth PT000033_41 41 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -short -fastq PT000033_1_trimmed_unpaired.fastq -short2 -fastq PT000033_2_trimmed_unpaired.fastq
+  456  velvetg PT000033_41 -clean yes -exp_cov auto -cov_cutoff auto
+  457  ./Bandage
+  458  nano ~/.bashrc
+  459  source ~/.bashrc
+  460  ./Bandage
+  461  su
+  462  Bandage
+  463  sudo ln -s /opt/Bandage/Bandage /home/centos/Desktop/
+  464  yum install qt5-qtsvg-5.6.1-10.el7.i686
+  465  sudo yum install qt5-qtsvg-5.6.1-10.el7.i686
+  466  gedit ./Bandage
+  467  cd ..
+  468  su
+  469  velveth PT000033_31 31 -fastq -shortPaired PT000033_1.fastq PT000033_2.fastq
+  470  cd velvet-stats/
+  471  pwd
+  472  nano ~/.bashrc
+  473  source ~/.bashrc
+  474  ls
+  475  velveth PT000033_21 21 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  476  velvetg PT000033_21 -clean yes -exp_cov auto -cov_cutoff auto
+  477  Bandage
+  478  velveth PT000033_31 31 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  479  ls
+  480  velvetg PT000033_31 -clean yes -exp_cov auto -cov_cutoff auto
+  481  cd PT000033_31
+  482  ls
+  483  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  484  act
+  485  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p nucmer -b -d -a
+  486  act
+  487  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  488  cd ..
+  489  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  490  velvetg PT000033_61 -clean yes -exp_cov auto -cov_cutoff auto
+  491  act
+  492  Bandage
+  493  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  494  cd PT000033_31
+  495  grep ">" -c contigs.fa
+  496  cd ../PT000033_21
+  497  grep ">" -c contigs.fa
+  498  velvetg PT000033_61 -exp_cov auto -cov_cutoff auto
+  499  cd ..
+  500  velvetg PT000033_61 -exp_cov auto -cov_cutoff auto
+  501  cd PT000033_61
+  502  ls
+  503  Bandage
+  504  ls
+  505  cd ..
+  506  ls
+  507  velvetg -h
+  508  velvetg
+  509  ls
+  510  wc -l PT000033_1.fastq
+  511  Bandage
+  512  cp ../NC000962_3.fasta ./
+  513  cp ./NC000962_3.fasta ./PT000033_31/
+  514  ls
+  515  wc -l PT000033_1_trimmed_paired.fastq
+  516  wc -l PT000033_2_trimmed_paired.fastq
+  517  Bandage
+  518  cp ./NC000962_3.fasta ./PT000033_61/
+  519  cd PT000033_61/
+  520  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  521  pwd
+  522  act
+  523  cd ..
+  524  rm -rf PT000033_61
+  525  cd /opt
+  526  su
+  527  git clone https://github.com/ajmazurie/velvet-stats.git
+  528  su
+  529  cd ~/Module2/PT000033_31
+  530  ls
+  531  velvet-stats
+  532  velvet-stats contigs.fa
+  533  velvet-stats -h
+  534  velvet-stats contigs.fa -o stats.csv
+  535  velvet-stats ../PT000033_31 -o stats.csv
+  536  wget http://milkweedgenome.org/sites/default/files/scripts/contig-stats.pl
+  537  ./contig-stats.pl
+  538  ./contig-stats.pl contigs.fa
+  539  ./contig-stats.pl ../PT000033_31
+  540  more ./contig-stats.pl
+  541  ./contig-stats.pl contigs.fa
+  542  perl ./contig-stats.pl contigs.fa
+  543  which perl
+  544  nano ./contigs-stats.pl
+  545  nano ./contig-stats.pl
+  546  ./contig-stats.pl contigs.fa
+  547  sudo mv ./contig-stats.pl /opt/velvet-stats/
+  548  ls
+  549  contig-stats.pl
+  550  contig-stats.pl contigs.fa
+  551  contig-stats.pl ../*/contigs.fa
+  552  cd ..
+  553  cd PT000033_21
+  554  contig-stats.pl contigs.fa
+  555  Bandage
+  556  contig-stats.pl ./PT000033_51/contigs.fa
+  557  contig-stats.pl ./PT000033_61/contigs.fa
+  558  contig-stats.pl ./PT000033_71/contigs.fa
+  559  contig-stats.pl ./PT000033_41/contigs.fa
+  560  cd PT000033_41
+  561  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  562  cd ../PT000033_61
+  563  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  564  cd ..
+  565  contig-stats.pl ./PT000033_31/contigs.fa
+  566  velvet-stats
+  567  velvet-stats ./PT000033_41 -o test.csv
+  568  wget http://korflab.ucdavis.edu/datasets/Assemblathon/Assemblathon2/Basic_metrics/assemblathon_stats.pl
+  569  ./assemblathon_stats.pl
+  570  sudo yum install FAlite.pm
+  571  yum install “perl(FAlite.pm)"
+  572  yum install "perl(FAlite.pm)"
+  573  sudo yum install "perl(FAlite.pm)"
+  574  wget https://www.google.pt/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiZvo2eyZPWAhXDNhoKHRHGD5sQFggmMAA&url=http%3A%2F%2Fkorflab.ucdavis.edu%2FUnix_and_Perl%2FFAlite.pm&usg=AFQjCNEQ-rcsi4F25WvecJlgvYjMyA1nCg
+  575  wget http://korflab.ucdavis.edu/Unix_and_Perl/FAlite.pm
+  576  ./assemblathon_stats.pl
+  577  ./assemblathon_stats.pl ./PT000033_41/contigs.fa
+  578  sudo mv ./assemblathon_stats.pl /opt/velvet-stats/
+  579  sudo mv ./FAlite.pm /opt/velvet-stats/
+  580  ls
+  581  rm url\?sa\=t
+  582  ls
+  583  nano 01-09-2017-17-02-58_Logfile.txt 
+  584  assemblathon_stats.pl ./PT000033_31/contigs.fa
+  585  cp /opt/velvet-stats/FAlite.pm /usr/local/share/perl5/
+  586  sudo cp /opt/velvet-stats/FAlite.pm /usr/local/share/perl5/
+  587  assemblathon_stats.pl ./PT000033_31/contigs.fa
+  588  contig-stats.pl ./PT000033_31/contigs.fa
+  589  contig-stats.pl ./PT000033_45/contigs.fa
+  590  contig-stats.pl ./PT000033_49/contigs.fa
+  591  contig-stats.pl ./PT000033_55/contigs.fa
+  592  velveth PT000033_51 51 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  593  velveth PT000033_61 61 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  594  velveth PT000033_71 71 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  595  velvetg PT000033_51 -exp_cov auto -cov_cutoff auto
+  596  velvetg PT000033_61 -exp_cov auto -cov_cutoff auto
+  597  velvetg PT000033_71 -exp_cov auto -cov_cutoff auto
+  598  velveth PT000033_41 41 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  599  velvetg PT000033_41 -exp_cov auto -cov_cutoff auto
+  600  cd PT000033_51
+  601  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  602  cd ../PT000033_71/
+  603  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  604  act
+  605  cd ..
+  606  velveth PT000033_31 31 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  607  velvetg PT000033_31 -exp_cov auto -cov_cutoff auto
+  608  velveth PT000033_45 45 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  609  velveth PT000033_49 49 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  610  velveth PT000033_55  -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  611  velvetg PT000033_45 -exp_cov auto -cov_cutoff auto
+  612  velvetg PT000033_49 -exp_cov auto -cov_cutoff auto
+  613  velvetg PT000033_55 -exp_cov auto -cov_cutoff auto
+  614  cd /opt
+  615  ls
+  616  act
+  617  cd PT000033_49
+  618  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  619  samtools index PT000033.sorted.bam
+  620  act
+  621  prokka
+  622  s
+  623  ls
+  624  cd Module2/PT000033_49
+  625  ls
+  626  cd /home/centos/Module2/PT000033_49
+  627  prokka --outdir ./PT000033_prokka --prefix PT000033 contigs.fa_NC000962_3.fasta.fasta
+  628  art
+  629  mkdir RAST_output
+  630  cd ~
+  631  cd ./Module2/RAST_output
+  632  art
+  633  mkdir Module3
+  634  cd Module3
+  635  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz 
+  636  nano /opt/snippy/bin/snippy
+  637  sudo nano /opt/snippy/bin/snippy
+  638  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz 
+  639  nano ~/.bashrc
+  640  source ~/.bashrc
+  641  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz 
+  642  sudo nano /opt/snippy/bin/snippy
+  643  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz 
+  644  sudo cpan install Fatal
+  645  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz 
+  646  snippy --cpus 1 --outdir PT000049 --ref ../NC000962_3.gbk --R1 ../course_files/PT000049_1.fastq.gz --R2 ../course_files/PT000049_2.fastq.gz 
+  647  snippy --cpus 1 --outdir PT000271 --ref ../NC000962_3.gbk --R1 ../course_files/PT000271_1.fastq.gz --R2 ../course_files/PT000271_2.fastq.gz 
+  648  snippy --cpus 1 --outdir PT000279 --ref ../NC000962_3.gbk --R1 ../course_files/PT000279_1.fastq.gz --R2 ../course_files/PT000279_2.fastq.gz 
+  649  snippy-core --prefix core PT000033 PT000049 PT000271 PT000279
+  650  cd /opt
+  651  ls
+  652  mkdir library_files
+  653  sudo mkdir library_files
+  654  cd ~
+  655  mkdir library_files
+  656  ls
+  657  ls -l
+  658  pwd
+  659  cd Module1
+  660  pwd
+  661  cd ..
+  662  ls
+  663  cp NC000962_3.fasta Documents
+  664  cd Documents
+  665  ls
+  666  tree
+  667  cd ..
+  668  cat NC000962_3.fasta
+  669  more NC000962_3.fasta
+  670  ls -l > list.txt
+  671  more list.txt
+  672  ls -l >> list.txt
+  673  more list.txt
+  674  $ ls -l NC*
+  675  ls -l NC*
+  676  ls -l *.fasta
+  677  cp ./NC* ./Documents/
+  678  ls ./Documents
+  679  rm ./Documents/NC*
+  680  mkdir test_dir
+  681  cd test_dir
+  682  touct test2
+  683  touch test2
+  684  touch test1
+  685  cd ..
+  686  rmdir test_dir
+  687  rmdir -r test_dir
+  688  rm -r test_dir
+  689  su 
+  690  su
+  691  xcode-select --install
+  692  cd /opt
+  693  su
+  694  ls
+  695  sudo yum install libjpeg-turbo-devel libjpeg-turbo-devel
+  696  sudo yum install libjpeg-turbo
+  697  sudo yum install libpng-devel
+  698  ls
+  699  ./HammingFasta.R SNP_fasta_noppe_uniq49_50.fas
+  700  nano ~/.bashrc
+  701  source ~/.bashrc
+  702  HammingFasta.R SNP_fasta_noppe_uniq49_50.fas
+  703  cd Documents/
+  704  HammingFasta.R SNP_fasta_noppe_uniq49_50.fas
+  705  HammingFasta.R ../SNP_fasta_noppe_uniq49_50.fas
+  706  cd ..
+  707  ./SNPtable_filter_Mtb.R core.tab
+  708  clear
+  709  ./SNPtable_filter_Mtb.R core.tab
+  710  cd Documents/
+  711  SNPtable_filter_Mtb.R core.tab
+  712  SNPtable_filter_Mtb.R ../core.tab
+  713  clear
+  714  ls
+  715  SNPtable_filter_Mtb.R ../core.tab
+  716  ls
+  717  rm coreSNP_alignment_filtered.fas
+  718  ls
+  719  SNPtable_filter_Mtb.R ../core.tab
+  720  ls
+  721  HammingFasta.R coreSNP_alignment_filtered.fas
+  722  ls
+  723  rm coreSNP_alignment_filtered.fas 
+  724  rm dists_hamming.csv
+  725  SNPtable_filter_Mtb.R ../core.tab
+  726  HammingFasta.R coreSNP_alignment_filtered.fas
+  727  cd /opt
+  728  su
+  729  cd opt
+  730  cd /opt
+  731  ls
+  732  cd ~
+  733  cd Desktop/
+  734  ls
+  735  LS -L
+  736  ls -l
+  737  rm jModelTest
+  738  su
+  739  ./runjmodeltest-gui.sh
+  740  ls
+  741  sudo nautilus
+  742  ls
+  743  sudo ln -s /opt/jmodeltest-2.1.1/runjmodeltest-gui.sh /home/centos/Desktop/jModelTest
+  744  su
+  745  cd /opt
+  746  sudo chgrp centos ./jmodeltest-2.1.1/*
+  747  cd jmodeltest-2.1.1/
+  748  ls -l
+  749  sudo chown centos ./jmodeltest-2.1.1/*
+  750  cd ..
+  751  sudo chown centos ./jmodeltest-2.1.1/*
+  752  cd jmodeltest-2.1.1/
+  753  ./runjmodeltest-gui.sh
+  754  nano ./runjmodeltest-gui.sh
+  755  pwd
+  756  su
+  757  ls
+  758  cd Desktop/
+  759  LS
+  760  ls -l
+  761  rm jModelTest 
+  762  su
+  763  ls
+  764  ls -l
+  765  rm jModelTest 
+  766  ls -l
+  767  sudo ln -s /opt/jmodeltest-2.1.1/runjmodeltest-gui.sh /home/centos/Desktop/jModelTest
+  768  ls -l
+  769  sudo ln -s /opt/jmodeltest-2.1.1/runjmodeltest-gui.sh /home/centos/Desktop/jModelTest2
+  770  nano ~/.bashrc
+  771  cd ..
+  772  cd Documents/
+  773  ls
+  774  rm ./*
+  775  ls
+  776  SNPtable_filter_Mtb.R ../files_copy/core.tab
+  777  rm *.fastq
+  778  snippy --cpus 1 --outdir PT000050 --ref ../NC000962_3.gbk --R1 ../course_files/PT000050_1.fastq.gz --R2 ../course_files/PT000050_2.fastq.gz
+  779  snippy-core PT000033 PT000049 PT000050 PT000271 PT000279
+  780  SNPtable_filter_Mtb.R core.tab
+  781  HammingFasta.R coreSNP_alignment_filtered.fas
+  782  gzip -d PT000050_1.fastq.gz
+  783  gzip -d PT000050_2.fastq.gz
+  784  gzip PT000050_1.fastq
+  785  gzip PT000050_2.fastq
+  786  SNPtable_filter_Mtb.R core.tab
+  787  sudo mv ./phyloviz/ /opt/
+  788  sudo ln -s /opt/phyloviz/bin/phyloviz /home/centos/Desktop/Phyloviz
+  789  ls
+  790  ls -l
+  791  -
+  792  ls -l
+  793  pwd
+  794  cd Module1
+  795  ls
+  796  cd ..
+  797  ls
+  798  pwd
+  799  clear
+  800  ls
+  801  mkdir test_dir
+  802  ls
+  803  pwd
+  804  rmdir test_dir/
+  805  ls
+  806  cp NC000962_3.fasta  Documents
+  807  ls
+  808  cd Documents/
+  809  ls
+  810  cd ..
+  811  ls
+  812  pwd
+  813  cp NC000962_3.fasta  Documents/test.fasta
+  814  cd Documents/
+  815  ls
+  816  pwd
+  817  cd ~
+  818  ls
+  819  cd course_files/
+  820  ls
+  821  gzip -dc PT00033_1.fastq.gz > PT000033_1.fastq
+  822  gzip PT000033_1.fastq.gz > PT000033_1.fastq
+  823  gzip -dc PT000033_1.fastq.gz > PT000033_1.fastq
+  824  ls
+  825  gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
+  826  ls
+  827  ls -l
+  828  Fastqc
+  829  fastqc
+  830  clear
+  831  pwd
+  832  cd ..
+  833  cd Module1
+  834  ls
+  835  fastqc
+  836  bwa index NC000962_3.fasta
+  837  bwa men –R “@RG\tID:PT000033\tSM: PT000033\tPL:Illumina” –M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  838  bwa mem –R “@RG\tID:PT000033\tSM: PT000033\tPL:Illumina” –M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  839  ls
+  840  more PT000033.sam
+  841  ls
+  842  more PT000033.sam
+  843  bwa mem –R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” –M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  844  ls
+  845  more PT000033.sam
+  846  bwa mem -R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” –M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  847  bwa mem -R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  848  ls
+  849  rm PT000033.sam
+  850  ls
+  851  bwa mem -R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  852  more PT000033.sam
+  853  bwa mem -R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  854  more PT000033.sam
+  855  ls
+  856  ls -l
+  857  bwa mem -R “@RG\tID:PT000033\tSM:PT000033\tPL:Illumina” -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  858  bwa index NC000962_3.fasta
+  859  bwa mem -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M NC000962_3.fasta PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq > PT000033.sam
+  860  more PT000033.sam 
+  861  wc -l PT000033.sam 
+  862  samtools faidx NC000962_3.fasta
+  863  ls
+  864  samtools view -bt NC000962_3.fasta.fai PT000033.sam > PT000033.bam
+  865  samtools sort PT000033.bam -o PT000033.sorted.bam
+  866  samtools index PT000033.sorted.bam
+  867  samtools flagstat PT000033.sorted.bam
+  868  samtools flagstat PT000033.sorted.bam > PT000033_stats.txt
+  869  art
+  870  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta PT000033.sorted.bam | bcftools call -O v -vm -o PT000033.raw.vcf 
+  871  ls
+  872  vcfutils.pl var/filter -d 10 -D 2000 PT000033.raw.vcf > PT000033.filt.vcf
+  873  vcfutils.pl varFilter -d 10 -D 2000 PT000033.raw.vcf > PT000033.filt.vcf
+  874  ls
+  875  ls -l
+  876  more PT000033.filt.vcf 
+  877  bgzip -c PT000033.filt.vcf > Pt000033.filt.vcf.gz
+  878  ls
+  879  ls -l
+  880  tabix -p vcf Pt000033.filt.vcf.gz 
+  881  ls
+  882  ls -l
+  883  mv Pt000033.filt.vcf.gz PT000033.filt.vcf.gz 
+  884  ls -l
+  885  mv Pt000033.filt.vcf.gz.tbi PT000033.filt.vcf.gz.tbi
+  886  ls -l
+  887  cd vcfs/
+  888  ls -l
+  889  cd ..
+  890  ls -l
+  891  history > cursoWGS.txt
+  892  ls
+  893  cd Module1
+  894  ls
+  895  cd ..
+  896  ls
+  897  cd course_files/
+  898  ls
+  899  cp ./PT000033_1.fastq ./Module1
+  900  cd ..
+  901  ls
+  902  cd course_files/
+  903  ls
+  904  cd ..
+  905  ls
+  906  cd Module1
+  907  ls
+  908  cd ..
+  909  ls
+  910  cd course_files/
+  911  ls
+  912  cd ..
+  913  ls
+  914  cd ./course_files/PT000033_*.fastq ./Module1
+  915  cd ./course_files/PT000033_*.fastq ./Module1/
+  916  pwd
+  917  cd course_files/
+  918  cd ./course_files/PT000033_*.fastq ./Module1/
+  919  cd ..
+  920  ls
+  921  cd ./course_files/PT000033_*.fastq ./Module1/
+  922  cd course_files/
+  923  ls
+  924  cd ..
+  925  ls
+  926  pwd
+  927  cd ./course_files/PT000033_*.fastq ./Module1/
+  928  ls
+  929  cd ./course_files/PT000033_*.fastq ./Module1/
+  930  cp ./course_files/PT000033_*.fastq ./Module1/
+  931  pwd
+  932  cd Module1
+  933  ls
+  934  java -jar /opt/Trimmomatic-0,36/trimmomatic-0,36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  935  Java -jar /opt/Trimmomatic-0,36/trimmomatic-0,36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  936  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+  937  ls
+  938  fastqc
+  939  kill
+  940  ls
+  941  cd Module2
+  942  ls
+  943  velveth PT000033_41 41 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  944  velvetg PT000033_41 -exp_cov auto -cov_cutoff auto
+  945  velveth PT000033_49 49 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  946  velveth PT000033_55 55 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  947  velvetg PT000033_49 -exp_cov auto -cov_cutoff auto
+  948  ls
+  949  assemblathon_stats.pl ./PT000033_41/contigs.fa
+  950  assemblathon_stats.pl ./PT000033_49/contigs.fa
+  951  assemblathon_stats.pl ./PT000033_55/contigs.fa
+  952  ls
+  953  ls -l
+  954  assemblathon_stats.pl ./PT000033_55/contigs.fa
+  955  ls -l
+  956  velveth PT000033_55 55 -fastq -shortPaired PT000033_1_trimmed_paired.fastq PT000033_2_trimmed_paired.fastq -fastq -short PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_unpaired.fastq
+  957  velvetg PT000033_55 -exp_cov auto -cov_cutoff auto
+  958  assemblathon_stats.pl ./PT000033_55/contigs.fa
+  959  cd PT000033_49
+  960  ls
+  961  more contigs.fa 
+  962  Bandage
+  963  q
+  964  cd PT000033_49
+  965  ls -l
+  966  pwd
+  967  cp ../NC000962.3.fasta ./
+  968  cd ..
+  969  ls
+  970  cd PT000033_49
+  971  ls
+  972  ls -l
+  973  cp ../NC000962.3.fasta ./
+  974  cd ..
+  975  ls
+  976  cd PT000033_49
+  977  cp ../NC000962_3.fasta ./
+  978  ls -l
+  979  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+  980  act
+  981  pwd
+  982  prokka --outdir ./PT000033_prokka --prefix PT000033 contigs.fa_NC000962_3.fasta.fasta
+  983  prokka
+  984  cd PT000033_prokka/
+  985  ls -l
+  986  art
+  987  history > cursoWGS2.txt
+  988  pwd
+  989  ls -l
+  990  cd Module3
+  991  ls
+  992  snippy --cpus 1 --outdir PT000033 --ref ../NC000962_3.gbk --R1 ../course_files/PT000033_1.fastq.gz --R2 ../course_files/PT000033_2.fastq.gz
+  993  cd PT000033
+  994  ls -l
+  995  cd ..
+  996  ls
+  997  snippy-core PT000033 PT000049 PT000050 PT000271 PT000279
+  998  more core.aln
+  999  more core.tab
+ 1000  SNPtable_filter_Mtb.R core.tab
+ 1001  more coreSNP_alignment_filtered.fas
+ 1002  HammingFasta.R coreSNP_alignment_filtered.fas
+ 1003  cd ..
+ 1004  ls
+ 1005  pwd
+ 1006  history > cursoWGS_2_Phylogeny
