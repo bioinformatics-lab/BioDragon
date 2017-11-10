@@ -13,14 +13,14 @@
 
 ** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
 ** https://linuxconfig.org/how-to-change-system-keyboard-keymap-layout-on-centos-7-linux
-** Scala script to generate the history file
+** http://toolkt.com/site/virtualbox-shared-folders-with-centos-server-guest/
+** TODO Scala script to generate the commands we enter
 
 
 ```scala 
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
-%%('history, "> history.txt")
 
 ```
 ** Change the keyboard layout
