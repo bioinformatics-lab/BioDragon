@@ -887,23 +887,9 @@
   887  sudo ln -s /opt/phyloviz/bin/phyloviz /home/centos/Desktop/Phyloviz
   888  sudo nautilus .
   889  sudo usermod -aG vboxsf $(whoami)
-  890  LS
-  891  ls
   892  cd Desktop/
-  893  ls
   894  mkdir Genesis
-  895  sudo mount -t vboxsf wd ~/Desktop/Genesis/
   896  sudo mount -t vboxsf Genesis ~/Desktop/Genesis/
-  897  ln 'sh
-  898  C
-  899  C
-  900  ln -sh
   901  ls -sh
   902  sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Genesis ~/Desktop/Genesis/
-  903  ,; .:Genesis'sh
-  904  C
-  905  C
-  906  ~/Desktop/Genesis/
-  907  ruby --version
-  908  history 
   909  history > history.txt
