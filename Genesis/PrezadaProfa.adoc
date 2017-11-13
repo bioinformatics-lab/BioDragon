@@ -27,17 +27,19 @@ abhinav
 
 
 === Scala script to generate the commands we enter ===
-```scala 
+[source,scala]
+----
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
+----
 
-```
 
 === Change the keyboard layout ===
-```sh
+[source,]
+----
 settings > keyboard > input layout > US Keyboard
-```
+----
 
 
 == <2017-11-13 Mon> ==

@@ -16,17 +16,17 @@
 ** TODO Scala script to generate the commands we enter
 
 
-```scala 
+#+BEGIN_SRC scala
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
+#+END_SRC
 
-```
 ** Change the keyboard layout
 
-```sh
+#+BEGIN_SRC 
 settings > keyboard > input layout > US Keyboard
-```
+#+END_SRC
 
 * <2017-11-13 Mon>
 
