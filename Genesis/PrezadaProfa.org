@@ -65,9 +65,6 @@ settings > keyboard > input layout > US Keyboard
  wc -l more G04868.sam 
  wc -l G04868.sam 
  samtools faidx ./AL123456_3.fasta
- tree
- yum instal ltree
- ls
  samtools --version
  samtools view -bt AL123456_3.fasta.fai G04868.sam > G04868.bam
  samtools sort G04868.bam -o G04868.sorted.bam
@@ -98,7 +95,6 @@ settings > keyboard > input layout > US Keyboard
  cp ../AL123456_3.fasta ./
  cd ..
  ls
- history | grep 'crunch'
  act
  abacas.pl -r ../AL123456_3.fasta -q contigs.fa -p promer -b -d -a
  ls
