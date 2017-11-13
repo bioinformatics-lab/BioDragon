@@ -33,4 +33,5 @@ conda install ruby=2.3.3
 https://conda.io/docs/user-guide/tasks/manage-environments.html
 
 
-
+## Source environment variables in a shell session within ruby
+https://stackoverflow.com/questions/2139080/how-do-i-source-environment-variables-for-a-command-shell-in-a-ruby-script

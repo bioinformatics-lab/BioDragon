@@ -1,0 +1,144 @@
+# original:
+bwa mem -R "@RG\tID:PT000033\tSM:PT000033\tPL:Illumina" -M
+NC000962_3.fasta PT000033_1_trimmed_paired.fastq
+PT000033_2_trimmed_paired.fastq > PT000033.sam
+
+---------------------------------------------------------------------------------------------------------------------------------00962_3.fasta
+# 16 genomas tiveram problemas:
+
+bwa mem -R "@RG\tID:G04870\tSM:G04870\tPL:Illumina" -M AL123456_3.fasta G04870_R1_p.fastq G04870_R2_p.fastq > G04870.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:3300:1958", "D00535:127:C7JREANXX:7:1110:1747:1956")
+
+bwa mem -R "@RG\tID:G04874\tSM:G04874\tPL:Illumina" -M AL123456_3.fasta G04874_R1_p.fastq G04874_R2_p.fastq > G04874.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:9072:1970", "D00535:125:C898AANXX:3:1105:17025:2249")
+
+bwa mem -R "@RG\tID:G04878\tSM:G04878\tPL:Illumina" -M AL123456_3.fasta G04878_R1_p.fastq G04878_R2_p.fastq > G04878.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:3713:1964", "D00535:127:C7JREANXX:7:1110:4389:1938")
+
+bwa mem -R "@RG\tID:G04879\tSM:G04879\tPL:Illumina" -M AL123456_3.fasta G04879_R1_p.fastq G04879_R2_p.fastq > G04879.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:2518:1965", "D00535:125:C898AANXX:3:1105:4140:2115")
+
+bwa mem -R "@RG\tID:G04880\tSM:G04880\tPL:Illumina" -M AL123456_3.fasta G04880_R1_p.fastq G04880_R2_p.fastq > G04880.sam
+[mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:9206:1951", "D00535:125:C898AANXX:3:1105:5645:2079")
+
+bwa mem -R "@RG\tID:G04882\tSM:G04882\tPL:Illumina" -M AL123456_3.fasta G04882_R1_p.fastq G04882_R2_p.fastq > G04882.sam 
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:9206:1951", "D00535:125:C898AANXX:3:1105:5645:2079")
+
+bwa mem -R "@RG\tID:G04885\tSM:G04885\tPL:Illumina" -M AL123456_3.fasta G04885_R1_p.fastq G04885_R2_p.fastq > G04885.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:4549:1998", "D00535:127:C7JREANXX:7:1110:2049:1945")
+
+bwa mem -R "@RG\tID:G04886\tSM:G04886\tPL:Illumina" -M AL123456_3.fasta G04886_R1_p.fastq G04886_R2_p.fastq > G04886.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:2440:1986", "D00535:125:C898AANXX:3:1105:4726:2239")
+
+bwa mem -R "@RG\tID:G04889\tSM:G04889\tPL:Illumina" -M AL123456_3.fasta G04889_R1_p.fastq G04889_R2_p.fastq > G04889.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:2386:1967", "D00535:127:C7JREANXX:7:1110:3478:1995")
+
+bwa mem -R "@RG\tID:G04890\tSM:G04890\tPL:Illumina" -M AL123456_3.fasta G04890_R1_p.fastq G04890_R2_p.fastq > G04890.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:6851:1997", "D00535:125:C898AANXX:3:1105:9822:2116")
+
+bwa mem -R "@RG\tID:G04893\tSM:G04893\tPL:Illumina" -M AL123456_3.fasta G04893_R1_p.fastq G04893_R2_p.fastq > G04893.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:1423:1951", "D00535:127:C7JREANXX:7:1110:3503:1959")
+
+bwa mem -R "@RG\tID:G04894\tSM:G04894\tPL:Illumina" -M AL123456_3.fasta G04894_R1_p.fastq G04894_R2_p.fastq > G04894.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:7:1110:3111:1966", "D00535:125:C898AANXX:3:1105:6356:2106")
+
+bwa mem -R "@RG\tID:G04895\tSM:G04895\tPL:Illumina" -M AL123456_3.fasta G04895_R1_p.fastq G04895_R2_p.fastq > G04895.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:7782:1984", "D00535:127:C7JREANXX:7:1110:1990:1950")
+
+bwa mem -R "@RG\tID:G04896\tSM:G04896\tPL:Illumina" -M AL123456_3.fasta G04896_R1_p.fastq G04896_R2_p.fastq > G04896.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:1423:1951", "D00535:127:C7JREANXX:7:1110:3503:1959")
+
+bwa mem -R "@RG\tID:G04897\tSM:G04897\tPL:Illumina" -M AL123456_3.fasta G04897_R1_p.fastq G04897_R2_p.fastq > G04897.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:6:2213:7782:1984", "D00535:127:C7JREANXX:7:1110:1990:1950")
+
+bwa mem -R "@RG\tID:G04958\tSM:G04958\tPL:Illumina" -M AL123456_3.fasta G04958_R1_p.fastq G04958_R2_p.fastq > G04958.sam
+([mem_sam_pe] paired reads have different names: "D00535:127:C7JREANXX:8:2210:2283:1973", "D00535:125:C898AANXX:4:2216:2832:2217")
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+# 56 genomas bem sucedidos:
+
+bwa mem -R "@RG\tID:G04868\tSM:G04868\tPL:Illumina" -M AL123456_3.fasta G04868_R1_p.fastq G04868_R2_p.fastq > G04868.sam
+bwa mem -R "@RG\tID:G04871\tSM:G04871\tPL:Illumina" -M AL123456_3.fasta G04871_R1_p.fastq G04871_R2_p.fastq > G04871.sam
+bwa mem -R "@RG\tID:G04872\tSM:G04872\tPL:Illumina" -M AL123456_3.fasta G04872_R1_p.fastq G04872_R2_p.fastq > G04872.sam
+bwa mem -R "@RG\tID:G04873\tSM:G04873\tPL:Illumina" -M AL123456_3.fasta G04873_R1_p.fastq G04873_R2_p.fastq > G04873.sam
+bwa mem -R "@RG\tID:G04875\tSM:G04875\tPL:Illumina" -M AL123456_3.fasta G04875_R1_p.fastq G04875_R2_p.fastq > G04875.sam
+bwa mem -R "@RG\tID:G04876\tSM:G04876\tPL:Illumina" -M AL123456_3.fasta G04876_R1_p.fastq G04876_R2_p.fastq > G04876.sam
+bwa mem -R "@RG\tID:G04877\tSM:G04877\tPL:Illumina" -M AL123456_3.fasta G04877_R1_p.fastq G04877_R2_p.fastq > G04877.sam
+bwa mem -R "@RG\tID:G04881\tSM:G04881\tPL:Illumina" -M AL123456_3.fasta G04881_R1_p.fastq G04881_R2_p.fastq > G04881.sam
+bwa mem -R "@RG\tID:G04883\tSM:G04883\tPL:Illumina" -M AL123456_3.fasta G04883_R1_p.fastq G04883_R2_p.fastq > G04883.sam
+bwa mem -R "@RG\tID:G04884\tSM:G04884\tPL:Illumina" -M AL123456_3.fasta G04884_R1_p.fastq G04884_R2_p.fastq > G04884.sam
+bwa mem -R "@RG\tID:G04887\tSM:G04887\tPL:Illumina" -M AL123456_3.fasta G04887_R1_p.fastq G04887_R2_p.fastq > G04887.sam
+bwa mem -R "@RG\tID:G04888\tSM:G04888\tPL:Illumina" -M AL123456_3.fasta G04888_R1_p.fastq G04888_R2_p.fastq > G04888.sam
+bwa mem -R "@RG\tID:G04891\tSM:G04891\tPL:Illumina" -M AL123456_3.fasta G04891_R1_p.fastq G04891_R2_p.fastq > G04891.sam
+bwa mem -R "@RG\tID:G04916\tSM:G04916\tPL:Illumina" -M AL123456_3.fasta G04916_R1_p.fastq G04916_R2_p.fastq > G04916.sam
+bwa mem -R "@RG\tID:G04917\tSM:G04917\tPL:Illumina" -M AL123456_3.fasta G04917_R1_p.fastq G04917_R2_p.fastq > G04917.sam
+bwa mem -R "@RG\tID:G04918\tSM:G04918\tPL:Illumina" -M AL123456_3.fasta G04918_R1_p.fastq G04918_R2_p.fastq > G04918.sam
+bwa mem -R "@RG\tID:G04919\tSM:G04919\tPL:Illumina" -M AL123456_3.fasta G04919_R1_p.fastq G04919_R2_p.fastq > G04919.sam
+bwa mem -R "@RG\tID:G04920\tSM:G04920\tPL:Illumina" -M AL123456_3.fasta G04920_R1_p.fastq G04920_R2_p.fastq > G04920.sam
+bwa mem -R "@RG\tID:G04921\tSM:G04921\tPL:Illumina" -M AL123456_3.fasta G04921_R1_p.fastq G04921_R2_p.fastq > G04921.sam
+bwa mem -R "@RG\tID:G04922\tSM:G04922\tPL:Illumina" -M AL123456_3.fasta G04922_R1_p.fastq G04922_R2_p.fastq > G04922.sam
+bwa mem -R "@RG\tID:G04923\tSM:G04923\tPL:Illumina" -M AL123456_3.fasta G04923_R1_p.fastq G04923_R2_p.fastq > G04923.sam
+bwa mem -R "@RG\tID:G04924\tSM:G04924\tPL:Illumina" -M AL123456_3.fasta G04924_R1_p.fastq G04924_R2_p.fastq > G04924.sam
+bwa mem -R "@RG\tID:G04925\tSM:G04925\tPL:Illumina" -M AL123456_3.fasta G04925_R1_p.fastq G04925_R2_p.fastq > G04925.sam
+bwa mem -R "@RG\tID:G04926\tSM:G04926\tPL:Illumina" -M AL123456_3.fasta G04926_R1_p.fastq G04926_R2_p.fastq > G04926.sam
+bwa mem -R "@RG\tID:G04927\tSM:G04927\tPL:Illumina" -M AL123456_3.fasta G04927_R1_p.fastq G04927_R2_p.fastq > G04927.sam
+bwa mem -R "@RG\tID:G04928\tSM:G04928\tPL:Illumina" -M AL123456_3.fasta G04928_R1_p.fastq G04928_R2_p.fastq > G04928.sam
+bwa mem -R "@RG\tID:G04929\tSM:G04929\tPL:Illumina" -M AL123456_3.fasta G04929_R1_p.fastq G04929_R2_p.fastq > G04929.sam
+bwa mem -R "@RG\tID:G04930\tSM:G04930\tPL:Illumina" -M AL123456_3.fasta G04930_R1_p.fastq G04930_R2_p.fastq > G04930.sam
+bwa mem -R "@RG\tID:G04931\tSM:G04931\tPL:Illumina" -M AL123456_3.fasta G04931_R1_p.fastq G04931_R2_p.fastq > G04931.sam
+bwa mem -R "@RG\tID:G04932\tSM:G04932\tPL:Illumina" -M AL123456_3.fasta G04932_R1_p.fastq G04932_R2_p.fastq > G04932.sam
+bwa mem -R "@RG\tID:G04933\tSM:G04933\tPL:Illumina" -M AL123456_3.fasta G04933_R1_p.fastq G04933_R2_p.fastq > G04933.sam
+bwa mem -R "@RG\tID:G04934\tSM:G04934\tPL:Illumina" -M AL123456_3.fasta G04934_R1_p.fastq G04934_R2_p.fastq > G04934.sam
+bwa mem -R "@RG\tID:G04936\tSM:G04936\tPL:Illumina" -M AL123456_3.fasta G04936_R1_p.fastq G04936_R2_p.fastq > G04936.sam
+bwa mem -R "@RG\tID:G04937\tSM:G04937\tPL:Illumina" -M AL123456_3.fasta G04937_R1_p.fastq G04937_R2_p.fastq > G04937.sam
+bwa mem -R "@RG\tID:G04938\tSM:G04938\tPL:Illumina" -M AL123456_3.fasta G04938_R1_p.fastq G04938_R2_p.fastq > G04938.sam
+bwa mem -R "@RG\tID:G04939\tSM:G04939\tPL:Illumina" -M AL123456_3.fasta G04939_R1_p.fastq G04939_R2_p.fastq > G04939.sam
+bwa mem -R "@RG\tID:G04940\tSM:G04940\tPL:Illumina" -M AL123456_3.fasta G04940_R1_p.fastq G04940_R2_p.fastq > G04940.sam
+bwa mem -R "@RG\tID:G04941\tSM:G04941\tPL:Illumina" -M AL123456_3.fasta G04941_R1_p.fastq G04941_R2_p.fastq > G04941.sam
+bwa mem -R "@RG\tID:G04942\tSM:G04942\tPL:Illumina" -M AL123456_3.fasta G04942_R1_p.fastq G04942_R2_p.fastq > G04942.sam
+bwa mem -R "@RG\tID:G04943\tSM:G04943\tPL:Illumina" -M AL123456_3.fasta G04943_R1_p.fastq G04943_R2_p.fastq > G04943.sam
+bwa mem -R "@RG\tID:G04944\tSM:G04944\tPL:Illumina" -M AL123456_3.fasta G04944_R1_p.fastq G04944_R2_p.fastq > G04944.sam
+bwa mem -R "@RG\tID:G04945\tSM:G04945\tPL:Illumina" -M AL123456_3.fasta G04945_R1_p.fastq G04945_R2_p.fastq > G04945.sam
+bwa mem -R "@RG\tID:G04946\tSM:G04946\tPL:Illumina" -M AL123456_3.fasta G04946_R1_p.fastq G04946_R2_p.fastq > G04946.sam
+bwa mem -R "@RG\tID:G04947\tSM:G04947\tPL:Illumina" -M AL123456_3.fasta G04947_R1_p.fastq G04947_R2_p.fastq > G04947.sam
+bwa mem -R "@RG\tID:G04948\tSM:G04948\tPL:Illumina" -M AL123456_3.fasta G04948_R1_p.fastq G04948_R2_p.fastq > G04948.sam
+bwa mem -R "@RG\tID:G04949\tSM:G04949\tPL:Illumina" -M AL123456_3.fasta G04949_R1_p.fastq G04949_R2_p.fastq > G04949.sam
+bwa mem -R "@RG\tID:G04950\tSM:G04950\tPL:Illumina" -M AL123456_3.fasta G04950_R1_p.fastq G04950_R2_p.fastq > G04950.sam
+bwa mem -R "@RG\tID:G04951\tSM:G04951\tPL:Illumina" -M AL123456_3.fasta G04951_R1_p.fastq G04951_R2_p.fastq > G04951.sam
+bwa mem -R "@RG\tID:G04952\tSM:G04952\tPL:Illumina" -M AL123456_3.fasta G04952_R1_p.fastq G04952_R2_p.fastq > G04952.sam
+bwa mem -R "@RG\tID:G04953\tSM:G04953\tPL:Illumina" -M AL123456_3.fasta G04953_R1_p.fastq G04953_R2_p.fastq > G04953.sam
+bwa mem -R "@RG\tID:G04954\tSM:G04954\tPL:Illumina" -M AL123456_3.fasta G04954_R1_p.fastq G04954_R2_p.fastq > G04954.sam
+bwa mem -R "@RG\tID:G04955\tSM:G04955\tPL:Illumina" -M AL123456_3.fasta G04955_R1_p.fastq G04955_R2_p.fastq > G04955.sam
+bwa mem -R "@RG\tID:G04956\tSM:G04956\tPL:Illumina" -M AL123456_3.fasta G04956_R1_p.fastq G04956_R2_p.fastq > G04956.sam
+bwa mem -R "@RG\tID:G04957\tSM:G04957\tPL:Illumina" -M AL123456_3.fasta G04957_R1_p.fastq G04957_R2_p.fastq > G04957.sam
+bwa mem -R "@RG\tID:G04959\tSM:G04959\tPL:Illumina" -M AL123456_3.fasta G04959_R1_p.fastq G04959_R2_p.fastq > G04959.sam
+bwa mem -R "@RG\tID:G04960\tSM:G04960\tPL:Illumina" -M AL123456_3.fasta G04960_R1_p.fastq G04960_R2_p.fastq > G04960.sam
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+samtools faidx AL123456_3.fasta
+
+samtools view -bt AL123456_3.fasta.fai G04868.sam > G04868.bam
+samtools view -bt AL123456_3.fasta.fai G04871.sam > G04871.bam
+samtools view -bt AL123456_3.fasta.fai G04972.sam > G04972.bam
+
+
+samtools view -bt AL123456_3.fasta.fai G04868.sam > G04868.bam
+for line in `cat samples.txt`; do samtools view -bt AL123456_3.fasta.fai "$line".sam > "$line".bam; done
+
+samtools sort G04868.bam -o G04868.sorted.bam
+for line in `cat samples.txt`; do samtools sort "$line".bam -o "$line".sorted.bam; done
+
+samtools index G04868.sorted.bam
+for line in `cat samples.txt`; do samtools index "$line".sorted.bam; done
+
+
+
+
+
+
+
+
+
+
