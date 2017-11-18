@@ -1,0 +1,26 @@
+# Script RP
+
+ - Na pasta RawDatas: #for line in `cat samples.txt`; do mkdir $line/02_Spades; done
+ - Copiar o arquivo "samples.txt" para dentro de Spades > bin
+ - rodar o script dentro de bin
+
+for line in `cat samples.txt`; do python spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 /media/marcelo/Emilyn/GENOMES/RP_Genomes/RawData/$line/01_Trimmomatic/"$line"_R1_p.fastq.gz --pe1-2 /media/marcelo/Emilyn/GENOMES/RP_Genomes/RawData/$line/01_Trimmomatic/"$line"_R2_p.fastq.gz -o /media/marcelo/Emilyn/GENOMES/RP_Genomes/RawData/$line/02_Spades/$line; done
+
+
+
+
+# Script EAI
+
+
+ - Na pasta RawDatas: #for line in `cat samples.txt`; do mkdir $line/02_Spades; done
+ - Copiar o arquivo "samples.txt" para dentro de Spades > bin
+ - rodar o script dentro de bin
+
+for line in `cat samples.txt`; do python spades.py -k 21,33,55,77 --careful --only-assembler --pe1-1 /media/marcelo/Emilyn/GENOMES/EAI_Genomes/EAI_RawData/$line/01_Trimmomatic/"$line"_R1_p.fastq.gz --pe1-2 /media/marcelo/Emilyn/GENOMES/EAI_Genomes/EAI_RawData/$line/01_Trimmomatic/"$line"_R2_p.fastq.gz -o /media/marcelo/Emilyn/GENOMES/RP_Genomes/RawData/$line/02_Spades/$line; done
+
+P.s.: errei o output
+
+
+
+
+

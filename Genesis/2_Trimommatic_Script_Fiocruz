@@ -1,0 +1,11 @@
+# Script
+
+In the directory where are the genomes directories...
+
+for i in $(ls -d */); do echo ${i%%/}; done > samples.txt
+
+In the directory where are the gz files...
+
+for line in `cat samples.txt`; do mkdir $line/01_Trimmomatic; done
+
+for line in `cat samples.txt`; do java -jar ~/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 $line/"$line"_R1.fastq.gz $line/"$line"_R2.fastq.gz $line/01_Trimmomatic/"$line"_R1_p.fastq.gz $line/01_Trimmomatic/"$line"_R1_s.fastq.gz $line/01_Trimmomatic/"$line"_R2_p.fastq.gz $line/01_Trimmomatic/"$line"_R2_s.fastq.gz ILLUMINACLIP:~/trimmomatic-0.36/adapters/NexteraPE-PE.fa:2:30:10 LEADING:15 TRAILING:15 HEADCROP:20 SLIDINGWINDOW:4:20 MINLEN:3; done

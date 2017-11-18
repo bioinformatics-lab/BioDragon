@@ -1,0 +1,20 @@
+# Script EAI
+
+ - Na pasta RawDatas:
+
+# for line in `cat samples.txt`; do mkdir $line/04_Prokka; done
+ - Copiar o arquivo "samples.txt" para dentro de Prokka > bin
+ - rodar o script dentro de bin
+ - dar o comando:
+
+# source ~/.bash_profile
+
+for line in `cat samples.txt`; do perl prokka /media/marcelo/Emilyn/GENOMES/3_Genomes_EAI/1_EAI_RawData/$line/02_Spades/contigs.fa && sudo mv PROKKA_08042017 /media/marcelo/Emilyn/GENOMES/3_Genomes_EAI/1_EAI_RawData/$line/04_Prokka
+
+eu partir do principio da linha que usei com a lizania, só mudei para o arquivo atual "PROKKA_08042017" aqui na fiocruz:
+
+perl prokka G04950.contigs.fa && sudo mv PROKKA_08302017 /home/bioinfo/Desktop/Emilyn/Results/prokka/G04950/
+
+
+
+
