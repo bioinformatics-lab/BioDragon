@@ -15,11 +15,21 @@ all_files.foreach{println}
 ls! pwd/up
 
 
-// "PT000033_1.fastq.gz".split("\\.")
+// "PT000033_1.fastq.gz" =>  "PT000033_1.fastq"
 
-def generate_fasta_names_from_fastqgz(fastqgz_name:String) =
+def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String =
 {
-   fastqgz_name.split("\\.")
+  var name_array = fastqgz_name.split("\\.")
+  return { name_array(0) + ".fastq"}
 }
 
- def add9(x:Int) { println(x + 9 )}
+
+def gzip_decompression(fastqgz_name:String) = {
+
+  var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
+
+  println("gzip -dc " + fastqgz_name + " > " + fastq_name )
+
+}
+
+
