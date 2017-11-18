@@ -14,6 +14,12 @@ all_files.foreach{println}
 
 ls! pwd/up
 
-time{ls!}
 
+// "PT000033_1.fastq.gz".split("\\.")
 
+def generate_fasta_names_from_fastqgz(fastqgz_name:String) =
+{
+   fastqgz_name.split("\\.")
+}
+
+ def add9(x:Int) { println(x + 9 )}
