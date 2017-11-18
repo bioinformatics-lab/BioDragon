@@ -60,12 +60,12 @@ settings > keyboard > input layout > US Keyboard
  sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
  sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Genesis ~/Desktop/Genesis/
  bwa index ./AL123456_3.fasta 
+
  bwa mem -R "@RG\tID:G04868\tSM:G04868\tPL:Illumina" -M AL123456_3.fasta G04868_R1_p.fastq G04868_R2_p.fastq > G04868.sam
- more ./G04868.sam 
- wc -l more G04868.sam 
- wc -l G04868.sam 
+
+
+
  samtools faidx ./AL123456_3.fasta
- samtools --version
  samtools view -bt AL123456_3.fasta.fai G04868.sam > G04868.bam
  samtools sort G04868.bam -o G04868.sorted.bam
  samtools index G04868.sorted.bam
