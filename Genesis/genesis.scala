@@ -61,15 +61,55 @@ def gzip_decompression(fastqgz_name:String) = {
 
 
 
-def index_reference_genome(reference_genome:String) = {
+def bwa_index_reference_genome(reference_genome:String) = {
 
   println("bwa index " + reference_genome)
 }
 
 
+def bwa_index_reference_genome(reference_genome:String) = {
+
+  println("samtools faidx " + reference_genome)
+}
 
 
-map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
+convert_sam_file_to_bam_file( "NC000962_3.fasta", "PT000033")
+
+def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = {
+
+
+   // If this file doesn't exist then execute the bwa_index_reference_genome function
+  var fai_from_reference_genome = reference_genome + ".fai"
+
+  var sam_file_name = genome_name.split("\\.")(0) + ".sam"
+
+  var bam_file_name = genome_name.split("\\.")(0) + ".bam"
+
+println("samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name  + " > " + bam_file_name)
+
+}
+
+
+sort_bam_file("PT000033")
+
+
+def sort_bam_file(genome_name:String) = {
+
+
+//  samtools sort PT000033.bam -o PT000033.sorted.bam
+
+
+  var bam_file_name = genome_name.split("\\.")(0) + ".bam"
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+
+println("samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_bam_file_name)
+
+}
+
+
+// map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
 
 
 def map_and_generate_sam_file(genome_name:String, reference_genome:String , genome_1_trimmed:String , genome_2_trimmed:String ) = {
@@ -82,7 +122,6 @@ def map_and_generate_sam_file(genome_name:String, reference_genome:String , geno
 
 var sam_file_name = genome_name.split("\\.")(0) + ".sam"
 
-println("bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + genome_1_trimmed + genome_2_trimmed + " > " + sam_file_name)
-
+println("bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name)
 
 }
