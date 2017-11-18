@@ -90,7 +90,7 @@ println("samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name 
 }
 
 
-sort_bam_file("PT000033")
+// sort_bam_file("PT000033")
 
 
 def sort_bam_file(genome_name:String) = {
@@ -109,6 +109,28 @@ println("samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_b
 }
 
 
+// samtools_index_sorted_bam("PT000033")
+
+def samtools_index_sorted_bam(genome_name:String) = {
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+  println("samtools index " + sorted_bam_file_name)
+}
+
+
+
+
+def mapping_statistics(genome_name:String) = {
+
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+var stats_text_file = genome_name + "_stats.txt"
+
+  println("samtools flagstat " + sorted_bam_file_name + " > " + stats_text_file)
+}
+
 // map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
 
 
@@ -124,4 +146,66 @@ var sam_file_name = genome_name.split("\\.")(0) + ".sam"
 
 println("bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name)
 
+}
+
+
+////// VARIANT CALLING PROCESS
+
+
+def samtools_mpileup(reference_genome:String, genome_name:String) = {
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+
+  var raw_vcf_file_name = genome_name.split("\\.")(0) + ".raw.vcf"
+
+println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
+
+}
+
+
+def vcfutils_filter(genome_name:String) = {
+
+  var raw_vcf_file_name = genome_name.split("\\.")(0) + ".raw.vcf"
+
+  var filt_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf"
+
+println("vcfutils.pl varFilter -d 10 -D 2000 " + raw_vcf_file_name + " > "  +  filt_vcf_file_name)
+
+}
+
+def bgzip_filt_file(genome_name:String) = {
+
+
+  var filt_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf"
+
+  var bgzip_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf.gz"
+
+
+  println("bgzip -c " +  filt_vcf_file_name + " > "  + bgzip_vcf_file_name )
+
+
+}
+
+def run_tabix(genome_name:String) = {
+
+  var bgzip_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf.gz"
+
+println("tabix -p vcf " + bgzip_vcf_file_name )
+
+}
+
+
+
+def snpEff(reference_genome:String, genome_name:String) = {
+
+
+// java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+
+
+
+  var filt_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf"
+  var ann_vcf_file_name = genome_name.split("\\.")(0) + ".ann.vcf.gz"
+
+println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name) 
 }

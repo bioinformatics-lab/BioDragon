@@ -71,11 +71,11 @@ settings > keyboard > input layout > US Keyboard
  samtools index G04868.sorted.bam
  samtools flagstat G04868.sorted.bam
  samtools flagstat G04868.sorted.bam > G04868_stats.txt
- nautilus .
  art
  samtools mpileup
  ls
  samtools mpileup -Q 23 -d 2000 -C 50 -ugf AL123456_3.fasta G04868.sorted.bam | bcftools call -O v -vm -o G04868.raw.vcf
+
  vcfutils.pl varFilter -d 10 -D 2000 G04868.raw.vcf > G04868.filt.vcf
  java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config AL123456_3 G04868.filt.vcf > G04868.ann.vcf
  bgzip -c G04868.filt.vcf > G04868.filt.vcf.gz
