@@ -40,3 +40,13 @@ write("hello.txt", "hello")
 %%(root/'bin/'bash, "-c", "echo 'Hello'$ENV_ARG", ENV_ARG=123)
 
 
+////
+
+
+
+ls! pwd
+
+ls! pwd |? grep! "scala"
+
+
+
