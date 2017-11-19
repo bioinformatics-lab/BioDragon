@@ -66,7 +66,8 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 }
 
-
+// TODO: 
+// abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 
 
 /// GENOME ANNOTATION
