@@ -31,3 +31,17 @@ EmilynGenomes/Documents-11-01-2017 7_34_53\.zip
 Genesis/ITGE2017_RIO\.ova
 
 *.fastq
+
+Genesis/Genomes/test2/
+
+*.png
+
+Figures/raw/
+
+Figures/WGS_Strict03_08Nov2017_Final\.tiff
+
+Figures/trial1/500dpi/
+
+Figures/trial1/2000dpi/
+
+Figures/trial1/1000dpi/
