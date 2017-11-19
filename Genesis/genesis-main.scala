@@ -18,28 +18,9 @@ ls! pwd/up
 
 
 ////////////////////////////////////////////////
-
 // EXERCISE - 1
 // PAGE - 20
-
-
-// generate_trimmed_name("PT000033_1")
-def generate_trimmed_name(genome_name:String) : String =
-{
-  var name_array = genome_name.split("\\.")
-  return { name_array(0) + "_trimmed_paired.fastq"}
-
-}
-
-
-// generate_untrimmed_name("PT000033_1")
-def generate_untrimmed_name(genome_name:String) : String =
-{
-
-  var name_array = genome_name.split("\\.")
-  return { name_array(0) + "_trimmed_unpaired.fastq"}
-
-}
+////////////////////////////////////////////////
 
 
 
@@ -60,6 +41,49 @@ def gzip_decompression(fastqgz_name:String) = {
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
   println("gzip -dc " + fastqgz_name + " > " + fastq_name )
+
+}
+
+
+////////////////////////////////////////////////
+// EXERCISE - 3
+// PAGE - 26
+////////////////////////////////////////////////
+
+
+
+
+
+
+// generate_trimmed_name("PT000033_1.fastq")
+def generate_trimmed_name(genome_name:String) : String =
+{
+  var name_array = genome_name.split("\\.")
+  return { name_array(0) + "_trimmed_paired.fastq"}
+
+}
+
+
+// generate_untrimmed_name("PT000033_1.fastq")
+def generate_untrimmed_name(genome_name:String) : String =
+{
+
+  var name_array = genome_name.split("\\.")
+  return { name_array(0) + "_trimmed_unpaired.fastq"}
+
+}
+
+
+def trimmomatic(genome_name:String) = {
+
+// java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+
+
+var  genome_first = genome_name + "_1.fastq"
+var  genome_second = genome_name + "_2.fastq"
+
+
+  println("java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36")
 
 }
 
