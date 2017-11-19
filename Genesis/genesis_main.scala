@@ -249,33 +249,4 @@ def snpEff(reference_genome:String, genome_name:String) = {
   println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name)
 }
 
-// assemblathon_stats("PT000033", "41")
-def assemblathon_stats(genome_name:String , k_mer:String) = {
 
-var genome_name_directory = genome_name + "_" + k_mer
-
-//  assemblathon_stats.pl ./PT000033_41/contigs.fa
-
-println("assemblathon_stats.pl ./" + genome_name_directory + "/contigs.fa")
-
-}
-
-
-/// GENOME ANNOTATION
-
-
-def prokka_annotation(genome_name:String, reference_genome:String) = {
-
-
-// cd /home/centos/Module2/PT000033_49
-
-//  prokka --outdir ./PT000033_prokka --prefix PT000033 contigs.fa_NC000962_3.fasta.fasta
-
-  var genome_prokka_name = genome_name + "_prokka"
-
-  var contigs_reference_genome = "contigs.fa_" + reference_genome + ".fasta.fasta"
-
-
-  println("prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
-
-}

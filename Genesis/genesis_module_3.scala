@@ -1,6 +1,3 @@
-
-
-
 // snippy_command("PT000033" , "NC000962_3")
 def snippy_command(genome_name:String, reference_genome:String) = {
 
@@ -15,4 +12,42 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 }
 
 
-def
+
+// TODO : Need to re-factor
+def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
+
+  var str = " "
+  for (i <- list_of_alphabets)
+    str = str + i + " "
+
+  // println(str)
+  return(str)
+
+}
+
+
+
+
+// TODO : Need to re-factor
+def snippy_core(string_of_genomes_names:String) = {
+
+println("snippy " + string_of_genomes_names)
+
+}
+
+
+
+
+def SNPtable() = {
+
+println("SNPtable_filter_Mtb.R core.tab")
+
+}
+
+
+
+def HammingFasta() = {
+
+println("HammingFasta.R coreSNP_alignment_filtered.fas")
+
+}
