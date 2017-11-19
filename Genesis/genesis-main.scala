@@ -17,7 +17,13 @@ all_files.foreach{println}
 ls! pwd/up
 
 
+////////////////////////////////////////////////
 
+// EXERCISE - 1
+// PAGE - 20
+
+
+// generate_trimmed_name("PT000033_1")
 def generate_trimmed_name(genome_name:String) : String =
 {
   var name_array = genome_name.split("\\.")
@@ -26,7 +32,7 @@ def generate_trimmed_name(genome_name:String) : String =
 }
 
 
-
+// generate_untrimmed_name("PT000033_1")
 def generate_untrimmed_name(genome_name:String) : String =
 {
 
@@ -39,6 +45,8 @@ def generate_untrimmed_name(genome_name:String) : String =
 
 
 // "PT000033_1.fastq.gz" =>  "PT000033_1.fastq"
+
+// generate_fastq_names_from_fastqgz( "PT000033_1.fastq.gz")
 
 def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String =
 {
@@ -60,6 +68,7 @@ def gzip_decompression(fastqgz_name:String) = {
 /////////////////
 
 
+// bwa_index_reference_genome("NC000962_3.fasta")
 
 def bwa_index_reference_genome(reference_genome:String) = {
 
@@ -67,13 +76,15 @@ def bwa_index_reference_genome(reference_genome:String) = {
 }
 
 
-def bwa_index_reference_genome(reference_genome:String) = {
+// samtools_faidx_reference_genome("NC000962_3.fasta")
+
+def samtools_faidx_reference_genome(reference_genome:String) = {
 
   println("samtools faidx " + reference_genome)
 }
 
 
-convert_sam_file_to_bam_file( "NC000962_3.fasta", "PT000033")
+// convert_sam_file_to_bam_file( "NC000962_3.fasta", "PT000033")
 
 def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = {
 
