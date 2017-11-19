@@ -220,3 +220,23 @@ var genome_name_directory = genome_name + "_" + k_mer
 println("assemblathon_stats.pl ./" + genome_name_directory + "/contigs.fa")
 
 }
+
+
+/// GENOME ANNOTATION
+
+
+def prokka_annotation(genome_name:String, reference_genome:String) = {
+
+
+// cd /home/centos/Module2/PT000033_49
+
+//  prokka --outdir ./PT000033_prokka --prefix PT000033 contigs.fa_NC000962_3.fasta.fasta
+
+  var genome_prokka_name = genome_name + "_prokka"
+
+  var contigs_reference_genome = "contigs.fa_" + reference_genome + ".fasta.fasta"
+
+
+  println("prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
+
+}
