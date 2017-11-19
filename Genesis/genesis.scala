@@ -209,3 +209,14 @@ def snpEff(reference_genome:String, genome_name:String) = {
 
 println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name) 
 }
+
+
+def assemblathon_stats(genome_name:String , k_mer:String) = {
+
+var genome_name_directory = genome_name + "_" + k_mer
+
+//  assemblathon_stats.pl ./PT000033_41/contigs.fa
+
+println("assemblathon_stats.pl ./" + genome_name_directory + "/contigs.fa")
+
+}
