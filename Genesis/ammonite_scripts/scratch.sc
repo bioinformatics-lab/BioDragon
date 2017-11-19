@@ -46,7 +46,7 @@ write("hello.txt", "hello")
 
 ls! pwd
 
-ls! pwd |? grep! "scala"
+ls! pwd |? grep! "sc"
 
 
 
