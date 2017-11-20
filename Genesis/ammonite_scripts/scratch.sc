@@ -43,6 +43,7 @@ write("hello.txt", "hello")
 
 
 %%('bash, "-c", "echo 'Hello' > test.txt")
+%%("cat", "test.txt")
 
 %%(root/'bin/'bash, "-c", "echo 'Hello'$ENV_ARG", ENV_ARG=123)
 
