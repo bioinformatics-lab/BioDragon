@@ -64,3 +64,8 @@ Genesis/Genomes/test1/NC000962_3\.gb
 *.bai
 *.bam
 *.vcf
+*.tbi
+Sequences
+Log
+/Genesis/Genomes/1_single_genome/snpEff_summary.html
+/Genesis/Genomes/1_single_genome/snpEff_genes.txt

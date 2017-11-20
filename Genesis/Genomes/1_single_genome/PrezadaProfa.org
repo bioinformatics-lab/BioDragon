@@ -77,7 +77,7 @@ settings > keyboard > input layout > US Keyboard
  
  samtools flagstat G04868.sorted.bam > G04868_stats.txt
  
- 
+ // Takes time
  samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta G04868.sorted.bam | bcftools call -O v -vm -o G04868.raw.vcf
 
  vcfutils.pl varFilter -d 10 -D 2000 G04868.raw.vcf > G04868.filt.vcf
@@ -125,3 +125,10 @@ settings > keyboard > input layout > US Keyboard
 
 #+END_SRC
    
+
+* <2017-11-21 Mon>
+
+** Tweak the settings of the virtual machine
+ - processor
+ - RAM
+ 
