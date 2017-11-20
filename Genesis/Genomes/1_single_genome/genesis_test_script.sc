@@ -1,5 +1,8 @@
+// TODO: Implement logging
 
 /// UTILS.SC
+
+
 
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
@@ -61,6 +64,7 @@ def gzip_decompression(fastqgz_name:String) = {
 
 
 
+// NOTE: "R1_p.fastq" instead of "_1_trimmed_paired.fastq"
 
 // generate_trimmed_name("PT000033_1.fastq")
 def generate_trimmed_name(genome_name:String) : String =
@@ -70,6 +74,8 @@ def generate_trimmed_name(genome_name:String) : String =
 
 }
 
+
+// NOTE: "R1_p.fastq" instead of "_1_trimmed_paired.fastq"
 
 // generate_untrimmed_name("PT000033_1.fastq")
 def generate_untrimmed_name(genome_name:String) : String =
@@ -327,7 +333,7 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 }
 
-// TODO: 
+// TODO:
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 
 
