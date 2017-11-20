@@ -4,6 +4,13 @@ import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
 
+//var all_fastq_files = ls! pwd || grep! "\\.fastq".r
+
+
+var all_fastq_files = ls! pwd |? grep! "\\.fastq".r
+
+
+
 %("ls" , "-l")
 ls!
 

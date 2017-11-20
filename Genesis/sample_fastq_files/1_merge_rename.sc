@@ -9,14 +9,16 @@ import ammonite.ops.ImplicitWd._
 
 // var all_fastq_files = ls! pwd || grep! "fastq".r
 
+// var all_fastq_files = ls! pwd || grep! "\\.fastq".r
 
-var all_fastq_files = ls! pwd || grep! "\\.fastq".r
+// var all_fastq_files = ls! pwd |? grep! "\\.fastq".r
+
 
 
 # Usage
-#find_unique_genomes(all_fastq_files)
+# find_unique_genomes(all_fastq_files)
 
-def find_unique_genomes(all_fastq_files)
+def find_unique_genomes(all_fastq_files:List[String])
   all_genome_list = []
 
   for file_name in all_fastq_files
