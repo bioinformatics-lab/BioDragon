@@ -3,18 +3,23 @@ import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
 
+// var all_fastq_files = ls! pwd |? grep! "fastq"
 
-var all_fastq_files = ls! pwd |? grep! "fastq"
+// var all_fastq_files = ls! pwd |? grep! "fastq$".r
 
+// var all_fastq_files = ls! pwd || grep! "fastq".r
+
+
+var all_fastq_files = ls! pwd || grep! "\\.fastq".r
 
 
 # Usage
-#findUniqueGenomes(allFastqFiles)
+#find_unique_genomes(all_fastq_files)
 
-def findUniqueGenomes(allFastqFiles)
+def find_unique_genomes(all_fastq_files)
   allGenomeList = []
 
-  for fileName in allFastqFiles
+  for fileName in all_fastq_files
     genomeName = fileName.split("_")[6]
 
     allGenomeList.push(genomeName)
@@ -63,8 +68,8 @@ def combineAllRCodeFilesForGenome(genome, rCode)
   system(cmd)
 end
 
-# Here we call the << findUniqueGenomes >> function to store the unique genomes in another array.
-uniqueGenomeList = findUniqueGenomes(allFastqFiles)
+# Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
+uniqueGenomeList = find_unique_genomes(all_fastq_files)
 
 
 # Show time baby!
