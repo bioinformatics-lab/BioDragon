@@ -1,9 +1,28 @@
-// Make sure that this script is executed only from the specific genome file
+
+/// UTILS.SC
 
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
+
+def genome_name_from_path(path:Path) : String = {
+
+
+// var x = root/'Users/'eklavya/'Projects/'ProjectEklavya/'Eklavya/'Code/'BioDragon/'Genesis/'Genomes/"1_single_genome"/"G04868_R1_p.fastq"
+
+
+// returns only "GO4868_R1"
+return path.toString.split("\\/").last.split("\\.")(0)
+
+}
+
+
 /// MAIN.SC
+
+
+
+
+var all_fastq_files = ls! pwd |? grep! "\\.fastq".r
 
 ////////////////////////////////////////////////
 // EXERCISE - 1
