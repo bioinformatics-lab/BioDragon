@@ -17,72 +17,72 @@ var all_fastq_files = ls! pwd || grep! "\\.fastq".r
 #find_unique_genomes(all_fastq_files)
 
 def find_unique_genomes(all_fastq_files)
-  allGenomeList = []
+  all_genome_list = []
 
-  for fileName in all_fastq_files
-    genomeName = fileName.split("_")[6]
+  for file_name in all_fastq_files
+    genome_name = file_name.split("_")[6]
 
-    allGenomeList.push(genomeName)
+    all_genome_list.push(genome_name)
   end
 
-  uniqueGenomeList = (allGenomeList.uniq).compact
-  return uniqueGenomeList
+  unique_genome_list = (all_genome_list.uniq).compact
+  return unique_genome_list
 end
 
 # Usage
-# allFilesForAGenome("G04868")
-def allFilesForAGenome (genome)
-  genomeRegExp = "*_" + genome + "_*"
+# all_files_for_a_genome("G04868")
+def all_files_for_a_genome (genome)
+  genome_reg_exp = "*_" + genome + "_*"
 
-  return Dir[genomeRegExp]
+  return Dir[genome_reg_exp]
 end
 
 # Usage
-# combineAllRCodeFilesForGenome("G04868","R1")
-def combineAllRCodeFilesForGenome(genome, rCode)
-  outputFileName = (genome).to_s + "_" + rCode + ".fastq"
+# combine_all_r_code_files_for_genome("G04868","R1")
+def combine_all_r_code_files_for_genome(genome, rCode)
+  output_file_name = (genome).to_s + "_" + rCode + ".fastq"
 
-  filesForAGenome = allFilesForAGenome(genome)
+  files_for_a_genome = all_files_for_a_genome(genome)
 
-  rCodeFilesForAGenome = []
+  r_code_files_for_a_genome = []
 
-  for f in filesForAGenome
+  for f in files_for_a_genome
     rPart = f.split("_")[-2]
 
     if rPart == rCode
-      rCodeFilesForAGenome.push(f)
+      r_code_files_for_a_genome.push(f)
     end
   end
 
-  #return rCodeFilesForAGenome
+  #return r_code_files_for_a_genome
 
   # construct the string to be executed by the shell
   cmd = "cat "
   # combine the names of the files into a single string
-  for file in rCodeFilesForAGenome
+  for file in r_code_files_for_a_genome
     cmd += file + " "
   end
 
-  cmd += " > #{outputFileName}"
+  cmd += " > #{output_file_name}"
   puts cmd
   system(cmd)
 end
 
 # Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
-uniqueGenomeList = find_unique_genomes(all_fastq_files)
+unique_genome_list = find_unique_genomes(all_fastq_files)
 
 
 # Show time baby!
-# Calling the << combineAllRCodeFilesForGenome >> functions per genome for both << R >> files
+# Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
 # The << puts >> is used for a well informed user experience while running the script
-for genome in uniqueGenomeList
+for genome in unique_genome_list
   puts "\n\n ~~~~~~~~~~~~~~~~~~~~~ "
   puts "\nWorking on the #{genome} files\n\n"
   puts "\n>>>>       R1      <<<<\n\n"
-  combineAllRCodeFilesForGenome(genome,"R1")
+  combine_all_r_code_files_for_genome(genome,"R1")
   puts "\n\n"
   puts "\n>>>>       R2      <<<<\n\n"
-  combineAllRCodeFilesForGenome(genome,"R2")
+  combine_all_r_code_files_for_genome(genome,"R2")
 end
 
 puts "\n\n\n@@@@@@@@@@@@@@@@@@@@@@@@"
