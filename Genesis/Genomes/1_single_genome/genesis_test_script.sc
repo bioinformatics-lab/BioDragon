@@ -7,7 +7,7 @@
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
-
+// genome_name_from_path(all_fastq_files(1))
 def genome_name_from_path(path:Path) : String = {
 
 
