@@ -60,3 +60,7 @@ Genesis/Genomes/test1/NC000962_3\.gb
 *.ann
 *.amb
 *.sam
+*.fai
+*.bai
+*.bam
+*.vcf
