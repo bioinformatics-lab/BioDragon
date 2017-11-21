@@ -102,9 +102,13 @@ def generate_untrimmed_name(genome_name:String) : String =
 }
 
 
+// trimmomatic("PT000033")
 def trimmomatic(genome_name:String) = {
 
 // java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+
+// java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+
 
 
 
