@@ -59,6 +59,7 @@ def gzip_decompression(fastqgz_name:String) = {
 
 %("bash", "-c", cmd_string)
 
+  println("\n\n")
 }
 
 
@@ -115,8 +116,11 @@ var  genome_second = genome_name + "_2.fastq"
   println(cmd_string)
 
 
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
+
+
+  println("\n\n")
 }
 
 // Apply trimmomatic to all fastq files in the directory
