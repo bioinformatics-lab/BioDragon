@@ -45,17 +45,29 @@ def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String =
 }
 
 
+// generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
 def gzip_decompression(fastqgz_name:String) = {
 
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
-  println("gzip -dc " + fastqgz_name + " > " + fastq_name )
+  var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
+  println(cmd_string )
+
+
+// what works
+//  %("bash", "-c" , "gzip -dc /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq.gz > /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq")
+
+%("bash", "-c", cmd_string)
 
 }
 
 
-// generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
 
+// Apply gzip_decompression to all fastq.gz files in the directory
+
+// DONE: Successful till this point
+for (f <- all_fastq_files)
+  gzip_decompression(f.toString)
 
 ////////////////////////////////////////////////
 // EXERCISE - 3
@@ -98,10 +110,21 @@ def trimmomatic(genome_name:String) = {
 var  genome_first = genome_name + "_1.fastq"
 var  genome_second = genome_name + "_2.fastq"
 
+  var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36"
 
-  println("java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36")
+  println(cmd_string)
+
+
+  %("bash", "-c", cmd_string)
 
 }
+
+// Apply trimmomatic to all fastq files in the directory
+
+// TODO: Successful till this point
+for (f <- all_fastq_files)
+  trimmomatic(f.toString)
+
 
 
 
