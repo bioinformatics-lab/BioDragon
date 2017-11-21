@@ -69,3 +69,16 @@ Sequences
 Log
 /Genesis/Genomes/1_single_genome/snpEff_summary.html
 /Genesis/Genomes/1_single_genome/snpEff_genes.txt
+*.gff
+*.csv
+*.html
+*.tab
+snps.txt
+*.log
+*.fa
+*.bed
+snpeff.config
+snpEffectPredictor.bin
+*.xls
+*.gbk
+ref.txt
