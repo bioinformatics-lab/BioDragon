@@ -23,8 +23,17 @@ return path.toString.split("\\/").last.split("\\.")(0)
 
 
 
+// TODO: generate this list more carefully
+//var all_fastq_files = ls! pwd |? grep! "\\.fastq$".r
 
-var all_fastq_files = ls! pwd |? grep! "\\.fastq.gz".r
+//var all_fastq_files = ls! pwd |? grep! """\\.fastq$""".r
+
+// or we can just filter using hte result of ls! pwd 
+var all_fastq_files = %%("bash", "-c", "ls | grep 'fastq$'")
+
+var all_fastqgz_files = %%("bash", "-c", "ls | grep 'fastq.gz$'")
+
+//var all_fastqgz_files = ls! pwd |? grep! "\\.fastq.gz".r
 
 ////////////////////////////////////////////////
 // EXERCISE - 1
@@ -67,8 +76,8 @@ def gzip_decompression(fastqgz_name:String) = {
 // Apply gzip_decompression to all fastq.gz files in the directory
 
 // DONE: Successful till this point
-for (f <- all_fastq_files)
-  gzip_decompression(f.toString)
+//for (f <- all_fastq_files)
+//  gzip_decompression(f.toString)
 
 ////////////////////////////////////////////////
 // EXERCISE - 3
@@ -107,8 +116,6 @@ def trimmomatic(genome_name:String) = {
 
 // java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
 
-// java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 PT000033_1.fastq PT000033_2.fastq PT000033_1_trimmed_paired.fastq PT000033_1_trimmed_unpaired.fastq PT000033_2_trimmed_paired.fastq PT000033_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
-
 
 
 
@@ -117,10 +124,16 @@ var  genome_second = genome_name + "_2.fastq"
 
   var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36"
 
+
+// var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar -version"
+
+
+  // This works
+// var cmd_string = "java -version"
   println(cmd_string)
 
 
-//  %("bash", "-c", cmd_string)
+  %("bash", "-c", cmd_string)
 
 
 
