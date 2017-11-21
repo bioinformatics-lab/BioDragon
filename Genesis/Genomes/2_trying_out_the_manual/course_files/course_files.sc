@@ -24,7 +24,7 @@ return path.toString.split("\\/").last.split("\\.")(0)
 
 
 
-var all_fastq_files = ls! pwd |? grep! "\\.fastq".r
+var all_fastq_files = ls! pwd |? grep! "\\.fastq.gz".r
 
 ////////////////////////////////////////////////
 // EXERCISE - 1
@@ -52,6 +52,9 @@ def gzip_decompression(fastqgz_name:String) = {
   println("gzip -dc " + fastqgz_name + " > " + fastq_name )
 
 }
+
+
+// generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
 
 
 ////////////////////////////////////////////////
