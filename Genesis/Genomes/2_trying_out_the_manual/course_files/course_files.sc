@@ -28,7 +28,7 @@ return path.toString.split("\\/").last.split("\\.")(0)
 
 
 
-
+/*
 def all_files_of_a_type(extension : String) : LsSeq = {
 
 
@@ -42,7 +42,7 @@ def all_files_of_a_type(extension : String) : LsSeq = {
 
 }
 
-
+*/
 
 // File extension predicates
 
@@ -183,7 +183,7 @@ def trimmomatic(genome_name:String) = {
 var  genome_first = genome_name + "_1.fastq"
 var  genome_second = genome_name + "_2.fastq"
 
-  var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36"
+var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 " +  genome_first +  " " + genome_second + " " + generate_trimmed_name(genome_first) +   " " + generate_untrimmed_name(genome_first) +   " " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + " LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36"
 
 
 // var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar -version"
