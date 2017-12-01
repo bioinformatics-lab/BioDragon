@@ -44,12 +44,27 @@ def all_files_of_a_type(extension : String) : LsSeq = {
 
 
 
+// File extension predicates
+
+// is_fastq_?( x(1).toString)
+
+
 def is_fastq_?(fileName:String) : Boolean = {
 
 
 //  "ab c d e f".matches(".*f$")
 
 return fileName.matches(".*fastq$")
+
+
+}
+
+def is_fastq_gz_?(fileName:String) : Boolean = {
+
+
+  //  "ab c d e f".matches(".*f$")
+
+  return fileName.matches(".*fastq.gz$")
 
 
 }
