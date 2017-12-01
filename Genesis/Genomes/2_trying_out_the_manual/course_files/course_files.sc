@@ -43,6 +43,22 @@ def all_files_of_a_type(extension : String) : LsSeq = {
 }
 
 
+
+def is_fastq_?(fileName:String) : Boolean = {
+
+
+//  "ab c d e f".matches(".*f$")
+
+return fileName.matches(".*fastq$")
+
+
+}
+
+
+
+
+
+
 /// MAIN.SC
 
 
@@ -55,14 +71,15 @@ def all_files_of_a_type(extension : String) : LsSeq = {
 // or we can just filter using hte result of ls! pwd
 // var all_fastq_files = %%("bash", "-c", "ls | grep 'fastq$'")
 
-//  %%("bash", "-c", "ls | grep 'fastq$'").toString.split("\n")
+// var arr =  %%("bash", "-c", "ls | grep 'fastq$'").toString.split("\n")
+// arr.drop(1)
 
 
 var all_fastqgz_files = ls! pwd |? grep! "fastq.gz"
 
 // var all_fastqgz_files = %%("bash", "-c", "ls | grep 'fastq.gz$'")
 
-//var all_fastqgz_files = ls! pwd |? grep! "\\.fastq.gz".r
+// var all_fastqgz_files = ls! pwd |? grep! "\\.fastq.gz".r
 
 ////////////////////////////////////////////////
 // EXERCISE - 1
