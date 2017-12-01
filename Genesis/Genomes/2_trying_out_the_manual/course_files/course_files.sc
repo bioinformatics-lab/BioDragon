@@ -71,7 +71,8 @@ def is_fastq_gz_?(fileName:String) : Boolean = {
 
 
 
-
+var all_files = ls! pwd
+// var fastqgz_files = all_files.filter( (f) => is_fastq_gz_?(f.toString) )
 
 
 /// MAIN.SC
