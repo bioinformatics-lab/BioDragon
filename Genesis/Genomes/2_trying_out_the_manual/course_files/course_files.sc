@@ -75,6 +75,8 @@ var all_files = ls! pwd
 
 
 
+var fastq_files = all_files.filter( (f) => is_fastq_?(f.toString) )
+
 var fastqgz_files = all_files.filter( (f) => is_fastq_gz_?(f.toString) )
 
 
@@ -192,7 +194,7 @@ var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred
 // var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar -version"
 
 
-  // This works
+// This works
 // var cmd_string = "java -version"
   println(cmd_string)
 
