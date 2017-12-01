@@ -19,6 +19,30 @@ return path.toString.split("\\/").last.split("\\.")(0)
 }
 
 
+
+// all_files(1).toString.matches("fastq.gz$")
+// all_files(1).toString
+// res99: String = "/Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/Genesis/Genomes/2_trying_out_the_manual/course_files/NC000962_3.fasta"
+
+// var pathString = "/Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/Genesis/Genomes/2_trying_out_the_manual/course_files/NC000962_3.fasta"
+
+
+
+
+def all_files_of_a_type(extension : String) : LsSeq = {
+
+
+  var all_files = ls! pwd
+
+
+  all_files.filter
+
+  return all_files
+
+
+}
+
+
 /// MAIN.SC
 
 
@@ -28,10 +52,15 @@ return path.toString.split("\\/").last.split("\\.")(0)
 
 //var all_fastq_files = ls! pwd |? grep! """\\.fastq$""".r
 
-// or we can just filter using hte result of ls! pwd 
-var all_fastq_files = %%("bash", "-c", "ls | grep 'fastq$'")
+// or we can just filter using hte result of ls! pwd
+// var all_fastq_files = %%("bash", "-c", "ls | grep 'fastq$'")
 
-var all_fastqgz_files = %%("bash", "-c", "ls | grep 'fastq.gz$'")
+//  %%("bash", "-c", "ls | grep 'fastq$'").toString.split("\n")
+
+
+var all_fastqgz_files = ls! pwd |? grep! "fastq.gz"
+
+// var all_fastqgz_files = %%("bash", "-c", "ls | grep 'fastq.gz$'")
 
 //var all_fastqgz_files = ls! pwd |? grep! "\\.fastq.gz".r
 
