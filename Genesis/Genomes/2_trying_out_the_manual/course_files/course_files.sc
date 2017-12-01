@@ -72,7 +72,10 @@ def is_fastq_gz_?(fileName:String) : Boolean = {
 
 
 var all_files = ls! pwd
-// var fastqgz_files = all_files.filter( (f) => is_fastq_gz_?(f.toString) )
+
+
+
+var fastqgz_files = all_files.filter( (f) => is_fastq_gz_?(f.toString) )
 
 
 /// MAIN.SC
@@ -91,7 +94,7 @@ var all_files = ls! pwd
 // arr.drop(1)
 
 
-var all_fastqgz_files = ls! pwd |? grep! "fastq.gz"
+// var all_fastqgz_files = ls! pwd |? grep! "fastq.gz"
 
 // var all_fastqgz_files = %%("bash", "-c", "ls | grep 'fastq.gz$'")
 
@@ -109,8 +112,7 @@ var all_fastqgz_files = ls! pwd |? grep! "fastq.gz"
 
 // generate_fastq_names_from_fastqgz( "PT000033_1.fastq.gz")
 
-def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String =
-{
+def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String = {
   var name_array = fastqgz_name.split("\\.")
   return { name_array(0) + ".fastq"}
 }
