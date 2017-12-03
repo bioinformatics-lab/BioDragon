@@ -301,18 +301,6 @@ def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = 
 
 
 
-// samtools_index_sorted_bam("PT000033")
-def samtools_index_sorted_bam(genome_name:String) = {
-
-  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
-
-  println("samtools index " + sorted_bam_file_name)
-  var cmd_string = "samtools index " + sorted_bam_file_name
-
-
-%("bash", "-c", cmd_string)
-}
-
 
 
 
@@ -325,12 +313,24 @@ def sort_bam_file(genome_name:String) = {
 
   var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
 
-  println("samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_bam_file_name)
-  var cmd_string = "samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_bam_file_name
+  println("samtools sort " +  bam_file_name + " -o " + sorted_bam_file_name)
+  var cmd_string = "samtools sort " + bam_file_name + " -o " + sorted_bam_file_name
 
 
 %("bash", "-c", cmd_string)
 
+}
+
+// samtools_index_sorted_bam("PT000033")
+def samtools_index_sorted_bam(genome_name:String) = {
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+  println("samtools index " + sorted_bam_file_name)
+  var cmd_string = "samtools index " + sorted_bam_file_name
+
+
+  %("bash", "-c", cmd_string)
 }
 
 
