@@ -487,7 +487,7 @@ def velveth_assembly(genome_name:String, k_mer:String) = {
 
 
 
-// velvetg_produce_graph("PT000033")
+// velvetg_produce_graph("PT000033", "41")
 def velvetg_produce_graph(genome_name:String, k_mer:String) = {
 
 //  velvetg PT000033_41 -exp_cov auto -cov_cutoff auto

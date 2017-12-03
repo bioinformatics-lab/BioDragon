@@ -209,6 +209,14 @@ $ gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
 
 
 
+ velveth_assembly("PT000033", "41")
+ velvetg_produce_graph("PT000033", "41")
+ assemblathon_stats("PT000033", "41")
 
+
+
+ velveth_assembly("PT000033", "49")
+
+ velveth_assembly("PT000033", "55")
 
 #+END_SRC
