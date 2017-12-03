@@ -135,4 +135,51 @@ settings > keyboard > input layout > US Keyboard
 
 * <2017-12-03 Sun>
 
-** 
+**   At this point we've already executed all the scripts 
+#+BEGIN_SRC shell
+
+$ gzip -dc PT000033_1.fastq.gz > PT000033_1.fastq 
+$ gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+@ for( f <- fastqgz_files ){
+  gzip_decompression(f.toString)
+  } 
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC shell
+
+more NC000962_3.fasta
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+%("more", "NC000962_3.fasta") 
+
+#+END_SRC
+
+
+
+
+
+#+BEGIN_SRC scala
+
+
+@ trimmomatic("PT000033")
+
+
+@ bwa_index_reference_genome("NC000962_3.fasta")
+
+
+
+ map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
+#+END_SRC
