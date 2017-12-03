@@ -129,10 +129,26 @@ def gzip_decompression(fastqgz_name:String) = {
   println(cmd_string )
 
 
+
+/*
+// this is useful
+( "gzip", "-dc", "/media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq.gz"," > ", "/media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq")
+
+
+ */
+
+
 // what works
 //  %("bash", "-c" , "gzip -dc /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq.gz > /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq")
 
-%("bash", "-c", cmd_string)
+//%("bash", "-c", cmd_string)
+
+//var cmd_string1 =  " " + fastqgz_name + " > " + fastq_name
+//  %("bash", "-c",  "gzip", "-dcf", cmd_string1)
+
+  var cmd_string1 =  " " + fastqgz_name + " > " + fastq_name
+    %("gzip", "-dc", cmd_string1)
+
 
   println("\n\n")
 }
