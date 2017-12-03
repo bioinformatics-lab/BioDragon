@@ -561,7 +561,7 @@ def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:Stri
 
 
 // prokka_annotation("PT000033", "NC000962_3")
-def prokka_annotation(genome_name:String, reference_genome:String) = {
+def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String) = {
 
   // cd /home/centos/Module2/PT000033_49
 
@@ -569,20 +569,24 @@ def prokka_annotation(genome_name:String, reference_genome:String) = {
 
   var genome_prokka_name = genome_name + "_prokka"
 
+  var  genome_k_mer_name = genome_name + "_" + k_mer
+
   var contigs_reference_genome = "contigs.fa_" + reference_genome + ".fasta.fasta"
 
 
-//  println("prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
+  println("cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
 
 
-  var cmd_string = "prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
+  var cmd_string = "cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
 
 
-%("bash", "-c", cmd_string)
+  %("bash", "-c", cmd_string)
 
 }
 
 
+
+// TODO: This entire module is in the Todo list - page 63/74 onwards
 
 /// MODULES_3.SC
 
@@ -595,7 +599,7 @@ def snippy_command(genome_name:String, reference_genome:String) = {
   var genome_first = genome_name + "_1.fastq.gz"
   var genome_second = genome_name + "_2.fastq.gz"
 
-//  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second)
+  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second)
 
 
   var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second
