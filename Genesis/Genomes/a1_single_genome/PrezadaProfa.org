@@ -132,3 +132,7 @@ settings > keyboard > input layout > US Keyboard
  - processor
  - RAM
  
+
+* <2017-12-03 Sun>
+
+** 

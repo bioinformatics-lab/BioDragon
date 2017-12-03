@@ -225,8 +225,8 @@ var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred
 // Apply trimmomatic to all fastq files in the directory
 
 // TODO: Successful till this point
-for (f <- all_fastq_files)
-  trimmomatic(f.toString)
+//for (f <- all_fastq_files)
+//  trimmomatic(f.toString)
 
 
 
@@ -575,9 +575,9 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 }
 
 
-
+/*
 // TODO : Need to re-factor
-def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
+ def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
 
   var str = " "
   for (i <- list_of_alphabets)
@@ -588,7 +588,7 @@ def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
 
 }
 
-
+ */
 
 
 // TODO : Need to re-factor
