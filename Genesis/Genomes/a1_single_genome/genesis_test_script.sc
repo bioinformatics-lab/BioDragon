@@ -368,8 +368,8 @@ def samtools_mpileup(reference_genome:String, genome_name:String) = {
 
   var raw_vcf_file_name = genome_name.split("\\.")(0) + ".raw.vcf"
 
-  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
-  var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
+  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
+  var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
 
 
 %("bash", "-c", cmd_string)
