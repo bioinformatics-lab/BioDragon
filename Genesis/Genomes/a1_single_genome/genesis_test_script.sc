@@ -533,9 +533,8 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 
 // TODO:
-//abacas("NC000962.3.fasta", "PT000033", "49")
-
-def abacas_align_contigs(referenceGenome:String, genomeName:String, k_mer:String) = {
+//abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
 
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 
@@ -545,9 +544,18 @@ def abacas_align_contigs(referenceGenome:String, genomeName:String, k_mer:String
   $ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 */
 
-  println("cd PT000033_49 && cp ../NC000962.3.fasta ./ &&  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a ")
+  println("cd PT000033_41 && cp ../NC000962_3.fasta ./ &&  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a ")
+
+  var  genome_k_mer_name = genome_name + "_" + k_mer
+
+  var cmd_string = "cd " + genome_k_mer_name + " && " + " cp ../NC000962_3.fasta ./ && abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a "
+
+  %%("bash", "-c", cmd_string)
 
 }
+
+
+
 
 /// GENOME ANNOTATION
 

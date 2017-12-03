@@ -219,4 +219,9 @@ $ gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
 
  velveth_assembly("PT000033", "55")
 
+
+abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+
+
+
 #+END_SRC
