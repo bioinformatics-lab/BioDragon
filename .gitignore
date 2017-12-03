@@ -82,3 +82,4 @@ snpEffectPredictor.bin
 *.xls
 *.gbk
 ref.txt
+snpEff_genes.txt
