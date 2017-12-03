@@ -509,6 +509,7 @@ def velvetg_produce_graph(genome_name:String, k_mer:String) = {
 // assemblathon_stats("PT000033", "41")
 def assemblathon_stats(genome_name:String , k_mer:String) = {
 
+
   //  assemblathon_stats.pl ./PT000033_41/contigs.fa
 
   var  genome_k_mer_name = genome_name + "_" + k_mer
@@ -518,13 +519,35 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
   var cmd_string = "assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa"
 
 
-%("bash", "-c", cmd_string)
+// %("bash", "-c", cmd_string)
 
+%%("bash", "-c", cmd_string)
 }
 
+
+
+// TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
+// res78.toString.split("\n\n")(2).split("\n")
+
+
+
+
 // TODO:
+//abacas("NC000962.3.fasta", "PT000033", "49")
+
+def abacas_align_contigs(referenceGenome:String, genomeName:String, k_mer:String) = {
+
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 
+/*
+  $ cd PT000033_49
+  $ cp ../NC000962.3.fasta ./
+  $ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+*/
+
+  println("cd PT000033_49 && cp ../NC000962.3.fasta ./ &&  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a ")
+
+}
 
 /// GENOME ANNOTATION
 
