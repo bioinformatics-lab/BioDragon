@@ -128,8 +128,6 @@ def gzip_decompression(fastqgz_name:String) = {
   var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
   println(cmd_string )
 
-
-
 /*
 // this is useful
 ( "gzip", "-dc", "/media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq.gz"," > ", "/media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq")
@@ -160,6 +158,28 @@ def gzip_decompression(fastqgz_name:String) = {
 // DONE: Successful till this point
 //for (f <- all_fastq_files)
 //  gzip_decompression(f.toString)
+
+
+
+
+// generate a gzip file from fastqgz
+
+//  gzip G04868_1.fastq
+
+def gzip_compression(fastq_name:String) = {
+
+  var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
+
+  var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
+  println(cmd_string )
+
+
+  %("bash", "-c", cmd_string)
+
+  println("\n\n")
+}
+
+
 
 ////////////////////////////////////////////////
 // EXERCISE - 3
@@ -595,6 +615,8 @@ def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String)
 
 /// MODULES_3.SC
 
+
+//TODO: Need to make a function to generate a << gzip >> file as well
 // snippy_command("PT000033" , "NC000962_3")
 def snippy_command(genome_name:String, reference_genome:String) = {
 

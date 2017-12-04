@@ -11,7 +11,8 @@
 ** https://gist.github.com/larsar/1687725
 ** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
 ** https://linuxconfig.org/how-to-change-system-keyboard-keymap-layout-on-centos-7-linux
-** http://toolkt.com/site/virtualbox-shared-folders-with-centos-server-guest/
+** http://toolkt.com/site/virtualbox-shared-folders-with-centos-serve genesis_test_script.velveth_assembly("G04868", "41")
+r-guest/
 
 ** TODO Scala script to generate the commands we enter
 
@@ -306,19 +307,29 @@ res2: LsSeq =
  genesis_test_script.assemblathon_stats("G04868", "41")
 
 
+ genesis_test_script.velveth_assembly("G04868", "49")
+ genesis_test_script.velvetg_produce_graph("G04868", "49")
+ genesis_test_script.assemblathon_stats("G04868", "49")
 
- // velveth_assembly("G04868", "49")
 
- // velveth_assembly("G04868", "55")
+
+ genesis_test_script.velveth_assembly("G04868", "55")
+ genesis_test_script.velvetg_produce_graph("G04868", "55")
+ genesis_test_script.assemblathon_stats("G04868", "55")
+
+
 
 
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
-
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
 
  genesis_test_script.prokka_annotation("G04868", "41", "NC000962_3") 
+ genesis_test_script.prokka_annotation("G04868", "49", "NC000962_3") 
+ genesis_test_script.prokka_annotation("G04868", "55", "NC000962_3") 
 
 
-
+// gzip G04868_1.fastq 
 
  snippy_command("G04868" , "NC000962_3")
 
