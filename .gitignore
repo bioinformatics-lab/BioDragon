@@ -89,3 +89,4 @@ PT000033_41
 *.fas
 *.aln
 core.txt
+Genesis/Genomes/a1_single_genome_em/*_stats.txt
