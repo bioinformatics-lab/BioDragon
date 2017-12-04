@@ -599,10 +599,10 @@ def snippy_command(genome_name:String, reference_genome:String) = {
   var genome_first = genome_name + "_1.fastq.gz"
   var genome_second = genome_name + "_2.fastq.gz"
 
-  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second)
+  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
 
 
-  var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second
+  var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
 
 %("bash", "-c", cmd_string)
