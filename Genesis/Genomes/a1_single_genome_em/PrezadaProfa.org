@@ -135,4 +135,100 @@ settings > keyboard > input layout > US Keyboard
 
 * <2017-12-03 Sun>
 
-** 
+**   At this point we've already executed all the scripts 
+
+
+#+BEGIN_SRC 
+
+@ ls! 
+res55: LsSeq = 
+".DS_Store"                "PT000033_1.fastq.gz"      "PrezadaProfa.org"
+"NC000962_3.fasta"         "PT000033_2.fastq.gz"      "genesis_test_script.sc"
+
+
+
+
+#+END_SRC
+
+#+BEGIN_SRC shell
+
+$ gzip -dc PT000033_1.fastq.gz > PT000033_1.fastq 
+$ gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+ for( f <- fastqgz_files ){
+  gzip_decompression(f.toString)
+  } 
+
+
+// %("more", "NC000962_3.fasta") 
+
+
+
+ trimmomatic("PT000033")
+
+
+ bwa_index_reference_genome("NC000962_3.fasta")
+
+
+
+ map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
+
+
+ samtools_faidx_reference_genome("NC000962_3.fasta")
+
+
+ convert_sam_file_to_bam_file( "NC000962_3.fasta", "PT000033")
+
+
+ sort_bam_file("PT000033")
+
+ samtools_index_sorted_bam("PT000033")
+
+
+ mapping_statistics("PT000033")
+
+
+ samtools_mpileup("NC000962_3", "PT000033")
+
+ vcfutils_filter("PT000033")
+
+
+ bgzip_filt_file("PT000033")
+
+
+
+ run_tabix("PT000033")
+
+ snpEff("NC000962_3", "PT000033")
+
+
+
+
+ velveth_assembly("PT000033", "41")
+ velvetg_produce_graph("PT000033", "41")
+ assemblathon_stats("PT000033", "41")
+
+
+
+// velveth_assembly("PT000033", "49")
+
+// velveth_assembly("PT000033", "55")
+
+
+ abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+
+
+ prokka_annotation("PT000033", "41", "NC000962_3") 
+
+
+
+
+// snippy_command("PT000033" , "NC000962_3")
+
+
+#+END_SRC

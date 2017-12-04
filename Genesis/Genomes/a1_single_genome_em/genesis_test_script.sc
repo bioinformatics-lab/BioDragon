@@ -301,18 +301,6 @@ def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = 
 
 
 
-// samtools_index_sorted_bam("PT000033")
-def samtools_index_sorted_bam(genome_name:String) = {
-
-  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
-
-  println("samtools index " + sorted_bam_file_name)
-  var cmd_string = "samtools index " + sorted_bam_file_name
-
-
-%("bash", "-c", cmd_string)
-}
-
 
 
 
@@ -325,12 +313,24 @@ def sort_bam_file(genome_name:String) = {
 
   var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
 
-  println("samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_bam_file_name)
-  var cmd_string = "samtools sort " + genome_name + " " + bam_file_name + " -o " + sorted_bam_file_name
+  println("samtools sort " +  bam_file_name + " -o " + sorted_bam_file_name)
+  var cmd_string = "samtools sort " + bam_file_name + " -o " + sorted_bam_file_name
 
 
 %("bash", "-c", cmd_string)
 
+}
+
+// samtools_index_sorted_bam("PT000033")
+def samtools_index_sorted_bam(genome_name:String) = {
+
+  var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
+
+  println("samtools index " + sorted_bam_file_name)
+  var cmd_string = "samtools index " + sorted_bam_file_name
+
+
+  %("bash", "-c", cmd_string)
 }
 
 
@@ -368,8 +368,8 @@ def samtools_mpileup(reference_genome:String, genome_name:String) = {
 
   var raw_vcf_file_name = genome_name.split("\\.")(0) + ".raw.vcf"
 
-  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
-  var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
+  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
+  var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
 
 
 %("bash", "-c", cmd_string)
@@ -426,14 +426,14 @@ def run_tabix(genome_name:String) = {
 // snpEff("NC000962_3", "PT000033")
 def snpEff(reference_genome:String, genome_name:String) = {
 
-// java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
+// java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config NC000962_3 PT000033.filt.vcf > PT000033.ann.vcf
 
   var filt_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf"
 
   var ann_vcf_file_name = genome_name.split("\\.")(0) + ".ann.vcf.gz"
 
-  println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name)
-  var cmd_string = "java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream - v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
+  println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name)
+  var cmd_string = "java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
 
 
 %("bash", "-c", cmd_string)
@@ -487,7 +487,7 @@ def velveth_assembly(genome_name:String, k_mer:String) = {
 
 
 
-// velvetg_produce_graph("PT000033")
+// velvetg_produce_graph("PT000033", "41")
 def velvetg_produce_graph(genome_name:String, k_mer:String) = {
 
 //  velvetg PT000033_41 -exp_cov auto -cov_cutoff auto
@@ -509,6 +509,7 @@ def velvetg_produce_graph(genome_name:String, k_mer:String) = {
 // assemblathon_stats("PT000033", "41")
 def assemblathon_stats(genome_name:String , k_mer:String) = {
 
+
   //  assemblathon_stats.pl ./PT000033_41/contigs.fa
 
   var  genome_k_mer_name = genome_name + "_" + k_mer
@@ -518,19 +519,50 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
   var cmd_string = "assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa"
 
 
-%("bash", "-c", cmd_string)
+// %("bash", "-c", cmd_string)
+
+%%("bash", "-c", cmd_string)
+}
+
+
+
+// TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
+// res78.toString.split("\n\n")(2).split("\n")
+
+var genome_quality 
+
+
+
+// TODO:
+//abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
+
+// abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+
+/*
+  $ cd PT000033_49
+  $ cp ../NC000962.3.fasta ./
+  $ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+*/
+
+  println("cd PT000033_41 && cp ../NC000962_3.fasta ./ &&  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a ")
+
+  var  genome_k_mer_name = genome_name + "_" + k_mer
+
+  var cmd_string = "cd " + genome_k_mer_name + " && " + " cp ../NC000962_3.fasta ./ && abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a "
+
+  %%("bash", "-c", cmd_string)
 
 }
 
-// TODO:
-// abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+
 
 
 /// GENOME ANNOTATION
 
 
 // prokka_annotation("PT000033", "NC000962_3")
-def prokka_annotation(genome_name:String, reference_genome:String) = {
+def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String) = {
 
   // cd /home/centos/Module2/PT000033_49
 
@@ -538,20 +570,24 @@ def prokka_annotation(genome_name:String, reference_genome:String) = {
 
   var genome_prokka_name = genome_name + "_prokka"
 
+  var  genome_k_mer_name = genome_name + "_" + k_mer
+
   var contigs_reference_genome = "contigs.fa_" + reference_genome + ".fasta.fasta"
 
 
-//  println("prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
+  println("cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
 
 
-  var cmd_string = "prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
+  var cmd_string = "cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
 
 
-%("bash", "-c", cmd_string)
+  %("bash", "-c", cmd_string)
 
 }
 
 
+
+// TODO: This entire module is in the Todo list - page 63/74 onwards
 
 /// MODULES_3.SC
 
@@ -564,10 +600,10 @@ def snippy_command(genome_name:String, reference_genome:String) = {
   var genome_first = genome_name + "_1.fastq.gz"
   var genome_second = genome_name + "_2.fastq.gz"
 
-//  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second)
+  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
 
 
-  var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ../" + reference_genome_gbk + " --R1 ../course_files/" + genome_first + " --R2 ../course_files/" + genome_second
+  var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
 
 %("bash", "-c", cmd_string)
@@ -575,30 +611,23 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 }
 
 
-/*
-// TODO : Need to re-factor
- def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
-
-  var str = " "
-  for (i <- list_of_alphabets)
-    str = str + i + " "
-
-  // println(str)
-  return(str)
-
-}
-
- */
 
 
-// TODO : Need to re-factor
-def snippy_core(string_of_genomes_names:String) = {
+
+
+// snippy_core( List("PT000033","PT000049","PT000050","PT000271","PT000279"))
+def snippy_core(list_of_genomes:List[String]) = {
 
 //  println("snippy " + string_of_genomes_names)
+  var string_of_genome_names = " "
 
-var cmd_string = "snippy " + string_of_genomes_names
+  for (s <- list_of_genomes)
+    string_of_genome_names = string_of_genome_names + s + " "
 
-%("bash", "-c", cmd_string)
+  var cmd_string = "snippy-core " + string_of_genome_names
+
+  %("bash", "-c", cmd_string)
+
 }
 
 
@@ -611,6 +640,7 @@ def SNPtable() = {
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
 %("bash", "-c", cmd_string)
+
 }
 
 
