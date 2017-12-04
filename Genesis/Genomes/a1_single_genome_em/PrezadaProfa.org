@@ -333,8 +333,7 @@ res2: LsSeq =
 
  snippy_command("G04868" , "NC000962_3")
 
-// snippy_core( List("PT000033","PT000049","PT000050","PT000271","PT000279"))
-
+snippy_core( List("G04868"))
 
 SNPtable()
 
