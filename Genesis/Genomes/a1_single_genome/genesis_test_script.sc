@@ -610,30 +610,23 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 }
 
 
-/*
-// TODO : Need to re-factor
- def concatenate_all_genome_names(list_of_genomes:List[String]) :String = {
-
-  var str = " "
-  for (i <- list_of_alphabets)
-    str = str + i + " "
-
-  // println(str)
-  return(str)
-
-}
-
- */
 
 
-// TODO : Need to re-factor
-def snippy_core(string_of_genomes_names:String) = {
+
+
+// snippy_core( List("PT000033","PT000049","PT000050","PT000271","PT000279"))
+def snippy_core(list_of_genomes:List[String]) = {
 
 //  println("snippy " + string_of_genomes_names)
+  var string_of_genome_names = " "
 
-var cmd_string = "snippy " + string_of_genomes_names
+  for (s <- list_of_genomes)
+    string_of_genome_names = string_of_genome_names + s + " "
 
-%("bash", "-c", cmd_string)
+  var cmd_string = "snippy-core " + string_of_genome_names
+
+  %("bash", "-c", cmd_string)
+
 }
 
 
@@ -646,6 +639,7 @@ def SNPtable() = {
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
 %("bash", "-c", cmd_string)
+
 }
 
 

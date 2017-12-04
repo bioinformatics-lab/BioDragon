@@ -86,3 +86,6 @@ snpEff_genes.txt
 PT000033_41
 *.mov
 *.m4v
+*.fas
+*.aln
+core.txt
