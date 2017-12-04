@@ -443,6 +443,8 @@ def snpEff(reference_genome:String, genome_name:String) = {
 
 /// MODULES_2.SC
 
+
+/*
 // generate_trimmed_name("PT000033_1.fastq")
 def generate_trimmed_name(genome_name:String) : String =
 {
@@ -460,6 +462,8 @@ def generate_untrimmed_name(genome_name:String) : String =
   return { name_array(0) + "_trimmed_unpaired.fastq"}
 
 }
+
+ */
 
 
 // velveth_assembly("PT000033", "41")
@@ -521,7 +525,8 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 // %("bash", "-c", cmd_string)
 
-%%("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
+
 }
 
 
@@ -529,13 +534,11 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 // TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
 // res78.toString.split("\n\n")(2).split("\n")
 
-var genome_quality 
+//var genome_quality
 
 
 
-// TODO:
 //abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
-
 def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
 
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
