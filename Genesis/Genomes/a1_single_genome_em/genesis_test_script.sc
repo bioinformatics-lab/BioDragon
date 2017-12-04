@@ -535,6 +535,7 @@ var genome_quality
 
 // TODO:
 //abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+
 def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
 
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
