@@ -1,4 +1,3 @@
-
  import $file.genesis_test_script
 
  genesis_test_script.trimmomatic("G04868")
@@ -63,12 +62,12 @@
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
 
- genesis_test_script.prokka_annotation("G04868", "41", "NC000962_3") 
- genesis_test_script.prokka_annotation("G04868", "49", "NC000962_3") 
- genesis_test_script.prokka_annotation("G04868", "55", "NC000962_3") 
+ genesis_test_script.prokka_annotation("G04868", "41", "NC000962_3")
+ genesis_test_script.prokka_annotation("G04868", "49", "NC000962_3")
+ genesis_test_script.prokka_annotation("G04868", "55", "NC000962_3")
 
 
-// gzip G04868_1.fastq 
+// gzip G04868_1.fastq
 
  snippy_command("G04868" , "NC000962_3")
 
@@ -77,5 +76,3 @@ snippy_core( List("G04868"))
 SNPtable()
 
 HammingFasta()
-
-
