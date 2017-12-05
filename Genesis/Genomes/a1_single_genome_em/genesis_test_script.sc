@@ -166,15 +166,14 @@ def gzip_decompression(fastqgz_name:String) = {
 
 //  gzip G04868_1.fastq
 
-def gzip_compression(fastq_name:String) = {
+def gzip_compression(genome_name:String) = {
 
-  var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
+  var fastq_name = genome_name + ".fastq"
+  var cmd_string =  "gzip " + fastq_name
 
-  var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
   println(cmd_string )
 
-
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
   println("\n\n")
 }
