@@ -1,4 +1,8 @@
+
+// "com.lihaoyi" %% "fansi" % "0.2.5"
+
  import $file.genesis_test_script
+
 
  genesis_test_script.trimmomatic("G04868")
 
