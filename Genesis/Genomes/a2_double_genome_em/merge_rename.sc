@@ -104,7 +104,7 @@ var unique_genome_list = find_unique_genomes(all_fastq_files)
 // The << println >> is used for a well informed user experience while running the script
 for(genome <- unique_genome_list){
   println("\n\n ~~~~~~~~~~~~~~~~~~~~~ ")
-  println("\n_working on the ${genome} files\n\n")
+  println("\nworking on the " + genome + " files\n\n")
   println("\n>>>>       R1      <<<<\n\n")
   combine_all_r_code_files_for_genome(genome,("R1"))
   println("\n\n")

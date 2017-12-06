@@ -65,7 +65,7 @@ def combineAllRCodeFilesForGenome(genome, rCode)
 
   cmd += " > #{outputFileName}"
   puts cmd
-  system(cmd)
+#  system(cmd)
 end
 
 # Here we call the << findUniqueGenomes >> function to store the unique genomes in another array.
