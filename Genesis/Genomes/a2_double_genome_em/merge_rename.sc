@@ -46,9 +46,7 @@ var genome_name = file_name.toString.split("/").last.split("_")(6)
 
 }
 
-var  unique_genome_list = all_genome_list.distinct
-
-  return unique_genome_list
+return all_genome_list.distinct
 
 }
 
@@ -93,7 +91,7 @@ var cmd_string = "cat "
   cmd_string += " > " + output_file_name
   println(cmd_string)
 
-  %("bash" , "-c", cmd_string)
+//  %("bash" , "-c", cmd_string)
 
 }
 
