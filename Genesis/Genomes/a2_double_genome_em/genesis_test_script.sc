@@ -1,7 +1,12 @@
 // TODO: Implement logging
+// https://www.playframework.com/documentation/2.6.x/ScalaLogging
+// https://github.com/typesafehub/scala-logging
+
+// TODO: Implement testing
+// libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
+
 
 /// UTILS.SC
-
 
 
 import ammonite.ops._
