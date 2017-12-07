@@ -73,12 +73,15 @@ def all_files_for_a_genome(genome_name:String) :Seq[Path] = {
   var r_code_files_for_a_genome = ArrayBuffer[String]()
 
   for (f <- files_for_a_genome) {
-    var r_part = f.toString.split("_")(13)
+    var r_part = f.toString.split("_")(16)
+   // println(r_part)
 
 
     if (r_part == r_code)
       r_code_files_for_a_genome += f.toString
   }
+
+  //println(r_code_files_for_a_genome)
 
   // return r_code_files_for_a_genome
 
@@ -94,5 +97,5 @@ def all_files_for_a_genome(genome_name:String) :Seq[Path] = {
 
   //  %("bash" , "-c", cmd_string)
 
-}
+
 

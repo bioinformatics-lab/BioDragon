@@ -72,7 +72,7 @@ var files_for_a_genome = all_files_for_a_genome(genome_name)
 var r_code_files_for_a_genome = ArrayBuffer[String]()
 
   for (f <- files_for_a_genome) {
-  var r_part = f.toString.split("_")(13)
+  var r_part = f.toString.split("_")(16)
 
 
   if (r_part == r_code)
