@@ -2,6 +2,11 @@
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
  import $file.genesis_test_script
+ import $file.merge_rename
+ 
+
+
+ merge_rename.merge_and_rename()
 
 
  genesis_test_script.trimmomatic("G04868")
