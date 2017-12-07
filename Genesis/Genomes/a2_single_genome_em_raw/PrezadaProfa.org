@@ -334,8 +334,8 @@ res2: LsSeq =
 
 #+BEGIN_SRC scala
 
-import ammonite.ops._
-import ammonite.ops.ImplicitWd._
+ import ammonite.ops._
+ import ammonite.ops.ImplicitWd._
 
 
 
