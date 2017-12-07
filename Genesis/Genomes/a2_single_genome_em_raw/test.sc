@@ -73,7 +73,7 @@ return genome_name.toString.split("_")(18)
 
 // Usage
 // combine_all_r_code_files_for_genome("G04868","R1")
-//def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
+def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
 var genome_name = "G04868"
 var r_code = "R1"
@@ -85,12 +85,12 @@ var files_for_a_genome = all_files_for_a_genome(genome_name)
 var r_code_files_for_a_genome = ArrayBuffer[String]()
 
 
-  for (f <- files_for_a_genome) {
+  for (g <- files_for_a_genome) {
 
     var r_part = r_code(f)
 
   if (r_part == r_code) {
-    r_code_files_for_a_genome += f.toString } }
+    r_code_files_for_a_genome += g.toString } }
 
 
 
@@ -109,20 +109,21 @@ var r_code_files_for_a_genome = ArrayBuffer[String]()
 
 //  %("bash" , "-c", cmd_string)
 
-//}
+}
 
 // Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
-var unique_genome_list = find_unique_genomes(all_fastq_files)
+var unique_genome_list = find_unique_genomes(all_fastq_files).toList
 
-//println(unique_genome_list)
+println(unique_genome_list)
 
 
 /*
 // Show time baby!
 // Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
 // The << println >> is used for a well informed user experience while running the script
-def merge_and_rename() = {
+def merge_and_rename( ) = {
 for(genome <- unique_genome_list){
+
   println("\n\n ~~~~~~~~~~~~~~~~~~~~~ ")
   println("\nworking on the " + genome + " files\n\n")
   println("\n>>>>       R1      <<<<\n\n")
@@ -140,4 +141,4 @@ println("\n\nAll Done!")
 }
 
 merge_and_rename()
- */
+ */ 
