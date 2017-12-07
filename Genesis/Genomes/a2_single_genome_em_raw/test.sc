@@ -63,7 +63,7 @@ def all_files_for_a_genome(genome_name:String) :Seq[Path] = {
 
 
 
-def r_code(genome_name:Path) : String = {
+def r_code(genome_name:String) : String = {
 
 return genome_name.toString.split("_")(18)
 
@@ -75,8 +75,8 @@ return genome_name.toString.split("_")(18)
 // combine_all_r_code_files_for_genome("G04868","R1")
 def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
-var genome_name = "G04868"
-var r_code = "R1"
+//var genome_name = "G04868"
+//var r_code = "R1"
 
 var output_file_name = pwd.toString + "/" + genome_name + "_" + r_code + ".fastq"
 
@@ -87,7 +87,9 @@ var r_code_files_for_a_genome = ArrayBuffer[String]()
 
   for (g <- files_for_a_genome) {
 
-    var r_part = r_code(f)
+    println(r_code(g))
+    var r_part = r_code(g)
+
 
   if (r_part == r_code) {
     r_code_files_for_a_genome += g.toString } }
