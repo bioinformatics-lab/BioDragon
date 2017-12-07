@@ -65,7 +65,7 @@ def all_files_for_a_genome(genome_name:String) :Seq[Path] = {
 
 def r_code(genome_name:String) : String = {
 
-return genome_name.toString.split("_")(18)
+return genome_name.toString.split("/").last.split("_")(18)
 
 }
 
