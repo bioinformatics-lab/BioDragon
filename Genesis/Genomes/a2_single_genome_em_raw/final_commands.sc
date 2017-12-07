@@ -6,10 +6,10 @@ import ammonite.ops.ImplicitWd._
 
 
  import $file.genesis_test_script
- import $file.merge_rename
+ import $file.merge_raw_files
 
 
- merge_rename.merge_and_rename()
+ merge_raw_files.merge_and_rename()
 
 
 
