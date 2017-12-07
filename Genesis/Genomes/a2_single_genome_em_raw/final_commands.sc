@@ -1,6 +1,10 @@
 
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+
  import $file.genesis_test_script
  import $file.merge_rename
 

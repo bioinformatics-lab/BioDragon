@@ -334,6 +334,39 @@ res2: LsSeq =
 
 #+BEGIN_SRC scala
 
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+
+
+ import $file.genesis_test_script
+ import $file.merge_rename
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+@ ls! 
+res4: LsSeq = 
+".#PrezadaProfa.org"
+".DS_Store"
+"BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R1_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R2_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R1_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R2_001.fastq"
+"BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq"
+"BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq"
+"NC000962_3.fasta"
+"NC000962_3.gbk"
+"PrezadaProfa.org"
+"final_commands.sc"
+"genesis_test_script.sc"
+"merge_rename.sc"
+
+
+@  
 
 
 #+END_SRC
