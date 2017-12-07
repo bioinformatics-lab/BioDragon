@@ -56,10 +56,20 @@ return all_genome_list.distinct
 def all_files_for_a_genome(genome_name:String) :Seq[Path] = {
 
   var genome_files = all_files.filter( (f) => file_name_has_genome_name_?(f.toString, genome_name) )
-println(genome_files)
+//println(genome_files)
 
   return genome_files
 }
+
+
+
+def r_code(genome_name:Path) : String = {
+
+return genome_name.toString.split("_")(18)
+
+}
+
+
 
 // Usage
 // combine_all_r_code_files_for_genome("G04868","R1")
@@ -73,16 +83,15 @@ var r_code_files_for_a_genome = ArrayBuffer[String]()
 
 
   for (f <- files_for_a_genome) {
-  var r_part = f.toString.split("_")(16)
+
+    var r_part = r_code(f)
+
+  if (r_part == r_code) {
+    r_code_files_for_a_genome += f.toString } }
 
 
-  if (r_part == r_code)
-      r_code_files_for_a_genome += f.toString
-  }
 
-
-
-println(r_code_files_for_a_genome)
+  // println(r_code_files_for_a_genome)
   // return r_code_files_for_a_genome
 
   // construct the string to be executed by the shell
@@ -93,7 +102,7 @@ println(r_code_files_for_a_genome)
   }
 
   cmd_string += " > " + output_file_name
-//  println(cmd_string)
+  println(cmd_string)
 
 //  %("bash" , "-c", cmd_string)
 
@@ -102,7 +111,7 @@ println(r_code_files_for_a_genome)
 // Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
 var unique_genome_list = find_unique_genomes(all_fastq_files)
 
-println(unique_genome_list)
+//println(unique_genome_list)
 
 // Show time baby!
 // Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
@@ -112,10 +121,10 @@ for(genome <- unique_genome_list){
   println("\n\n ~~~~~~~~~~~~~~~~~~~~~ ")
   println("\nworking on the " + genome + " files\n\n")
   println("\n>>>>       R1      <<<<\n\n")
-  combine_all_r_code_files_for_genome(genome,("R1"))
+  combine_all_r_code_files_for_genome(genome,"R1")
   println("\n\n")
   println("\n>>>>       R2      <<<<\n\n")
-  combine_all_r_code_files_for_genome(genome,("R2"))
+  combine_all_r_code_files_for_genome(genome,"R2")
 }
 
 
@@ -124,3 +133,5 @@ println("\n\n\n@@@@@@@@@@@@@@@@@@@@@@@@")
 println("\n\nAll Done!")
 
 }
+
+merge_and_rename()
