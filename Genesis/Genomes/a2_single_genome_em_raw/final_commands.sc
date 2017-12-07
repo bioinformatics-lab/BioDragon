@@ -1,8 +1,8 @@
 
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
-import ammonite.ops._
-import ammonite.ops.ImplicitWd._
+ import ammonite.ops._
+ import ammonite.ops.ImplicitWd._
 
 
  import $file.genesis_test_script
@@ -56,6 +56,7 @@ import ammonite.ops.ImplicitWd._
  genesis_test_script.assemblathon_stats("G04868", "41")
 
 
+// continue with this command
  genesis_test_script.velveth_assembly("G04868", "49")
  genesis_test_script.velvetg_produce_graph("G04868", "49")
  genesis_test_script.assemblathon_stats("G04868", "49")

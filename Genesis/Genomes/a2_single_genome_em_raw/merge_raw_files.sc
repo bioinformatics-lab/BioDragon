@@ -35,7 +35,7 @@ var all_fastq_files = all_files.filter( (f) => is_fastq_?(f.toString) ).map( (f)
 
 def find_unique_genomes(all_fastq_files: Seq[String]): ArrayBuffer[String] = {
 
-  var  all_genome_list = ArrayBuffer[String]/()
+  var  all_genome_list = ArrayBuffer[String]()
 
   for (file_name <- all_fastq_files) {
 
