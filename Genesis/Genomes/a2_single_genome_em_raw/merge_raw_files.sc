@@ -86,7 +86,7 @@ def r_code_files_for_a_genome(genome_name:String, r_code:String) : Seq[String] =
 // combine_all_r_code_files_for_genome("G04868","R1")
 def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
-  var output_file_name = pwd.toString + "/" + genome_name + "_" + r_code + ".fastq"
+  var output_file_name = pwd.toString + "/" + genome_name + "_" + r_code.toList(1) + ".fastq"
 
   var files_for_a_genome = all_files_for_a_genome(genome_name)
 
@@ -107,7 +107,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
   cmd_string += " > " + output_file_name
   println(cmd_string)
 
-  //  %("bash" , "-c", cmd_string)
+   %("bash" , "-c", cmd_string)
 
 }
 
