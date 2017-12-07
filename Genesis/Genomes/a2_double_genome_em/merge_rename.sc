@@ -91,7 +91,7 @@ var r_code_files_for_a_genome = ArrayBuffer[String]()
   cmd_string += " > " + output_file_name
   println(cmd_string)
 
-//  %("bash" , "-c", cmd_string)
+  %("bash" , "-c", cmd_string)
 
 }
 
