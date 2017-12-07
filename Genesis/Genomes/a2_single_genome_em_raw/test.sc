@@ -73,10 +73,10 @@ return genome_name.toString.split("_")(18)
 
 // Usage
 // combine_all_r_code_files_for_genome("G04868","R1")
-def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
+//def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
-//var genome_name = "G04868"
-//var r_code = "R1"
+var genome_name = "G04868"
+var r_code = "R1"
 
 var output_file_name = pwd.toString + "/" + genome_name + "_" + r_code + ".fastq"
 
@@ -84,11 +84,15 @@ var files_for_a_genome = all_files_for_a_genome(genome_name)
 
 var r_code_files_for_a_genome = ArrayBuffer[String]()
 
+var r_part:String = null
+
+//  println(files_for_a_genome)
+
 
   for (g <- files_for_a_genome) {
-
-    println(r_code(g))
-    var r_part = r_code(g)
+    println(g)
+//       println(r_code(g))
+//       r_part = r_code(g.toString)
 
 
   if (r_part == r_code) {
@@ -107,11 +111,11 @@ var r_code_files_for_a_genome = ArrayBuffer[String]()
   }
 
   cmd_string += " > " + output_file_name
-  println(cmd_string)
+//  println(cmd_string)
 
 //  %("bash" , "-c", cmd_string)
 
-}
+//}
 
 // Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
 var unique_genome_list = find_unique_genomes(all_fastq_files).toList
@@ -143,4 +147,4 @@ println("\n\nAll Done!")
 }
 
 merge_and_rename()
- */ 
+ */
