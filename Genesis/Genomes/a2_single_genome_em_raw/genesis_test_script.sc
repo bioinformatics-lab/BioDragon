@@ -2,6 +2,11 @@
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
 // https://github.com/typesafehub/scala-logging
 
+
+// TODO: show everything in a proper markdown
+// addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.11")
+
+
 // TODO: Implement testing
 // libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
 
@@ -561,7 +566,7 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 def best_assemblathon_stats(genome_name:String) = {
 
 
-for (k_mer <- List("41", "49", "50")  ) {
+for (k_mer <- List("41", "49", "55")  ) {
 
   var genome_stats = genesis_test_script.assemblathon_stats("G04868", k_mer)
 
