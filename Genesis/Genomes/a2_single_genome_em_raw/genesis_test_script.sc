@@ -566,29 +566,34 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 def best_assemblathon_stats(genome_name:String) = {
 
 
-var 
+  var genome_and_stats = collection.mutable.Map[String, String]()
+
 
 // also add "55" to the list
 for (k_mer <- List("41", "49" , "55")  ) {
 
-  println("\n\n" + genome_name + "\n\n")
+//  println("\n\n" + genome_name + "\n\n")
 
   var genome_stats = assemblathon_stats("G04868", k_mer)
 
   var number_of_contigs =  genome_stats.toString.split("\n")(33).split(" ").last
-  println("number_of_contigs : " + number_of_contigs )
+//  println("number_of_contigs : " + number_of_contigs )
 
   var total_size_of_contigs =  genome_stats.toString.split("\n")(36).split(" ").last
-  println("total_size_of_contigs : " + total_size_of_contigs )
+//  println("total_size_of_contigs : " + total_size_of_contigs )
 
   var longest_contig =  genome_stats.toString.split("\n")(37).split(" ").last
-  println("longest_contig : " + longest_contig )
+//  println("longest_contig : " + longest_contig )
 
   var mean_contig_size =   genome_stats.toString.split("\n")(44).split(" ").last
-  println("mean_contig_size : " + mean_contig_size )
+//  println("mean_contig_size : " + mean_contig_size )
 
   var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
-  println("n50_contig_length : " + n50_contig_length)
+//  println("n50_contig_length : " + n50_contig_length)
+
+
+genome_and_stats += (k_mer -> total_size_of_contigs)
+
 
 /*
   var genome_stats_hashmap =  Map(
@@ -602,16 +607,13 @@ for (k_mer <- List("41", "49" , "55")  ) {
  */
 
 
-}
+} // end of for loop
+
+println(genome_and_stats)
 
 }
 
 
-
-// TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
-// res78.toString.split("\n\n")(2).split("\n")
-
-//var genome_quality
 
 
 
