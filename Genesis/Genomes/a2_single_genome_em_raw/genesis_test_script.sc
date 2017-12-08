@@ -565,8 +565,11 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 // best_assemblathon_stats("G04868")
 def best_assemblathon_stats(genome_name:String) = {
 
+
+var 
+
 // also add "55" to the list
-for (k_mer <- List("41", "49")  ) {
+for (k_mer <- List("41", "49" , "55")  ) {
 
   println("\n\n" + genome_name + "\n\n")
 
@@ -587,7 +590,7 @@ for (k_mer <- List("41", "49")  ) {
   var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
   println("n50_contig_length : " + n50_contig_length)
 
-
+/*
   var genome_stats_hashmap =  Map(
     "number_of_contigs" -> number_of_contigs,
     "total_size_of_contigs" -> total_size_of_contigs,
@@ -595,6 +598,10 @@ for (k_mer <- List("41", "49")  ) {
     "mean_contig_size" -> mean_contig_size,
     "n50_contig_length" -> n50_contig_length
   )
+
+ */
+
+
 }
 
 }
