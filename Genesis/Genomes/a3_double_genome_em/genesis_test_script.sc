@@ -2,6 +2,11 @@
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
 // https://github.com/typesafehub/scala-logging
 
+
+// TODO: show everything in a proper HTML output
+// addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.11")
+
+
 // TODO: Implement testing
 // libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
 
@@ -179,7 +184,7 @@ def gzip_compression(genome_name:String) = {
 
   println(cmd_string )
 
-//  %("bash", "-c", cmd_string)
+  %("bash", "-c", cmd_string)
 
   println("\n\n")
 }
@@ -556,14 +561,68 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 
 
-// TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
-// res78.toString.split("\n\n")(2).split("\n")
-
-//var genome_quality
-
+// TODO : Need to write a function to find the best genome statistics from the various assemblies
+// best_assemblathon_stats("G04868")
+def best_assemblathon_stats(genome_name:String) : String = {
 
 
-//abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+  var genome_and_stats = collection.mutable.Map[String, String]()
+
+
+// also add "55" to the list
+for (k_mer <- List("41", "49" , "55")  ) {
+
+//  println("\n\n" + genome_name + "\n\n")
+
+  var genome_stats = assemblathon_stats("G04868", k_mer)
+
+  var number_of_contigs =  genome_stats.toString.split("\n")(33).split(" ").last
+//  println("number_of_contigs : " + number_of_contigs )
+
+  var total_size_of_contigs =  genome_stats.toString.split("\n")(36).split(" ").last
+//  println("total_size_of_contigs : " + total_size_of_contigs )
+
+  var longest_contig =  genome_stats.toString.split("\n")(37).split(" ").last
+//  println("longest_contig : " + longest_contig )
+
+  var mean_contig_size =   genome_stats.toString.split("\n")(44).split(" ").last
+//  println("mean_contig_size : " + mean_contig_size )
+
+  var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
+//  println("n50_contig_length : " + n50_contig_length)
+
+
+  genome_and_stats += ( total_size_of_contigs ->  k_mer )
+
+
+/*
+  var genome_stats_hashmap =  Map(
+    "number_of_contigs" -> number_of_contigs,
+    "total_size_of_contigs" -> total_size_of_contigs,
+    "longest_contig" -> longest_contig,
+    "mean_contig_size" -> mean_contig_size,
+    "n50_contig_length" -> n50_contig_length
+  )
+
+ */
+
+
+} // end of for loop
+
+  println(genome_and_stats)
+
+  var max_total_size_of_contigs = genome_and_stats.keys.max
+
+  println("Highest quality k_mer : " + genome_and_stats(max_total_size_of_contigs))
+  return genome_and_stats(max_total_size_of_contigs)
+
+
+}
+
+
+
+
+//abacas_align_contigs("NC000962_3.fasta", "G04868", highest_quality_k_mer)
 def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
 
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
@@ -590,7 +649,7 @@ def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:Stri
 /// GENOME ANNOTATION
 
 
-// prokka_annotation("PT000033", "NC000962_3")
+// prokka_annotation("G04868", "49" , "NC000962_3")
 def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String) = {
 
   // cd /home/centos/Module2/PT000033_49
