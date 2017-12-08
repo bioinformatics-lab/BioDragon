@@ -557,6 +557,7 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 
 // TODO : Need to write a function to find the best genome statistics from the various assemblies
+// best_assemblathon_stats("G04868")
 def best_assemblathon_stats(genome_name:String) = {
 
 //var k_mer_41 =
@@ -565,21 +566,24 @@ def best_assemblathon_stats(genome_name:String) = {
 
 //var k_mer_50 =
 
-  var x = genesis_test_script.assemblathon_stats("G04868", "41")
+for (k_mer <- List("41", "49", "50")  ) {
 
-var number_of_contigs =  x.toString.split("\n")(33).split(" ").last
+  var genome_stats = genesis_test_script.assemblathon_stats("G04868", k_mer)
 
+  var number_of_contigs =  genome_stats.toString.split("\n")(33).split(" ").last
+  println(number_of_contigs )
 
- var total_size_of_contigs =  x.toString.split("\n")(36).split(" ").last
+  var total_size_of_contigs =  genome_stats.toString.split("\n")(36).split(" ").last
+  println(total_size_of_contigs )
 
-  var longest_contig =  x.toString.split("\n")(37).split(" ").last
+  var longest_contig =  genome_stats.toString.split("\n")(37).split(" ").last
+  println(longest_contig )
 
-  var mean_contig_size =   x.toString.split("\n")(44).split(" ").last
+  var mean_contig_size =   genome_stats.toString.split("\n")(44).split(" ").last
+  println(mean_contig_size )
 
-var n50_contig_length = x.toString.split("\n")(46).split(" ").last
-
-
-
+  var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
+}
 
 }
 
