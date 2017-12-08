@@ -557,8 +557,31 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 
 // TODO : Need to write a function to find the best genome statistics from the various assemblies
+def best_assemblathon_stats(genome_name:String) = {
+
+//var k_mer_41 =
+
+//var k_mer_49 =
+
+//var k_mer_50 =
+
+  var x = genesis_test_script.assemblathon_stats("G04868", "41")
+
+var number_of_contigs =  x.toString.split("\n")(33).split(" ").last
 
 
+ var total_size_of_contigs =  x.toString.split("\n")(36).split(" ").last
+
+  var longest_contig =  x.toString.split("\n")(37).split(" ").last
+
+  var mean_contig_size =   x.toString.split("\n")(44).split(" ").last
+
+var n50_contig_length = x.toString.split("\n")(46).split(" ").last
+
+
+
+
+}
 
 
 
