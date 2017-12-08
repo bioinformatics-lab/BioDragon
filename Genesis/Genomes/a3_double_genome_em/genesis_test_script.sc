@@ -2,6 +2,13 @@
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
 // https://github.com/typesafehub/scala-logging
 
+// TODO: backups
+// https://github.com/restic/restic
+// https://minio.io/
+
+
+// TODO: git versioning
+// http://wiki.eclipse.org/JGit/User_Guide
 
 // TODO: show everything in a proper HTML output
 // addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.11")
@@ -9,6 +16,9 @@
 
 // TODO: Implement testing
 // libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
+
+
+
 
 
 /// UTILS.SC
