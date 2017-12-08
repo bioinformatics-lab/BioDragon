@@ -609,7 +609,10 @@ genome_and_stats += (k_mer -> total_size_of_contigs)
 
 } // end of for loop
 
-println(genome_and_stats)
+  println(genome_and_stats)
+
+ 
+
 
 }
 
