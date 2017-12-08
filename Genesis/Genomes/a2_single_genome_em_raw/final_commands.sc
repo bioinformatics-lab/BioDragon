@@ -86,12 +86,12 @@
 
 
 
- abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
 
- prokka_annotation("G04868", "49" , "NC000962_3")
+ genesis_test_script.prokka_annotation("G04868", "49" , "NC000962_3")
 
- gzip_decompression("G04868_1")
- gzip_decompression("G04868_2")
+ genesis_test_script.gzip_decompression("G04868_1")
+ genesis_test_script.gzip_decompression("G04868_2")
 
  snippy_command("G04868" , "NC000962_3")
 
