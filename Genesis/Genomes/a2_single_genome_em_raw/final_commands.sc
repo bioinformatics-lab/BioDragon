@@ -90,14 +90,14 @@
 
  genesis_test_script.prokka_annotation("G04868", "49" , "NC000962_3")
 
- genesis_test_script.gzip_decompression("G04868_1")
- genesis_test_script.gzip_decompression("G04868_2")
+ genesis_test_script.gzip_compression("G04868_1")
+ genesis_test_script.gzip_compression("G04868_2")
 
- snippy_command("G04868" , "NC000962_3")
+ genesis_test_script.snippy_command("G04868" , "NC000962_3")
 
- snippy_core( List("G04868"))
+ genesis_test_script.snippy_core( List("G04868"))
 
- SNPtable()
+ genesis_test_script.SNPtable()
 
- HammingFasta()
+ genesis_test_script.HammingFasta()
 

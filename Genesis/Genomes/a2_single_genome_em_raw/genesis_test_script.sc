@@ -184,7 +184,7 @@ def gzip_compression(genome_name:String) = {
 
   println(cmd_string )
 
-//  %("bash", "-c", cmd_string)
+  %("bash", "-c", cmd_string)
 
   println("\n\n")
 }
