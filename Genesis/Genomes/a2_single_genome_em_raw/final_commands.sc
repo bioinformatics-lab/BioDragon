@@ -87,6 +87,7 @@
 
 
  abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
+
  prokka_annotation("G04868", "49" , "NC000962_3")
 
  gzip_decompression("G04868_1")
