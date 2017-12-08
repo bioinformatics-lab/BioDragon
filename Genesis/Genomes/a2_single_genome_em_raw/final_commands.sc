@@ -67,6 +67,10 @@
  genesis_test_script.assemblathon_stats("G04868", "55")
 
 
+
+ genesis_test_script.best_assemblathon_stats("G04868")
+
+
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
  genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
