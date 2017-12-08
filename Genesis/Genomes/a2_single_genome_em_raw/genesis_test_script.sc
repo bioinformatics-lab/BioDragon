@@ -20,7 +20,7 @@ def genome_name_from_path(path:Path) : String = {
 
 
 // returns only "GO4868_R1"
-return path.toString.split("\\/").last.split("\\.")(0)
+return patnumber_of_contigsh.toString.split("\\/").last.split("\\.")(0)
 
 }
 
@@ -560,11 +560,6 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 // best_assemblathon_stats("G04868")
 def best_assemblathon_stats(genome_name:String) = {
 
-//var k_mer_41 =
-
-//var k_mer_49 =
-
-//var k_mer_50 =
 
 for (k_mer <- List("41", "49", "50")  ) {
 
@@ -584,6 +579,16 @@ for (k_mer <- List("41", "49", "50")  ) {
 
   var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
 }
+
+
+  var genome_stats_hashmap =  Map(
+    "number_of_contigs" -> number_of_contigs,
+    "total_size_of_contigs" -> total_size_of_contigs,
+    "longest_contig" -> longest_contig,
+    "mean_contig_size" -> mean_contig_size,
+    "n50_contig_length" -> n50_contig_length
+  )
+
 
 }
 

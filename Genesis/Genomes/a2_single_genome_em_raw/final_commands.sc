@@ -56,12 +56,12 @@
  genesis_test_script.assemblathon_stats("G04868", "41")
 
 
-// continue with this command
  genesis_test_script.velveth_assembly("G04868", "49")
  genesis_test_script.velvetg_produce_graph("G04868", "49")
  genesis_test_script.assemblathon_stats("G04868", "49")
 
 
+// continue with this command
  genesis_test_script.velveth_assembly("G04868", "55")
  genesis_test_script.velvetg_produce_graph("G04868", "55")
  genesis_test_script.assemblathon_stats("G04868", "55")
