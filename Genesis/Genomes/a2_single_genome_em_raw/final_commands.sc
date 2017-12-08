@@ -80,13 +80,23 @@
  genesis_test_script.prokka_annotation("G04868", "55", "NC000962_3")
 
 
-// gzip G04868_1.fastq
+
+// var highest_quality_k_mer = best_assemblathon_stats("G04868")
+// abacas_align_contigs("NC000962_3.fasta", "G04868", highest_quality_k_mer)
+
+
+
+ abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
+ prokka_annotation("G04868", "49" , "NC000962_3")
+
+ gzip_decompression("G04868_1")
+ gzip_decompression("G04868_2")
 
  snippy_command("G04868" , "NC000962_3")
 
-snippy_core( List("G04868"))
+ snippy_core( List("G04868"))
 
-SNPtable()
+ SNPtable()
 
-HammingFasta()
+ HammingFasta()
 
