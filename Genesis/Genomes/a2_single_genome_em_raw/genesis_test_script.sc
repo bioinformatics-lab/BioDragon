@@ -3,7 +3,7 @@
 // https://github.com/typesafehub/scala-logging
 
 
-// TODO: show everything in a proper markdown
+// TODO: show everything in a proper HTML output
 // addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.11")
 
 
@@ -25,7 +25,7 @@ def genome_name_from_path(path:Path) : String = {
 
 
 // returns only "GO4868_R1"
-return patnumber_of_contigsh.toString.split("\\/").last.split("\\.")(0)
+return path.toString.split("\\/").last.split("\\.")(0)
 
 }
 
@@ -565,10 +565,10 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 // best_assemblathon_stats("G04868")
 def best_assemblathon_stats(genome_name:String) = {
 
+// also add "55" to the list
+for (k_mer <- List("41", "49")  ) {
 
-for (k_mer <- List("41", "49", "55")  ) {
-
-  var genome_stats = genesis_test_script.assemblathon_stats("G04868", k_mer)
+  var genome_stats = assemblathon_stats("G04868", k_mer)
 
   var number_of_contigs =  genome_stats.toString.split("\n")(33).split(" ").last
   println(number_of_contigs )
@@ -583,7 +583,7 @@ for (k_mer <- List("41", "49", "55")  ) {
   println(mean_contig_size )
 
   var n50_contig_length = genome_stats.toString.split("\n")(46).split(" ").last
-}
+
 
 
   var genome_stats_hashmap =  Map(
@@ -593,7 +593,7 @@ for (k_mer <- List("41", "49", "55")  ) {
     "mean_contig_size" -> mean_contig_size,
     "n50_contig_length" -> n50_contig_length
   )
-
+}
 
 }
 
