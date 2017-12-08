@@ -556,6 +556,12 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
 
 
+// TODO : Need to write a function to find the best genome statistics from the various assemblies
+
+
+
+
+
 // TODO : Take into account the automation of comparison of best genome quality as per the table on Page-45/80
 // res78.toString.split("\n\n")(2).split("\n")
 
