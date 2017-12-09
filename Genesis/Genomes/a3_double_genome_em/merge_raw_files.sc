@@ -1,6 +1,6 @@
-import ammonite.ops._
+//import ammonite.ops._
 
-import ammonite.ops.ImplicitWd._
+//import ammonite.ops.ImplicitWd._
 
 import scala.collection.mutable.ArrayBuffer
 
@@ -83,23 +83,16 @@ def r_code_files_for_a_genome(genome_name:String, r_code:String) : Seq[String] =
 
 
 
-def mkdir_genome_dir(genome_name:String) = {
-
-mkdir! pwd/genome_name
-
-cd! pwd/genome_name
-
-}
-
 
 // Usage
 // combine_all_r_code_files_for_genome("G04868","R1")
 def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
+  var genome_dir_name = genome_name + "_analysis"
 
-  mkdir! pwd/genome_name
+  mkdir! pwd/genome_dir_name
 
-  var output_file_name = pwd.toString +  "/" + genome_name +"/" + genome_name + "_" + r_code.toList(1) + ".fastq"
+  var output_file_name = pwd.toString +  "/" + genome_dir_name +"/" + genome_name + "_" + r_code.toList(1) + ".fastq"
 
   var files_for_a_genome = all_files_for_a_genome(genome_name)
 
@@ -124,7 +117,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
   cmd_string += " > " + output_file_name
   println(cmd_string)
 
-//   %("bash" , "-c", cmd_string)
+   %("bash" , "-c", cmd_string)
 
 }
 
@@ -132,6 +125,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 // combine_all_r_code_files_for_genome("G04868","R1")
 
 // Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
+// TODO: this is sensing only a single genome!
 var unique_genome_list = find_unique_genomes(all_fastq_files).toList
 //println(unique_genome_list)
 
@@ -163,5 +157,6 @@ var unique_genome_list = find_unique_genomes(all_fastq_files).toList
 
 def move_into_genome_folder(genome_name: String) = {
 
-  cd! pwd/genome_name
+  var genome_dir_name = genome_name + "_analysis"
+  cd! pwd/genome_dir_name
 }

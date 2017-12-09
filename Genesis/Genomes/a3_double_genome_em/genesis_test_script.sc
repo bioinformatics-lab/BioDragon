@@ -24,8 +24,8 @@
 /// UTILS.SC
 
 
-import ammonite.ops._
-import ammonite.ops.ImplicitWd._
+//import ammonite.ops._
+//import ammonite.ops.ImplicitWd._
 
 
 // genome_name_from_path(all_fastq_files(1))
