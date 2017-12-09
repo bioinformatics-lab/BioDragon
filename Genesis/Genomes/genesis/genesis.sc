@@ -1,11 +1,3 @@
-// "com.lihaoyi" %% "fansi" % "0.2.5"
-
-// import ammonite.ops._
-// import ammonite.ops.ImplicitWd._
-
-
- import $file.analysis
-
 
 
 // TODO: convert this script to automatically run on all the raw genome files in the directory
@@ -47,10 +39,19 @@
 
  */
 
+// "com.lihaoyi" %% "fansi" % "0.2.5"
 
- analysis.copy_reference_genome()
+// import ammonite.ops._
+// import ammonite.ops.ImplicitWd._
 
- analysis.merge_and_rename()
+
+import $file.analysis
+
+
+
+ analysis.copy_reference_genome("G04868")
+
+ analysis.merge_and_rename("G04868")
 
 
 

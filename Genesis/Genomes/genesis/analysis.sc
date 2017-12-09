@@ -256,7 +256,7 @@ def all_files_of_a_type(extension : String) : LsSeq = {
 
 // is_fastq_?( x(1).toString)
 
-
+/*
 def is_fastq_?(fileName:String) : Boolean = {
 
 
@@ -266,6 +266,9 @@ return fileName.matches(".*fastq$")
 
 
 }
+
+ */
+
 
 def is_fastq_gz_?(fileName:String) : Boolean = {
 
@@ -279,7 +282,7 @@ def is_fastq_gz_?(fileName:String) : Boolean = {
 
 
 
-var all_files = ls! pwd
+// var all_files = ls! pwd
 
 
 

@@ -374,12 +374,24 @@ res4: LsSeq =
 
 * <2017-12-09 Sat> 
 
-** Trying to convert the script to conduct the analysis in a genome-specific directory
+** DONE Trying to convert the script to conduct the analysis in a genome-specific directory
+   CLOSED: [2017-12-10 Sun 02:27]
+
+** Install the ammonite predef 
+#+BEGIN_SRC shell
+
+curl -L -o ~/.ammonite/predef.sc https://git.io/vHaKQ
+
+#+END_SRC
 
 
 
 
+** The actual commands used in the test run of genesis script
+#+BEGIN_SRC scala
 
+
+#+END_SRC
 
 
 
