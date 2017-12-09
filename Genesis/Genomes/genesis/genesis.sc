@@ -115,7 +115,7 @@ import $file.analysis
 
  analysis.best_assemblathon_stats("G04868")
 
-
+// TODO: do any further analysis only for the best assemblathon stats
  analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
  analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
  analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
