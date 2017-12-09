@@ -181,8 +181,15 @@ def gzip_decompression(fastqgz_name:String) = {
 //  gzip_decompression(f.toString)
 
 
+// generate_fastqgz_names_from_fastq( "PT000033_1.fastq")
+def generate_fastqgz_names_from_fastq(fastq_name:String) : String = {
+  var name_array = fastq_name.split("\\.")
+  return { name_array(0) + ".fastq.gz"}
+}
 
 
+
+/*
 // generate a gzip file from fastqgz
 
 //  gzip G04868_1.fastq
@@ -195,6 +202,22 @@ def gzip_compression(genome_name:String) = {
   println(cmd_string )
 
   %("bash", "-c", cmd_string)
+
+  println("\n\n")
+}
+
+*/
+
+// generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
+def gzip_compression(fastq_name:String) = {
+
+  var fastqgz_name = generate_fastqgz_names_from_fastq(fastq_name)
+
+  var cmd_string =  "gzip -c " + fastq_name + " > " + fastqgz_name
+  println(cmd_string )
+
+  // %("bash", "-c", cmd_string)
+
 
   println("\n\n")
 }
@@ -753,3 +776,6 @@ var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
 %("bash", "-c", cmd_string)
 }
+
+
+

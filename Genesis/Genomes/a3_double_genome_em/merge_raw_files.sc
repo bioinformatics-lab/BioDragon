@@ -160,3 +160,10 @@ def move_into_genome_folder(genome_name: String) = {
   var genome_dir_name = genome_name + "_analysis"
   cd! pwd/genome_dir_name
 }
+
+
+
+def move_out_of_genome_folder() = {
+
+  cd! pwd/up
+}

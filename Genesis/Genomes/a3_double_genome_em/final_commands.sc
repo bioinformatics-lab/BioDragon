@@ -104,3 +104,4 @@
 
  genesis_test_script.HammingFasta()
 
+genesis_test_script.move_out_of_genome_folder()
