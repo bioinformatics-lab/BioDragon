@@ -11,7 +11,9 @@
 
  merge_raw_files.merge_and_rename()
 
- move_into_genome_folder("G04868")
+
+
+ merge_raw_files.move_into_genome_folder("G04868")
 
 
 
