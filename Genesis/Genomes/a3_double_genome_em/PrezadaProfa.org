@@ -370,3 +370,16 @@ res4: LsSeq =
 
 
 #+END_SRC
+
+
+* <2017-12-09 Sat> 
+
+** Trying to convert the script to conduct the analysis in a genome-specific directory
+
+
+
+
+
+
+
+
