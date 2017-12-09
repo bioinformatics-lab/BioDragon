@@ -159,8 +159,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
 // Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
  // The << println >> is used for a well informed user experience while running the script
- def merge_and_rename( ) = {
- for(genome <- unique_genome_list){
+ def merge_and_rename(genome:String ) = {
 
  println("\n\n ~~~~~~~~~~~~~~~~~~~~~ ")
  println("\nworking on the " + genome + " files\n\n")
@@ -169,8 +168,6 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
  println("\n\n")
  println("\n>>>>       R2      <<<<\n\n")
  combine_all_r_code_files_for_genome(genome,"R2")
- }
-
 
  println("\n\n\n@@@@@@@@@@@@@@@@@@@@@@@@")
 
