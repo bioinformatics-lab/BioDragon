@@ -169,6 +169,12 @@ def move_into_genome_folder(genome_name: String) = {
 }
 
 
+def copy_reference_genome(reference_genome:String) = {
+
+
+
+}
+
 
 def move_out_of_genome_folder() = {
 
