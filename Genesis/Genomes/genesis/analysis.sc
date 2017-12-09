@@ -207,6 +207,10 @@ def move_out_of_genome_folder() = {
 
 
 
+
+
+
+
 /// UTILS.SC
 
 
@@ -328,7 +332,9 @@ def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String = {
 
 
 // generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
-def gzip_decompression(fastqgz_name:String) = {
+def gzip_decompression(genome_name:String) = {
+
+  var fastqgz_name = genome_name + ".fastq.gz"
 
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
@@ -395,11 +401,14 @@ def gzip_compression(genome_name:String) = {
 */
 
 // generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
-def gzip_compression(fastq_name:String) = {
+def gzip_compression(genome_name:String) = {
+
+  var fastq_name = genome_name + ".fastq"
 
   var fastqgz_name = generate_fastqgz_names_from_fastq(fastq_name)
 
   var cmd_string =  "gzip -c " + fastq_name + " > " + fastqgz_name
+
   println(cmd_string )
 
    %("bash", "-c", cmd_string)
