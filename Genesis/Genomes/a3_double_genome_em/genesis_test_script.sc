@@ -209,7 +209,9 @@ def gzip_compression(genome_name:String) = {
 */
 
 // generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
-def gzip_compression(fastq_name:String) = {
+def gzip_compression(genome_name:String) = {
+
+  var fastq_name = genome_name + ".fastq"
 
   var fastqgz_name = generate_fastqgz_names_from_fastq(fastq_name)
 
