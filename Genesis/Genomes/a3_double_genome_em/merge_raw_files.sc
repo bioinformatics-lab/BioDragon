@@ -82,13 +82,30 @@ def r_code_files_for_a_genome(genome_name:String, r_code:String) : Seq[String] =
 }
 
 
+
+def mkdir_genome_dir(genome_name:String) = {
+
+mkdir! pwd/genome_name
+
+cd! pwd/genome_name
+
+}
+
+
 // Usage
 // combine_all_r_code_files_for_genome("G04868","R1")
 def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
-  var output_file_name = pwd.toString + "/" + genome_name + "_" + r_code.toList(1) + ".fastq"
+
+  mkdir! pwd/genome_name
+
+  var output_file_name = pwd.toString +  "/" + genome_name +"/" + genome_name + "_" + r_code.toList(1) + ".fastq"
 
   var files_for_a_genome = all_files_for_a_genome(genome_name)
+
+
+
+//  mkdir_genome_dir(genome_name)
 
   // println(files_for_a_genome)
 
@@ -107,7 +124,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
   cmd_string += " > " + output_file_name
   println(cmd_string)
 
-   %("bash" , "-c", cmd_string)
+//   %("bash" , "-c", cmd_string)
 
 }
 
@@ -116,13 +133,13 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
 // Here we call the << find_unique_genomes >> function to store the unique genomes in another array.
 var unique_genome_list = find_unique_genomes(all_fastq_files).toList
-
 //println(unique_genome_list)
 
 
 
  // Show time baby!
- // Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
+
+// Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
  // The << println >> is used for a well informed user experience while running the script
  def merge_and_rename( ) = {
  for(genome <- unique_genome_list){
@@ -143,3 +160,8 @@ var unique_genome_list = find_unique_genomes(all_fastq_files).toList
 
  }
 
+
+def move_into_genome_folder(genome_name: String) = {
+
+  cd! pwd/genome_name
+}
