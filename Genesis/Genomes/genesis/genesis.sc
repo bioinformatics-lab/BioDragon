@@ -9,11 +9,13 @@
  import $file.merge_raw_files
 
 
+ merge_raw_files.copy_reference_genome()
+
  merge_raw_files.merge_and_rename()
 
- move_into_genome_folder("G04868")
 
 
+ merge_raw_files.move_into_genome_folder("G04868")
 
 
  genesis_test_script.trimmomatic("G04868")
@@ -104,4 +106,4 @@
 
  genesis_test_script.HammingFasta()
 
-genesis_test_script.move_out_of_genome_folder()
+merge_raw_files.move_out_of_genome_folder()
