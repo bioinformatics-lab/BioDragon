@@ -46,8 +46,6 @@ def find_unique_genomes_fastq(all_fastq_files: Seq[String]): ArrayBuffer[String]
     all_genome_list += genome_name
 
 
-    return all_genome_list
-
   }
 
   return all_genome_list.distinct
