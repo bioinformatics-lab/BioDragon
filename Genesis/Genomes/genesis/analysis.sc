@@ -17,7 +17,6 @@
 // TODO: Implement testing
 // libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
 
-// MERGE_AND_RENAME.sc 
 //import ammonite.ops._
 
 //import ammonite.ops.ImplicitWd._
@@ -65,8 +64,6 @@ def find_unique_genomes_fastq(all_fastq_files: Seq[String]): ArrayBuffer[String]
 
     all_genome_list += genome_name
 
-
-    return all_genome_list
 
   }
 
@@ -122,7 +119,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
   var genome_dir_name = genome_name + "_analysis"
 
-  mkdir! pwd/genome_dir_name
+//  mkdir! pwd/genome_dir_name
 
   var output_file_name = pwd.toString +  "/" + genome_dir_name +"/" + genome_name + "_" + r_code.toList(1) + ".fastq"
 
@@ -182,6 +179,19 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
  }
 
 
+def copy_reference_genome(genome_name:String) = {
+
+
+  var genome_dir_name = genome_name + "_analysis"
+
+  mkdir! pwd/genome_dir_name
+
+  cp.into(wd/"NC000962_3.fasta", wd/genome_dir_name)
+
+}
+
+
+
 def move_into_genome_folder(genome_name: String) = {
 
   var genome_dir_name = genome_name + "_analysis"
@@ -194,7 +204,6 @@ def move_out_of_genome_folder() = {
 
   cd! pwd/up
 }
-
 
 
 
