@@ -100,7 +100,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 
   var genome_dir_name = genome_name + "_analysis"
 
-  mkdir! pwd/genome_dir_name
+//  mkdir! pwd/genome_dir_name
 
   var output_file_name = pwd.toString +  "/" + genome_dir_name +"/" + genome_name + "_" + r_code.toList(1) + ".fastq"
 
@@ -160,9 +160,14 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
  }
 
 
-def copy_reference_genome(genome_dir_name:String) = {
+def copy_reference_genome(genome_name:String) = {
 
 
+  var genome_dir_name = genome_name + "_analysis"
+
+  mkdir! pwd/genome_dir_name
+
+  cp.into(wd/"NC000962_3.fasta", wd/genome_dir_name)
 
 }
 

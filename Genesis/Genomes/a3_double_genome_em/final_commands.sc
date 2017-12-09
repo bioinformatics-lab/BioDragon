@@ -9,10 +9,11 @@
  import $file.merge_raw_files
 
 
+ merge_raw_files.copy_reference_genome()
+
  merge_raw_files.merge_and_rename()
 
 
- merge_raw_files.copy_reference_genome("G04868")
 
  merge_raw_files.move_into_genome_folder("G04868")
 
