@@ -1,8 +1,8 @@
 
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
- import ammonite.ops._
- import ammonite.ops.ImplicitWd._
+// import ammonite.ops._
+// import ammonite.ops.ImplicitWd._
 
 
  import $file.genesis_test_script
@@ -10,6 +10,9 @@
 
 
  merge_raw_files.merge_and_rename()
+
+ move_into_genome_folder("G04868")
+
 
 
 
@@ -101,3 +104,4 @@
 
  genesis_test_script.HammingFasta()
 
+genesis_test_script.move_out_of_genome_folder()
