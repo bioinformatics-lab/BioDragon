@@ -216,7 +216,7 @@ def gzip_compression(fastq_name:String) = {
   var cmd_string =  "gzip -c " + fastq_name + " > " + fastqgz_name
   println(cmd_string )
 
-  // %("bash", "-c", cmd_string)
+   %("bash", "-c", cmd_string)
 
 
   println("\n\n")
