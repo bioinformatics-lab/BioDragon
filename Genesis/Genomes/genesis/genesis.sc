@@ -106,7 +106,6 @@ import $file.analysis
  analysis.assemblathon_stats("G04868", "49")
 
 
-// continue with this command
  analysis.velveth_assembly("G04868", "55")
  analysis.velvetg_produce_graph("G04868", "55")
  analysis.assemblathon_stats("G04868", "55")
@@ -116,13 +115,9 @@ import $file.analysis
  analysis.best_assemblathon_stats("G04868")
 
 // TODO: do any further analysis only for the best assemblathon stats
- analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
  analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
- analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
 
- analysis.prokka_annotation("G04868", "41", "NC000962_3")
  analysis.prokka_annotation("G04868", "49", "NC000962_3")
- analysis.prokka_annotation("G04868", "55", "NC000962_3")
 
 
 
@@ -130,10 +125,6 @@ import $file.analysis
 // abacas_align_contigs("NC000962_3.fasta", "G04868", highest_quality_k_mer)
 
 
-
- analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
-
- analysis.prokka_annotation("G04868", "49" , "NC000962_3")
 
  analysis.gzip_compression("G04868_1")
  analysis.gzip_compression("G04868_2")

@@ -185,6 +185,7 @@ def copy_reference_genome(genome_name:String) = {
 
   cp.into(wd/"NC000962_3.fasta", wd/genome_dir_name)
 
+  cp.into(wd/"NC000962_3.gbk", wd/genome_dir_name)
 }
 
 
@@ -944,6 +945,7 @@ def snippy_core(list_of_genomes:List[String]) = {
 
   var cmd_string = "snippy-core " + string_of_genome_names
 
+  println(cmd_string)
   %("bash", "-c", cmd_string)
 
 }
@@ -957,6 +959,7 @@ def SNPtable() = {
 
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
+ println(cmd_string)
 %("bash", "-c", cmd_string)
 
 }
@@ -969,6 +972,7 @@ def HammingFasta() = {
 
 var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
+  println(cmd_string)
 %("bash", "-c", cmd_string)
 }
 

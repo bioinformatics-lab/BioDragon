@@ -395,3 +395,6 @@ curl -L -o ~/.ammonite/predef.sc https://git.io/vHaKQ
 
 
 
+** TODO Need to take be sure of taking care of exceptions during run-time.
+
+*** bad genomes need to be listed before hand
