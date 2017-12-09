@@ -39,13 +39,25 @@ settings > keyboard > input layout > US Keyboard
 
 ** Since `java` is already installed we can direclty move to install `scala ammonite` shell for creating a pipeline
 
+** Install the ammonite predef.sc
+
+#+BEGIN_SRC shell
+
+mkdir -p ~/.ammonite && curl -L -o ~/.ammonite/predef.sc https://git.io/vHaKQ
+
+#+END_SRC
+
 ** Install the Ammonite repl
 
 #+BEGIN_SRC shell
 
- sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
+sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
 
 #+END_SRC
+
+
+
+
 
 ** Working on the history file which was generated after the analysis
 
@@ -370,3 +382,5 @@ res4: LsSeq =
 
 
 #+END_SRC
+
+
