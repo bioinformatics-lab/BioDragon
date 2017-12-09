@@ -160,18 +160,20 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
  }
 
 
+def copy_reference_genome(genome_dir_name:String) = {
+
+
+
+}
+
+
+
 def move_into_genome_folder(genome_name: String) = {
 
   var genome_dir_name = genome_name + "_analysis"
   cd! pwd/genome_dir_name
 }
 
-
-def copy_reference_genome(reference_genome:String) = {
-
-
-
-}
 
 
 def move_out_of_genome_folder() = {
