@@ -1,3 +1,9 @@
+
+
+
+// #!/usr/bin/env amm
+
+
 // TODO: Implement logging
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
 // https://github.com/typesafehub/scala-logging
@@ -21,6 +27,7 @@
 // TODO: Colored output
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
+/*
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
@@ -30,6 +37,10 @@ import shellSession._
 import ammonite.ops._
 import ammonite.shell._
 ammonite.shell.Configure(interp, repl, wd)
+
+
+ */
+
 
 
 
