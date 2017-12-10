@@ -1169,7 +1169,10 @@ SNPtable()
 HammingFasta()
 
   println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
-move_out_of_genome_folder()
+
+
+// TODO: figure out the reason for the << non-existent reference genome >> error while moving to new genome in sequence
+  //move_out_of_genome_folder()
 
 
 }
