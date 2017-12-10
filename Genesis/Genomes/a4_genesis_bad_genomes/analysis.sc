@@ -244,7 +244,7 @@ def move_into_genome_folder(genome_name: String) = {
 
 def move_out_of_genome_folder() = {
 
-  cd! pwd/up
+  cd! wd/up
 }
 
 
@@ -1034,6 +1034,8 @@ def analyse_all_genomes(unique_genome_list:List[String]) = {
 
 for(genome_name <- unique_genome_list) {
 
+
+  println("\n\n>>>>> GENOME => "  + genome_name + "\n\n")
 //for(genome_name <- List("G04869") ) {
 
   println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
