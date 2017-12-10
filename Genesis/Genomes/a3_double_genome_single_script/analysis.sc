@@ -1029,3 +1029,149 @@ var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
 
 
+
+
+def analyse_all_genomes(unique_genome_list:List[String]) = {
+
+for(genome_name <- unique_genome_list) {
+
+//for(genome_name <- List("G04869") ) {
+
+copy_reference_genome(genome_name)
+  println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
+
+merge_and_rename(genome_name)
+  println("\n\n>>>>> merge_and_rename <<<<<\n\n")
+
+
+move_into_genome_folder(genome_name)
+  println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
+
+
+
+trimmomatic(genome_name)
+  println("\n\n>>>>> trimmomatic\n <<<<<\n")
+
+
+bwa_index_reference_genome("NC000962_3.fasta")
+  println("\n\n>>>>> bwa_index_reference_genome <<<<<\n\n")
+
+ var genome_trimmed_name_first = genome_name + "_1_trimmed_paired.fastq"
+ var genome_trimmed_name_second = genome_name + "_2_trimmed_paired.fastq"
+
+  println("\n\n>>>>> map_and_generate_sam_file <<<<<\n\n")
+map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
+
+
+  println("\n\n>>>>> samtools_faidx_reference_genome <<<<<\n\n")
+samtools_faidx_reference_genome("NC000962_3.fasta")
+
+
+  println("\n\n>>>>> convert_sam_file_to_bam_file <<<<<\n\n")
+convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
+
+
+  println("\n\n>>>>> sort_bam_file\n <<<<<\n")
+sort_bam_file(genome_name)
+
+  println("\n\n>>>>> samtools_index_sorted_bam <<<<<\n\n")
+samtools_index_sorted_bam(genome_name)
+
+
+  println("\n\n>>>>> mapping_statistics <<<<<\n\n")
+mapping_statistics(genome_name)
+
+
+  println("\n\n>>>>> samtools_mpileup\n <<<<<\n")
+samtools_mpileup("NC000962_3", genome_name)
+
+  println("\n\n>>>>> vcfutils_filter\n <<<<<\n")
+vcfutils_filter(genome_name)
+
+
+  println("\n\n>>>>> bgzip_filt_file\n <<<<<\n")
+bgzip_filt_file(genome_name)
+
+
+
+  println("\n\n>>>>> run_tabix <<<<<\n\n")
+run_tabix(genome_name)
+
+  println("\n\n>>>>> snpEff <<<<<\n\n")
+snpEff("NC000962_3", genome_name)
+
+
+
+  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+velveth_assembly(genome_name, "41")
+
+  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+velvetg_produce_graph(genome_name, "41")
+
+  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
+assemblathon_stats(genome_name, "41")
+
+
+  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+velveth_assembly(genome_name, "49")
+
+  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+velvetg_produce_graph(genome_name, "49")
+
+  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
+assemblathon_stats(genome_name, "49")
+
+
+  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+velveth_assembly(genome_name, "55")
+
+  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+velvetg_produce_graph(genome_name, "55")
+
+  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
+assemblathon_stats(genome_name, "55")
+
+
+
+// analysis.best_assemblathon_stats(genome_name)
+
+// TODO: do any further analysis only for the best assemblathon stats
+// analysis.abacas_align_contigs("NC000962_3.fasta", genome_name, "49")
+
+// analysis.prokka_annotation(genome_name, "49", "NC000962_3")
+
+
+
+ var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
+  println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
+abacas_align_contigs( genome_name, highest_quality_k_mer)
+
+  println("\n\n>>>>> prokka_annotation <<<<<\n\n")
+prokka_annotation(genome_name, highest_quality_k_mer , "NC000962_3")
+
+ var genome_name_first = genome_name + "_1"
+ var genome_name_second = genome_name + "_2"
+  println("\n\n>>>>> gzip_compression <<<<<\n\n")
+gzip_compression(genome_name_first)
+
+  println("\n\n>>>>> gzip_compression <<<<<\n\n")
+gzip_compression(genome_name_second)
+
+  println("\n\n>>>>> snippy_command <<<<<\n\n")
+snippy_command(genome_name , "NC000962_3")
+
+  println("\n\n>>>>> snippy_core <<<<<\n\n")
+snippy_core( List(genome_name))
+
+  println("\n\n>>>>> SNPtable <<<<<\n\n")
+SNPtable()
+
+  println("\n\n>>>>> HammingFasta <<<<<\n\n")
+HammingFasta()
+
+  println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
+move_out_of_genome_folder()
+
+
+}
+}
