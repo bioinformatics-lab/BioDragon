@@ -21,8 +21,18 @@
 // TODO: Colored output
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
-//import ammonite.ops._
-//import ammonite.ops.ImplicitWd._
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+interp.load.ivy("com.lihaoyi" % "ammonite-shell_2.12.4" % "1.0.3")
+val shellSession = ammonite.shell.ShellSession()
+import shellSession._
+import ammonite.ops._
+import ammonite.shell._
+ammonite.shell.Configure(interp, repl, wd)
+
+
+
 /*
 interp.load.ivy(
   "com.lihaoyi" %
