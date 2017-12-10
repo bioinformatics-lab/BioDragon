@@ -1,6 +1,3 @@
-
-
-
 // #!/usr/bin/env amm
 
 
@@ -251,7 +248,7 @@ def move_out_of_genome_folder() = {
 }
 
 
- 
+
 
 
 
@@ -825,13 +822,15 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
   var  genome_k_mer_name = genome_name + "_" + k_mer
 
 
-  println("assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa" + "\n\n")
+//  println("assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa" + "\n\n")
   var cmd_string = "assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa"
 
+  println(cmd_string + "\n\n")
 
 // %("bash", "-c", cmd_string)
 
   %%("bash", "-c", cmd_string)
+
 
 }
 
@@ -889,7 +888,7 @@ for (k_mer <- List("41", "49" , "55")  ) {
 
   var max_total_size_of_contigs = genome_and_stats.keys.max
 
-  println("Highest quality k_mer : " + genome_and_stats(max_total_size_of_contigs ) + "\n\n")
+  println(" \n\n Highest quality k_mer : " + genome_and_stats(max_total_size_of_contigs ) + "\n\n")
   return genome_and_stats(max_total_size_of_contigs)
 
 
