@@ -1038,17 +1038,21 @@ for(genome_name <- unique_genome_list) {
   println("\n\n>>>>> GENOME => "  + genome_name + "\n\n")
 //for(genome_name <- List("G04869") ) {
 
+
+
   println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
 copy_reference_genome(genome_name)
 
   println("\n\n>>>>> merge_and_rename <<<<<\n\n")
 merge_and_rename(genome_name)
 
+  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
 
   println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
 move_into_genome_folder(genome_name)
 
 
+  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
 
   println("\n\n>>>>> trimmomatic <<<<<\n\n")
 trimmomatic(genome_name)
@@ -1172,6 +1176,7 @@ HammingFasta()
 
   println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
 
+  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
 
 // TODO: figure out the reason for the << non-existent reference genome >> error while moving to new genome in sequence
   //move_out_of_genome_folder()
