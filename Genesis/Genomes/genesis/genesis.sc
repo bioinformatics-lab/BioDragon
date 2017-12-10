@@ -35,7 +35,11 @@ import $file.analysis
 
  // Here we call the << find_unique_genomes_fastq >> function to store the unique genomes in another array.
 
- var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList
+var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList
+
+
+
+analyse_all_genomes(unique_genome_list)
 
 
 def analyse_all_genomes(unique_genome_list:List) = {
@@ -138,5 +142,3 @@ for(genome_name <- unique_genome_list) {
 }
 }
 
-
-analyse_all_genomes(unique_genome_list)
