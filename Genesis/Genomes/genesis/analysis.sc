@@ -852,7 +852,7 @@ for (k_mer <- List("41", "49" , "55")  ) {
 
 
 //abacas_align_contigs("NC000962_3.fasta", "G04868", highest_quality_k_mer)
-def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:String) = {
+def abacas_align_contigs(genome_name:String, k_mer:String) = {
 
 // abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 
@@ -862,11 +862,12 @@ def abacas_align_contigs(reference_genome:String, genome_name:String, k_mer:Stri
   $ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
 */
 
-  println("cd PT000033_41 && cp ../NC000962_3.fasta ./ &&  abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a ")
 
   var  genome_k_mer_name = genome_name + "_" + k_mer
 
   var cmd_string = "cd " + genome_k_mer_name + " && " + " cp ../NC000962_3.fasta ./ && abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a "
+
+  println(cmd_string)
 
   %%("bash", "-c", cmd_string)
 
@@ -892,11 +893,12 @@ def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String)
   var contigs_reference_genome = "contigs.fa_" + reference_genome + ".fasta.fasta"
 
 
-  println("cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
+//  println("cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome)
 
 
   var cmd_string = "cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
 
+  println(cmd_string)
 
   %("bash", "-c", cmd_string)
 
@@ -919,13 +921,14 @@ def snippy_command(genome_name:String, reference_genome:String) = {
   var genome_first = genome_name + "_1.fastq.gz"
   var genome_second = genome_name + "_2.fastq.gz"
 
-  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
+//  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
 
 
   var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
+  println(cmd_string)
 
-%("bash", "-c", cmd_string)
+ %("bash", "-c", cmd_string)
 
 }
 
@@ -946,6 +949,7 @@ def snippy_core(list_of_genomes:List[String]) = {
   var cmd_string = "snippy-core " + string_of_genome_names
 
   println(cmd_string)
+
   %("bash", "-c", cmd_string)
 
 }

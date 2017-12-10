@@ -115,15 +115,16 @@ import $file.analysis
  analysis.best_assemblathon_stats("G04868")
 
 // TODO: do any further analysis only for the best assemblathon stats
- analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
+// analysis.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
 
- analysis.prokka_annotation("G04868", "49", "NC000962_3")
+// analysis.prokka_annotation("G04868", "49", "NC000962_3")
 
 
 
-// var highest_quality_k_mer = best_assemblathon_stats("G04868")
-// abacas_align_contigs("NC000962_3.fasta", "G04868", highest_quality_k_mer)
 
+ var highest_quality_k_mer = best_assemblathon_stats("G04868")
+ abacas_align_contigs( "G04868", highest_quality_k_mer)
+ analysis.prokka_annotation("G04868", highest_quality_k_mer , "NC000962_3")
 
 
  analysis.gzip_compression("G04868_1")
