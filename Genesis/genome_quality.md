@@ -6,7 +6,7 @@ G04870
 G04874
 G04878
 G04879
-G04880 - not found in dropbox genomes
+G04880
 G04882
 G04885
 G04886
