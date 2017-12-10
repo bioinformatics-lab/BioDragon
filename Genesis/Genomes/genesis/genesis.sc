@@ -38,9 +38,11 @@ import $file.analysis
  var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList
 
 
-//for(genome_name <- unique_genome_list) {
+def analyse_all_genomes(unique_genome_list:List) = {
 
-for(genome_name <- List("G04869") ) {
+for(genome_name <- unique_genome_list) {
+
+//for(genome_name <- List("G04869") ) {
 
  analysis.copy_reference_genome(genome_name)
 
@@ -55,8 +57,10 @@ for(genome_name <- List("G04869") ) {
 
  analysis.bwa_index_reference_genome("NC000962_3.fasta")
 
+ var genome_trimmed_name_first = genome_name + "_1_trimmed_paired"
+ var genome_trimmed_name_second = genome_name + "_2_trimmed_paired"
 
- analysis.map_and_generate_sam_file( genome_name , "NC000962_3.fasta", "G04868_1_trimmed_paired.fastq", "G04868_2_trimmed_paired.fastq")
+ analysis.map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
 
 
  analysis.samtools_faidx_reference_genome("NC000962_3.fasta")
@@ -132,3 +136,7 @@ for(genome_name <- List("G04869") ) {
 
  analysis.move_out_of_genome_folder()
 }
+}
+
+
+analyse_all_genomes(unique_genome_list)
