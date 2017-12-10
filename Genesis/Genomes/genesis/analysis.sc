@@ -17,6 +17,10 @@
 // TODO: Implement testing
 // libraryDependencies += "com.lihaoyi" %% "utest" % "0.6.0" % "test"
 
+
+// TODO: Colored output
+// "com.lihaoyi" %% "fansi" % "0.2.5"
+
 //import ammonite.ops._
 
 //import ammonite.ops.ImplicitWd._
