@@ -57,8 +57,7 @@ TrimmomaticPE: Completed successfully
 
 
 
->>>>> trimmomatic
- <<<<<
+>>>>> trimmomatic <<<<<
 
 bwa index NC000962_3.fasta
 [bwa_index] Pack FASTA... 0.05 sec
@@ -2103,8 +2102,7 @@ samtools faidx NC000962_3.fasta
 samtools view -bt NC000962_3.fasta.fai G04870.sam > G04870.bam
 
 
->>>>> sort_bam_file
- <<<<<
+>>>>> sort_bam_file <<<<<
 
 samtools sort G04870.bam -o G04870.sorted.bam
 [bam_sort_core] merging from 4 files...
@@ -2122,8 +2120,7 @@ samtools index G04870.sorted.bam
 samtools flagstat G04870.sorted.bam > G04870_stats.txt
 
 
->>>>> samtools_mpileup
- <<<<<
+>>>>> samtools_mpileup <<<<<
 
 samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta G04870.sorted.bam | bcftools call -O v -vm -o G04870.raw.vcf
 Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
@@ -2131,14 +2128,12 @@ Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all site
 <mpileup> Set max per-file depth to 8000
 
 
->>>>> vcfutils_filter
- <<<<<
+>>>>> vcfutils_filter <<<<<
 
 vcfutils.pl varFilter -d 10 -D 2000 G04870.raw.vcf > G04870.filt.vcf
 
 
->>>>> bgzip_filt_file
- <<<<<
+>>>>> bgzip_filt_file <<<<<
 
 bgzip -c G04870.filt.vcf > G04870.filt.vcf.gz
 
@@ -2229,8 +2224,7 @@ NEW VERSION!
 00:00:08    Done.
 
 
->>>>> velveth_assembly
- <<<<<
+>>>>> velveth_assembly <<<<<
 
 velveth G04870_41 41 -fastq -shortPaired  G04870_1_trimmed_paired.fastq G04870_1_trimmed_unpaired.fastq -fastq -short G04870_2_trimmed_paired.fastq G04870_2_trimmed_unpaired.fastq
 [0.000000] Reading FastQ file G04870_1_trimmed_paired.fastq;
@@ -2266,8 +2260,7 @@ velveth G04870_41 41 -fastq -shortPaired  G04870_1_trimmed_paired.fastq G04870_1
 [271.268386] Splay table destroyed
 
 
->>>>> velvetg_produce_graph
- <<<<<
+>>>>> velvetg_produce_graph <<<<<
 
 velvetg G04870_41 -exp_cov auto -cov_cutoff auto
 [0.000000] Reading roadmap file G04870_41/Roadmaps
@@ -2621,8 +2614,7 @@ Final graph has 1153 nodes and n50 of 13731, max 54231, total 4232549, using 815
 assemblathon_stats.pl ./G04870_41/contigs.fa
 
 
->>>>> velveth_assembly
- <<<<<
+>>>>> velveth_assembly <<<<<
 
 velveth G04870_49 49 -fastq -shortPaired  G04870_1_trimmed_paired.fastq G04870_1_trimmed_unpaired.fastq -fastq -short G04870_2_trimmed_paired.fastq G04870_2_trimmed_unpaired.fastq
 [0.000000] Reading FastQ file G04870_1_trimmed_paired.fastq;
@@ -2658,8 +2650,7 @@ velveth G04870_49 49 -fastq -shortPaired  G04870_1_trimmed_paired.fastq G04870_1
 [452.571829] Splay table destroyed
 
 
->>>>> velvetg_produce_graph
- <<<<<
+>>>>> velvetg_produce_graph <<<<<
 
 velvetg G04870_49 -exp_cov auto -cov_cutoff auto
 [0.000000] Reading roadmap file G04870_49/Roadmaps
@@ -4377,4 +4368,4 @@ Output Matrix File: dists_hamming.csv
 
 
 
-centos-sf_Genomes@  
+centos-sf_Genomes@ 
