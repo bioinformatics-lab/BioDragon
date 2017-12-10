@@ -191,7 +191,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
   }
 
   cmd_string += " > " + output_file_name
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
    %("bash" , "-c", cmd_string)
 
@@ -387,7 +387,7 @@ def gzip_decompression(genome_name:String) = {
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
   var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
-  println(cmd_string )
+  println(cmd_string  + "\n\n")
 
 /*
 // this is useful
@@ -457,7 +457,7 @@ def gzip_compression(genome_name:String) = {
 
   var cmd_string =  "gzip -c " + fastq_name + " > " + fastqgz_name
 
-  println(cmd_string )
+  println(cmd_string  + "\n\n")
 
    %("bash", "-c", cmd_string)
 
@@ -518,7 +518,7 @@ var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred
 
 // This works
 // var cmd_string = "java -version"
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
 
   %("bash", "-c", cmd_string)
@@ -548,7 +548,7 @@ var cmd_string = "java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred
 // bwa_index_reference_genome("NC000962_3.fasta")
 def bwa_index_reference_genome(reference_genome:String) = {
 
-  println("bwa index " + reference_genome)
+  println("bwa index " + reference_genome + "\n\n")
 
   var cmd_string = "bwa index " + reference_genome
 
@@ -567,7 +567,7 @@ def map_and_generate_sam_file(genome_name:String, reference_genome:String , geno
 
   var sam_file_name = genome_name.split("\\.")(0) + ".sam"
 
-  println("bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name)
+  println("bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name + "\n\n")
   var cmd_string = "bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name
 
 
@@ -579,7 +579,7 @@ def map_and_generate_sam_file(genome_name:String, reference_genome:String , geno
 // samtools_faidx_reference_genome("NC000962_3.fasta")
 def samtools_faidx_reference_genome(reference_genome:String) = {
 
-  println("samtools faidx " + reference_genome)
+  println("samtools faidx " + reference_genome + "\n\n")
   var cmd_string = "samtools faidx " + reference_genome
 
 
@@ -597,7 +597,7 @@ def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = 
 
   var bam_file_name = genome_name.split("\\.")(0) + ".bam"
 
-  println("samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name  + " > " + bam_file_name)
+  println("samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name  + " > " + bam_file_name + "\n\n")
   var cmd_string = "samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name  + " > " + bam_file_name
 
 
@@ -619,7 +619,7 @@ def sort_bam_file(genome_name:String) = {
 
   var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
 
-  println("samtools sort " +  bam_file_name + " -o " + sorted_bam_file_name)
+  println("samtools sort " +  bam_file_name + " -o " + sorted_bam_file_name + "\n\n")
   var cmd_string = "samtools sort " + bam_file_name + " -o " + sorted_bam_file_name
 
 
@@ -632,7 +632,7 @@ def samtools_index_sorted_bam(genome_name:String) = {
 
   var sorted_bam_file_name = genome_name.split("\\.")(0) + ".sorted.bam"
 
-  println("samtools index " + sorted_bam_file_name)
+  println("samtools index " + sorted_bam_file_name + "\n\n")
   var cmd_string = "samtools index " + sorted_bam_file_name
 
 
@@ -648,7 +648,7 @@ def mapping_statistics(genome_name:String) = {
 
   var stats_text_file = genome_name + "_stats.txt"
 
-  println("samtools flagstat " + sorted_bam_file_name + " > " + stats_text_file)
+  println("samtools flagstat " + sorted_bam_file_name + " > " + stats_text_file + "\n\n")
   var cmd_string = "samtools flagstat " + sorted_bam_file_name + " > " + stats_text_file
 
 
@@ -674,7 +674,7 @@ def samtools_mpileup(reference_genome:String, genome_name:String) = {
 
   var raw_vcf_file_name = genome_name.split("\\.")(0) + ".raw.vcf"
 
-  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name)
+  println("samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name + "\n\n")
   var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
 
 
@@ -690,7 +690,7 @@ def vcfutils_filter(genome_name:String) = {
 
   var filt_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf"
 
-  println("vcfutils.pl varFilter -d 10 -D 2000 " + raw_vcf_file_name + " > "  +  filt_vcf_file_name)
+  println("vcfutils.pl varFilter -d 10 -D 2000 " + raw_vcf_file_name + " > "  +  filt_vcf_file_name + "\n\n")
   var cmd_string = "vcfutils.pl varFilter -d 10 -D 2000 " + raw_vcf_file_name + " > "  +  filt_vcf_file_name
 
 
@@ -706,7 +706,7 @@ def bgzip_filt_file(genome_name:String) = {
 
   var bgzip_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf.gz"
 
-  println("bgzip -c " +  filt_vcf_file_name + " > "  + bgzip_vcf_file_name )
+  println("bgzip -c " +  filt_vcf_file_name + " > "  + bgzip_vcf_file_name  + "\n\n")
   var cmd_string = "bgzip -c " +  filt_vcf_file_name + " > "  + bgzip_vcf_file_name
 
 
@@ -720,7 +720,7 @@ def run_tabix(genome_name:String) = {
 
   var bgzip_vcf_file_name = genome_name.split("\\.")(0) + ".filt.vcf.gz"
 
-  println("tabix -p vcf " + bgzip_vcf_file_name )
+  println("tabix -p vcf " + bgzip_vcf_file_name  + "\n\n")
   var cmd_string = "tabix -p vcf " + bgzip_vcf_file_name
 
 
@@ -738,7 +738,7 @@ def snpEff(reference_genome:String, genome_name:String) = {
 
   var ann_vcf_file_name = genome_name.split("\\.")(0) + ".ann.vcf.gz"
 
-  println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name)
+  println("java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name + "\n\n")
   var cmd_string = "java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
 
 
@@ -785,7 +785,7 @@ def velveth_assembly(genome_name:String, k_mer:String) = {
   var  genome_second = genome_name + "_2.fastq"
 
 
-  println("velveth " +  genome_k_mer_name +  " " + k_mer + " -fastq -shortPaired " + " " + generate_trimmed_name(genome_first) +  " " + generate_untrimmed_name(genome_first) +  " -fastq -short " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second))
+  println("velveth " +  genome_k_mer_name +  " " + k_mer + " -fastq -shortPaired " + " " + generate_trimmed_name(genome_first) +  " " + generate_untrimmed_name(genome_first) +  " -fastq -short " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second) + "\n\n")
   var cmd_string = "velveth " +  genome_k_mer_name +  " " + k_mer + " -fastq -shortPaired " + " " + generate_trimmed_name(genome_first) +  " " + generate_untrimmed_name(genome_first) +  " -fastq -short " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second)
 
 
@@ -805,7 +805,7 @@ def velvetg_produce_graph(genome_name:String, k_mer:String) = {
 
   var  genome_k_mer_name = genome_name + "_" + k_mer
 
-  println("velvetg " + genome_k_mer_name + " -exp_cov auto -cov_cutoff auto")
+  println("velvetg " + genome_k_mer_name + " -exp_cov auto -cov_cutoff auto" + "\n\n")
   var cmd_string = "velvetg " + genome_k_mer_name + " -exp_cov auto -cov_cutoff auto"
 
 
@@ -825,7 +825,7 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
   var  genome_k_mer_name = genome_name + "_" + k_mer
 
 
-  println("assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa")
+  println("assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa" + "\n\n")
   var cmd_string = "assemblathon_stats.pl ./" + genome_k_mer_name + "/contigs.fa"
 
 
@@ -889,7 +889,7 @@ for (k_mer <- List("41", "49" , "55")  ) {
 
   var max_total_size_of_contigs = genome_and_stats.keys.max
 
-  println("Highest quality k_mer : " + genome_and_stats(max_total_size_of_contigs))
+  println("Highest quality k_mer : " + genome_and_stats(max_total_size_of_contigs ) + "\n\n")
   return genome_and_stats(max_total_size_of_contigs)
 
 
@@ -914,7 +914,7 @@ def abacas_align_contigs(genome_name:String, k_mer:String) = {
 
   var cmd_string = "cd " + genome_k_mer_name + " && " + " cp ../NC000962_3.fasta ./ && abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a "
 
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
   %%("bash", "-c", cmd_string)
 
@@ -945,7 +945,7 @@ def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String)
 
   var cmd_string = "cd ./" + genome_k_mer_name + " && prokka --outdir ./" + genome_prokka_name +  " --prefix " + genome_name + " " + contigs_reference_genome
 
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
   %("bash", "-c", cmd_string)
 
@@ -973,7 +973,7 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 
   var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
  %("bash", "-c", cmd_string)
 
@@ -995,7 +995,7 @@ def snippy_core(list_of_genomes:List[String]) = {
 
   var cmd_string = "snippy-core " + string_of_genome_names
 
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 
   %("bash", "-c", cmd_string)
 
@@ -1010,7 +1010,7 @@ def SNPtable() = {
 
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
- println(cmd_string)
+ println(cmd_string + "\n\n")
 %("bash", "-c", cmd_string)
 
 }
@@ -1023,7 +1023,7 @@ def HammingFasta() = {
 
 var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
-  println(cmd_string)
+  println(cmd_string + "\n\n")
 %("bash", "-c", cmd_string)
 }
 
