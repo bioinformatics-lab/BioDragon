@@ -60,77 +60,77 @@ for(genome_name <- unique_genome_list) {
  var genome_trimmed_name_first = genome_name + "_1_trimmed_paired.fastq"
  var genome_trimmed_name_second = genome_name + "_2_trimmed_paired.fastq"
 
- analysis.map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
   println("\n\n>>>>> map_and_generate_sam_file <<<<<\n\n")
+ analysis.map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
 
 
- analysis.samtools_faidx_reference_genome("NC000962_3.fasta")
   println("\n\n>>>>> samtools_faidx_reference_genome <<<<<\n\n")
+ analysis.samtools_faidx_reference_genome("NC000962_3.fasta")
 
 
- analysis.convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
   println("\n\n>>>>> convert_sam_file_to_bam_file <<<<<\n\n")
+ analysis.convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
 
 
- analysis.sort_bam_file(genome_name)
   println("\n\n>>>>> sort_bam_file\n <<<<<\n")
+ analysis.sort_bam_file(genome_name)
 
- analysis.samtools_index_sorted_bam(genome_name)
   println("\n\n>>>>> samtools_index_sorted_bam <<<<<\n\n")
+ analysis.samtools_index_sorted_bam(genome_name)
 
 
- analysis.mapping_statistics(genome_name)
   println("\n\n>>>>> mapping_statistics <<<<<\n\n")
+ analysis.mapping_statistics(genome_name)
 
 
- analysis.samtools_mpileup("NC000962_3", genome_name)
   println("\n\n>>>>> samtools_mpileup\n <<<<<\n")
+ analysis.samtools_mpileup("NC000962_3", genome_name)
 
- analysis.vcfutils_filter(genome_name)
   println("\n\n>>>>> vcfutils_filter\n <<<<<\n")
+ analysis.vcfutils_filter(genome_name)
 
 
- analysis.bgzip_filt_file(genome_name)
   println("\n\n>>>>> bgzip_filt_file\n <<<<<\n")
+ analysis.bgzip_filt_file(genome_name)
 
 
 
- analysis.run_tabix(genome_name)
   println("\n\n>>>>> run_tabix <<<<<\n\n")
+ analysis.run_tabix(genome_name)
 
- analysis.snpEff("NC000962_3", genome_name)
   println("\n\n>>>>> snpEff <<<<<\n\n")
+ analysis.snpEff("NC000962_3", genome_name)
 
 
 
+  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
   analysis.velveth_assembly(genome_name, "41")
-  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
 
+  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
   analysis.velvetg_produce_graph(genome_name, "41")
-  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
 
+  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
   analysis.assemblathon_stats(genome_name, "41")
-  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
 
 
+  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
  analysis.velveth_assembly(genome_name, "49")
-  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
 
+  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
  analysis.velvetg_produce_graph(genome_name, "49")
-  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
 
+  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
  analysis.assemblathon_stats(genome_name, "49")
-  println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
 
 
- analysis.velveth_assembly(genome_name, "55")
   println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+ analysis.velveth_assembly(genome_name, "55")
 
- analysis.velvetg_produce_graph(genome_name, "55")
   println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+ analysis.velvetg_produce_graph(genome_name, "55")
 
- analysis.assemblathon_stats(genome_name, "55")
   println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
+ analysis.assemblathon_stats(genome_name, "55")
 
 
 
@@ -144,33 +144,34 @@ for(genome_name <- unique_genome_list) {
 
 
  var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
-  analysis.abacas_align_contigs( genome_name, highest_quality_k_mer)
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
+  analysis.abacas_align_contigs( genome_name, highest_quality_k_mer)
 
- analysis.prokka_annotation(genome_name, highest_quality_k_mer , "NC000962_3")
   println("\n\n>>>>> prokka_annotation <<<<<\n\n")
+ analysis.prokka_annotation(genome_name, highest_quality_k_mer , "NC000962_3")
 
  var genome_name_first = genome_name + "_1"
  var genome_name_second = genome_name + "_2"
- analysis.gzip_compression(genome_name_first)
   println("\n\n>>>>> gzip_compression <<<<<\n\n")
+ analysis.gzip_compression(genome_name_first)
 
+  println("\n\n>>>>> gzip_compression <<<<<\n\n")
   analysis.gzip_compression(genome_name_second)
 
- analysis.snippy_command(genome_name , "NC000962_3")
   println("\n\n>>>>> snippy_command <<<<<\n\n")
+ analysis.snippy_command(genome_name , "NC000962_3")
 
- analysis.snippy_core( List(genome_name))
   println("\n\n>>>>> snippy_core <<<<<\n\n")
+ analysis.snippy_core( List(genome_name))
 
- analysis.SNPtable()
   println("\n\n>>>>> SNPtable\n <<<<<\n")
+ analysis.SNPtable()
 
- analysis.HammingFasta()
   println("\n\n>>>>> HammingFasta <<<<<\n\n")
+ analysis.HammingFasta()
 
-  analysis.move_out_of_genome_folder()
   println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
+  analysis.move_out_of_genome_folder()
 
 
 }
