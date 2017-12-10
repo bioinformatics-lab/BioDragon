@@ -1070,7 +1070,7 @@ samtools_faidx_reference_genome("NC000962_3.fasta")
 convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
 
 
-  println("\n\n>>>>> sort_bam_file\n <<<<<\n")
+  println("\n\n>>>>> sort_bam_file <<<<<\n\n")
 sort_bam_file(genome_name)
 
   println("\n\n>>>>> samtools_index_sorted_bam <<<<<\n\n")
