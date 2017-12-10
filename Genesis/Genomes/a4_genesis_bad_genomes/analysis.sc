@@ -1104,14 +1104,14 @@ snpEff("NC000962_3", genome_name)
   println("\n\n>>>>> velveth_assembly <<<<<\n\n")
 velveth_assembly(genome_name, "41")
 
-  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+  println("\n\n>>>>> velvetg_produce_graph <<<<<\n\n")
 velvetg_produce_graph(genome_name, "41")
 
   println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
 assemblathon_stats(genome_name, "41")
 
 
-  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+  println("\n\n>>>>> velveth_assembly <<<<<\n\n")
 velveth_assembly(genome_name, "49")
 
   println("\n\n>>>>> velvetg_produce_graph <<<<<\n\n")
