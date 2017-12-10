@@ -29,8 +29,8 @@
 
 
 
-import ammonite.ops._
-import ammonite.ops.ImplicitWd._
+//import ammonite.ops._
+//import ammonite.ops.ImplicitWd._
 
 
 
@@ -1037,24 +1037,24 @@ for(genome_name <- unique_genome_list) {
 
 //for(genome_name <- List("G04869") ) {
 
-copy_reference_genome(genome_name)
   println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
+copy_reference_genome(genome_name)
 
-merge_and_rename(genome_name)
   println("\n\n>>>>> merge_and_rename <<<<<\n\n")
+merge_and_rename(genome_name)
 
 
-move_into_genome_folder(genome_name)
   println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
+move_into_genome_folder(genome_name)
 
 
 
+  println("\n\n>>>>> trimmomatic <<<<<\n\n")
 trimmomatic(genome_name)
-  println("\n\n>>>>> trimmomatic\n <<<<<\n")
 
 
-bwa_index_reference_genome("NC000962_3.fasta")
   println("\n\n>>>>> bwa_index_reference_genome <<<<<\n\n")
+bwa_index_reference_genome("NC000962_3.fasta")
 
  var genome_trimmed_name_first = genome_name + "_1_trimmed_paired.fastq"
  var genome_trimmed_name_second = genome_name + "_2_trimmed_paired.fastq"
@@ -1082,14 +1082,14 @@ samtools_index_sorted_bam(genome_name)
 mapping_statistics(genome_name)
 
 
-  println("\n\n>>>>> samtools_mpileup\n <<<<<\n")
+  println("\n\n>>>>> samtools_mpileup <<<<<\n\n")
 samtools_mpileup("NC000962_3", genome_name)
 
-  println("\n\n>>>>> vcfutils_filter\n <<<<<\n")
+  println("\n\n>>>>> vcfutils_filter<<<<<\n\n")
 vcfutils_filter(genome_name)
 
 
-  println("\n\n>>>>> bgzip_filt_file\n <<<<<\n")
+  println("\n\n>>>>> bgzip_filt_file <<<<<\n\n")
 bgzip_filt_file(genome_name)
 
 
@@ -1102,7 +1102,7 @@ snpEff("NC000962_3", genome_name)
 
 
 
-  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+  println("\n\n>>>>> velveth_assembly <<<<<\n\n")
 velveth_assembly(genome_name, "41")
 
   println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
@@ -1115,17 +1115,17 @@ assemblathon_stats(genome_name, "41")
   println("\n\n>>>>> velveth_assembly\n <<<<<\n")
 velveth_assembly(genome_name, "49")
 
-  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+  println("\n\n>>>>> velvetg_produce_graph <<<<<\n\n")
 velvetg_produce_graph(genome_name, "49")
 
   println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
 assemblathon_stats(genome_name, "49")
 
 
-  println("\n\n>>>>> velveth_assembly\n <<<<<\n")
+  println("\n\n>>>>> velveth_assembly <<<<<\n\n")
 velveth_assembly(genome_name, "55")
 
-  println("\n\n>>>>> velvetg_produce_graph\n <<<<<\n")
+  println("\n\n>>>>> velvetg_produce_graph <<<<<\n\n")
 velvetg_produce_graph(genome_name, "55")
 
   println("\n\n>>>>> assemblathon_stats <<<<<\n\n")
