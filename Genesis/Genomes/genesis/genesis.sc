@@ -164,7 +164,7 @@ for(genome_name <- unique_genome_list) {
   println("\n\n>>>>> snippy_core <<<<<\n\n")
  analysis.snippy_core( List(genome_name))
 
-  println("\n\n>>>>> SNPtable\n <<<<<\n")
+  println("\n\n>>>>> SNPtable <<<<<\n\n")
  analysis.SNPtable()
 
   println("\n\n>>>>> HammingFasta <<<<<\n\n")

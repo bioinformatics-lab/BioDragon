@@ -822,7 +822,7 @@ for (k_mer <- List("41", "49" , "55")  ) {
 
 //  println("\n\n" + genome_name + "\n\n")
 
-  var genome_stats = assemblathon_stats("G04868", k_mer)
+  var genome_stats = assemblathon_stats(genome_name, k_mer)
 
   var number_of_contigs =  genome_stats.toString.split("\n")(33).split(" ").last
 //  println("number_of_contigs : " + number_of_contigs )
@@ -857,7 +857,7 @@ for (k_mer <- List("41", "49" , "55")  ) {
 
 } // end of for loop
 
-  println(genome_and_stats)
+//  println(genome_and_stats)
 
   var max_total_size_of_contigs = genome_and_stats.keys.max
 
