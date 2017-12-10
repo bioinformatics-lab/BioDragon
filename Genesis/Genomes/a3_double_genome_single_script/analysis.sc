@@ -27,11 +27,18 @@
 // TODO: Colored output
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
-/*
+
+
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
+
+
+/*
 interp.load.ivy("com.lihaoyi" % "ammonite-shell_2.12.4" % "1.0.3")
+// TODO somethign wrong in the following command
+// import $ivy.`com.lihaoy:ammonite-shell_2.12.4:1.0.3`
+
 val shellSession = ammonite.shell.ShellSession()
 import shellSession._
 import ammonite.ops._
