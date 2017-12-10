@@ -22,8 +22,23 @@
 // "com.lihaoyi" %% "fansi" % "0.2.5"
 
 //import ammonite.ops._
-
 //import ammonite.ops.ImplicitWd._
+/*
+interp.load.ivy(
+  "com.lihaoyi" %
+    s"ammonite-shell_${scala.util.Properties.versionNumberString}" %
+    ammonite.Constants.version
+)
+@
+val shellSession = ammonite.shell.ShellSession()
+import shellSession._
+import ammonite.ops._
+import ammonite.shell._
+ammonite.shell.Configure(interp, repl, wd)
+
+
+ */
+
 
 import scala.collection.mutable.ArrayBuffer
 

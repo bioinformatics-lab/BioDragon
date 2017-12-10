@@ -1,10 +1,36 @@
 
+// TODO: figure out why we're unable to simply do << amm genesis.sc >>
+
 // import ammonite.ops._
 // import ammonite.ops.ImplicitWd._
 
 
-import $file.analysis
 
+
+
+/*
+interp.load.ivy(
+  "com.lihaoyi" %
+    s"ammonite-shell_${scala.util.Properties.versionNumberString}" %
+    ammonite.Constants.version
+)
+
+
+// interp.load.ivy("com.lihaoyi" % "ammonite-shell_2.12.4" % "1.0.3")
+
+
+val shellSession = ammonite.shell.ShellSession()
+import shellSession._
+import ammonite.ops._
+import ammonite.shell._
+ammonite.shell.Configure(interp, repl, wd)
+
+ */
+
+
+
+
+import $file.analysis
 
 
  // Here we call the << find_unique_genomes_fastq >> function to store the unique genomes in another array.
@@ -12,7 +38,9 @@ import $file.analysis
  var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList
 
 
-for(genome_name <- unique_genome_list) {
+//for(genome_name <- unique_genome_list) {
+
+for(genome_name <- List("G04869") ) {
 
  analysis.copy_reference_genome(genome_name)
 
@@ -76,7 +104,7 @@ for(genome_name <- unique_genome_list) {
 
 
 
- analysis.best_assemblathon_stats(genome_name)
+// analysis.best_assemblathon_stats(genome_name)
 
 // TODO: do any further analysis only for the best assemblathon stats
 // analysis.abacas_align_contigs("NC000962_3.fasta", genome_name, "49")
@@ -85,13 +113,14 @@ for(genome_name <- unique_genome_list) {
 
 
 
- var highest_quality_k_mer = best_assemblathon_stats(genome_name)
- abacas_align_contigs( genome_name, highest_quality_k_mer)
+ var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
+ analysis.abacas_align_contigs( genome_name, highest_quality_k_mer)
  analysis.prokka_annotation(genome_name, highest_quality_k_mer , "NC000962_3")
 
-
- analysis.gzip_compression("G04868_1")
- analysis.gzip_compression("G04868_2")
+ var genome_name_first = genome_name + "_1"
+ var genome_name_second = genome_name + "_2"
+ analysis.gzip_compression(genome_name_first)
+ analysis.gzip_compression(genome_name_second)
 
  analysis.snippy_command(genome_name , "NC000962_3")
 
