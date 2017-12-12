@@ -1,0 +1,400 @@
+* <2017-11-05 Sun>
+** Install "virtualbox guest additions"
+
+*** https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-centos-7
+
+* <2017-11-06 Mon>
+** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
+
+
+* <2017-11-10 Fri> 
+** https://gist.github.com/larsar/1687725
+** https://serverfault.com/questions/674974/how-to-mount-a-virtualbox-shared-folder
+** https://linuxconfig.org/how-to-change-system-keyboard-keymap-layout-on-centos-7-linux
+** http://toolkt.com/site/virtualbox-shared-folders-with-centos-serve genesis_test_script.velveth_assembly("G04868", "41")
+r-guest/
+
+** TODO Scala script to generate the commands we enter
+
+
+#+BEGIN_SRC scala
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+#+END_SRC
+
+** Change the keyboard layout
+
+#+BEGIN_SRC 
+settings > keyboard > input layout > US Keyboard
+#+END_SRC
+
+* <2017-11-13 Mon>
+
+** FRESH PROCESS 
+
+** Setup the keyboard to US-English
+
+** Setup the shared folder from the VirtualBox settings 
+
+** Since `java` is already installed we can direclty move to install `scala ammonite` shell for creating a pipeline
+
+** Install the Ammonite repl
+
+#+BEGIN_SRC shell
+
+ sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
+
+#+END_SRC
+
+** Working on the history file which was generated after the analysis
+
+#+BEGIN_SRC 
+ sudo usermod -aG vboxsf $(whoami)
+ cd Desktop/
+ mkdir Genesis
+ sudo mount -t vboxsf Genesis ~/Desktop/Genesis/
+ ls -sh
+ sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Genesis ~/Desktop/Genesis/
+ history > history.txt
+ java -version
+ sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm && amm
+ 
+ sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Genesis ~/Desktop/Genesis/
+ 
+ bwa index ./NC000962_3.fasta 
+
+ bwa mem -R "@RG\tID:G04868\tSM:G04868\tPL:Illumina" -M NC000962_3.fasta G04868_R1_p.fastq G04868_R2_p.fastq > G04868.sam
+
+
+
+ samtools faidx ./NC000962_3.fasta
+ 
+ samtools view -bt NC000962_3.fasta.fai G04868.sam > G04868.bam
+ 
+ samtools sort G04868.bam -o G04868.sorted.bam
+
+ samtools index G04868.sorted.bam
+ 
+ samtools flagstat G04868.sorted.bam > G04868_stats.txt
+ 
+ // Takes time
+ samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta G04868.sorted.bam | bcftools call -O v -vm -o G04868.raw.vcf
+
+ vcfutils.pl varFilter -d 10 -D 2000 G04868.raw.vcf > G04868.filt.vcf
+ 
+ java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config NC000962_3 G04868.filt.vcf > G04868.ann.vcf
+ 
+ bgzip -c G04868.filt.vcf > G04868.filt.vcf.gz
+ 
+ tabix -p vcf G04868.filt.vcf.gz
+ 
+ velveth G04868_41 41 -fastq -shortPaired G04868_R1_p.fastq G04868_R2_p.fastq -fastq -short G04868_R1_s.fastq G04868_R2_s.fastq
+
+ velveth G04868_49 49 -fastq -shortPaired G04868_R1_p.fastq G04868_R2_p.fastq -fastq -short G04868_R1_s.fastq G04868_R2_s.fastq
+ 
+ velveth G04868_55 55 -fastq -shortPaired G04868_R1_p.fastq G04868_R2_p.fastq -fastq -short G04868_R1_s.fastq G04868_R2_s.fastq
+
+ velvetg G04868_41 -exp_cov auto -cov_cutoff auto
+ 
+ velvetg G04868_49 -exp_cov auto -cov_cutoff auto
+ 
+ velvetg G04868_55 -exp_cov auto -cov_cutoff auto
+ 
+ assemblathon_stats.pl ./G04868_41/contigs.fa
+ 
+ assemblathon_stats.pl ./G04868_49/contigs.fa
+ 
+ assemblathon_stats.pl ./G04868_55/contigs.fa
+ 
+ history
+ 
+ cd G04868_55/
+ 
+ ls
+ cp ../NC000962_3.fasta ./
+
+ act
+ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+ ls
+ cd ./G04868_55/
+ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+ ls
+ act
+ abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a
+ act
+
+#+END_SRC
+   
+
+* <2017-11-21 Mon>
+
+** Tweak the settings of the virtual machine
+ - processor
+ - RAM
+ 
+
+* <2017-12-03 Sun>
+  
+**   At this point we've already executed all the scripts 
+
+
+#+BEGIN_SRC 
+
+@ ls! 
+res55: LsSeq = 
+".DS_Store"                "PT000033_1.fastq.gz"      "PrezadaProfa.org"
+"NC000962_3.fasta"         "PT000033_2.fastq.gz"      "genesis_test_script.sc"
+
+
+
+
+#+END_SRC
+
+#+BEGIN_SRC shell
+
+$ gzip -dc PT000033_1.fastq.gz > PT000033_1.fastq 
+$ gzip -dc PT000033_2.fastq.gz > PT000033_2.fastq
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+ for( f <- fastqgz_files ){
+  gzip_decompression(f.toString)
+  } 
+
+
+// %("more", "NC000962_3.fasta") 
+
+
+"G04868"
+ trimmomatic("PT000033")
+
+
+ bwa_index_reference_genome("NC000962_3.fasta")
+
+
+
+ map_and_generate_sam_file("PT000033", "NC000962_3.fasta", "PT000033_1_trimmed_paired.fastq", "PT000033_2_trimmed_paired.fastq")
+
+
+ samtools_faidx_reference_genome("NC000962_3.fasta")
+
+
+ convert_sam_file_to_bam_file( "NC000962_3.fasta", "PT000033")
+
+
+ sort_bam_file("PT000033")
+
+ samtools_index_sorted_bam("PT000033")
+
+
+ mapping_statistics("PT000033")
+
+
+ samtools_mpileup("NC000962_3", "PT000033")
+
+ vcfutils_filter("PT000033")
+
+
+ bgzip_filt_file("PT000033")
+
+
+
+ run_tabix("PT000033")
+
+ snpEff("NC000962_3", "PT000033")
+
+
+
+
+ velveth_assembly("PT000033", "41")
+ velvetg_produce_graph("PT000033", "41")
+ assemblathon_stats("PT000033", "41")
+
+
+
+// velveth_assembly("PT000033", "49")
+
+// velveth_assembly("PT000033", "55")
+
+
+ abacas_align_contigs("NC000962_3.fasta", "PT000033", "41")
+
+
+ prokka_annotation("PT000033", "41", "NC000962_3") 
+
+
+
+
+// snippy_command("PT000033" , "NC000962_3")
+
+
+#+END_SRC
+
+
+* <2017-12-04 Mon>
+
+
+
+
+
+#+BEGIN_SRC 
+
+@ ls! 
+res2: LsSeq = 
+".DS_Store"               "NC000962_3.fasta"        "genesis_test_script.sc"
+"G04868_1.fastq"          "NC000962_3.gbk"
+"G04868_2.fastq"          "PrezadaProfa.org"
+
+
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+// %("more", "NC000962_3.fasta") 
+
+
+ import $file.genesis_test_script
+
+ genesis_test_script.trimmomatic("G04868")
+
+ genesis_test_script.bwa_index_reference_genome("NC000962_3.fasta")
+
+ genesis_test_script.map_and_generate_sam_file( "G04868" , "NC000962_3.fasta", "G04868_1_trimmed_paired.fastq", "G04868_2_trimmed_paired.fastq")
+
+ genesis_test_script.samtools_faidx_reference_genome("NC000962_3.fasta")
+
+ genesis_test_script.convert_sam_file_to_bam_file( "NC000962_3.fasta", "G04868")
+
+ genesis_test_script.sort_bam_file("G04868")
+
+ genesis_test_script.samtools_index_sorted_bam("G04868")
+
+ genesis_test_script.mapping_statistics("G04868")
+
+ genesis_test_script.samtools_mpileup("NC000962_3", "G04868")
+
+ genesis_test_script.vcfutils_filter("G04868")
+
+ genesis_test_script.bgzip_filt_file("G04868")
+
+ genesis_test_script.run_tabix("G04868")
+
+ genesis_test_script.snpEff("NC000962_3", "G04868")
+
+
+ genesis_test_script.velveth_assembly("G04868", "41")
+ genesis_test_script.velvetg_produce_graph("G04868", "41")
+ genesis_test_script.assemblathon_stats("G04868", "41")
+
+
+ genesis_test_script.velveth_assembly("G04868", "49")
+ genesis_test_script.velvetg_produce_graph("G04868", "49")
+ genesis_test_script.assemblathon_stats("G04868", "49")
+
+
+ genesis_test_script.velveth_assembly("G04868", "55")
+ genesis_test_script.velvetg_produce_graph("G04868", "55")
+ genesis_test_script.assemblathon_stats("G04868", "55")
+
+
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "41")
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "49")
+ genesis_test_script.abacas_align_contigs("NC000962_3.fasta", "G04868", "55")
+
+ genesis_test_script.prokka_annotation("G04868", "41", "NC000962_3") 
+ genesis_test_script.prokka_annotation("G04868", "49", "NC000962_3") 
+ genesis_test_script.prokka_annotation("G04868", "55", "NC000962_3") 
+
+
+ gzip_compression("G04868_1")
+ gzip_compression("G04868_2")
+
+ snippy_command("G04868" , "NC000962_3")
+
+ snippy_core( List("G04868"))
+
+ SNPtable()
+
+ HammingFasta()
+
+
+#+END_SRC
+
+
+
+* <2017-12-07 Thu> 
+
+
+#+BEGIN_SRC scala
+
+ import ammonite.ops._
+ import ammonite.ops.ImplicitWd._
+
+
+
+ import $file.genesis_test_script
+ import $file.merge_rename
+
+
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+
+@ ls! 
+res4: LsSeq = 
+".#PrezadaProfa.org"
+".DS_Store"
+"BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R1_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R2_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R1_001.fastq"
+"BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R2_001.fastq"
+"BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq"
+"BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq"
+"NC000962_3.fasta"
+"NC000962_3.gbk"
+"PrezadaProfa.org"
+"final_commands.sc"
+"genesis_test_script.sc"
+"merge_rename.sc"
+
+
+@  
+
+
+#+END_SRC
+
+
+* <2017-12-09 Sat> 
+
+** DONE Trying to convert the script to conduct the analysis in a genome-specific directory
+   CLOSED: [2017-12-10 Sun 02:27]
+
+** Install the ammonite predef 
+#+BEGIN_SRC shell
+
+curl -L -o ~/.ammonite/predef.sc https://git.io/vHaKQ
+
+#+END_SRC
+
+
+
+
+** The actual commands used in the test run of genesis script
+#+BEGIN_SRC scala
+
+
+#+END_SRC
+
+
+
+** TODO Need to take be sure of taking care of exceptions during run-time.
+
+*** bad genomes need to be listed before hand

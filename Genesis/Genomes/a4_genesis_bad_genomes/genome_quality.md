@@ -1,18 +1,18 @@
 
 
 # Bad Genomes
->>>> 
+ 
 
 Trying out these genomes in this folder
 
-G04870 - already done 
+G04870 - good 
 G04880 - not found in dropbox genomes
 
-G04874
-G04878
-G04879
-G04882
-G04885
+G04874 - 
+G04878 - 
+G04879 - bad
+G04882 - bad
+G04885 - bad
 
 <<<< 
 
