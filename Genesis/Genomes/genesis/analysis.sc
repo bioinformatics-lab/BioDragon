@@ -942,8 +942,8 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 
 //  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
 
-
-  var cmd_string = "snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
+// NOTE: Changed the cpu from 1 to 4
+  var cmd_string = "snippy --cpus 4 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
   println(cmd_string)
 
