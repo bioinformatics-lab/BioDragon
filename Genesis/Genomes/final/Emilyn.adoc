@@ -1,0 +1,7 @@
+# Setup VirtualBox
+# Setup the virtual image - change settings
+# Install virtualbox extension
+# Install guest additions
+# Setup shared folder
+# Elevate the access
+
