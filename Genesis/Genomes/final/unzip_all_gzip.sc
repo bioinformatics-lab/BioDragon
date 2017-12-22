@@ -1,5 +1,3 @@
-
-
 import scala.collection.mutable.ArrayBuffer
 
 def is_fastqgz_?(file_name:String) : Boolean = {
@@ -36,7 +34,7 @@ def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String = {
 // generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
 def gzip_decompression(genome_name:String) = {
 
-  var fastqgz_name = genome_name 
+  var fastqgz_name = genome_name
 
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
