@@ -1,3 +1,27 @@
+// Move all the genomes as per the division of good and bad genomes
+
+
+
+
+var bad_genomes = Array(
+    "G04870",
+    "G04874 ",
+    "G04878 ",
+    "G04879",
+    "G04880  ",
+    "G04882 ",
+    "G04885 ",
+    "G04886",
+    "G04889",
+    "G04890",
+    "G04893",
+    "G04894",
+    "G04895",
+    "G04896",
+    "G04897",
+    "G04958"
+)
+
 
 var all_files = ls! pwd
 
@@ -30,7 +54,9 @@ def all_files_for_a_genome(genome_name:String) :Seq[String] = {
  // The << println >> is used for a well informed user experience while running the script
  def move_a_genome(genomeName:String, kind:String ) = {
 
-  var cmd_string = "mv " + genomeName + " ./" + kind + "/"
+var target_folder = pwd/'bad
+
+  var cmd_string = "mv " + genomeName + " " + target_folder
 
   println(cmd_string + "\n\n")
 
