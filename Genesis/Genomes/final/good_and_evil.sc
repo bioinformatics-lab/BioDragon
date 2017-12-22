@@ -38,7 +38,6 @@ def file_name_has_genome_name_?(file_name:String, genome_name:String) : Boolean 
 
 
 
-
 def all_files_for_a_genome(genome_name:String) :Seq[String] = {
 
   var genome_files = all_files.filter( (f) => file_name_has_genome_name_?(f.toString, genome_name) ).map((f) => f.toString)
@@ -49,45 +48,20 @@ def all_files_for_a_genome(genome_name:String) :Seq[String] = {
 
 
 
-
 // Calling the << combine_all_r_code_files_for_genome >> functions per genome for both << R >> files
  // The << println >> is used for a well informed user experience while running the script
- def move_a_genome(genomeName:String, kind:String ) = {
+def move_a_genome(genomeName:String, kind:String ) = {
 
-var target_folder = pwd/'bad
+  var target_folder = pwd + "/" + kind
 
   var cmd_string = "mv " + genomeName + " " + target_folder
 
   println(cmd_string + "\n\n")
 
- // %%("bash", "-c", cmd_string)
- }
-
-
-
-
-var all_fastq_files = all_files.filter( (f) => is_fastq_?(f.toString) ).map( (f) => f.toString)
-
-
-
-// Usage
-// find_unique_genomes_fastq(all_fastq_files)
-
-def find_unique_genomes_fastq(all_fastq_files: Seq[String]): ArrayBuffer[String] = {
-
-  var  all_genome_list = ArrayBuffer[String]()
-
-  for (file_name <- all_fastq_files) {
-
-    var genome_name = file_name.toString.split("/").last.split("_")(6)
-
-    all_genome_list += genome_name
-
-
-  }
-
-  return all_genome_list.distinct
-
+//  %%("bash", "-c", cmd_string)
 }
+
+
+
 
 
