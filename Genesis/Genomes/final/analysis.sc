@@ -75,6 +75,14 @@ def is_fastq_?(file_name:String) : Boolean = {
 
 }
 
+def is_fastqgz_?(file_name:String) : Boolean = {
+
+  //  "ab c d e f".matches(".*f$")
+
+  return file_name.matches(".*fastq.gz$")
+
+}
+
 
 def file_name_has_genome_name_?(file_name:String, genome_name:String) : Boolean = {
 
@@ -93,6 +101,8 @@ var all_files = ls! pwd
 
 var all_fastq_files = all_files.filter( (f) => is_fastq_?(f.toString) ).map( (f) => f.toString)
 
+
+var all_fastqgz_files = all_files.filter( (f) => is_fastqgz_?(f.toString) ).map( (f) => f.toString)
 
 
 // Usage

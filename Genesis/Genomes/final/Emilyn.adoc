@@ -4,4 +4,5 @@
 # Install guest additions
 # Setup shared folder
 # Elevate the access
-
+# Install ex-fat or ntfs drivers
+# Install ammonite shell and predef
