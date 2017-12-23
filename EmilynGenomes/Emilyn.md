@@ -245,6 +245,8 @@ Version 1.1.06
 
 ## ABACAS
 
+submit PR for abacas and abacas2 in bioconda channels
+
 This is a perl script - when installed using conda - we need to change the location of the interpreter
 
 http://abacas.sourceforge.net/
