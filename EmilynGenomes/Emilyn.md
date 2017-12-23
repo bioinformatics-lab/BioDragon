@@ -60,9 +60,10 @@ https://github.com/sanger-pathogens/ABACAS2
 
 conda install prokka
 
-## All programs installed 
+## SNIPPY
 
-conda install bwa samtools bcftools tabix snpeff velvet trimmomatic prokka
+conda install snippy
+
 
 ## Git / Git lfs
 
