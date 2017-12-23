@@ -11,23 +11,38 @@ conda config --add channels bioconda
 
 ## FASTQC
 
+conda install fastqc
+
 ## TRIMMOMATIC
 
+conda install trimmomatic 
+
 ## BWA
+conda install bwa
 
 ## SAMTOOLS
+conda install samtools
 
-## ARTEMIS ( for visualization )
+
+## ARTEMIS ( for visualization - maybe called art)
+
 
 ## BCFTOOLS
+conda install bcftools
 
 ##  VCFUTILS
+conda install vcfutils
 
 ## TABIX
+conda install tabix
+
 
 ## SNPEFF
+conda install snpeff
 
 ## VELVET 
+
+conda install velvet
 
 ## ABACAS
 http://abacas.sourceforge.net/
@@ -35,7 +50,5 @@ http://abacas.sourceforge.net/
 https://github.com/sanger-pathogens/ABACAS2
 
 ## PROKKA
-
-## ARTEMIS ( maybe called art )
 
 ## 
