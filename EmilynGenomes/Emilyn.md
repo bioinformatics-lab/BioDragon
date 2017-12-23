@@ -23,4 +23,19 @@ conda config --add channels bioconda
 
 ##  VCFUTILS
 
+## TABIX
+
+## SNPEFF
+
+## VELVET 
+
+## ABACAS
+http://abacas.sourceforge.net/
+
+https://github.com/sanger-pathogens/ABACAS2
+
+## PROKKA
+
+## ARTEMIS ( maybe called art )
+
 ## 
