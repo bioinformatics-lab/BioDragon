@@ -164,12 +164,13 @@ conda install tabix
 Version: 1.3
 
 
-[eklavya@localhost EmilynGenomes]$ tabix 
-
-Version: 1.3.2
 
 [eklavya@localhost EmilynGenomes]$ which tabix
 ~/miniconda3/bin/tabix
+
+[eklavya@localhost EmilynGenomes]$ tabix 
+Version: 1.3.2
+
 
 
 ## SNPEFF
@@ -183,6 +184,9 @@ SnpEff version SnpEff 4.1l (build 2015-10-03), by Pablo Cingolani
 Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each specific command
+
+[eklavya@localhost EmilynGenomes]$ which tabix
+~/miniconda3/bin/snpEff
 
 
 [eklavya@localhost EmilynGenomes]$ snpEff 
