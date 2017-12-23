@@ -134,6 +134,14 @@ Usage:   vcfutils.pl <command> [<arguments>]
 
 
 
+[eklavya@localhost ~]$ vcfutils.pl 
+
+Usage:   vcfutils.pl <command> [<arguments>]
+
+
+[eklavya@localhost ~]$ which vcfutils.pl 
+~/miniconda3/bin/vcfutils.pl
+
 
 ## TABIX
 conda install tabix
@@ -148,6 +156,12 @@ conda install tabix
 Version: 1.3
 
 
+[eklavya@localhost EmilynGenomes]$ tabix 
+
+Version: 1.3.2
+
+[eklavya@localhost EmilynGenomes]$ which tabix
+~/miniconda3/bin/tabix
 
 
 ## SNPEFF
@@ -163,7 +177,11 @@ Usage: snpEff [command] [options] [files]
 Run 'java -jar snpEff.jar command' for help on each specific command
 
 
+[eklavya@localhost EmilynGenomes]$ snpEff 
+SnpEff version SnpEff 4.3r (build 2017-09-06 16:41), by Pablo Cingolani
+Usage: snpEff [command] [options] [files]
 
+Run 'java -jar snpEff.jar command' for help on each sp
 
 
 ## VELVET 
@@ -261,6 +279,15 @@ conda install prokka
 prokka 1.12
 
 
+[eklavya@localhost EmilynGenomes]$ which prokka
+~/miniconda3/bin/prokka
+
+
+[eklavya@localhost EmilynGenomes]$ prokka 
+Name:
+  Prokka 1.12 by Torsten Seemann <torsten.seemann@gmail.com>
+
+
 ## SNIPPY
 
 conda install snippy
@@ -272,6 +299,14 @@ conda install snippy
 [centos@localhost ~]$ snippy --version
 snippy 3.2-dev
 
+
+
+[eklavya@localhost EmilynGenomes]$ which snippy
+~/miniconda3/bin/snippy
+
+
+[eklavya@localhost EmilynGenomes]$ snippy --version
+  snippy 3.1 
 
 
 ## R
@@ -295,6 +330,7 @@ R version 3.4.1 (2017-06-30) -- "Single Candle"
 
 [eklavya@localhost EmilynGenomes]$ which R
 ~/miniconda3/bin/R
+
 [eklavya@localhost EmilynGenomes]$ R --version
 R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
