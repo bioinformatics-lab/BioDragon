@@ -59,7 +59,11 @@ https://github.com/sanger-pathogens/ABACAS2
 ## PROKKA
 
 conda install prokka
-## 
 
+## All programs installed 
 
 conda install bwa samtools bcftools tabix snpeff velvet trimmomatic prokka
+
+## Git / Git lfs
+
+conda install git git-lfs
