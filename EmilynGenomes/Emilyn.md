@@ -52,3 +52,6 @@ https://github.com/sanger-pathogens/ABACAS2
 ## PROKKA
 
 ## 
+
+
+conda install bwa samtools bcftools tabix snpeff velvet trimmomatic
