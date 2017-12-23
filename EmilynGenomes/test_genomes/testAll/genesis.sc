@@ -26,5 +26,5 @@ But by default, this code will do the analysis for all the genomes
 
  var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList
 
-
- analysis.analyse_all_genomes(unique_genome_list)
+// TODO: Redirect the output to a file - make it output the logs per genom
+var output =  analysis.analyse_all_genomes(unique_genome_list)
