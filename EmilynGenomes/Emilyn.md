@@ -1,12 +1,29 @@
 # History of commands which need to be run for setting up centos or any linux
 
+
+python
+NOTE: This should now display `python-2.7.x` 
+
 bash ./Miniconda3-latest-Linux-x86_64.sh 
 exec $SHELL
+
 python
-conda config --add channels r
+NOTE: This should now display `python-3.6` 
+
+
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
+
+
+
+
+## Git / Git lfs
+
+conda install git git-lfs
+
+
+
 
 
 ## FASTQC
@@ -168,6 +185,18 @@ velvetg - de Bruijn graph construction, error removal and repeat resolution
 Version 1.2.10
 
 
+
+[eklavya@localhost EmilynGenomes]$ velveth 
+velveth - simple hashing program
+Version 1.1.06
+
+
+[eklavya@localhost EmilynGenomes]$ velvetg
+vvelvetg - de Bruijn graph construction, error removal and repeat resolution
+Version 1.1.06
+
+
+
 ## ABACAS
 
 This is a perl script - when installed using conda - we need to change the location of the interpreter
@@ -268,14 +297,6 @@ R version 3.4.1 (2017-06-30) -- "Single Candle"
 ~/miniconda3/bin/R
 [eklavya@localhost EmilynGenomes]$ R --version
 R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
-
-
-
-## Git / Git lfs
-
-conda install git git-lfs
-
-
 
 
 
