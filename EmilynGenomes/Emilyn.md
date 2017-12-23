@@ -24,8 +24,9 @@ conda install bwa
 conda install samtools
 
 
-## ARTEMIS ( for visualization - maybe called art)
+## ARTEMIS ( for visualization - maybe called art - doesn't seem like it!)
 
+http://www.sanger.ac.uk/science/tools/artemis
 
 ## BCFTOOLS
 conda install bcftools
@@ -54,4 +55,4 @@ https://github.com/sanger-pathogens/ABACAS2
 ## 
 
 
-conda install bwa samtools bcftools tabix snpeff velvet trimmomatic
+conda install bwa samtools bcftools tabix snpeff velvet trimmomatic prokka
