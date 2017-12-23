@@ -249,6 +249,13 @@ snippy 3.2-dev
 
 conda install R
 
+The installation of R would raise `libreadline`	 and `symbol PC ` issues.
+
+```sh
+conda install -c conda-forge readline=6.2
+
+```
+
 [centos@localhost ~]$ which R
 /usr/bin/R
 
@@ -256,6 +263,11 @@ conda install R
 [centos@localhost ~]$ R --version
 R version 3.4.1 (2017-06-30) -- "Single Candle"
 
+
+[eklavya@localhost EmilynGenomes]$ which R
+~/miniconda3/bin/R
+[eklavya@localhost EmilynGenomes]$ R --version
+R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
 
 
