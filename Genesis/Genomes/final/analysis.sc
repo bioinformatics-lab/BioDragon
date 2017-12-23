@@ -1156,11 +1156,12 @@ assemblathon_stats(genome_name, "55")
 // analysis.prokka_annotation(genome_name, "49", "NC000962_3")
 
 
-
+// TODO: Do the analysis for the other two k_mer as well
  var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
 abacas_align_contigs( genome_name, highest_quality_k_mer)
 
+// TODO: Do the analysis for the other two k_mer as well
   println("\n\n>>>>> prokka_annotation <<<<<\n\n")
 prokka_annotation(genome_name, highest_quality_k_mer , "NC000962_3")
 
