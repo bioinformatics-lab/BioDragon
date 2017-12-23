@@ -28,6 +28,8 @@ conda install samtools
 
 http://www.sanger.ac.uk/science/tools/artemis
 
+Just download and run - it's a jar
+
 ## BCFTOOLS
 conda install bcftools
 
@@ -46,12 +48,17 @@ conda install snpeff
 conda install velvet
 
 ## ABACAS
+
+This is a perl script - when installed using conda - we need to change the location of the interpreter
+
 http://abacas.sourceforge.net/
 
 https://github.com/sanger-pathogens/ABACAS2
 
+
 ## PROKKA
 
+conda install prokka
 ## 
 
 
