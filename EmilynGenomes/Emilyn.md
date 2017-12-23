@@ -367,7 +367,11 @@ R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
 
 
+##SNPTable
+NOTE: Move from the virtualbox image
 
+## HammingFastaR
+NOTE: Move from the virtualbox image
 
 
 
