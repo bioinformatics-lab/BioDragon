@@ -119,6 +119,14 @@ Using htslib 1.5-14-ge1380c8
 
 
 
+[eklavya@localhost BioDragon]$ which bcftools 
+~/miniconda3/bin/bcftools
+
+[eklavya@localhost BioDragon]$ bcftools --version
+bcftools 1.6
+Using htslib 1.6
+
+
 
 ##  VCFUTILS
 conda install vcfutils
