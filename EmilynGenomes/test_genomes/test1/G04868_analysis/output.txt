@@ -1,0 +1,2859 @@
+[centos@localhost test1]$ amm
+Loading...
+Welcome to the Ammonite Repl 1.0.3
+(Scala 2.12.4 Java 1.8.0_151)
+If you like Ammonite, please support our development at www.patreon.com/lihaoyi
+centos-test1@ import $file.analysis 
+import $file.$       
+
+centos-test1@ 
+ var unique_genome_list = analysis.find_unique_genomes_fastq(analysis.all_fastq_files).toList 
+unique_genome_list: List[String] = List("G04868")
+
+centos-test1@  analysis.analyse_all_genomes(unique_genome_list) 
+
+
+>>>>> GENOME => G04868
+
+
+
+
+>>>>> copy_reference_genome <<<<<
+
+
+
+
+>>>>> merge_and_rename <<<<<
+
+
+
+
+ ~~~~~~~~~~~~~~~~~~~~~ 
+
+working on the G04868 files
+
+
+
+>>>>       R1      <<<<
+
+
+cat /media/sf_test_genomes/test1/BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R1_001.fastq /media/sf_test_genomes/test1/BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R1_001.fastq /media/sf_test_genomes/test1/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq  > /media/sf_test_genomes/test1/G04868_analysis/G04868_1.fastq
+
+
+
+
+
+
+>>>>       R2      <<<<
+
+
+cat /media/sf_test_genomes/test1/BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R2_001.fastq /media/sf_test_genomes/test1/BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R2_001.fastq /media/sf_test_genomes/test1/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq  > /media/sf_test_genomes/test1/G04868_analysis/G04868_2.fastq
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+All Done!
+
+
+>>>>> Current Directory => /media/sf_test_genomes/test1
+
+
+
+
+>>>>> move_into_genome_folder <<<<<
+
+
+
+
+>>>>> Current Directory => /media/sf_test_genomes/test1/G04868_analysis
+
+
+
+
+>>>>> trimmomatic <<<<<
+
+
+java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar PE -phred33 G04868_1.fastq G04868_2.fastq G04868_1_trimmed_paired.fastq G04868_1_trimmed_unpaired.fastq G04868_2_trimmed_paired.fastq G04868_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+
+
+TrimmomaticPE: Started with arguments:
+ -phred33 G04868_1.fastq G04868_2.fastq G04868_1_trimmed_paired.fastq G04868_1_trimmed_unpaired.fastq G04868_2_trimmed_paired.fastq G04868_2_trimmed_unpaired.fastq LEADING:3 TRAILING:3 SLIDINGWINDOW:4:20 MINLEN:36
+Multiple cores found: Using 4 threads
+java.io.IOException: Protocol error
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at org.usadellab.trimmomatic.util.PositionTrackingInputStream.read(PositionTrackingInputStream.java:49)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parseOne(FastqParser.java:71)
+	at org.usadellab.trimmomatic.fastq.FastqParser.next(FastqParser.java:179)
+	at org.usadellab.trimmomatic.threading.ParserWorker.run(ParserWorker.java:42)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-0" java.lang.RuntimeException: java.io.IOException: Protocol error
+	at org.usadellab.trimmomatic.threading.ParserWorker.run(ParserWorker.java:56)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Protocol error
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at org.usadellab.trimmomatic.util.PositionTrackingInputStream.read(PositionTrackingInputStream.java:49)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at org.usadellab.trimmomatic.fastq.FastqParser.parseOne(FastqParser.java:71)
+	at org.usadellab.trimmomatic.fastq.FastqParser.next(FastqParser.java:179)
+	at org.usadellab.trimmomatic.threading.ParserWorker.run(ParserWorker.java:42)
+	... 1 more
+Input Read Pairs: 1353000 Both Surviving: 1246739 (92.15%) Forward Only Surviving: 38546 (2.85%) Reverse Only Surviving: 36252 (2.68%) Dropped: 31463 (2.33%)
+TrimmomaticPE: Completed successfully
+
+
+
+
+
+>>>>> bwa_index_reference_genome <<<<<
+
+
+bwa index NC000962_3.fasta
+
+
+[bwa_index] Pack FASTA... 0.03 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 1.46 seconds elapse.
+[bwa_index] Update BWT... 0.02 sec
+[bwa_index] Pack forward-only FASTA... 0.02 sec
+[bwa_index] Construct SA from BWT and Occ... 0.36 sec
+[main] Version: 0.7.12-r1039
+[main] CMD: bwa index NC000962_3.fasta
+[main] Real time: 2.007 sec; CPU: 1.905 sec
+
+
+>>>>> map_and_generate_sam_file <<<<<
+
+
+bwa mem -R "@RG\tID:G04868\tSM:G04868\tPL:Illumina" -M NC000962_3.fasta G04868_1_trimmed_paired.fastq G04868_2_trimmed_paired.fastq > G04868.sam
+
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 100168 sequences (10000192 bp)...
+[M::process] read 100186 sequences (10000085 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (151, 48076, 28, 121)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (90, 176, 315)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 765)
+[M::mem_pestat] mean and std.dev: (206.55, 143.17)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 990)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 216, 342)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 760)
+[M::mem_pestat] mean and std.dev: (250.03, 151.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 969)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (211, 637, 2447)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6919)
+[M::mem_pestat] mean and std.dev: (1276.96, 1458.39)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 9155)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (103, 168, 294)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 676)
+[M::mem_pestat] mean and std.dev: (198.77, 136.43)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 867)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100168 reads in 3.297 CPU sec, 3.198 real sec
+[M::process] read 100320 sequences (10000036 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (151, 48112, 16, 140)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (90, 189, 291)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 693)
+[M::mem_pestat] mean and std.dev: (199.43, 135.39)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 894)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (131, 214, 337)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 749)
+[M::mem_pestat] mean and std.dev: (246.56, 148.17)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 955)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (164, 661, 2133)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6071)
+[M::mem_pestat] mean and std.dev: (990.93, 1221.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8040)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (92, 180, 313)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 755)
+[M::mem_pestat] mean and std.dev: (205.64, 146.62)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 976)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100186 reads in 3.315 CPU sec, 3.011 real sec
+[M::process] read 100188 sequences (10000079 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (127, 48183, 11, 113)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (120, 211, 326)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 738)
+[M::mem_pestat] mean and std.dev: (226.82, 134.01)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 944)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (131, 212, 333)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 737)
+[M::mem_pestat] mean and std.dev: (244.60, 146.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 939)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (177, 493, 3060)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 8826)
+[M::mem_pestat] mean and std.dev: (1362.55, 1819.93)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 11709)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (122, 186, 289)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 623)
+[M::mem_pestat] mean and std.dev: (207.56, 119.95)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 790)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100320 reads in 3.453 CPU sec, 3.169 real sec
+[M::process] read 100110 sequences (10000167 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (154, 48095, 17, 91)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 220, 325)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 767)
+[M::mem_pestat] mean and std.dev: (233.81, 157.70)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 988)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (134, 219, 345)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 767)
+[M::mem_pestat] mean and std.dev: (252.99, 152.77)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 978)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (310, 523, 2429)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6667)
+[M::mem_pestat] mean and std.dev: (1216.59, 1364.89)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8786)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (101, 187, 335)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 803)
+[M::mem_pestat] mean and std.dev: (222.25, 158.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1037)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100188 reads in 3.355 CPU sec, 3.061 real sec
+[M::process] read 100168 sequences (10000026 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (172, 48021, 18, 134)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (95, 176, 276)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 638)
+[M::mem_pestat] mean and std.dev: (195.39, 124.36)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 819)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (136, 223, 351)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 781)
+[M::mem_pestat] mean and std.dev: (257.30, 155.91)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 996)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (147, 227, 436)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 1014)
+[M::mem_pestat] mean and std.dev: (221.29, 112.32)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1303)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (106, 204, 306)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 706)
+[M::mem_pestat] mean and std.dev: (212.46, 131.07)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 906)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100110 reads in 3.279 CPU sec, 3.007 real sec
+[M::process] read 100144 sequences (10000025 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (161, 48012, 19, 145)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (112, 181, 295)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 661)
+[M::mem_pestat] mean and std.dev: (209.41, 141.52)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 844)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (136, 222, 352)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 784)
+[M::mem_pestat] mean and std.dev: (256.66, 155.43)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1000)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (277, 737, 1912)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 5182)
+[M::mem_pestat] mean and std.dev: (1079.26, 1130.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 6817)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (108, 187, 337)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 795)
+[M::mem_pestat] mean and std.dev: (224.64, 154.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1024)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100168 reads in 3.362 CPU sec, 3.096 real sec
+[M::process] read 100292 sequences (10000164 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (170, 48008, 21, 122)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 196, 290)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 662)
+[M::mem_pestat] mean and std.dev: (213.55, 142.87)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 848)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (136, 224, 352)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 784)
+[M::mem_pestat] mean and std.dev: (257.98, 156.12)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1000)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (291, 1024, 3398)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 9612)
+[M::mem_pestat] mean and std.dev: (1670.00, 1706.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 12719)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (108, 190, 303)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 693)
+[M::mem_pestat] mean and std.dev: (208.56, 141.75)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 888)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100144 reads in 3.299 CPU sec, 2.981 real sec
+[M::process] read 100238 sequences (10000037 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (138, 48092, 15, 148)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (89, 197, 328)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 806)
+[M::mem_pestat] mean and std.dev: (232.32, 164.22)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1045)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 218, 348)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 778)
+[M::mem_pestat] mean and std.dev: (254.60, 156.57)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 993)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (397, 588, 2412)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6442)
+[M::mem_pestat] mean and std.dev: (1505.53, 1690.68)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8457)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (89, 160, 246)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 560)
+[M::mem_pestat] mean and std.dev: (171.77, 108.45)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 717)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100292 reads in 3.553 CPU sec, 3.257 real sec
+[M::process] read 100314 sequences (10000144 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (131, 48137, 17, 128)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (90, 173, 308)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 744)
+[M::mem_pestat] mean and std.dev: (209.95, 152.55)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 962)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (135, 221, 351)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 783)
+[M::mem_pestat] mean and std.dev: (255.48, 155.53)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 999)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (282, 527, 2155)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 5901)
+[M::mem_pestat] mean and std.dev: (1113.82, 1230.68)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 7774)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (117, 201, 325)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 741)
+[M::mem_pestat] mean and std.dev: (225.11, 144.49)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 949)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100238 reads in 3.486 CPU sec, 3.177 real sec
+[M::process] read 100390 sequences (10000155 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (145, 48087, 23, 125)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (102, 213, 340)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 816)
+[M::mem_pestat] mean and std.dev: (230.80, 160.05)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1054)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 218, 347)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 775)
+[M::mem_pestat] mean and std.dev: (252.95, 155.19)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 989)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (441, 1318, 2565)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6813)
+[M::mem_pestat] mean and std.dev: (1800.18, 1714.21)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8937)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (123, 202, 325)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 729)
+[M::mem_pestat] mean and std.dev: (234.81, 153.74)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 931)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100314 reads in 3.439 CPU sec, 3.140 real sec
+[M::process] read 100202 sequences (10000053 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (142, 48269, 19, 107)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (94, 189, 328)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 796)
+[M::mem_pestat] mean and std.dev: (225.74, 166.64)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1030)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (135, 220, 350)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 780)
+[M::mem_pestat] mean and std.dev: (255.43, 155.98)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 995)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (88, 359, 1299)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 3721)
+[M::mem_pestat] mean and std.dev: (564.00, 686.29)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 4932)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (121, 213, 320)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 718)
+[M::mem_pestat] mean and std.dev: (219.55, 131.47)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 917)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100390 reads in 3.293 CPU sec, 3.008 real sec
+[M::process] read 100260 sequences (10000189 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (176, 48015, 20, 125)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (100, 198, 323)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 769)
+[M::mem_pestat] mean and std.dev: (223.23, 150.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 992)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (138, 226, 358)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 798)
+[M::mem_pestat] mean and std.dev: (261.72, 158.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1018)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (657, 2427, 4526)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 12264)
+[M::mem_pestat] mean and std.dev: (2595.10, 2298.90)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 16133)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (94, 190, 308)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 736)
+[M::mem_pestat] mean and std.dev: (216.81, 157.24)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 950)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100202 reads in 3.957 CPU sec, 3.674 real sec
+[M::process] read 100232 sequences (10000069 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (154, 48093, 15, 131)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (119, 211, 349)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 809)
+[M::mem_pestat] mean and std.dev: (246.77, 170.58)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1039)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (137, 225, 357)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 797)
+[M::mem_pestat] mean and std.dev: (260.82, 159.31)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1017)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (365, 845, 1632)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 4166)
+[M::mem_pestat] mean and std.dev: (1035.50, 854.94)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 5433)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (107, 173, 315)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 731)
+[M::mem_pestat] mean and std.dev: (216.38, 150.76)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 939)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100260 reads in 3.380 CPU sec, 3.096 real sec
+[M::process] read 100180 sequences (10000123 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (142, 48055, 18, 126)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (117, 221, 363)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 855)
+[M::mem_pestat] mean and std.dev: (259.10, 183.35)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1101)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (137, 225, 358)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 800)
+[M::mem_pestat] mean and std.dev: (261.27, 159.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1021)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (503, 2320, 2921)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 7757)
+[M::mem_pestat] mean and std.dev: (2169.89, 1597.88)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 10175)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (105, 191, 360)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 870)
+[M::mem_pestat] mean and std.dev: (239.23, 173.21)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1125)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100232 reads in 3.624 CPU sec, 3.330 real sec
+[M::process] read 100206 sequences (10000045 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (137, 48126, 16, 122)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (110, 190, 308)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 704)
+[M::mem_pestat] mean and std.dev: (220.78, 144.04)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 902)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (134, 221, 352)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 788)
+[M::mem_pestat] mean and std.dev: (256.78, 158.64)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1006)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (335, 1093, 2192)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 5906)
+[M::mem_pestat] mean and std.dev: (1312.94, 1201.83)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 7763)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (87, 167, 258)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 600)
+[M::mem_pestat] mean and std.dev: (187.66, 133.01)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 771)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100180 reads in 3.512 CPU sec, 3.208 real sec
+[M::process] read 100272 sequences (10000134 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (156, 48102, 10, 134)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (109, 190, 338)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 796)
+[M::mem_pestat] mean and std.dev: (222.01, 148.61)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1025)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (134, 219, 348)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 776)
+[M::mem_pestat] mean and std.dev: (254.47, 155.37)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 990)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (275, 1251, 4463)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 12839)
+[M::mem_pestat] mean and std.dev: (1853.40, 1872.36)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 17027)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 194, 292)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 668)
+[M::mem_pestat] mean and std.dev: (220.03, 145.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 856)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100206 reads in 3.310 CPU sec, 3.033 real sec
+[M::process] read 100292 sequences (10000188 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (146, 48132, 13, 120)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (95, 186, 298)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 704)
+[M::mem_pestat] mean and std.dev: (212.06, 148.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 907)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 219, 348)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 778)
+[M::mem_pestat] mean and std.dev: (253.65, 154.93)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 993)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (125, 435, 2265)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6545)
+[M::mem_pestat] mean and std.dev: (1376.08, 1663.41)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8685)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (96, 188, 308)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 732)
+[M::mem_pestat] mean and std.dev: (207.72, 137.99)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 944)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100272 reads in 3.462 CPU sec, 3.183 real sec
+[M::process] read 100088 sequences (10000061 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (138, 48163, 13, 117)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (97, 161, 321)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 769)
+[M::mem_pestat] mean and std.dev: (211.11, 155.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 993)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (134, 220, 349)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 779)
+[M::mem_pestat] mean and std.dev: (255.47, 156.18)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 994)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (482, 2355, 4648)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 12980)
+[M::mem_pestat] mean and std.dev: (2313.38, 1753.87)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 17146)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (113, 210, 361)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 857)
+[M::mem_pestat] mean and std.dev: (247.16, 167.34)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1105)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100292 reads in 3.303 CPU sec, 2.990 real sec
+[M::process] read 100108 sequences (10000186 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (146, 47912, 15, 122)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (106, 189, 298)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 682)
+[M::mem_pestat] mean and std.dev: (213.90, 149.56)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 874)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (137, 225, 357)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 797)
+[M::mem_pestat] mean and std.dev: (260.74, 158.98)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1017)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (670, 1787, 2341)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 5683)
+[M::mem_pestat] mean and std.dev: (1505.07, 1193.36)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 7354)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 190, 310)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 722)
+[M::mem_pestat] mean and std.dev: (213.11, 127.02)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 928)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100088 reads in 3.492 CPU sec, 3.216 real sec
+[M::process] read 100136 sequences (10000159 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (163, 48035, 20, 107)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (101, 199, 326)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 776)
+[M::mem_pestat] mean and std.dev: (227.58, 163.94)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1001)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (136, 224, 358)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 802)
+[M::mem_pestat] mean and std.dev: (261.07, 160.54)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1024)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (240, 1571, 4318)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 12474)
+[M::mem_pestat] mean and std.dev: (1954.10, 2016.50)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 16552)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (100, 178, 324)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 772)
+[M::mem_pestat] mean and std.dev: (219.92, 157.13)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 996)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100108 reads in 3.323 CPU sec, 3.024 real sec
+[M::process] read 100180 sequences (10000013 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (150, 48032, 12, 106)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (96, 193, 333)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 807)
+[M::mem_pestat] mean and std.dev: (228.11, 159.57)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1044)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (137, 224, 356)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 794)
+[M::mem_pestat] mean and std.dev: (259.82, 158.76)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1013)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (933, 2334, 4637)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 12045)
+[M::mem_pestat] mean and std.dev: (2351.33, 1597.90)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 15749)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (119, 202, 331)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 755)
+[M::mem_pestat] mean and std.dev: (232.75, 156.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 967)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100136 reads in 3.330 CPU sec, 3.020 real sec
+[M::process] read 100200 sequences (10000115 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (154, 48064, 15, 120)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (93, 188, 299)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 711)
+[M::mem_pestat] mean and std.dev: (211.70, 145.37)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 917)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (132, 217, 346)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 774)
+[M::mem_pestat] mean and std.dev: (252.27, 154.16)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 988)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (589, 2009, 2677)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6853)
+[M::mem_pestat] mean and std.dev: (1927.00, 1489.47)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8941)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (100, 184, 319)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 757)
+[M::mem_pestat] mean and std.dev: (217.07, 150.03)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 976)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100180 reads in 3.330 CPU sec, 3.021 real sec
+[M::process] read 100294 sequences (10000106 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (150, 48137, 18, 102)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (78, 207, 342)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 870)
+[M::mem_pestat] mean and std.dev: (230.03, 176.60)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 1134)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (130, 212, 338)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 754)
+[M::mem_pestat] mean and std.dev: (247.02, 150.72)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 962)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (413, 1532, 2566)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6872)
+[M::mem_pestat] mean and std.dev: (1756.28, 1534.92)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 9025)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (78, 159, 284)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 696)
+[M::mem_pestat] mean and std.dev: (178.46, 134.05)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 902)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100200 reads in 3.328 CPU sec, 3.006 real sec
+[M::process] read 88310 sequences (8791572 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (157, 48130, 19, 107)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (122, 198, 318)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 710)
+[M::mem_pestat] mean and std.dev: (225.72, 152.72)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 906)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 216, 341)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 757)
+[M::mem_pestat] mean and std.dev: (250.23, 151.99)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 965)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (226, 671, 2449)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6895)
+[M::mem_pestat] mean and std.dev: (1513.74, 1654.98)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 9118)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (87, 169, 313)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 765)
+[M::mem_pestat] mean and std.dev: (201.82, 145.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 991)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 100294 reads in 3.299 CPU sec, 3.014 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (121, 42329, 13, 123)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (98, 184, 307)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 725)
+[M::mem_pestat] mean and std.dev: (214.62, 146.60)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 934)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (133, 216, 341)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 757)
+[M::mem_pestat] mean and std.dev: (250.08, 151.39)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 965)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (127, 262, 1043)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2875)
+[M::mem_pestat] mean and std.dev: (622.08, 720.80)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3791)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (101, 176, 292)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 674)
+[M::mem_pestat] mean and std.dev: (194.59, 132.48)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 865)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 88310 reads in 2.863 CPU sec, 2.638 real sec
+[main] Version: 0.7.12-r1039
+[main] CMD: bwa mem -R @RG\tID:G04868\tSM:G04868\tPL:Illumina -M NC000962_3.fasta G04868_1_trimmed_paired.fastq G04868_2_trimmed_paired.fastq
+[main] Real time: 78.311 sec; CPU: 84.931 sec
+
+
+>>>>> samtools_faidx_reference_genome <<<<<
+
+
+samtools faidx NC000962_3.fasta
+
+
+
+
+>>>>> convert_sam_file_to_bam_file <<<<<
+
+
+samtools view -bt NC000962_3.fasta.fai G04868.sam > G04868.bam
+
+
+
+
+>>>>> sort_bam_file <<<<<
+
+
+samtools sort G04868.bam -o G04868.sorted.bam
+
+
+[bam_sort_core] merging from 2 files...
+
+
+>>>>> samtools_index_sorted_bam <<<<<
+
+
+samtools index G04868.sorted.bam
+
+
+
+
+>>>>> mapping_statistics <<<<<
+
+
+samtools flagstat G04868.sorted.bam > G04868_stats.txt
+
+
+
+
+>>>>> samtools_mpileup <<<<<
+
+
+samtools mpileup -Q 23 -d 2000 -C 50 -ugf NC000962_3.fasta G04868.sorted.bam | bcftools call -O v -vm -o G04868.raw.vcf
+
+
+[mpileup] 1 samples in 1 input files
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+<mpileup> Set max per-file depth to 8000
+^[[B
+
+>>>>> vcfutils_filter<<<<<
+
+
+vcfutils.pl varFilter -d 10 -D 2000 G04868.raw.vcf > G04868.filt.vcf
+
+
+
+
+>>>>> bgzip_filt_file <<<<<
+
+
+bgzip -c G04868.filt.vcf > G04868.filt.vcf.gz
+
+
+
+
+>>>>> run_tabix <<<<<
+
+
+tabix -p vcf G04868.filt.vcf.gz
+
+
+
+
+>>>>> snpEff <<<<<
+
+
+java -Xmx4g -jar /opt/snpEff/snpEff.jar -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config NC000962_3 G04868.filt.vcf > G04868.ann.vcf.gz
+
+
+00:00:00	SnpEff version SnpEff 4.3p (build 2017-06-06 09:55), by Pablo Cingolani
+00:00:00	Command: 'ann'
+00:00:00	Reading configuration file '/opt/snpEff/snpEff.config'. Genome: 'NC000962_3'
+00:00:00	Reading config file: /opt/snpEff/snpEff.config
+00:00:00	done
+00:00:00	Reading database for genome version 'NC000962_3' from file '/opt/snpEff/./data/NC000962_3/snpEffectPredictor.bin' (this might take a while)
+00:00:01	done
+00:00:01	Loading Motifs and PWMs
+00:00:01	Building interval forest
+00:00:01	done.
+00:00:01	Genome stats :
+#-----------------------------------------------
+# Genome name                : 'Mycobacterium tuberculosis'
+# Genome version             : 'NC000962_3'
+# Genome ID                  : 'NC000962_3[0]'
+# Has protein coding info    : true
+# Has Tr. Support Level info : true
+# Genes                      : 4111
+# Protein coding genes       : 4018
+#-----------------------------------------------
+# Transcripts                : 4018
+# Avg. transcripts per gene  : 0.98
+# TSL transcripts            : 0
+#-----------------------------------------------
+# Checked transcripts        : 
+#               AA sequences :   4018 ( 100.00% )
+#              DNA sequences :      0 ( 0.00% )
+#-----------------------------------------------
+# Protein coding transcripts : 4018
+#              Length errors :      0 ( 0.00% )
+#  STOP codons in CDS errors :      0 ( 0.00% )
+#         START codon errors :     27 ( 0.67% )
+#        STOP codon warnings :      0 ( 0.00% )
+#              UTR sequences :      0 ( 0.00% )
+#               Total Errors :     27 ( 0.67% )
+# WARNING                    : No protein coding transcript has UTR
+#-----------------------------------------------
+# Cds                        : 4018
+# Exons                      : 4018
+# Exons with sequence        : 4018
+# Exons without sequence     : 0
+# Avg. exons per transcript  : 1.00
+#-----------------------------------------------
+# Number of chromosomes      : 1
+# Chromosomes                : Format 'chromo_name size codon_table'
+#		'NC000962_3'	4411532	Bacterial_and_Plant_Plastid
+#-----------------------------------------------
+
+00:00:01	Predicting variants
+00:00:01	Creating sequences from exon information 'NC000962_3'
+00:00:01	Building sequence tree for chromosome 'NC000962_3'
+00:00:01	Building sequence tree for genome sequences
+00:00:01	Done.
+00:00:01	Done. Loaded 3228 sequences.
+
+WARNINGS: Some warning were detected
+Warning type	Number of warnings
+WARNING_TRANSCRIPT_NO_START_CODON	165
+
+
+00:00:02	Creating summary file: snpEff_summary.html
+00:00:03	Creating genes file: snpEff_genes.txt
+00:00:03	done.
+00:00:03	Logging
+00:00:05	Checking for updates...
+
+
+NEW VERSION!
+	There is a new SnpEff version available: 
+		Version      : 4.3T
+		Release date : 2017-11-24
+		Download URL : http://sourceforge.net/projects/snpeff/files/snpEff_latest_core.zip
+
+00:00:06	Done.
+
+
+>>>>> velveth_assembly <<<<<
+
+
+velveth G04868_41 41 -fastq -shortPaired  G04868_1_trimmed_paired.fastq G04868_1_trimmed_unpaired.fastq -fastq -short G04868_2_trimmed_paired.fastq G04868_2_trimmed_unpaired.fastq
+
+
+[0.000000] Reading FastQ file G04868_1_trimmed_paired.fastq;
+[8.182502] 1246739 sequences found
+[8.182512] Done
+[8.197914] Reading FastQ file G04868_1_trimmed_unpaired.fastq;
+[8.441283] 38546 sequences found
+[8.441294] Done
+[8.449759] Reading FastQ file G04868_2_trimmed_paired.fastq;
+[16.034654] 1246739 sequences found
+[16.034665] Done
+[16.035230] Reading FastQ file G04868_2_trimmed_unpaired.fastq;
+[16.347256] 36252 sequences found
+[16.347266] Done
+[16.347542] Reading read set file G04868_41/Sequences;
+[27.901349] 2568276 sequences found
+[39.794875] Done
+[39.794891] 2568276 sequences in total.
+[39.795347] Writing into roadmap file G04868_41/Roadmaps...
+[41.714887] Inputting sequences...
+[41.714906] Inputting sequence 0 / 2568276
+[54.589904] Inputting sequence 1000000 / 2568276
+[68.275167] Inputting sequence 2000000 / 2568276
+[76.212502]  === Sequences loaded in 34.499111 s
+[76.212767] Done inputting sequences
+[76.212773] Destroying splay table
+[76.278655] Splay table destroyed
+
+
+>>>>> velvetg_produce_graph <<<<<
+
+
+velvetg G04868_41 -exp_cov auto -cov_cutoff auto
+
+
+[0.000001] Reading roadmap file G04868_41/Roadmaps
+[6.043760] 2568276 roadmaps read
+[6.044289] Creating insertion markers
+[6.705502] Ordering insertion markers
+[8.474896] Counting preNodes
+[8.787938] 2742104 preNodes counted, creating them now
+[13.041777] Sequence 1000000 / 2568276
+[16.408685] Sequence 2000000 / 2568276
+[18.255560] Adjusting marker info...
+[18.626870] Connecting preNodes
+[19.867490] Connecting 1000000 / 2568276
+[21.198741] Connecting 2000000 / 2568276
+[21.980689] Cleaning up memory
+[21.981210] Done creating preGraph
+[21.981223] Concatenation...
+[22.594382] Renumbering preNodes
+[22.594399] Initial preNode count 2742104
+[22.664576] Destroyed 2230461 preNodes
+[22.664596] Concatenation over!
+[22.664598] Clipping short tips off preGraph
+[22.733988] Concatenation...
+[22.877685] Renumbering preNodes
+[22.877706] Initial preNode count 511643
+[22.918846] Destroyed 175178 preNodes
+[22.918861] Concatenation over!
+[22.918863] 91747 tips cut off
+[22.918864] 336465 nodes left
+[22.919967] Writing into pregraph file G04868_41/PreGraph...
+[24.055524] Reading read set file G04868_41/Sequences;
+[27.611681] 2568276 sequences found
+[35.947257] Done
+[37.867965] Reading pre-graph file G04868_41/PreGraph
+[37.868558] Graph has 336465 nodes and 2568276 sequences
+[38.492950] Scanning pre-graph file G04868_41/PreGraph for k-mers
+[38.886516] 8403519 kmers found
+[39.661355] Sorting kmer occurence table ... 
+[43.830574] Sorting done.
+[43.830595] Computing acceleration table... 
+[43.921599] Computing offsets... 
+[43.975862] Ghost Threading through reads 0 / 2568276
+[60.196449] Ghost Threading through reads 1000000 / 2568276
+[77.439672] Ghost Threading through reads 2000000 / 2568276
+[87.496548]  === Ghost-Threaded in 43.520685 s
+[87.496567] Threading through reads 0 / 2568276
+[107.093775] Threading through reads 1000000 / 2568276
+[126.265704] Threading through reads 2000000 / 2568276
+[136.236991]  === Threaded in 48.740424 s
+[136.435196] Correcting graph with cutoff 0.200000
+[136.452127] Determining eligible starting points
+[136.802010] Done listing starting nodes
+[136.802031] Initializing todo lists
+[136.882135] Done with initilization
+[136.882161] Activating arc lookup table
+[137.044750] Done activating arc lookup table
+[137.068424] 10000 / 336465 nodes visited
+[137.092180] 20000 / 336465 nodes visited
+[137.111735] 30000 / 336465 nodes visited
+[137.131995] 40000 / 336465 nodes visited
+[137.154277] 50000 / 336465 nodes visited
+[137.171537] 60000 / 336465 nodes visited
+[137.190235] 70000 / 336465 nodes visited
+[137.206344] 80000 / 336465 nodes visited
+[137.234690] 90000 / 336465 nodes visited
+[137.295003] 100000 / 336465 nodes visited
+[137.358126] 110000 / 336465 nodes visited
+[137.455188] 120000 / 336465 nodes visited
+[137.518654] 130000 / 336465 nodes visited
+[137.576471] 140000 / 336465 nodes visited
+[137.635760] 150000 / 336465 nodes visited
+[137.694374] 160000 / 336465 nodes visited
+[137.763484] 170000 / 336465 nodes visited
+[137.819695] 180000 / 336465 nodes visited
+[137.883417] 190000 / 336465 nodes visited
+[137.952186] 200000 / 336465 nodes visited
+[138.055153] 210000 / 336465 nodes visited
+[138.174033] 220000 / 336465 nodes visited
+[138.297464] 230000 / 336465 nodes visited
+[138.386233] 240000 / 336465 nodes visited
+[138.527962] 250000 / 336465 nodes visited
+[138.721375] 260000 / 336465 nodes visited
+[138.889574] 270000 / 336465 nodes visited
+[139.092517] 280000 / 336465 nodes visited
+[139.282497] 290000 / 336465 nodes visited
+^[[B[139.475246] 300000 / 336465 nodes visited
+[139.650898] 310000 / 336465 nodes visited
+[139.744230] 320000 / 336465 nodes visited
+[139.858277] 330000 / 336465 nodes visited
+[139.963412] 340000 / 336465 nodes visited
+[140.073962] 350000 / 336465 nodes visited
+[140.192890] 360000 / 336465 nodes visited
+[140.315757] 370000 / 336465 nodes visited
+[140.445837] 380000 / 336465 nodes visited
+[140.589248] 390000 / 336465 nodes visited
+[140.739437] 400000 / 336465 nodes visited
+[140.902926] 410000 / 336465 nodes visited
+[141.081755] 420000 / 336465 nodes visited
+[141.296582] 430000 / 336465 nodes visited
+[141.504439] 440000 / 336465 nodes visited
+[141.759016] 450000 / 336465 nodes visited
+[142.014094] 460000 / 336465 nodes visited
+[142.280358] 470000 / 336465 nodes visited
+[142.576642] 480000 / 336465 nodes visited
+[142.866847] 490000 / 336465 nodes visited
+[143.146309] 500000 / 336465 nodes visited
+[143.426830] 510000 / 336465 nodes visited
+[143.743484] 520000 / 336465 nodes visited
+[144.093566] 530000 / 336465 nodes visited
+[144.407169] 540000 / 336465 nodes visited
+[144.643846] 550000 / 336465 nodes visited
+[144.922778] 560000 / 336465 nodes visited
+[144.942960] 570000 / 336465 nodes visited
+[144.956052] Concatenation...
+[145.002773] Renumbering nodes
+[145.002797] Initial node count 336465
+[145.022562] Removed 27588 null nodes
+[145.022588] Concatenation over!
+[145.022591] Clipping short tips off graph, drastic
+[145.700206] Concatenation...
+[146.129762] Renumbering nodes
+[146.129787] Initial node count 308877
+[146.132669] Removed 285961 null nodes
+[146.132682] Concatenation over!
+[146.132684] 22916 nodes left
+[146.133270] Writing into graph file G04868_41/Graph2...
+[147.409042] Measuring median coverage depth...
+[147.417857] Median coverage depth = 31.937338
+[148.002103] Removing contigs with coverage < 15.968669...
+[148.012158] Concatenation...
+[148.415597] Renumbering nodes
+[148.415620] Initial node count 22916
+[148.415738] Removed 21865 null nodes
+[148.415742] Concatenation over!
+[148.415783] Concatenation...
+[148.415876] Renumbering nodes
+[148.415881] Initial node count 1051
+[148.415883] Removed 0 null nodes
+[148.415885] Concatenation over!
+[148.415896] Clipping short tips off graph, drastic
+[148.416015] Concatenation...
+[148.416306] Renumbering nodes
+[148.416311] Initial node count 1051
+[148.416326] Removed 49 null nodes
+[148.416328] Concatenation over!
+[148.416329] 1002 nodes left
+[148.416331] Read coherency...
+[148.416345] Identifying unique nodes
+[148.416365] Done, 604 unique nodes counted
+[148.416366] Trimming read tips
+[148.416414] Renumbering nodes
+[148.416417] Initial node count 1002
+[148.416419] Removed 0 null nodes
+[148.416420] Confronted to 0 multiple hits and 0 null over 0
+[148.416422] Read coherency over!
+[148.425163] Starting pebble resolution...
+[148.436495] Computing read to node mapping array sizes
+[148.519889] Computing read to node mappings
+[148.924621] Estimating library insert lengths...
+[148.939682] Paired-end library 1 has length: 291, sample standard deviation: 503
+[148.939705] Done
+[148.939735] Computing direct node to node mappings
+[149.173586] Scaffolding node 0
+[149.402317]  === Nodes Scaffolded in 0.462580 s
+[149.417513] Preparing to correct graph with cutoff 0.200000
+[149.421314] Cleaning memory
+[149.421321] Deactivating local correction settings
+[149.421336] Pebble done.
+[149.421338] Starting pebble resolution...
+[149.432630] Computing read to node mapping array sizes
+[149.507574] Computing read to node mappings
+[149.926450] Estimating library insert lengths...
+[149.941433] Paired-end library 1 has length: 291, sample standard deviation: 503
+[149.941456] Done
+[149.941480] Computing direct node to node mappings
+[150.172663] Scaffolding node 0
+[150.403525]  === Nodes Scaffolded in 0.462042 s
+[150.418858] Preparing to correct graph with cutoff 0.200000
+[150.423445] Cleaning memory
+[150.423477] Deactivating local correction settings
+[150.423529] Pebble done.
+[150.423533] Concatenation...
+[150.424296] Renumbering nodes
+[150.424311] Initial node count 1002
+[150.424356] Removed 32 null nodes
+[150.424365] Concatenation over!
+[150.424368] Removing reference contigs with coverage < 15.968669...
+[150.424410] Concatenation...
+[150.424508] Renumbering nodes
+[150.424511] Initial node count 970
+[150.424514] Removed 0 null nodes
+[150.424522] Concatenation over!
+[150.433725] Writing contigs into G04868_41/contigs.fa...
+[151.208547] Writing into stats file G04868_41/stats.txt...
+[151.220068] Writing into graph file G04868_41/LastGraph...
+[152.361168] Estimated Coverage = 31.937338
+[152.361189] Estimated Coverage cutoff = 15.968669
+Final graph has 970 nodes and n50 of 16323, max 59055, total 4253348, using 2517177/2568276 reads
+
+
+>>>>> assemblathon_stats <<<<<
+
+
+assemblathon_stats.pl ./G04868_41/contigs.fa
+
+
+
+
+>>>>> velveth_assembly <<<<<
+
+
+velveth G04868_49 49 -fastq -shortPaired  G04868_1_trimmed_paired.fastq G04868_1_trimmed_unpaired.fastq -fastq -short G04868_2_trimmed_paired.fastq G04868_2_trimmed_unpaired.fastq
+
+
+[0.000000] Reading FastQ file G04868_1_trimmed_paired.fastq;
+[8.388110] 1246739 sequences found
+[8.388120] Done
+[8.401089] Reading FastQ file G04868_1_trimmed_unpaired.fastq;
+[8.680455] 38546 sequences found
+[8.680465] Done
+[8.708583] Reading FastQ file G04868_2_trimmed_paired.fastq;
+[16.494771] 1246739 sequences found
+[16.494781] Done
+[16.495328] Reading FastQ file G04868_2_trimmed_unpaired.fastq;
+[16.735172] 36252 sequences found
+[16.735183] Done
+[16.735467] Reading read set file G04868_49/Sequences;
+[22.091298] 2568276 sequences found
+[32.441337] Done
+[32.441353] 2568276 sequences in total.
+[32.441769] Writing into roadmap file G04868_49/Roadmaps...
+[34.370017] Inputting sequences...
+[34.370037] Inputting sequence 0 / 2568276
+[46.050990] Inputting sequence 1000000 / 2568276
+[58.560815] Inputting sequence 2000000 / 2568276
+[65.839758]  === Sequences loaded in 31.471115 s
+[65.856247] Done inputting sequences
+[65.856253] Destroying splay table
+[65.889050] Splay table destroyed
+
+
+>>>>> velvetg_produce_graph <<<<<
+
+
+velvetg G04868_49 -exp_cov auto -cov_cutoff auto
+
+
+[0.000000] Reading roadmap file G04868_49/Roadmaps
+[6.055569] 2568276 roadmaps read
+[6.056002] Creating insertion markers
+[6.685948] Ordering insertion markers
+[8.293794] Counting preNodes
+[8.595181] 2646789 preNodes counted, creating them now
+[12.934794] Sequence 1000000 / 2568276
+[16.240883] Sequence 2000000 / 2568276
+[18.167315] Adjusting marker info...
+[18.516709] Connecting preNodes
+[19.601878] Connecting 1000000 / 2568276
+[20.780857] Connecting 2000000 / 2568276
+[21.452191] Cleaning up memory
+[21.452844] Done creating preGraph
+[21.452857] Concatenation...
+[22.041159] Renumbering preNodes
+[22.041175] Initial preNode count 2646789
+[22.095046] Destroyed 2270131 preNodes
+[22.095062] Concatenation over!
+[22.095065] Clipping short tips off preGraph
+[22.175290] Concatenation...
+[22.388249] Renumbering preNodes
+[22.388267] Initial preNode count 376658
+[22.406822] Destroyed 223299 preNodes
+[22.406836] Concatenation over!
+[22.406838] 120037 tips cut off
+[22.406839] 153359 nodes left
+[22.407449] Writing into pregraph file G04868_49/PreGraph...
+[23.097797] Reading read set file G04868_49/Sequences;
+[26.587871] 2568276 sequences found
+[34.850293] Done
+[36.767577] Reading pre-graph file G04868_49/PreGraph
+[36.767928] Graph has 153359 nodes and 2568276 sequences
+[37.147028] Scanning pre-graph file G04868_49/PreGraph for k-mers
+[37.394350] 6665430 kmers found
+[37.919051] Sorting kmer occurence table ... 
+[41.191503] Sorting done.
+[41.191523] Computing acceleration table... 
+[41.271013] Computing offsets... 
+[41.310316] Ghost Threading through reads 0 / 2568276
+[55.165024] Ghost Threading through reads 1000000 / 2568276
+[68.950055] Ghost Threading through reads 2000000 / 2568276
+[76.857038]  === Ghost-Threaded in 35.546723 s
+[76.857061] Threading through reads 0 / 2568276
+[91.742757] Threading through reads 1000000 / 2568276
+[106.598523] Threading through reads 2000000 / 2568276
+[116.063806]  === Threaded in 39.206745 s
+[116.183506] Correcting graph with cutoff 0.200000
+[116.190490] Determining eligible starting points
+[116.363807] Done listing starting nodes
+[116.363826] Initializing todo lists
+[116.413136] Done with initilization
+[116.413155] Activating arc lookup table
+[116.500322] Done activating arc lookup table
+[116.521618] 10000 / 153359 nodes visited
+[116.553885] 20000 / 153359 nodes visited
+[116.572669] 30000 / 153359 nodes visited
+[116.596168] 40000 / 153359 nodes visited
+[116.647752] 50000 / 153359 nodes visited
+[116.704545] 60000 / 153359 nodes visited
+[116.763049] 70000 / 153359 nodes visited
+[116.825095] 80000 / 153359 nodes visited
+[116.905023] 90000 / 153359 nodes visited
+[117.001092] 100000 / 153359 nodes visited
+[117.113660] 110000 / 153359 nodes visited
+[117.231129] 120000 / 153359 nodes visited
+[117.339861] 130000 / 153359 nodes visited
+[117.463155] 140000 / 153359 nodes visited
+[117.605461] 150000 / 153359 nodes visited
+[117.779838] 160000 / 153359 nodes visited
+[117.965498] 170000 / 153359 nodes visited
+[118.118810] 180000 / 153359 nodes visited
+[118.240809] 190000 / 153359 nodes visited
+[118.436007] 200000 / 153359 nodes visited
+[118.672896] 210000 / 153359 nodes visited
+[118.847099] 220000 / 153359 nodes visited
+[119.128652] 230000 / 153359 nodes visited
+[119.381744] 240000 / 153359 nodes visited
+[119.567910] 250000 / 153359 nodes visited
+[119.726615] 260000 / 153359 nodes visited
+[119.727949] Concatenation...
+[119.747525] Renumbering nodes
+[119.747550] Initial node count 153359
+[119.755514] Removed 7199 null nodes
+[119.755543] Concatenation over!
+[119.755545] Clipping short tips off graph, drastic
+[119.998403] Concatenation...
+[120.330785] Renumbering nodes
+[120.330813] Initial node count 146160
+[120.331926] Removed 135476 null nodes
+[120.331933] Concatenation over!
+[120.331935] 10684 nodes left
+[120.332919] Writing into graph file G04868_49/Graph2...
+[121.612061] Measuring median coverage depth...
+[121.615516] Median coverage depth = 27.539598
+[121.615843] Removing contigs with coverage < 13.769799...
+[121.619614] Concatenation...
+[121.879527] Renumbering nodes
+[121.879562] Initial node count 10684
+[121.879719] Removed 9914 null nodes
+[121.879722] Concatenation over!
+[121.879743] Concatenation...
+[121.879842] Renumbering nodes
+[121.879845] Initial node count 770
+[121.879847] Removed 0 null nodes
+[121.879848] Concatenation over!
+[121.879869] Clipping short tips off graph, drastic
+[121.880021] Concatenation...
+[121.880320] Renumbering nodes
+[121.880325] Initial node count 770
+[121.880339] Removed 26 null nodes
+[121.880340] Concatenation over!
+[121.880341] 744 nodes left
+[121.880344] Read coherency...
+[121.880353] Identifying unique nodes
+[121.880367] Done, 439 unique nodes counted
+[121.880370] Trimming read tips
+[121.880410] Renumbering nodes
+[121.880412] Initial node count 744
+[121.880414] Removed 0 null nodes
+[121.880415] Confronted to 0 multiple hits and 0 null over 0
+[121.880417] Read coherency over!
+[121.891369] Starting pebble resolution...
+[121.901791] Computing read to node mapping array sizes
+[121.983755] Computing read to node mappings
+[122.345921] Estimating library insert lengths...
+[122.362163] Paired-end library 1 has length: 455, sample standard deviation: 941
+[122.362183] Done
+[122.362201] Computing direct node to node mappings
+[122.601492] Scaffolding node 0
+[122.856047]  === Nodes Scaffolded in 0.493843 s
+[122.878550] Preparing to correct graph with cutoff 0.200000
+[122.882815] Cleaning memory
+[122.882826] Deactivating local correction settings
+[122.882847] Pebble done.
+[122.882849] Starting pebble resolution...
+[122.896058] Computing read to node mapping array sizes
+[122.983728] Computing read to node mappings
+[123.407078] Estimating library insert lengths...
+[123.422697] Paired-end library 1 has length: 455, sample standard deviation: 941
+[123.422719] Done
+[123.422730] Computing direct node to node mappings
+[123.663720] Scaffolding node 0
+[123.916229]  === Nodes Scaffolded in 0.493498 s
+[123.935539] Preparing to correct graph with cutoff 0.200000
+[123.937885] Cleaning memory
+[123.937895] Deactivating local correction settings
+[123.937917] Pebble done.
+[123.937920] Concatenation...
+[123.938645] Renumbering nodes
+[123.938649] Initial node count 744
+[123.938660] Removed 10 null nodes
+[123.938665] Concatenation over!
+[123.938666] Removing reference contigs with coverage < 13.769799...
+[123.938691] Concatenation...
+[123.938715] Renumbering nodes
+[123.938717] Initial node count 734
+[123.938719] Removed 0 null nodes
+[123.938723] Concatenation over!
+[123.947665] Writing contigs into G04868_49/contigs.fa...
+[124.747933] Writing into stats file G04868_49/stats.txt...
+[124.757847] Writing into graph file G04868_49/LastGraph...
+[125.965615] Estimated Coverage = 27.539598
+[125.965630] Estimated Coverage cutoff = 13.769799
+Final graph has 734 nodes and n50 of 22034, max 92528, total 4269920, using 2481351/2568276 reads
+
+
+>>>>> assemblathon_stats <<<<<
+
+
+assemblathon_stats.pl ./G04868_49/contigs.fa
+
+
+
+
+>>>>> velveth_assembly <<<<<
+
+
+velveth G04868_55 55 -fastq -shortPaired  G04868_1_trimmed_paired.fastq G04868_1_trimmed_unpaired.fastq -fastq -short G04868_2_trimmed_paired.fastq G04868_2_trimmed_unpaired.fastq
+
+
+[0.000000] Reading FastQ file G04868_1_trimmed_paired.fastq;
+[8.688381] 1246739 sequences found
+[8.688390] Done
+[8.701273] Reading FastQ file G04868_1_trimmed_unpaired.fastq;
+[9.062329] 38546 sequences found
+[9.062338] Done
+[9.078265] Reading FastQ file G04868_2_trimmed_paired.fastq;
+[17.862038] 1246739 sequences found
+[17.862049] Done
+[17.870458] Reading FastQ file G04868_2_trimmed_unpaired.fastq;
+[18.028174] 36252 sequences found
+[18.028185] Done
+[18.028448] Reading read set file G04868_55/Sequences;
+[22.839848] 2568276 sequences found
+[31.908370] Done
+[31.908385] 2568276 sequences in total.
+[31.908785] Writing into roadmap file G04868_55/Roadmaps...
+[33.823974] Inputting sequences...
+[33.823996] Inputting sequence 0 / 2568276
+[44.332212] Inputting sequence 1000000 / 2568276
+[55.570763] Inputting sequence 2000000 / 2568276
+[62.176956]  === Sequences loaded in 28.354356 s
+[62.177141] Done inputting sequences
+[62.177148] Destroying splay table
+[62.210997] Splay table destroyed
+
+
+>>>>> velvetg_produce_graph <<<<<
+
+
+velvetg G04868_55 -exp_cov auto -cov_cutoff auto
+
+
+[0.000000] Reading roadmap file G04868_55/Roadmaps
+[5.540515] 2568276 roadmaps read
+[5.540833] Creating insertion markers
+[6.176072] Ordering insertion markers
+[7.679551] Counting preNodes
+[7.967306] 2575744 preNodes counted, creating them now
+[12.271607] Sequence 1000000 / 2568276
+[15.736622] Sequence 2000000 / 2568276
+[17.742341] Adjusting marker info...
+[18.076118] Connecting preNodes
+[19.048515] Connecting 1000000 / 2568276
+[20.078243] Connecting 2000000 / 2568276
+[20.670173] Cleaning up memory
+[20.670853] Done creating preGraph
+[20.670866] Concatenation...
+[21.217867] Renumbering preNodes
+[21.217883] Initial preNode count 2575744
+[21.256497] Destroyed 2291755 preNodes
+[21.256550] Concatenation over!
+[21.256554] Clipping short tips off preGraph
+[21.381298] Concatenation...
+[21.570311] Renumbering preNodes
+[21.570331] Initial preNode count 283989
+[21.575698] Destroyed 246992 preNodes
+[21.575707] Concatenation over!
+[21.575708] 143172 tips cut off
+[21.575710] 36997 nodes left
+[21.576254] Writing into pregraph file G04868_55/PreGraph...
+[21.951025] Reading read set file G04868_55/Sequences;
+[25.446811] 2568276 sequences found
+[33.788916] Done
+[35.706364] Reading pre-graph file G04868_55/PreGraph
+[35.706650] Graph has 36997 nodes and 2568276 sequences
+[35.893465] Scanning pre-graph file G04868_55/PreGraph for k-mers
+[36.023284] 4995277 kmers found
+[36.319495] Sorting kmer occurence table ... 
+[38.701422] Sorting done.
+[38.701444] Computing acceleration table... 
+[38.766314] Computing offsets... 
+[38.788496] Ghost Threading through reads 0 / 2568276
+[50.530406] Ghost Threading through reads 1000000 / 2568276
+[62.171129] Ghost Threading through reads 2000000 / 2568276
+[68.781172]  === Ghost-Threaded in 29.992677 s
+[68.781190] Threading through reads 0 / 2568276
+[81.073919] Threading through reads 1000000 / 2568276
+[93.230983] Threading through reads 2000000 / 2568276
+[100.101814]  === Threaded in 31.320623 s
+[100.184240] Correcting graph with cutoff 0.200000
+[100.185742] Determining eligible starting points
+[100.226448] Done listing starting nodes
+[100.226469] Initializing todo lists
+[100.234392] Done with initilization
+[100.234407] Activating arc lookup table
+[100.246061] Done activating arc lookup table
+[100.255780] 10000 / 36997 nodes visited
+[100.288224] 20000 / 36997 nodes visited
+[100.332090] 30000 / 36997 nodes visited
+[100.386381] 40000 / 36997 nodes visited
+[100.465441] 50000 / 36997 nodes visited
+[100.488654] Concatenation...
+[100.493465] Renumbering nodes
+[100.493495] Initial node count 36997
+[100.495130] Removed 1791 null nodes
+[100.495146] Concatenation over!
+[100.495148] Clipping short tips off graph, drastic
+[100.522004] Concatenation...
+[100.633515] Renumbering nodes
+[100.633537] Initial node count 35206
+[100.633984] Removed 30713 null nodes
+[100.633990] Concatenation over!
+[100.633991] 4493 nodes left
+[100.634564] Writing into graph file G04868_55/Graph2...
+[101.710420] Measuring median coverage depth...
+[101.711614] Median coverage depth = 24.155497
+[101.711784] Removing contigs with coverage < 12.077749...
+[101.713296] Concatenation...
+[101.838087] Renumbering nodes
+[101.838111] Initial node count 4493
+[101.838144] Removed 3813 null nodes
+[101.838146] Concatenation over!
+[101.838157] Concatenation...
+[101.838184] Renumbering nodes
+[101.838186] Initial node count 680
+[101.838187] Removed 0 null nodes
+[101.838189] Concatenation over!
+[101.838200] Clipping short tips off graph, drastic
+[101.838234] Concatenation...
+[101.838325] Renumbering nodes
+[101.838328] Initial node count 680
+[101.838333] Removed 15 null nodes
+[101.838335] Concatenation over!
+[101.838336] 665 nodes left
+[101.838338] Read coherency...
+[101.838343] Identifying unique nodes
+[101.838354] Done, 389 unique nodes counted
+[101.838356] Trimming read tips
+[101.838378] Renumbering nodes
+[101.838380] Initial node count 665
+[101.838381] Removed 0 null nodes
+[101.838383] Confronted to 0 multiple hits and 0 null over 0
+[101.838384] Read coherency over!
+[101.846840] Starting pebble resolution...
+[101.855658] Computing read to node mapping array sizes
+[101.929046] Computing read to node mappings
+[102.263833] Estimating library insert lengths...
+[102.279031] Paired-end library 1 has length: 443, sample standard deviation: 894
+[102.279045] Done
+[102.279061] Computing direct node to node mappings
+[102.496181] Scaffolding node 0
+[102.707764]  === Nodes Scaffolded in 0.428700 s
+[102.723214] Preparing to correct graph with cutoff 0.200000
+[102.726349] Cleaning memory
+[102.726362] Deactivating local correction settings
+[102.726386] Pebble done.
+[102.726388] Starting pebble resolution...
+[102.738344] Computing read to node mapping array sizes
+[102.807504] Computing read to node mappings
+[103.147640] Estimating library insert lengths...
+[103.162695] Paired-end library 1 has length: 443, sample standard deviation: 894
+[103.162714] Done
+[103.162724] Computing direct node to node mappings
+[103.372551] Scaffolding node 0
+[103.584211]  === Nodes Scaffolded in 0.421485 s
+[103.599426] Preparing to correct graph with cutoff 0.200000
+[103.601035] Cleaning memory
+[103.601044] Deactivating local correction settings
+[103.601065] Pebble done.
+[103.601068] Concatenation...
+[103.601231] Renumbering nodes
+[103.601234] Initial node count 665
+[103.601239] Removed 11 null nodes
+[103.601243] Concatenation over!
+[103.601244] Removing reference contigs with coverage < 12.077749...
+[103.601263] Concatenation...
+[103.601281] Renumbering nodes
+[103.601282] Initial node count 654
+[103.601284] Removed 0 null nodes
+[103.601287] Concatenation over!
+[103.608531] Writing contigs into G04868_55/contigs.fa...
+[104.372474] Writing into stats file G04868_55/stats.txt...
+[104.382255] Writing into graph file G04868_55/LastGraph...
+[105.563449] Estimated Coverage = 24.155497
+[105.563465] Estimated Coverage cutoff = 12.077749
+Final graph has 654 nodes and n50 of 26426, max 79418, total 4284560, using 2446745/2568276 reads
+
+
+>>>>> assemblathon_stats <<<<<
+
+
+assemblathon_stats.pl ./G04868_55/contigs.fa
+
+
+assemblathon_stats.pl ./G04868_41/contigs.fa
+
+
+assemblathon_stats.pl ./G04868_49/contigs.fa
+
+
+assemblathon_stats.pl ./G04868_55/contigs.fa
+
+
+ 
+
+ Highest quality k_mer : 55
+
+
+
+
+>>>>> abacas_align_contigs <<<<<
+
+
+cd G04868_55 &&  cp ../NC000962_3.fasta ./ && abacas.pl -r ../NC000962_3.fasta -q contigs.fa -p promer -b -d -a 
+
+
+
+
+>>>>> prokka_annotation <<<<<
+
+
+cd ./G04868_55 && prokka --outdir ./G04868_prokka --prefix G04868 contigs.fa_NC000962_3.fasta.fasta
+
+
+[18:40:16] This is prokka 1.12
+[18:40:16] Written by Torsten Seemann <torsten.seemann@gmail.com>
+[18:40:16] Homepage is https://github.com/tseemann/prokka
+[18:40:16] Local time is Thu Dec 21 18:40:16 2017
+[18:40:16] You are centos
+[18:40:16] Operating system is linux
+[18:40:16] You have BioPerl 1.007001
+[18:40:16] System has 4 cores.
+[18:40:16] Option --cpu asked for 8 cores, but system only has 4
+[18:40:16] Will use maximum of 4 cores.
+[18:40:16] Annotating as >>> Bacteria <<<
+[18:40:16] Generating locus_tag from 'contigs.fa_NC000962_3.fasta.fasta' contents.
+[18:40:16] Setting --locustag LDKFHCNH from MD5 5d4f1c712027e04236b6a404005ae966
+[18:40:16] Creating new output folder: ./G04868_prokka
+[18:40:16] Running: mkdir -p \.\/G04868_prokka
+[18:40:16] Using filename prefix: G04868.XXX
+[18:40:16] Setting HMMER_NCPU=1
+[18:40:16] Writing log to: ./G04868_prokka/G04868.log
+[18:40:16] Command: /opt/prokka/bin/prokka --outdir ./G04868_prokka --prefix G04868 contigs.fa_NC000962_3.fasta.fasta
+[18:40:16] Appending to PATH: /opt/prokka/bin/../binaries/linux
+[18:40:16] Appending to PATH: /opt/prokka/bin/../binaries/linux/../common
+[18:40:16] Appending to PATH: /opt/prokka/bin
+[18:40:16] Looking for 'aragorn' - found /opt/prokka/binaries/linux/aragorn
+[18:40:16] Determined aragorn version is 1.2
+[18:40:16] Looking for 'blastp' - found /opt/prokka/binaries/linux/blastp
+[18:40:17] Determined blastp version is 2.4
+[18:40:17] Looking for 'cmpress' - found /opt/prokka/binaries/linux/cmpress
+[18:40:17] Determined cmpress version is 1.1
+[18:40:17] Looking for 'cmscan' - found /opt/prokka/binaries/linux/cmscan
+[18:40:17] Determined cmscan version is 1.1
+[18:40:17] Looking for 'egrep' - found /usr/bin/egrep
+[18:40:17] Looking for 'find' - found /usr/bin/find
+[18:40:17] Looking for 'grep' - found /usr/bin/grep
+[18:40:17] Looking for 'hmmpress' - found /opt/prokka/binaries/linux/hmmpress
+[18:40:17] Determined hmmpress version is 3.1
+[18:40:17] Looking for 'hmmscan' - found /opt/prokka/binaries/linux/hmmscan
+[18:40:17] Determined hmmscan version is 3.1
+[18:40:17] Looking for 'java' - found /usr/bin/java
+[18:40:17] Looking for 'less' - found /usr/bin/less
+[18:40:17] Looking for 'makeblastdb' - found /opt/prokka/binaries/linux/makeblastdb
+[18:40:17] Determined makeblastdb version is 2.4
+[18:40:17] Looking for 'minced' - found /opt/prokka/binaries/common/minced
+[18:40:18] Determined minced version is 2.0
+[18:40:18] Looking for 'parallel' - found /opt/snippy/binaries/noarch/parallel
+[18:40:18] Determined parallel version is 20150122
+[18:40:18] Looking for 'prodigal' - found /opt/prokka/binaries/linux/prodigal
+[18:40:19] Determined prodigal version is 2.6
+[18:40:19] Looking for 'prokka-genbank_to_fasta_db' - found /opt/prokka/bin/prokka-genbank_to_fasta_db
+[18:40:19] Looking for 'sed' - found /usr/bin/sed
+[18:40:19] Looking for 'tbl2asn' - found /opt/prokka/binaries/linux/tbl2asn
+[18:40:19] Determined tbl2asn version is 25.3
+[18:40:19] Using genetic code table 11.
+[18:40:19] Loading and checking input file: contigs.fa_NC000962_3.fasta.fasta
+[18:40:19] Wrote 1 contigs totalling 4481260 bp.
+[18:40:19] Predicting tRNAs and tmRNAs
+[18:40:19] Running: aragorn -l -gc11  -w \.\/G04868_prokka\/G04868\.fna
+[18:40:22] 1 tRNA-Ile [8388,8462] 35 (gat)
+[18:40:22] 2 tRNA-Ala [8613,8686] 34 (tgc)
+[18:40:22] 3 tRNA-Leu [23141,23225] 34 (cag)
+[18:40:22] 4 tRNA-Gly c[385298,385370] 33 (ccc)
+[18:40:22] 5 tRNA-Tyr [658479,658562] 35 (gta)
+[18:40:22] 6 tRNA-Thr [732105,732178] 34 (ggt)
+[18:40:22] 7 tRNA-Met [732214,732288] 35 (cat)
+[18:40:22] 8 tRNA-Trp [734135,734208] 34 (cca)
+[18:40:22] 9 tRNA-Thr c[852191,852263] 33 (tgt)
+[18:40:22] 10 tRNA-Lys c[925350,925423] 34 (ttt)
+[18:40:22] 11 tRNA-Glu [925547,925622] 36 (ttc)
+[18:40:22] 12 tRNA-Asp [925658,925734] 35 (gtc)
+[18:40:22] 13 tRNA-Phe [925761,925837] 35 (gaa)
+[18:40:22] 14 tRNA-Arg c[1027167,1027240] 34 (cct)
+[18:40:22] 15 tRNA-Ala [1115612,1115687] 34 (cgc)
+[18:40:22] 16 tRNA-Gln c[1140303,1140375] 34 (ttg)
+[18:40:22] 17 tRNA-Leu [1179832,1179906] 35 (taa)
+[18:40:22] 18 tRNA-Arg c[1450292,1450365] 34 (ccg)
+[18:40:22] 19 tRNA-Leu [1517206,1517290] 35 (tag)
+[18:40:22] 20 tRNA-Leu c[1585979,1586065] 32 (aag)
+[18:40:22] 21 tRNA-Arg c[1631783,1631879] 37 (ccg)
+[18:40:22] 22 tRNA-Leu c[1835274,1835350] 35 (caa)
+[18:40:22] 23 tRNA-Pro [1954946,1955020] 35 (ggg)
+[18:40:22] 24 tRNA-Leu [2423020,2423106] 34 (gag)
+[18:40:22] 25 tRNA-Val c[2532272,2532345] 33 (tac)
+[18:40:22] 26 tRNA-Met c[2603926,2604000] 35 (cat)
+[18:40:22] 27 tRNA-Asn c[2641993,2642066] 34 (gtt)
+[18:40:22] 28 tRNA-Pro c[2788476,2788552] 35 (tgg)
+[18:40:22] 29 tRNA-Gly [2788689,2788760] 33 (tcc)
+[18:40:22] 30 tRNA-Arg [2815966,2816040] 35 (tct)
+[18:40:22] 31 tRNA-His [2851008,2851083] 34 (gtg)
+[18:40:22] 32 tRNA-Lys [2858648,2858721] 34 (ctt)
+[18:40:22] 33 tRNA-Val c[2993850,2993922] 33 (cac)
+[18:40:22] 34 tRNA-Gly [2994107,2994180] 34 (gcc)
+[18:40:22] 35 tRNA-Cys [2994209,2994282] 33 (gca)
+[18:40:22] 36 tRNA-Val [2994296,2994370] 33 (gac)
+[18:40:22] 37 tRNA-Thr c[3168775,3168849] 33 (ggt)
+[18:40:22] 38 tRNA-Glu c[3375553,3375626] 35 (ctc)
+[18:40:22] 39 tRNA-Gln c[3375665,3375737] 34 (ctg)
+[18:40:22] 40 tRNA-Ala c[3459347,3459420] 34 (ggc)
+[18:40:22] 41 tmRNA c[3495773,3496139] 95,133 ADSHQRDYALAA*
+[18:40:22] 42 tRNA-Met c[3587487,3587563] 35 (cat)
+[18:40:22] 43 tRNA-His [3790301,3790400] 38 (gtg)
+[18:40:22] 44 tRNA-Gly c[4016932,4017024] 33 (gcc)
+[18:40:22] 45 tRNA-Thr c[4115013,4115088] 34 (cgt)
+[18:40:22] 46 tRNA-Pro [4160345,4160420] 35 (cgg)
+[18:40:22] 47 tRNA-Ser [4202140,4202228] 35 (gga)
+[18:40:22] 48 tRNA-Ser c[4233169,4233258] 35 (cga)
+[18:40:22] 49 tRNA-Arg c[4251042,4251115] 34 (acg)
+[18:40:22] 50 tRNA-Ser c[4251145,4251234] 35 (gct)
+[18:40:22] 51 tRNA-Ser c[4256867,4256954] 35 (tga)
+[18:40:22] Found 51 tRNAs
+[18:40:22] Predicting Ribosomal RNAs
+[18:40:22] You need either Barrnap or RNAmmer installed to predict rRNAs!
+[18:40:22] Skipping ncRNA search, enable with --rfam if desired.
+[18:40:22] Total of 50 tRNA + rRNA features
+[18:40:22] Searching for CRISPR repeats
+[18:40:23] CRISPR1 ordered_NC000962_3 569802 with 3 spacers
+[18:40:23] CRISPR2 ordered_NC000962_3 2553955 with 3 spacers
+[18:40:23] CRISPR3 ordered_NC000962_3 3144225 with 20 spacers
+[18:40:23] CRISPR4 ordered_NC000962_3 3147148 with 5 spacers
+[18:40:23] CRISPR5 ordered_NC000962_3 3147875 with 13 spacers
+[18:40:23] CRISPR6 ordered_NC000962_3 3692079 with 4 spacers
+[18:40:23] CRISPR7 ordered_NC000962_3 4451308 with 6 spacers
+[18:40:23] CRISPR8 ordered_NC000962_3 4451750 with 6 spacers
+[18:40:23] Found 8 CRISPRs
+[18:40:23] Predicting coding sequences
+[18:40:23] Contigs total 4481260 bp, so using single mode
+[18:40:23] Running: prodigal -i \.\/G04868_prokka\/G04868\.fna -c -m -g 11 -p single -f sco -q
+[18:40:30] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:8624..8842 on - strand
+[18:40:30] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:23183..23512 on + strand
+[18:40:31] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:925583..925750 on - strand
+[18:40:32] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:1585807..1586631 on - strand
+[18:40:32] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:1631737..1632858 on - strand
+[18:40:33] Excluding CDS which overlaps existing RNA (repeat_region) at ordered_NC000962_3:3144362..3145255 on - strand
+[18:40:33] Excluding CDS which overlaps existing RNA (repeat_region) at ordered_NC000962_3:3147261..3147485 on + strand
+[18:40:33] Excluding CDS which overlaps existing RNA (repeat_region) at ordered_NC000962_3:3148164..3148748 on - strand
+[18:40:33] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:3167842..3169152 on - strand
+[18:40:33] Excluding CDS which overlaps existing RNA (repeat_region) at ordered_NC000962_3:3692290..3692556 on + strand
+[18:40:34] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:3790288..3790428 on + strand
+[18:40:34] Excluding CDS which overlaps existing RNA (tRNA) at ordered_NC000962_3:4016083..4017102 on - strand
+[18:40:34] Excluding CDS which overlaps existing RNA (repeat_region) at ordered_NC000962_3:4450917..4451456 on + strand
+[18:40:34] Found 4236 CDS
+[18:40:34] Connecting features back to sequences
+[18:40:34] Not using genus-specific database. Try --usegenus to enable it.
+[18:40:34] Annotating CDS, please be patient.
+[18:40:34] Will use 4 CPUs for similarity searching.
+[18:40:40] There are still 4236 unannotated CDS left (started with 4236)
+[18:40:40] Will use blast to search against /opt/prokka/bin/../db/kingdom/Bacteria/sprot with 4 CPUs
+[18:40:40] Running: cat \.\/G04868_prokka\/sprot\.faa | parallel --gnu --plain -j 4 --block 161868 --recstart '>' --pipe blastp -query - -db /opt/prokka/bin/../db/kingdom/Bacteria/sprot -evalue 1e-06 -num_threads 1 -num_descriptions 1 -num_alignments 1 -seg no > \.\/G04868_prokka\/sprot\.blast 2> /dev/null
+[18:41:52] Modify product: Probable aldehyde dehydrogenase => putative aldehyde dehydrogenase
+[18:41:52] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0472c => putative HTH-type transcriptional regulator
+[18:41:52] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0474 => putative HTH-type transcriptional regulator
+[18:41:52] Modify product: Hydrolase Rv0480c => Hydrolase
+[18:41:52] Modify product: Uncharacterized oxidoreductase Rv0484c => putative oxidoreductase
+[18:41:52] Modify product: Transcriptional regulator Rv0485 => Transcriptional regulator
+[18:41:52] Modify product: Uncharacterized GMC-type oxidoreductase Rv0492c => putative GMC-type oxidoreductase
+[18:41:52] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0494 => putative HTH-type transcriptional regulator
+[18:41:52] Modify product: Putative DNA-binding protein Rv0500A => Putative DNA-binding proteinA
+[18:41:52] Modify product: Probable transport accessory protein MmpS2 => putative transport accessory protein MmpS2
+[18:41:52] Modify product: Probable transport protein MmpL2 => putative transport protein MmpL2
+[18:41:52] Modify product: Uncharacterized glycosyltransferase Rv0539 => putative glycosyltransferase
+[18:41:52] Modify product: Probable 2-succinylbenzoate--CoA ligase => putative 2-succinylbenzoate--CoA ligase
+[18:41:52] Modify product: Protease HtpX homolog => Protease HtpX 
+[18:41:52] Modify product: Probable glycerol-3-phosphate dehydrogenase 2 [NAD(P)+] => putative glycerol-3-phosphate dehydrogenase 2 [NAD(P)+]
+[18:41:52] Modify product: Putative phosphoribosyl transferase MT0597 => Putative phosphoribosyl transferase
+[18:41:52] Modify product: Probable polyglutamine synthesis accessory protein MT0602 => putative polyglutamine synthesis accessory protein
+[18:41:52] Modify product: HTH-type transcriptional regulator Rv2034 => HTH-type transcriptional regulator
+[18:41:52] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:52] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:52] Modify product: TVP38/TMEM64 family membrane protein Rv0625c => TVP38/TMEM64 family membrane protein
+[18:41:52] Modify product: Probable enoyl-CoA hydratase echA17 => putative enoyl-CoA hydratase echA17
+[18:41:52] Modify product: Probable polyketide biosynthesis zinc-dependent hydrolase BaeB => putative polyketide biosynthesis zinc-dependent hydrolase BaeB
+[18:41:52] Modify product: Probable protein kinase UbiB => putative protein kinase UbiB
+[18:41:52] Modify product: Probable ribonucleotide transport ATP-binding protein mkl => putative ribonucleotide transport ATP-binding protein mkl
+[18:41:52] Modify product: Probable endoribonuclease MazF2 => putative endoribonuclease MazF2
+[18:41:52] Modify product: Probable endonuclease 4 => putative endonuclease 4
+[18:41:52] Modify product: Uncharacterized NAD-dependent oxidoreductase Rv0687 => putative NAD-dependent oxidoreductase
+[18:41:52] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv1729c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:52] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0726c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:52] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0731c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:52] Modify product: Probable 3-hydroxyisobutyrate dehydrogenase => putative 3-hydroxyisobutyrate dehydrogenase
+[18:41:52] Modify product: Probable 3-hydroxyisobutyrate dehydrogenase => putative 3-hydroxyisobutyrate dehydrogenase
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:53] Modify product: Probable transcriptional regulatory protein TcrX => putative transcriptional regulatory protein TcrX
+[18:41:53] Modify product: Probable sensor histidine kinase TcrY => putative sensor histidine kinase TcrY
+[18:41:53] Modify product: Uncharacterized HIT-like protein Rv0759c => putative HIT-like protein
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0767c => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Putative aldehyde dehydrogenase SAV2122 => Putative aldehyde dehydrogenase
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv0769 => putative oxidoreductase
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv0770 => putative oxidoreductase
+[18:41:53] Modify product: Probable transport protein HsrA => putative transport protein HsrA
+[18:41:53] Modify product: KsdD-like steroid dehydrogenase Rv0785 => KsdD-like steroid dehydrogenase
+[18:41:53] Modify product: Putative monooxygenase Rv0793 => Putative monooxygenase
+[18:41:53] Modify product: Probable deferrochelatase/peroxidase YfeX => putative deferrochelatase/peroxidase YfeX
+[18:41:53] Modify product: Probable M18 family aminopeptidase 2 => putative M18 family aminopeptidase 2
+[18:41:53] Modify product: Putative succinyl-CoA transferase Rv0802c => Putative succinyl-CoA transferase
+[18:41:53] Modify product: Phosphate-specific transport system accessory protein PhoU homolog 2 => Phosphate-specific transport system accessory protein PhoU 
+[18:41:53] Modify product: Probable tRNA-dihydrouridine synthase => putative tRNA-dihydrouridine synthase
+[18:41:53] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0830 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:53] Modify product: Probable transcriptional regulatory protein NarL => putative transcriptional regulatory protein NarL
+[18:41:53] Modify product: Probable sensor histidine kinase NarS => putative sensor histidine kinase NarS
+[18:41:53] Modify product: Probable siderophore biosynthesis protein SbnA => putative siderophore biosynthesis protein SbnA
+[18:41:53] Modify product: Probable N-succinyldiaminopimelate aminotransferase DapC => putative N-succinyldiaminopimelate aminotransferase DapC
+[18:41:53] Modify product: Putative acyltransferase Rv0859 => Putative acyltransferase
+[18:41:53] Modify product: Probable acyl-CoA dehydrogenase FadE10 => putative acyl-CoA dehydrogenase FadE10
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0880 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Probable ferredoxin/ferredoxin--NADP reductase => putative ferredoxin/ferredoxin--NADP reductase
+[18:41:53] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Uncharacterized monooxygenase Rv0892 => putative monooxygenase
+[18:41:53] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0893c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:53] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Putative diacyglycerol O-acyltransferase Rv0895 => Putative diacyglycerol O-acyltransferase
+[18:41:53] Modify product: Uncharacterized membrane protein ArfB => putative membrane protein ArfB
+[18:41:53] Modify product: Uncharacterized membrane protein ArfC => putative membrane protein ArfC
+[18:41:53] Modify product: Probable enoyl-CoA hydratase echA6 => putative enoyl-CoA hydratase echA6
+[18:41:53] Modify product: Probable cation-transporting ATPase E => putative cation-transporting ATPase E
+[18:41:53] Modify product: Antitoxin Rv0909 => Antitoxin
+[18:41:53] Modify product: Toxin Rv0910 => Toxin
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE29 => putative PPE family protein PPE29
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv0927c => putative oxidoreductase
+[18:41:53] Modify product: Uncharacterized formamidopyrimidine-DNA glycosylase-like protein => putative formamidopyrimidine-DNA glycosylase-like protein
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv0945 => putative oxidoreductase
+[18:41:53] Modify product: 34 kDa antigenic protein homolog => 34 kDa antigenic protein 
+[18:41:53] Modify product: Probable copper-exporting P-type ATPase V => putative copper-exporting P-type ATPase V
+[18:41:53] Modify product: Probable enoyl-CoA hydratase => putative enoyl-CoA hydratase
+[18:41:53] Modify product: Probable propionyl-CoA carboxylase beta chain 5 => putative propionyl-CoA carboxylase beta chain 5
+[18:41:53] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv0986 => putative ABC transporter ATP-binding protein
+[18:41:53] Modify product: Probable dolichyl-phosphate-mannose--protein mannosyltransferase => putative dolichyl-phosphate-mannose--protein mannosyltransferase
+[18:41:53] Modify product: Uncharacterized metal-dependent hydrolase TatD => putative metal-dependent hydrolase TatD
+[18:41:53] Modify product: Putative ligase Rv1013 => Putative ligase
+[18:41:53] Modify product: Probable sensor histidine kinase TcrY => putative sensor histidine kinase TcrY
+[18:41:53] Modify product: Probable transcriptional regulatory protein TcrX => putative transcriptional regulatory protein TcrX
+[18:41:53] Modify product: Uncharacterized PE family protein PE23 => putative PE family protein PE23
+[18:41:53] Modify product: Uncharacterized NTE family protein Rv1063c => putative NTE family protein
+[18:41:53] Modify product: Probable enoyl-CoA hydratase echA8 => putative enoyl-CoA hydratase echA8
+[18:41:53] Modify product: Putative cystathionine beta-synthase Rv1077 => Putative cystathionine beta-synthase
+[18:41:53] Modify product: Proline-rich antigen homolog => Proline-rich antigen 
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv1144 => putative oxidoreductase
+[18:41:53] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0830 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:53] Modify product: Probable monoacyl phosphatidylinositol tetramannoside-binding protein LpqW => putative monoacyl phosphatidylinositol tetramannoside-binding protein LpqW
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1556 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE17 => putative PPE family protein PPE17
+[18:41:53] Modify product: Probable ECF RNA polymerase sigma factor SigI => putative ECF RNA polymerase sigma factor SigI
+[18:41:53] Modify product: Putative O-methyltransferase Rv1220c => Putative O-methyltransferase
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1255c => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Uncharacterized FAD-linked oxidoreductase Rv2280 => putative FAD-linked oxidoreductase
+[18:41:53] Modify product: Probable multidrug-efflux transporter Rv1258c => putative multidrug-efflux transporter
+[18:41:53] Modify product: Probable multidrug-efflux transporter Rv1258c => putative multidrug-efflux transporter
+[18:41:53] Modify product: F420H(2)-dependent quinone reductase Rv1261c => F420H(2)-dependent quinone reductase
+[18:41:53] Modify product: Uncharacterized HIT-like protein HP_0404 => putative HIT-like protein
+[18:41:53] Modify product: pH-sensitive adenylate cyclase Rv1264 => pH-sensitive adenylate cyclase
+[18:41:53] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv1272c => putative ABC transporter ATP-binding protein
+[18:41:53] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv1273c => putative ABC transporter ATP-binding protein
+[18:41:53] Modify product: Uncharacterized GMC-type oxidoreductase Rv1279 => putative GMC-type oxidoreductase
+[18:41:53] Modify product: Probable monoacyl phosphatidylinositol tetramannoside-binding protein LpqW => putative monoacyl phosphatidylinositol tetramannoside-binding protein LpqW
+[18:41:53] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv1281c => putative ABC transporter ATP-binding protein
+[18:41:53] Modify product: Putative peptide transport permease protein Rv1282c => Putative peptide transport permease protein
+[18:41:53] Modify product: Putative peptide transport permease protein Rv1283c => Putative peptide transport permease protein
+[18:41:53] Modify product: Putative HTH-type transcriptional regulator Rv1287 => Putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Probable bifunctional transcriptional activator/DNA repair enzyme AlkA => putative bifunctional transcriptional activator/DNA repair enzyme AlkA
+[18:41:53] Modify product: Probable acetyl-CoA acetyltransferase => putative acetyl-CoA acetyltransferase
+[18:41:53] Modify product: Probable ATP-dependent helicase DinG homolog => putative ATP-dependent helicase DinG 
+[18:41:53] Modify product: Uncharacterized aminopeptidase Rv1333 => putative aminopeptidase
+[18:41:53] Modify product: Uncharacterized oxidoreductase Rv1350 => putative oxidoreductase
+[18:41:53] Modify product: Uncharacterized signaling protein CC_0091 => putative signaling protein
+[18:41:53] Modify product: Probable adenylyltransferase/sulfurtransferase MoeZ => putative adenylyltransferase/sulfurtransferase MoeZ
+[18:41:53] Modify product: Uncharacterized signaling protein CC_0091 => putative signaling protein
+[18:41:53] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Putative coenzyme F420-dependent oxidoreductase Rv3520c => Putative coenzyme F420-dependent oxidoreductase
+[18:41:53] Modify product: Glycolipid sulfotransferase Rv1373 => Glycolipid sulfotransferase
+[18:41:53] Modify product: Uncharacterized PPE family protein PPE20 => putative PPE family protein PPE20
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1395 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Uncharacterized membrane protein Rv1401 => putative membrane protein
+[18:41:53] Modify product: Probable primosomal protein N' => putative primosomal protein N'
+[18:41:53] Modify product: Putative methyltransferase Rv1407 => Putative methyltransferase
+[18:41:53] Modify product: Probable triacylglyceride transporter BCG_1471c => putative triacylglyceride transporter
+[18:41:53] Modify product: Nucleotide-binding protein Rv1421 => Nucleotide-binding protein
+[18:41:53] Modify product: Putative diacyglycerol O-acyltransferase Rv1425 => Putative diacyglycerol O-acyltransferase
+[18:41:53] Modify product: Probable L,D-transpeptidase 3 => putative L,D-transpeptidase 3
+[18:41:53] Modify product: Probable protein-export membrane protein SecG => putative protein-export membrane protein SecG
+[18:41:53] Modify product: Alpha-(1->6)-mannopyranosyltransferase Rv1459c => Alpha-(1->6)-mannopyranosyltransferase
+[18:41:53] Modify product: Uncharacterized FtsW-like protein => putative FtsW-like protein
+[18:41:53] Modify product: Putative monooxygenase Rv1533 => Putative monooxygenase
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0023 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Probable endopeptidase cgR_2070 => putative endopeptidase
+[18:41:53] Modify product: Putative ligase Rv1013 => Putative ligase
+[18:41:53] Modify product: Uncharacterized MFS-type transporter Rv0037c => putative MFS-type transporter
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0880 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0043c => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Putative coenzyme F420-dependent oxidoreductase Rv3520c => Putative coenzyme F420-dependent oxidoreductase
+[18:41:53] Modify product: Uncharacterized FAD-linked oxidoreductase YvdP => putative FAD-linked oxidoreductase YvdP
+[18:41:53] Modify product: Uncharacterized ABC transporter permease Rv0072 => putative ABC transporter permease
+[18:41:53] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv0073 => putative ABC transporter ATP-binding protein
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator MT0088 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Putative dioxygenase Rv0097 => Putative dioxygenase
+[18:41:53] Modify product: Uncharacterized NTE family protein Rv2565 => putative NTE family protein
+[18:41:53] Modify product: Probable cation-transporting ATPase I => putative cation-transporting ATPase I
+[18:41:53] Modify product: Probable hydrogen peroxide-inducible genes activator => putative hydrogen peroxide-inducible genes activator
+[18:41:53] Modify product: Probable sulfoacetate--CoA ligase => putative sulfoacetate--CoA ligase
+[18:41:53] Modify product: Probable enoyl-CoA hydratase 1 => putative enoyl-CoA hydratase 1
+[18:41:53] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0145 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:53] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0146 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:53] Modify product: Putative short-chain type dehydrogenase/reductase Rv0148 => Putative short-chain type dehydrogenase/reductase
+[18:41:53] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:53] Modify product: Uncharacterized FAD-linked oxidoreductase Rv2280 => putative FAD-linked oxidoreductase
+[18:41:53] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:53] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:53] Modify product: Proline-rich antigen homolog => Proline-rich antigen 
+[18:41:53] Modify product: Putative quercetin 2,3-dioxygenase Rv0181c => Putative quercetin 2,3-dioxygenase
+[18:41:53] Modify product: Putative O-methyltransferase Rv1220c => Putative O-methyltransferase
+[18:41:53] Modify product: Multidrug efflux ATP-binding/permease protein Rv0194 => Multidrug efflux ATP-binding/permease protein
+[18:41:53] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0196 => putative HTH-type transcriptional regulator
+[18:41:53] Modify product: Heme-binding protein Rv0203 => Heme-binding protein
+[18:41:53] Modify product: Putative diacyglycerol O-acyltransferase Rv0221 => Putative diacyglycerol O-acyltransferase
+[18:41:53] Modify product: Putative diacyglycerol O-acyltransferase Rv0221 => Putative diacyglycerol O-acyltransferase
+[18:41:53] Modify product: Uncharacterized methyltransferase Rv0224c => putative methyltransferase
+[18:41:53] Modify product: Putative secreted protein Rv0236.1 => Putative secreted protein.1
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE2 => putative PPE family protein PPE2
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE3 => putative PPE family protein PPE3
+[18:41:54] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0281 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:54] Modify product: Probable trans-aconitate 2-methyltransferase => putative trans-aconitate 2-methyltransferase
+[18:41:54] Modify product: Antitoxin Rv0298 => Antitoxin
+[18:41:54] Modify product: Toxin Rv0299 => Toxin
+[18:41:54] Modify product: Probable aspartate aminotransferase => putative aspartate aminotransferase
+[18:41:54] Modify product: Uncharacterized membrane protein Rv0364 => putative membrane protein
+[18:41:54] Modify product: Probable xanthine dehydrogenase subunit A => putative xanthine dehydrogenase subunit A
+[18:41:54] Modify product: Probable xanthine dehydrogenase subunit A => putative xanthine dehydrogenase subunit A
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0377 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:54] Modify product: NADH dehydrogenase-like protein SA0802 => NADH dehydrogenase-like protein
+[18:41:54] Modify product: Probable transport protein MmpL1 => putative transport protein MmpL1
+[18:41:54] Modify product: Probable metallo-hydrolase YflN => putative metallo-hydrolase YflN
+[18:41:54] Modify product: Probable lipoprotein aminopeptidase LpqL => putative lipoprotein aminopeptidase LpqL
+[18:41:54] Modify product: Probable cation-transporting ATPase I => putative cation-transporting ATPase I
+[18:41:54] Modify product: Uncharacterized oxidoreductase Rv0769 => putative oxidoreductase
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE10 => putative PPE family protein PPE10
+[18:41:54] Modify product: Probable cysteine desulfurase => putative cysteine desulfurase
+[18:41:54] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:54] Modify product: Probable cobalt/nickel-exporting P-type ATPase => putative cobalt/nickel-exporting P-type ATPase
+[18:41:54] Modify product: Probable enoyl-CoA hydratase echA12 => putative enoyl-CoA hydratase echA12
+[18:41:54] Modify product: Uncharacterized ABC transporter ATP-binding protein YbiT => putative ABC transporter ATP-binding protein YbiT
+[18:41:54] Modify product: Probable methylmalonyl-CoA mutase large subunit => putative methylmalonyl-CoA mutase large subunit
+[18:41:54] Modify product: Probable methylmalonyl-CoA mutase small subunit => putative methylmalonyl-CoA mutase small subunit
+[18:41:54] Modify product: Probable methylmalonyl-CoA mutase large subunit => putative methylmalonyl-CoA mutase large subunit
+[18:41:54] Modify product: Probable antitoxin MazE4 => putative antitoxin MazE4
+[18:41:54] Modify product: Probable GTPase Rv1496 => putative GTPase
+[18:41:54] Modify product: Uncharacterized glycosyltransferase Rv1514c => putative glycosyltransferase
+[18:41:54] Modify product: Uncharacterized glycosyltransferase Rv1524 => putative glycosyltransferase
+[18:41:54] Modify product: Uncharacterized glycosyltransferase Rv1524 => putative glycosyltransferase
+[18:41:54] Modify product: Probable alcohol dehydrogenase adh => putative alcohol dehydrogenase adh
+[18:41:54] Modify product: Putative monooxygenase Rv1533 => Putative monooxygenase
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator YfiR => putative HTH-type transcriptional regulator YfiR
+[18:41:54] Modify product: Probable L-asparaginase => putative L-asparaginase
+[18:41:54] Modify product: Uncharacterized RNA pseudouridine synthase Rv1540 => putative RNA pseudouridine synthase
+[18:41:54] Modify product: Uncharacterized oxidoreductase Rv1543 => putative oxidoreductase
+[18:41:54] Modify product: Uncharacterized oxidoreductase SA2266 => putative oxidoreductase
+[18:41:54] Modify product: Toxin Rv0910 => Toxin
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1556 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: F420H(2)-dependent quinone reductase Rv1558 => F420H(2)-dependent quinone reductase
+[18:41:54] Modify product: Glycogen operon protein GlgX homolog => Glycogen operon protein GlgX 
+[18:41:54] Modify product: Probable inactive lipase Rv1592c => putative inactive lipase
+[18:41:54] Modify product: Probable inositol 1-monophosphatase ImpA => putative inositol 1-monophosphatase ImpA
+[18:41:54] Modify product: Putative peroxiredoxin Rv1608c => Putative peroxiredoxin
+[18:41:54] Modify product: Probable ABC transporter ATP-binding protein HI_0664 => putative ABC transporter ATP-binding protein
+[18:41:54] Modify product: Probable transcriptional regulatory protein pdtaR => putative transcriptional regulatory protein pdtaR
+[18:41:54] Modify product: Probable multidrug-efflux transporter Rv1634 => putative multidrug-efflux transporter
+[18:41:54] Modify product: Universal stress protein Rv1636 => Universal stress protein
+[18:41:54] Modify product: pH-sensitive adenylate cyclase Rv1264 => pH-sensitive adenylate cyclase
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator MT0088 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: HTH-type transcriptional repressor Rv3405c => HTH-type transcriptional repressor
+[18:41:54] Modify product: Uncharacterized ABC transporter ATP-binding protein YbhF => putative ABC transporter ATP-binding protein YbhF
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:54] Modify product: Uncharacterized RNA pseudouridine synthase Rv1711 => putative RNA pseudouridine synthase
+[18:41:54] Modify product: Probable 3-hydroxybutyryl-CoA dehydrogenase => putative 3-hydroxybutyryl-CoA dehydrogenase
+[18:41:54] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv1729c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:54] Modify product: Probable membrane protein Rv1733c => putative membrane protein
+[18:41:54] Modify product: Uncharacterized membrane protein MT1776 => putative membrane protein
+[18:41:54] Modify product: Probable nitrate/nitrite transporter NarK2 => putative nitrate/nitrite transporter NarK2
+[18:41:54] Modify product: Probable sulfate transporter Rv1739c => putative sulfate transporter
+[18:41:54] Modify product: ABC transporter ATP-binding/permease protein Rv1747 => ABC transporter ATP-binding/permease protein
+[18:41:54] Modify product: Probable cutinase Rv1984c => putative cutinase
+[18:41:54] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:54] Modify product: Putative diacyglycerol O-acyltransferase Rv1760 => Putative diacyglycerol O-acyltransferase
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1255c => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE42 => putative PPE family protein PPE42
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE29 => putative PPE family protein PPE29
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE33 => putative PPE family protein PPE33
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE29 => putative PPE family protein PPE29
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE33 => putative PPE family protein PPE33
+[18:41:54] Modify product: NADH dehydrogenase-like protein MT1860 => NADH dehydrogenase-like protein
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1816 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1828 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1830 => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Probable glycine dehydrogenase (decarboxylating) => putative glycine dehydrogenase (decarboxylating)
+[18:41:54] Modify product: Putative serine esterase Rv1835c => Putative serine esterase
+[18:41:54] Modify product: Uncharacterized oxidoreductase Rv1843c => putative oxidoreductase
+[18:41:54] Modify product: Putative esterase Rv1847 => Putative esterase
+[18:41:54] Modify product: NADH dehydrogenase-like protein SA0802 => NADH dehydrogenase-like protein
+[18:41:54] Modify product: Putative oxidoreductase Rv1856c => Putative oxidoreductase
+[18:41:54] Modify product: Probable alcohol dehydrogenase AdhA => putative alcohol dehydrogenase AdhA
+[18:41:54] Modify product: Probable oxidoreductase EphD => putative oxidoreductase EphD
+[18:41:54] Modify product: Probable CoA-transferase Rv1866 => putative CoA-transferase
+[18:41:54] Modify product: Probable lipoprotein LppE => putative lipoprotein LppE
+[18:41:54] Modify product: Uncharacterized oxidoreductase SA2266 => putative oxidoreductase
+[18:41:54] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv3787c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:54] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv3399 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:54] Modify product: Putative monooxygenase Rv1533 => Putative monooxygenase
+[18:41:54] Modify product: Probable zinc-binding alcohol dehydrogenase Rv1895 => putative zinc-binding alcohol dehydrogenase
+[18:41:54] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv1896c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:54] Modify product: Probable D-amino-acid oxidase => putative D-amino-acid oxidase
+[18:41:54] Modify product: HTH-type transcriptional regulator Rv1931c => HTH-type transcriptional regulator
+[18:41:54] Modify product: Probable thiol peroxidase => putative thiol peroxidase
+[18:41:54] Modify product: Probable endoribonuclease MazF5 => putative endoribonuclease MazF5
+[18:41:54] Modify product: Probable endoribonuclease HigB1 => putative endoribonuclease HigB1
+[18:41:54] Modify product: SecB-like chaperone Rv1957 => SecB-like chaperone
+[18:41:54] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:54] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:54] Modify product: Probable phospholipid ABC transporter-binding protein MlaD => putative phospholipid ABC transporter-binding protein MlaD
+[18:41:54] Modify product: Uncharacterized transporter Rv1979c => putative transporter
+[18:41:54] Modify product: Probable cutinase Rv1984c => putative cutinase
+[18:41:54] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1985c => putative HTH-type transcriptional regulator
+[18:41:54] Modify product: Putative short-chain type dehydrogenase/reductase MSMEG_6031/MSMEI_5872 => Putative short-chain type dehydrogenase/reductase/MSMEI_5872
+[18:41:54] Modify product: Probable cation-transporting ATPase G => putative cation-transporting ATPase G
+[18:41:54] Modify product: Universal stress protein Rv1996 => Universal stress protein
+[18:41:54] Modify product: Probable cation-transporting ATPase F => putative cation-transporting ATPase F
+[18:41:54] Modify product: Uncharacterized transporter Rv1999c => putative transporter
+[18:41:54] Modify product: Universal stress protein MT2061 => Universal stress protein
+[18:41:54] Modify product: Uncharacterized glycosyl hydrolase MT2062 => putative glycosyl hydrolase
+[18:41:54] Modify product: Probable cation efflux system protein Rv2025c => putative cation efflux system protein
+[18:41:54] Modify product: Universal stress protein Rv2026c => Universal stress protein
+[18:41:54] Modify product: Universal stress protein MT2087 => Universal stress protein
+[18:41:54] Modify product: Putative phosphoribosyl transferase MT0597 => Putative phosphoribosyl transferase
+[18:41:54] Modify product: HTH-type transcriptional regulator Rv2034 => HTH-type transcriptional regulator
+[18:41:54] Modify product: Uncharacterized oxidoreductase Rv2073c => putative oxidoreductase
+[18:41:54] Modify product: Probable dipeptidase PepE => putative dipeptidase PepE
+[18:41:54] Modify product: Probable helicase HelY => putative helicase HelY
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE36 => putative PPE family protein PPE36
+[18:41:54] Modify product: Uncharacterized PPE family protein PPE37 => putative PPE family protein PPE37
+[18:41:54] Modify product: Uncharacterized NAD-dependent oxidoreductase MAP_4146 => putative NAD-dependent oxidoreductase
+[18:41:54] Modify product: Putative phosphoribosyl transferase MT0597 => Putative phosphoribosyl transferase
+[18:41:54] Modify product: Laccase domain protein Rv2149c => Laccase domain protein
+[18:41:54] Modify product: Probable peptidoglycan glycosyltransferase FtsW => putative peptidoglycan glycosyltransferase FtsW
+[18:41:54] Modify product: DNA-binding protein Rv2175c => DNA-binding protein
+[18:41:54] Modify product: 3'-5' exoribonuclease MT2234.1 => 3'-5' exoribonuclease.1
+[18:41:54] Modify product: Probable endopeptidase cgR_2070 => putative endopeptidase
+[18:41:54] Modify product: Probable cytochrome c oxidase subunit 3 => putative cytochrome c oxidase subunit 3
+[18:41:54] Modify product: Probable transport accessory protein MmpS3 => putative transport accessory protein MmpS3
+[18:41:54] Modify product: pH-sensitive adenylate cyclase Rv1264 => pH-sensitive adenylate cyclase
+[18:41:54] Modify product: Probable cytosol aminopeptidase => putative cytosol aminopeptidase
+[18:41:54] Modify product: Probable oxidoreductase EphD => putative oxidoreductase EphD
+[18:41:54] Modify product: Epimerase family protein Rv2216 => Epimerase family protein
+[18:41:55] Modify product: GTP cyclohydrolase 1 type 2 homolog => GTP cyclohydrolase 1 type 2 
+[18:41:55] Modify product: Uncharacterized aminotransferase Rv2231c => putative aminotransferase
+[18:41:55] Modify product: Probable low molecular weight protein-tyrosine-phosphatase => putative low molecular weight protein-tyrosine-phosphatase
+[18:41:55] Modify product: Uncharacterized SURF1-like protein Rv2235 => putative SURF1-like protein
+[18:41:55] Modify product: Putative peroxiredoxin Rv2238c => Putative peroxiredoxin
+[18:41:55] Modify product: Probable propionyl-CoA carboxylase beta chain 6 => putative propionyl-CoA carboxylase beta chain 6
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv2250c => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Uncharacterized FAD-linked oxidoreductase Rv2280 => putative FAD-linked oxidoreductase
+[18:41:55] Modify product: Uncharacterized FAD-linked oxidoreductase Rv2280 => putative FAD-linked oxidoreductase
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv2282c => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Putative diacyglycerol O-acyltransferase Rv2285 => Putative diacyglycerol O-acyltransferase
+[18:41:55] Modify product: Thioredoxin-like reductase Rv2466c => Thioredoxin-like reductase
+[18:41:55] Modify product: Uncharacterized Na(+)/H(+) exchanger Rv2287 => putative Na(+)/H(+) exchanger
+[18:41:55] Modify product: Probable CDP-diacylglycerol pyrophosphatase => putative CDP-diacylglycerol pyrophosphatase
+[18:41:55] Modify product: Uncharacterized oxidoreductase Rv2298 => putative oxidoreductase
+[18:41:55] Modify product: Probable metallo-hydrolase Rv2300c => putative metallo-hydrolase
+[18:41:55] Modify product: Probable cutinase cut2 => putative cutinase cut2
+[18:41:55] Modify product: TVP38/TMEM64 family membrane protein Rv0625c => TVP38/TMEM64 family membrane protein
+[18:41:55] Modify product: Probable ABC transporter-binding protein DR_1438 => putative ABC transporter-binding protein
+[18:41:55] Modify product: Universal stress protein Rv2319c => Universal stress protein
+[18:41:55] Modify product: Universal stress protein Rv2319c => Universal stress protein
+[18:41:55] Modify product: Uncharacterized amino acid permease YhdG => putative amino acid permease YhdG
+[18:41:55] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv2326c => putative ABC transporter ATP-binding protein
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0880 => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Uncharacterized PE family protein PE23 => putative PE family protein PE23
+[18:41:55] Modify product: Probable transport protein MmpL9 => putative transport protein MmpL9
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:55] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:55] Modify product: Oxygen-independent coproporphyrinogen-III oxidase-like protein Rv2388c => Oxygen-independent coproporphyrinogen-III oxidase-like protein
+[18:41:55] Modify product: Probable phosphoadenosine phosphosulfate reductase => putative phosphoadenosine phosphosulfate reductase
+[18:41:55] Modify product: DegV domain-containing protein Rv2417c => DegV domain-containing protein
+[18:41:55] Modify product: Probable nicotinate-nucleotide adenylyltransferase => putative nicotinate-nucleotide adenylyltransferase
+[18:41:55] Modify product: Probable hydrogen peroxide-inducible genes activator => putative hydrogen peroxide-inducible genes activator
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:55] Modify product: Uncharacterized oxidoreductase Mb2996 => putative oxidoreductase
+[18:41:55] Modify product: Probable 8-oxo-dGTP diphosphatase 1 => putative 8-oxo-dGTP diphosphatase 1
+[18:41:55] Modify product: DNA-binding protein HU homolog => DNA-binding protein HU 
+[18:41:55] Modify product: Uncharacterized MFS-type transporter Rv2994 => putative MFS-type transporter
+[18:41:55] Modify product: Uncharacterized MFS-type transporter Rv2994 => putative MFS-type transporter
+[18:41:55] Modify product: Probable iron export permease protein FetB => putative iron export permease protein FetB
+[18:41:55] Modify product: Probable S-adenosylmethionine-dependent methyltransferase Rv3030 => putative S-adenosylmethionine-dependent methyltransferase
+[18:41:55] Modify product: Probable 1,4-alpha-glucan branching enzyme Rv3031 => putative 1,4-alpha-glucan branching enzyme
+[18:41:55] Modify product: Putative acetyltransferase Rv3034c => Putative acetyltransferase
+[18:41:55] Modify product: Probable enoyl-CoA hydratase echA17 => putative enoyl-CoA hydratase echA17
+[18:41:55] Modify product: Uncharacterized ABC transporter ATP-binding protein YlmA => putative ABC transporter ATP-binding protein YlmA
+[18:41:55] Modify product: Probable cytochrome c oxidase subunit 1 => putative cytochrome c oxidase subunit 1
+[18:41:55] Modify product: Probable siderophore-binding lipoprotein YfiY => putative siderophore-binding lipoprotein YfiY
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv0472c => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Putative diacyglycerol O-acyltransferase Rv3087 => Putative diacyglycerol O-acyltransferase
+[18:41:55] Modify product: Probable diacyglycerol O-acyltransferase Tgs4 => putative diacyglycerol O-acyltransferase Tgs4
+[18:41:55] Modify product: Putative coenzyme F420-dependent oxidoreductase Rv3520c => Putative coenzyme F420-dependent oxidoreductase
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv3095 => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Putative toxin Rv3098A/RVBD_3098A => Putative toxinA/RVBD_3098A
+[18:41:55] Modify product: Uncharacterized MscS family protein YkuT => putative MscS family protein YkuT
+[18:41:55] Modify product: Uncharacterized FAD-linked oxidoreductase Rv2280 => putative FAD-linked oxidoreductase
+[18:41:55] Modify product: Probable adenylyltransferase/sulfurtransferase MoeZ => putative adenylyltransferase/sulfurtransferase MoeZ
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE38 => putative PPE family protein PPE38
+[18:41:55] Modify product: Probable diacyglycerol O-acyltransferase tgs1 => putative diacyglycerol O-acyltransferase tgs1
+[18:41:55] Modify product: Universal stress protein MT3220 => Universal stress protein
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE51 => putative PPE family protein PPE51
+[18:41:55] Modify product: Uncharacterized response regulatory protein Rv3143 => putative response regulatory protein
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE42 => putative PPE family protein PPE42
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1556 => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Uncharacterized oxidoreductase SA2266 => putative oxidoreductase
+[18:41:55] Modify product: Probable protein kinase UbiB => putative protein kinase UbiB
+[18:41:55] Modify product: Probable transcriptional regulator WhiB7 => putative transcriptional regulator WhiB7
+[18:41:55] Modify product: Putative glutaredoxin Rv3198.1 => Putative glutaredoxin.1
+[18:41:55] Modify product: Probable adenylyltransferase/sulfurtransferase MoeZ => putative adenylyltransferase/sulfurtransferase MoeZ
+[18:41:55] Modify product: Probable transport accessory protein MmpS3 => putative transport accessory protein MmpS3
+[18:41:55] Modify product: Probable sensor histidine kinase pdtaS => putative sensor histidine kinase pdtaS
+[18:41:55] Modify product: Uncharacterized NAD-dependent oxidoreductase MAP_4146 => putative NAD-dependent oxidoreductase
+[18:41:55] Modify product: Putative diacyglycerol O-acyltransferase Rv1760 => Putative diacyglycerol O-acyltransferase
+[18:41:55] Modify product: Probable diacyglycerol O-acyltransferase tgs3 => putative diacyglycerol O-acyltransferase tgs3
+[18:41:55] Modify product: Uncharacterized NTE family protein Rv2565 => putative NTE family protein
+[18:41:55] Modify product: Uncharacterized HTH-type transcriptional regulator Rv1255c => putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Uncharacterized amino acid permease YhdG => putative amino acid permease YhdG
+[18:41:55] Modify product: Probable manganese/zinc-exporting P-type ATPase => putative manganese/zinc-exporting P-type ATPase
+[18:41:55] Modify product: Probable acyl-CoA dehydrogenase fadE25 => putative acyl-CoA dehydrogenase fadE25
+[18:41:55] Modify product: Probable propionyl-CoA carboxylase beta chain 5 => putative propionyl-CoA carboxylase beta chain 5
+[18:41:55] Modify product: Maf-like protein Rv3282 => Maf-like protein
+[18:41:55] Modify product: Uncharacterized SufE-like protein Rv3284 => putative SufE-like protein
+[18:41:55] Modify product: Probable L-lysine-epsilon aminotransferase => putative L-lysine-epsilon aminotransferase
+[18:41:55] Modify product: Phosphate-specific transport system accessory protein PhoU homolog 1 => Phosphate-specific transport system accessory protein PhoU 
+[18:41:55] Modify product: Uncharacterized hydrolase YxeP => putative hydrolase YxeP
+[18:41:55] Modify product: Probable phosphomannomutase => putative phosphomannomutase
+[18:41:55] Modify product: Probable aminotransferase Rv3329 => putative aminotransferase
+[18:41:55] Modify product: Uncharacterized methyltransferase Rv3342 => putative methyltransferase
+[18:41:55] Modify product: Bifunctional protein FolD => Bifunctional protein FolD protein
+[18:41:55] Modify product: ABC transporter ATP-binding/permease protein Rv1747 => ABC transporter ATP-binding/permease protein
+[18:41:55] Modify product: Serine protease inhibitor Rv3364c => Serine protease inhibitor
+[18:41:55] Modify product: Putative diacyglycerol O-acyltransferase Rv3371 => Putative diacyglycerol O-acyltransferase
+[18:41:55] Modify product: Phosphatase Rv3376 => Phosphatase
+[18:41:55] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv3399 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:55] Modify product: Uncharacterized glycosyl hydrolase MT2062 => putative glycosyl hydrolase
+[18:41:55] Modify product: Uncharacterized glycosyl hydrolase Rv3401 => putative glycosyl hydrolase
+[18:41:55] Modify product: HTH-type transcriptional repressor Rv3405c => HTH-type transcriptional repressor
+[18:41:55] Modify product: Uncharacterized oxidoreductase Rv3410c => putative oxidoreductase
+[18:41:55] Modify product: Putative trans-acting enoyl reductase Rv2449c => Putative trans-acting enoyl reductase
+[18:41:55] Modify product: Probable molybdenum cofactor guanylyltransferase => putative molybdenum cofactor guanylyltransferase
+[18:41:55] Modify product: Uncharacterized MFS-type transporter Rv2456c => putative MFS-type transporter
+[18:41:55] Modify product: Thioredoxin-like reductase Rv2466c => Thioredoxin-like reductase
+[18:41:55] Modify product: Putative diacyglycerol O-acyltransferase Rv2484c => Putative diacyglycerol O-acyltransferase
+[18:41:55] Modify product: Probable enoyl-CoA hydratase echA14 => putative enoyl-CoA hydratase echA14
+[18:41:55] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Putative HTH-type transcriptional regulator Rv0890c => Putative HTH-type transcriptional regulator
+[18:41:55] Modify product: Probable succinyl-CoA:3-ketoacid coenzyme A transferase subunit B => putative succinyl-CoA:3-ketoacid coenzyme A transferase subunit B
+[18:41:55] Modify product: Probable succinyl-CoA:3-ketoacid coenzyme A transferase subunit A => putative succinyl-CoA:3-ketoacid coenzyme A transferase subunit A
+[18:41:55] Modify product: Putative peroxiredoxin Rv2521 => Putative peroxiredoxin
+[18:41:55] Modify product: Putative peptidoglycan hydrolase Rv2525c => Putative peptidoglycan hydrolase
+[18:41:55] Modify product: N utilization substance protein B homolog => N utilization substance protein B 
+[18:41:55] Modify product: Uncharacterized AAA domain-containing protein Rv2559c => putative AAA domain-containing protein
+[18:41:55] Modify product: Uncharacterized ABC transporter permease Rv2563 => putative ABC transporter permease
+[18:41:55] Modify product: Uncharacterized ABC transporter ATP-binding protein Rv2564 => putative ABC transporter ATP-binding protein
+[18:41:55] Modify product: Uncharacterized NTE family protein Rv2565 => putative NTE family protein
+[18:41:55] Modify product: Probable peptidyl-prolyl cis-trans isomerase B => putative peptidyl-prolyl cis-trans isomerase B
+[18:41:55] Modify product: Uncharacterized lipoprotein Rv2585c => putative lipoprotein
+[18:41:55] Modify product: Probable transcriptional regulatory protein Rv2603c => putative transcriptional regulatory protein
+[18:41:55] Modify product: Uncharacterized PPE family protein PPE42 => putative PPE family protein PPE42
+[18:41:55] Modify product: Universal stress protein MT2698 => Universal stress protein
+[18:41:55] Modify product: Universal stress protein MT2699 => Universal stress protein
+[18:41:55] Modify product: Putative uncharacterized protein MT2703 => Putative uncharacterized protein
+[18:41:55] Modify product: Probable protein archease => putative protein archease
+[18:41:55] Modify product: Putative O-phosphotransferase Rv2636 => Putative O-phosphotransferase
+[18:41:55] Modify product: Uncharacterized membrane protein Rv2637 => putative membrane protein
+[18:41:55] Modify product: Uncharacterized N-acetyltransferase Rv2669 => putative N-acetyltransferase
+[18:41:55] Modify product: Putative heme-dependent peroxidase SA0544 => Putative heme-dependent peroxidase
+[18:41:55] Modify product: Probable enoyl-CoA hydratase echA12 => putative enoyl-CoA hydratase echA12
+[18:41:55] Modify product: Uncharacterized transporter Rv2685 => putative transporter
+[18:41:55] Modify product: Uncharacterized transporter Rv2685 => putative transporter
+[18:41:55] Modify product: Uncharacterized transporter Rv2685 => putative transporter
+[18:41:55] Modify product: Fluoroquinolones export permease protein Rv2686c => Fluoroquinolones export permease protein
+[18:41:55] Modify product: Fluoroquinolones export permease protein Rv2687c => Fluoroquinolones export permease protein
+[18:41:55] Modify product: Fluoroquinolones export ATP-binding protein Rv2688c => Fluoroquinolones export ATP-binding protein
+[18:41:56] Modify product: Probable soluble pyridine nucleotide transhydrogenase => putative soluble pyridine nucleotide transhydrogenase
+[18:41:56] Modify product: Uncharacterized membrane protein Rv2723 => putative membrane protein
+[18:41:56] Modify product: Putative monooxygenase Rv0793 => Putative monooxygenase
+[18:41:56] Modify product: Uncharacterized oxidoreductase Rv2750 => putative oxidoreductase
+[18:41:56] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv0830 => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:56] Modify product: Putative monooxygenase Rv1533 => Putative monooxygenase
+[18:41:56] Modify product: Uncharacterized zinc protease Rv2782c => putative zinc protease
+[18:41:56] Modify product: Probable enoyl-CoA hydratase echA8 => putative enoyl-CoA hydratase echA8
+[18:41:56] Modify product: Uncharacterized MFS-type transporter EfpA => putative MFS-type transporter EfpA
+[18:41:56] Modify product: Acetyltransferase SACOL1063 => Acetyltransferase
+[18:41:56] Modify product: Probable malate:quinone oxidoreductase => putative malate:quinone oxidoreductase
+[18:41:56] Modify product: Putative glutamine amidotransferase Rv2859c => Putative glutamine amidotransferase
+[18:41:56] Modify product: Probable dual-specificity RNA methyltransferase RlmN => putative dual-specificity RNA methyltransferase RlmN
+[18:41:56] Modify product: Uncharacterized HTH-type transcriptional regulator Rv2887 => putative HTH-type transcriptional regulator
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:56] Modify product: Uncharacterized oxidoreductase Rv2900c => putative oxidoreductase
+[18:41:56] Modify product: Uncharacterized HTH-type transcriptional regulator Rv2912c => putative HTH-type transcriptional regulator
+[18:41:56] Modify product: Probable thioesterase TesA => putative thioesterase TesA
+[18:41:56] Modify product: Probable doxorubicin resistance ABC transporter permease protein DrrC => putative doxorubicin resistance ABC transporter permease protein DrrC
+[18:41:56] Modify product: PGL/p-HBAD biosynthesis glycosyltransferase Rv2957 => PGL/p-HBAD biosynthesis glycosyltransferase
+[18:41:56] Modify product: PGL/p-HBAD biosynthesis glycosyltransferase Rv2958c => PGL/p-HBAD biosynthesis glycosyltransferase
+[18:41:56] Modify product: Putative permease Rv2963 => Putative permease
+[18:41:56] Modify product: Probable cutinase cut3 => putative cutinase cut3
+[18:41:56] Modify product: Probable cutinase cut3 => putative cutinase cut3
+[18:41:56] Modify product: Uncharacterized membrane protein Rv3479 => putative membrane protein
+[18:41:56] Modify product: Putative diacyglycerol O-acyltransferase Rv3480c => Putative diacyglycerol O-acyltransferase
+[18:41:56] Modify product: Uncharacterized oxidoreductase Rv0769 => putative oxidoreductase
+[18:41:56] Modify product: Uncharacterized membrane protein Rv3486 => putative membrane protein
+[18:41:56] Modify product: Probable phospholipid ABC transporter permease protein MlaE => putative phospholipid ABC transporter permease protein MlaE
+[18:41:56] Modify product: Putative short-chain type dehydrogenase/reductase Rv0148 => Putative short-chain type dehydrogenase/reductase
+[18:41:56] Modify product: Putative coenzyme F420-dependent oxidoreductase Rv3520c => Putative coenzyme F420-dependent oxidoreductase
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE51 => putative PPE family protein PPE51
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:56] Modify product: Putative short-chain type dehydrogenase/reductase Rv0148 => Putative short-chain type dehydrogenase/reductase
+[18:41:56] Modify product: Probable 2,4-dienoyl-CoA reductase => putative 2,4-dienoyl-CoA reductase
+[18:41:56] Modify product: Putative CoA-transferase subunit alpha Rv3551 => Putative CoA-transferase subunit alpha
+[18:41:56] Modify product: Putative CoA-transferase subunit beta Rv3552 => Putative CoA-transferase subunit beta
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE40 => putative PPE family protein PPE40
+[18:41:56] Modify product: Uncharacterized oxidoreductase Rv1350 => putative oxidoreductase
+[18:41:56] Modify product: Uncharacterized tRNA/rRNA methyltransferase Rv3579c => putative tRNA/rRNA methyltransferase
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:56] Modify product: Probable adenosine monophosphate-protein transferase fic => putative adenosine monophosphate-protein transferase fic
+[18:41:56] Modify product: Probable cold shock protein A => putative cold shock protein A
+[18:41:56] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:56] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:56] Modify product: Apoptosis inhibitor Rv3654c => Apoptosis inhibitor
+[18:41:56] Modify product: Apoptosis inhibitor Rv3655c => Apoptosis inhibitor
+[18:41:56] Modify product: Putative conjugal transfer protein Rv3659c => Putative conjugal transfer protein
+[18:41:56] Modify product: Probable phosphatase Rv3661 => putative phosphatase
+[18:41:56] Modify product: Serine protease Rv3671c => Serine protease
+[18:41:56] Modify product: Probable polyketide biosynthesis zinc-dependent hydrolase PksB => putative polyketide biosynthesis zinc-dependent hydrolase PksB
+[18:41:56] Modify product: Putative ATPase Rv3679 => Putative ATPase
+[18:41:56] Modify product: Probable siderophore biosynthesis protein SbnA => putative siderophore biosynthesis protein SbnA
+[18:41:56] Modify product: Uncharacterized membrane protein Rv3691 => putative membrane protein
+[18:41:56] Modify product: Probable hercynylcysteine sulfoxide lyase => putative hercynylcysteine sulfoxide lyase
+[18:41:56] Modify product: Nucleoid-associated protein Rv3716c => Nucleoid-associated protein
+[18:41:56] Modify product: N-acetylmuramoyl-L-alanine amidase Rv3717 => N-acetylmuramoyl-L-alanine amidase
+[18:41:56] Modify product: Probable fatty acid methyltransferase Rv3720 => putative fatty acid methyltransferase
+[18:41:56] Modify product: Putative aminotransferase MSMEG_6286/MSMEI_6121 => Putative aminotransferase/MSMEI_6121
+[18:41:56] Modify product: Probable cutinase Rv1984c => putative cutinase
+[18:41:56] Modify product: Uncharacterized NTE family protein Rv2565 => putative NTE family protein
+[18:41:56] Modify product: Probable diacyglycerol O-acyltransferase tgs2 => putative diacyglycerol O-acyltransferase tgs2
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE47/PPE48 => putative PPE family protein PPE47/PPE48
+[18:41:56] Modify product: Putative diacyglycerol O-acyltransferase Rv3740c => Putative diacyglycerol O-acyltransferase
+[18:41:56] Modify product: Probable cation-transporting P-type ATPase J => putative cation-transporting P-type ATPase J
+[18:41:56] Modify product: Uncharacterized membrane protein Rv3760 => putative membrane protein
+[18:41:56] Modify product: Probable sensor histidine kinase TcrY => putative sensor histidine kinase TcrY
+[18:41:56] Modify product: Probable transcriptional regulatory protein TcrX => putative transcriptional regulatory protein TcrX
+[18:41:56] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv3767c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:56] Modify product: Probable enoyl-CoA hydratase echA8 => putative enoyl-CoA hydratase echA8
+[18:41:56] Modify product: Putative S-adenosyl-L-methionine-dependent methyltransferase Rv3787c => Putative S-adenosyl-L-methionine-dependent methyltransferase
+[18:41:56] Modify product: Arabinogalactan biosynthesis recruiting protein Rv3789 => Arabinogalactan biosynthesis recruiting protein
+[18:41:56] Modify product: Probable arabinosyltransferase C => putative arabinosyltransferase C
+[18:41:56] Modify product: Probable arabinosyltransferase A => putative arabinosyltransferase A
+[18:41:56] Modify product: Probable arabinosyltransferase B => putative arabinosyltransferase B
+[18:41:56] Modify product: Probable propionyl-CoA carboxylase beta chain 5 => putative propionyl-CoA carboxylase beta chain 5
+[18:41:56] Modify product: Putative decaprenylphosphoryl-5-phosphoribose phosphatase Rv3807c => Putative decaprenylphosphoryl-5-phosphoribose phosphatase
+[18:41:56] Modify product: Putative Rieske 2Fe-2S iron-sulfur protein Rv3818 => Putative Rieske 2Fe-2S iron-sulfur protein
+[18:41:56] Modify product: Probable long-chain-fatty-acid--CoA ligase FadD23 => putative long-chain-fatty-acid--CoA ligase FadD23
+[18:41:56] Modify product: Probable S-adenosylmethionine-dependent methyltransferase MSMEG_2350/MSMEI_2290 => putative S-adenosylmethionine-dependent methyltransferase/MSMEI_2290
+[18:41:56] Modify product: Probable glycerophosphodiester phosphodiesterase 1 => putative glycerophosphodiester phosphodiesterase 1
+[18:41:56] Modify product: Probable peptidoglycan biosynthesis protein MviN => putative peptidoglycan biosynthesis protein MviN
+[18:41:56] Modify product: Probable chromosome-partitioning protein ParB => putative chromosome-partitioning protein ParB
+[18:41:56] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS54 => putative PE-PGRS family protein PE_PGRS54
+[18:41:56] Modify product: Uncharacterized PPE family protein PPE32 => putative PPE family protein PPE32
+[18:41:56] Modify product: Uncharacterized PE-PGRS family protein PE_PGRS24 => putative PE-PGRS family protein PE_PGRS24
+[18:41:56] Modify product: ABC transporter ATP-binding/permease protein Rv1747 => ABC transporter ATP-binding/permease protein
+[18:41:56] Cleaned 529 /product names
+[18:41:56] Deleting unwanted file: ./G04868_prokka/sprot.faa
+[18:41:56] Deleting unwanted file: ./G04868_prokka/sprot.blast
+[18:41:58] There are still 1654 unannotated CDS left (started with 4236)
+[18:41:58] Will use hmmer3 to search against /opt/prokka/bin/../db/hmm/HAMAP.hmm with 4 CPUs
+[18:41:58] Running: cat \.\/G04868_prokka\/HAMAP\.hmm\.faa | parallel --gnu --plain -j 4 --block 43527 --recstart '>' --pipe hmmscan --noali --notextw --acc -E 1e-06 --cpu 1 /opt/prokka/bin/../db/hmm/HAMAP.hmm /dev/stdin > \.\/G04868_prokka\/HAMAP\.hmm\.hmmer3 2> /dev/null
+[18:42:34] Modify product: Uncharacterized Nudix hydrolase NudL => putative Nudix hydrolase NudL
+[18:42:34] Cleaned 1 /product names
+[18:42:34] Deleting unwanted file: ./G04868_prokka/HAMAP.hmm.faa
+[18:42:34] Deleting unwanted file: ./G04868_prokka/HAMAP.hmm.hmmer3
+[18:42:34] Labelling remaining 1598 proteins as 'hypothetical protein'
+[18:42:34] Possible /pseudo 'putative HTH-type transcriptional regulator' at ordered_NC000962_3 position 44867
+[18:42:34] Possible /pseudo 'Putative S-adenosyl-L-methionine-dependent methyltransferase' at ordered_NC000962_3 position 170491
+[18:42:34] Possible /pseudo 'PE family protein PE3' at ordered_NC000962_3 position 177599
+[18:42:34] Possible /pseudo 'PE family protein PE3' at ordered_NC000962_3 position 187211
+[18:42:34] Possible /pseudo 'putative phospholipid ABC transporter permease protein MlaE' at ordered_NC000962_3 position 195942
+[18:42:34] Possible /pseudo 'Putative diacyglycerol O-acyltransferase' at ordered_NC000962_3 position 263632
+[18:42:34] Possible /pseudo 'L-asparagine permease 2' at ordered_NC000962_3 position 415737
+[18:42:34] Possible /pseudo 'Sarcosine/dimethylglycine N-methyltransferase' at ordered_NC000962_3 position 612865
+[18:42:34] Possible /pseudo 'putative phospholipid ABC transporter permease protein MlaE' at ordered_NC000962_3 position 686441
+[18:42:34] Possible /pseudo 'Putative S-adenosyl-L-methionine-dependent methyltransferase' at ordered_NC000962_3 position 819902
+[18:42:34] Possible /pseudo 'PE-PGRS family protein PE_PGRS11' at ordered_NC000962_3 position 848603
+[18:42:34] Possible /pseudo 'Para-nitrobenzyl esterase' at ordered_NC000962_3 position 1235348
+[18:42:34] Possible /pseudo '1,2-epoxyphenylacetyl-CoA isomerase' at ordered_NC000962_3 position 1272188
+[18:42:34] Possible /pseudo 'Nitrate reductase-like protein NarX' at ordered_NC000962_3 position 1296744
+[18:42:34] Possible /pseudo 'putative multidrug-efflux transporter' at ordered_NC000962_3 position 1409976
+[18:42:34] Possible /pseudo 'putative ABC transporter ATP-binding protein' at ordered_NC000962_3 position 1426097
+[18:42:34] Possible /pseudo 'Putative peptide transport permease protein' at ordered_NC000962_3 position 1439935
+[18:42:34] Possible /pseudo 'Adenylate cyclase 2' at ordered_NC000962_3 position 1485301
+[18:42:34] Possible /pseudo 'Adenylate cyclase 2' at ordered_NC000962_3 position 1487028
+[18:42:34] Possible /pseudo 'Carboxylesterase NlhH' at ordered_NC000962_3 position 1580497
+[18:42:34] Possible /pseudo 'Putative thioredoxin 2' at ordered_NC000962_3 position 1664302
+[18:42:34] Possible /pseudo 'putative glycosyltransferase' at ordered_NC000962_3 position 1726439
+[18:42:34] Possible /pseudo 'putative oxidoreductase' at ordered_NC000962_3 position 1751330
+[18:42:34] Possible /pseudo 'Haloalkane dehalogenase 2' at ordered_NC000962_3 position 2090101
+[18:42:34] Possible /pseudo 'Hemolysin C' at ordered_NC000962_3 position 2100889
+[18:42:34] Possible /pseudo 'Putative S-adenosyl-L-methionine-dependent methyltransferase' at ordered_NC000962_3 position 2148855
+[18:42:34] Possible /pseudo 'putative phospholipid ABC transporter permease protein MlaE' at ordered_NC000962_3 position 2219751
+[18:42:34] Possible /pseudo 'Lipoprotein LprN' at ordered_NC000962_3 position 2226501
+[18:42:34] Possible /pseudo 'Precorrin-6A reductase' at ordered_NC000962_3 position 2348471
+[18:42:34] Possible /pseudo 'Universal stress protein' at ordered_NC000962_3 position 2614223
+[18:42:34] Possible /pseudo 'putative PPE family protein PPE40' at ordered_NC000962_3 position 2660410
+[18:42:34] Possible /pseudo 'NAD-specific glutamate dehydrogenase' at ordered_NC000962_3 position 2801001
+[18:42:34] Possible /pseudo 'Putative HTH-type transcriptional regulator' at ordered_NC000962_3 position 2822377
+[18:42:34] Possible /pseudo 'Putative lipoprotein LppA' at ordered_NC000962_3 position 2891139
+[18:42:34] Possible /pseudo 'Universal stress protein' at ordered_NC000962_3 position 2974843
+[18:42:34] Possible /pseudo 'putative transporter' at ordered_NC000962_3 position 3026337
+[18:42:34] Possible /pseudo 'putative transporter' at ordered_NC000962_3 position 3026961
+[18:42:34] Possible /pseudo 'Fluoroquinolones export permease protein' at ordered_NC000962_3 position 3028389
+[18:42:34] Possible /pseudo 'Trk system potassium uptake protein TrkA' at ordered_NC000962_3 position 3034378
+[18:42:34] Possible /pseudo 'PGL/p-HBAD biosynthesis rhamnosyltransferase' at ordered_NC000962_3 position 3340666
+[18:42:34] Possible /pseudo 'putative MFS-type transporter' at ordered_NC000962_3 position 3378516
+[18:42:34] Possible /pseudo 'Acyl-CoA dehydrogenase' at ordered_NC000962_3 position 3534797
+[18:42:34] Possible /pseudo 'Putative flavin-containing monoamine oxidase AofH' at ordered_NC000962_3 position 3570076
+[18:42:34] Possible /pseudo 'putative glycosyl hydrolase' at ordered_NC000962_3 position 3850173
+[18:42:34] Possible /pseudo 'putative cutinase cut3' at ordered_NC000962_3 position 3905679
+[18:42:34] Possible /pseudo 'Apoptosis inhibitor' at ordered_NC000962_3 position 4128652
+[18:42:34] Possible /pseudo '1-acyl-sn-glycerol-3-phosphate acyltransferase' at ordered_NC000962_3 position 4314320
+[18:42:34] Possible /pseudo '1-acyl-sn-glycerol-3-phosphate acyltransferase' at ordered_NC000962_3 position 4315079
+[18:42:34] Possible /pseudo 'ESX-1 secretion-associated protein EspJ' at ordered_NC000962_3 position 4391475
+[18:42:34] Found 1658 unique /gene codes.
+[18:42:34] Fixed 2 duplicate /gene - dapE_1 dapE_2
+[18:42:34] Fixed 4 duplicate /gene - fgd2_1 fgd2_2 fgd2_3 fgd2_4
+[18:42:34] Fixed 2 duplicate /gene - fbiB_1 fbiB_2
+[18:42:34] Fixed 2 duplicate /gene - bacC_1 bacC_2
+[18:42:34] Fixed 3 duplicate /gene - tcrX_1 tcrX_2 tcrX_3
+[18:42:34] Fixed 2 duplicate /gene - pyrE_1 pyrE_2
+[18:42:34] Fixed 2 duplicate /gene - pbpB_1 pbpB_2
+[18:42:34] Fixed 2 duplicate /gene - tesB_1 tesB_2
+[18:42:34] Fixed 3 duplicate /gene - tcrY_1 tcrY_2 tcrY_3
+[18:42:34] Fixed 2 duplicate /gene - ansP2_1 ansP2_2
+[18:42:34] Fixed 2 duplicate /gene - hsaA_1 hsaA_2
+[18:42:34] Fixed 2 duplicate /gene - papA2_1 papA2_2
+[18:42:34] Fixed 2 duplicate /gene - pra_1 pra_2
+[18:42:34] Fixed 2 duplicate /gene - gdh_1 gdh_2
+[18:42:34] Fixed 2 duplicate /gene - eccB3_1 eccB3_2
+[18:42:34] Fixed 2 duplicate /gene - rpsR1_1 rpsR1_2
+[18:42:34] Fixed 2 duplicate /gene - htpX_1 htpX_2
+[18:42:34] Fixed 2 duplicate /gene - fabG_1 fabG_2
+[18:42:34] Fixed 2 duplicate /gene - dnaB_1 dnaB_2
+[18:42:34] Fixed 2 duplicate /gene - tetC_1 tetC_2
+[18:42:34] Fixed 2 duplicate /gene - clpC1_1 clpC1_2
+[18:42:34] Fixed 2 duplicate /gene - higB2_1 higB2_2
+[18:42:34] Fixed 3 duplicate /gene - dhmA2_1 dhmA2_2 dhmA2_3
+[18:42:34] Fixed 2 duplicate /gene - dinB1_1 dinB1_2
+[18:42:34] Fixed 2 duplicate /gene - arsR1_1 arsR1_2
+[18:42:34] Fixed 2 duplicate /gene - csoR_1 csoR_2
+[18:42:34] Fixed 2 duplicate /gene - PE5_1 PE5_2
+[18:42:34] Fixed 2 duplicate /gene - vapB5_1 vapB5_2
+[18:42:34] Fixed 3 duplicate /gene - inhA_1 inhA_2 inhA_3
+[18:42:34] Fixed 2 duplicate /gene - trxC_1 trxC_2
+[18:42:34] Fixed 2 duplicate /gene - galE_1 galE_2
+[18:42:34] Fixed 3 duplicate /gene - atsA_1 atsA_2 atsA_3
+[18:42:34] Fixed 2 duplicate /gene - gmd_1 gmd_2
+[18:42:34] Fixed 2 duplicate /gene - lprE_1 lprE_2
+[18:42:34] Fixed 2 duplicate /gene - nicC_1 nicC_2
+[18:42:34] Fixed 2 duplicate /gene - fbpA_1 fbpA_2
+[18:42:34] Fixed 2 duplicate /gene - hyfB_1 hyfB_2
+[18:42:34] Fixed 2 duplicate /gene - secA_1 secA_2
+[18:42:34] Fixed 2 duplicate /gene - lpdA_1 lpdA_2
+[18:42:34] Fixed 2 duplicate /gene - pucR_1 pucR_2
+[18:42:34] Fixed 3 duplicate /gene - narK_1 narK_2 narK_3
+[18:42:34] Fixed 3 duplicate /gene - sugC_1 sugC_2 sugC_3
+[18:42:34] Fixed 2 duplicate /gene - lnt_1 lnt_2
+[18:42:34] Fixed 2 duplicate /gene - bmr3_1 bmr3_2
+[18:42:34] Fixed 2 duplicate /gene - dmdC_1 dmdC_2
+[18:42:34] Fixed 2 duplicate /gene - gcvT_1 gcvT_2
+[18:42:34] Fixed 2 duplicate /gene - msrR_1 msrR_2
+[18:42:34] Fixed 2 duplicate /gene - cya_1 cya_2
+[18:42:34] Fixed 2 duplicate /gene - walR_1 walR_2
+[18:42:34] Fixed 2 duplicate /gene - frdB_1 frdB_2
+[18:42:34] Fixed 2 duplicate /gene - nfdA_1 nfdA_2
+[18:42:34] Fixed 2 duplicate /gene - ahpD_1 ahpD_2
+[18:42:34] Fixed 3 duplicate /gene - rsfA_1 rsfA_2 rsfA_3
+[18:42:34] Fixed 2 duplicate /gene - ideR_1 ideR_2
+[18:42:34] Fixed 3 duplicate /gene - dacB_1 dacB_2 dacB_3
+[18:42:34] Fixed 3 duplicate /gene - lprJ_1 lprJ_2 lprJ_3
+[18:42:34] Fixed 2 duplicate /gene - ctpI_1 ctpI_2
+[18:42:34] Fixed 2 duplicate /gene - caeB_1 caeB_2
+[18:42:34] Fixed 2 duplicate /gene - pgsA1_1 pgsA1_2
+[18:42:34] Fixed 2 duplicate /gene - moaA1_1 moaA1_2
+[18:42:34] Fixed 2 duplicate /gene - pknH_1 pknH_2
+[18:42:34] Fixed 3 duplicate /gene - narX_1 narX_2 narX_3
+[18:42:34] Fixed 5 duplicate /gene - espI_1 espI_2 espI_3 espI_4 espI_5
+[18:42:34] Fixed 3 duplicate /gene - mmpS4_1 mmpS4_2 mmpS4_3
+[18:42:34] Fixed 7 duplicate /gene - mlaE_1 mlaE_2 mlaE_3 mlaE_4 mlaE_5 mlaE_6 mlaE_7
+[18:42:34] Fixed 2 duplicate /gene - rpmG2_1 rpmG2_2
+[18:42:34] Fixed 2 duplicate /gene - paaG_1 paaG_2
+[18:42:34] Fixed 2 duplicate /gene - bicA_1 bicA_2
+[18:42:34] Fixed 2 duplicate /gene - ethR_1 ethR_2
+[18:42:34] Fixed 3 duplicate /gene - ligD_1 ligD_2 ligD_3
+[18:42:34] Fixed 2 duplicate /gene - ppsA_1 ppsA_2
+[18:42:34] Fixed 2 duplicate /gene - ftsH_1 ftsH_2
+[18:42:34] Fixed 2 duplicate /gene - menG_1 menG_2
+[18:42:34] Fixed 4 duplicate /gene - plsC_1 plsC_2 plsC_3 plsC_4
+[18:42:34] Fixed 2 duplicate /gene - moaE2_1 moaE2_2
+[18:42:34] Fixed 2 duplicate /gene - resA_1 resA_2
+[18:42:34] Fixed 3 duplicate /gene - sadH_1 sadH_2 sadH_3
+[18:42:34] Fixed 2 duplicate /gene - qorA_1 qorA_2
+[18:42:34] Fixed 3 duplicate /gene - trxA_1 trxA_2 trxA_3
+[18:42:34] Fixed 3 duplicate /gene - pks1_1 pks1_2 pks1_3
+[18:42:34] Fixed 2 duplicate /gene - dagK_1 dagK_2
+[18:42:34] Fixed 2 duplicate /gene - pimB_1 pimB_2
+[18:42:34] Fixed 2 duplicate /gene - aspC_1 aspC_2
+[18:42:34] Fixed 2 duplicate /gene - virS_1 virS_2
+[18:42:34] Fixed 2 duplicate /gene - gpmA_1 gpmA_2
+[18:42:34] Fixed 2 duplicate /gene - adhB_1 adhB_2
+[18:42:34] Fixed 2 duplicate /gene - ripA_1 ripA_2
+[18:42:34] Fixed 4 duplicate /gene - cyaB_1 cyaB_2 cyaB_3 cyaB_4
+[18:42:34] Fixed 2 duplicate /gene - eccD1_1 eccD1_2
+[18:42:34] Fixed 2 duplicate /gene - srpR_1 srpR_2
+[18:42:34] Fixed 2 duplicate /gene - tadA_1 tadA_2
+[18:42:34] Fixed 2 duplicate /gene - dnaK_1 dnaK_2
+[18:42:34] Fixed 2 duplicate /gene - uvrD1_1 uvrD1_2
+[18:42:34] Fixed 3 duplicate /gene - pnbA_1 pnbA_2 pnbA_3
+[18:42:34] Fixed 2 duplicate /gene - cobQ_1 cobQ_2
+[18:42:34] Fixed 2 duplicate /gene - aofH_1 aofH_2
+[18:42:34] Fixed 2 duplicate /gene - estB_1 estB_2
+[18:42:34] Fixed 2 duplicate /gene - tuf_1 tuf_2
+[18:42:34] Fixed 2 duplicate /gene - ampC_1 ampC_2
+[18:42:34] Fixed 2 duplicate /gene - eccC5_1 eccC5_2
+[18:42:34] Fixed 2 duplicate /gene - mmpL4_1 mmpL4_2
+[18:42:34] Fixed 2 duplicate /gene - dxs_1 dxs_2
+[18:42:34] Fixed 3 duplicate /gene - accD5_1 accD5_2 accD5_3
+[18:42:34] Fixed 2 duplicate /gene - embR_1 embR_2
+[18:42:34] Fixed 3 duplicate /gene - uctC_1 uctC_2 uctC_3
+[18:42:34] Fixed 2 duplicate /gene - pknD_1 pknD_2
+[18:42:34] Fixed 4 duplicate /gene - pcaF_1 pcaF_2 pcaF_3 pcaF_4
+[18:42:34] Fixed 2 duplicate /gene - pip_1 pip_2
+[18:42:34] Fixed 2 duplicate /gene - aidB_1 aidB_2
+[18:42:34] Fixed 2 duplicate /gene - yhdG_1 yhdG_2
+[18:42:34] Fixed 4 duplicate /gene - crt_1 crt_2 crt_3 crt_4
+[18:42:34] Fixed 2 duplicate /gene - ettA_1 ettA_2
+[18:42:34] Fixed 2 duplicate /gene - ddn_1 ddn_2
+[18:42:34] Fixed 2 duplicate /gene - mutB_1 mutB_2
+[18:42:34] Fixed 2 duplicate /gene - noeI_1 noeI_2
+[18:42:34] Fixed 2 duplicate /gene - sdhA_1 sdhA_2
+[18:42:34] Fixed 5 duplicate /gene - rebM_1 rebM_2 rebM_3 rebM_4 rebM_5
+[18:42:34] Fixed 2 duplicate /gene - vapC5_1 vapC5_2
+[18:42:34] Fixed 2 duplicate /gene - ord_1 ord_2
+[18:42:34] Fixed 2 duplicate /gene - serB1_1 serB1_2
+[18:42:34] Fixed 2 duplicate /gene - rcdA_1 rcdA_2
+[18:42:34] Fixed 3 duplicate /gene - lipF_1 lipF_2 lipF_3
+[18:42:34] Fixed 2 duplicate /gene - recD_1 recD_2
+[18:42:34] Fixed 2 duplicate /gene - vapC9_1 vapC9_2
+[18:42:34] Fixed 2 duplicate /gene - mmpL8_1 mmpL8_2
+[18:42:34] Fixed 3 duplicate /gene - hsaB_1 hsaB_2 hsaB_3
+[18:42:34] Fixed 2 duplicate /gene - gppA_1 gppA_2
+[18:42:34] Fixed 2 duplicate /gene - sbnA_1 sbnA_2
+[18:42:34] Fixed 3 duplicate /gene - ethA_1 ethA_2 ethA_3
+[18:42:34] Fixed 3 duplicate /gene - fgd1_1 fgd1_2 fgd1_3
+[18:42:34] Fixed 2 duplicate /gene - mmsB_1 mmsB_2
+[18:42:34] Fixed 2 duplicate /gene - betI_1 betI_2
+[18:42:34] Fixed 2 duplicate /gene - fabG2_1 fabG2_2
+[18:42:34] Fixed 5 duplicate /gene - lipY_1 lipY_2 lipY_3 lipY_4 lipY_5
+[18:42:34] Fixed 2 duplicate /gene - ubiB_1 ubiB_2
+[18:42:34] Fixed 2 duplicate /gene - tetR_1 tetR_2
+[18:42:34] Fixed 2 duplicate /gene - trkA_1 trkA_2
+[18:42:34] Fixed 3 duplicate /gene - rpmB_1 rpmB_2 rpmB_3
+[18:42:34] Fixed 2 duplicate /gene - mca_1 mca_2
+[18:42:34] Fixed 2 duplicate /gene - rbn_1 rbn_2
+[18:42:34] Fixed 7 duplicate /gene - nlhH_1 nlhH_2 nlhH_3 nlhH_4 nlhH_5 nlhH_6 nlhH_7
+[18:42:34] Fixed 3 duplicate /gene - drrA_1 drrA_2 drrA_3
+[18:42:34] Fixed 2 duplicate /gene - acg_1 acg_2
+[18:42:34] Fixed 2 duplicate /gene - xerC_1 xerC_2
+[18:42:34] Fixed 2 duplicate /gene - epsE_1 epsE_2
+[18:42:34] Fixed 2 duplicate /gene - ttgV_1 ttgV_2
+[18:42:34] Fixed 3 duplicate /gene - echA8_1 echA8_2 echA8_3
+[18:42:34] Fixed 2 duplicate /gene - cobB_1 cobB_2
+[18:42:34] Fixed 2 duplicate /gene - ribBA_1 ribBA_2
+[18:42:34] Fixed 3 duplicate /gene - ephA_1 ephA_2 ephA_3
+[18:42:34] Fixed 2 duplicate /gene - esxR_1 esxR_2
+[18:42:34] Fixed 2 duplicate /gene - dprE1_1 dprE1_2
+[18:42:34] Fixed 2 duplicate /gene - cobK_1 cobK_2
+[18:42:34] Fixed 2 duplicate /gene - hepT_1 hepT_2
+[18:42:34] Fixed 3 duplicate /gene - bpoC_1 bpoC_2 bpoC_3
+[18:42:34] Fixed 2 duplicate /gene - vapC_1 vapC_2
+[18:42:34] Fixed 2 duplicate /gene - accA1_1 accA1_2
+[18:42:34] Fixed 3 duplicate /gene - soj_1 soj_2 soj_3
+[18:42:34] Fixed 2 duplicate /gene - acrC_1 acrC_2
+[18:42:34] Fixed 2 duplicate /gene - dhbF_1 dhbF_2
+[18:42:34] Fixed 4 duplicate /gene - pspA_1 pspA_2 pspA_3 pspA_4
+[18:42:34] Fixed 2 duplicate /gene - cysW_1 cysW_2
+[18:42:34] Fixed 2 duplicate /gene - caiD_1 caiD_2
+[18:42:34] Fixed 2 duplicate /gene - sap_1 sap_2
+[18:42:34] Fixed 2 duplicate /gene - chp1_1 chp1_2
+[18:42:34] Fixed 5 duplicate /gene - acr1_1 acr1_2 acr1_3 acr1_4 acr1_5
+[18:42:34] Fixed 2 duplicate /gene - tlyC_1 tlyC_2
+[18:42:34] Fixed 2 duplicate /gene - tam_1 tam_2
+[18:42:34] Fixed 3 duplicate /gene - oatA_1 oatA_2 oatA_3
+[18:42:34] Fixed 3 duplicate /gene - araQ_1 araQ_2 araQ_3
+[18:42:34] Fixed 2 duplicate /gene - ugpA_1 ugpA_2
+[18:42:34] Fixed 5 duplicate /gene - PE3_1 PE3_2 PE3_3 PE3_4 PE3_5
+[18:42:34] Fixed 2 duplicate /gene - oxyR_1 oxyR_2
+[18:42:34] Fixed 2 duplicate /gene - mshD_1 mshD_2
+[18:42:34] Fixed 2 duplicate /gene - cmoB_1 cmoB_2
+[18:42:34] Fixed 7 duplicate /gene - kstR2_1 kstR2_2 kstR2_3 kstR2_4 kstR2_5 kstR2_6 kstR2_7
+[18:42:34] Fixed 2 duplicate /gene - fadD3_1 fadD3_2
+[18:42:34] Fixed 2 duplicate /gene - greA_1 greA_2
+[18:42:34] Fixed 2 duplicate /gene - ephD_1 ephD_2
+[18:42:34] Fixed 2 duplicate /gene - pknE_1 pknE_2
+[18:42:34] Fixed 5 duplicate /gene - lprN_1 lprN_2 lprN_3 lprN_4 lprN_5
+[18:42:34] Fixed 7 duplicate /gene - mmgC_1 mmgC_2 mmgC_3 mmgC_4 mmgC_5 mmgC_6 mmgC_7
+[18:42:34] Fixed 2 duplicate /gene - cysA1_1 cysA1_2
+[18:42:34] Fixed 2 duplicate /gene - mmpS3_1 mmpS3_2
+[18:42:34] Fixed 4 duplicate /gene - lppA_1 lppA_2 lppA_3 lppA_4
+[18:42:34] Fixed 2 duplicate /gene - lrp_1 lrp_2
+[18:42:34] Fixed 2 duplicate /gene - yedY_1 yedY_2
+[18:42:34] Fixed 2 duplicate /gene - argO_1 argO_2
+[18:42:34] Fixed 2 duplicate /gene - vapC3_1 vapC3_2
+[18:42:34] Fixed 2 duplicate /gene - priA_1 priA_2
+[18:42:34] Fixed 3 duplicate /gene - ubiG_1 ubiG_2 ubiG_3
+[18:42:34] Fixed 2 duplicate /gene - higA2_1 higA2_2
+[18:42:34] Fixed 2 duplicate /gene - mmpL5_1 mmpL5_2
+[18:42:34] Fixed 2 duplicate /gene - pucA_1 pucA_2
+[18:42:34] Fixed 2 duplicate /gene - moaE1_1 moaE1_2
+[18:42:34] Fixed 2 duplicate /gene - fdxA_1 fdxA_2
+[18:42:34] Fixed 2 duplicate /gene - murF_1 murF_2
+[18:42:34] Fixed 2 duplicate /gene - stp_1 stp_2
+[18:42:34] Fixed 2 duplicate /gene - hspX_1 hspX_2
+[18:42:34] Fixed 2 duplicate /gene - fadA_1 fadA_2
+[18:42:34] Fixed 2 duplicate /gene - icaR_1 icaR_2
+[18:42:34] Fixed 2 duplicate /gene - lysX_1 lysX_2
+[18:42:34] Fixed 2 duplicate /gene - mmpL3_1 mmpL3_2
+[18:42:34] Fixed 2 duplicate /gene - cocE_1 cocE_2
+[18:42:34] Fixed 4 duplicate /gene - acdA_1 acdA_2 acdA_3 acdA_4
+[18:42:34] Fixed 2 duplicate /gene - moaC1_1 moaC1_2
+[18:42:34] Fixed 2 duplicate /gene - espJ_1 espJ_2
+[18:42:34] Fixed 2 duplicate /gene - cut3_1 cut3_2
+[18:42:34] Fixed 2 duplicate /gene - fadH_1 fadH_2
+[18:42:34] Fixed 3 duplicate /gene - gloC_1 gloC_2 gloC_3
+[18:42:34] Fixed 2 duplicate /gene - dnaX_1 dnaX_2
+[18:42:34] Fixed 2 duplicate /gene - amiD_1 amiD_2
+[18:42:34] Fixed 2 duplicate /gene - hypB_1 hypB_2
+[18:42:34] Fixed 2 duplicate /gene - menA_1 menA_2
+[18:42:34] Fixed 3 duplicate /gene - moeZ_1 moeZ_2 moeZ_3
+[18:42:34] Fixed 4 duplicate /gene - lcfB_1 lcfB_2 lcfB_3 lcfB_4
+[18:42:34] Fixed 4 duplicate /gene - cpo_1 cpo_2 cpo_3 cpo_4
+[18:42:34] Fixed 217 colliding /gene names.
+[18:42:34] Adding /locus_tag identifiers
+[18:42:34] Assigned 4287 locus_tags to CDS and RNA features.
+[18:42:34] Writing outputs to ./G04868_prokka/
+[18:42:42] Generating annotation statistics file
+[18:42:42] Generating Genbank and Sequin files
+[18:42:42] Running: tbl2asn -V b -a r10k -l paired-ends -M n -N 1 -y 'Annotated using prokka 1.12 from https://github.com/tseemann/prokka' -Z \.\/G04868_prokka\/G04868\.err -i \.\/G04868_prokka\/G04868\.fsa 2> /dev/null
+[18:42:50] Deleting unwanted file: ./G04868_prokka/errorsummary.val
+[18:42:50] Deleting unwanted file: ./G04868_prokka/G04868.dr
+[18:42:50] Deleting unwanted file: ./G04868_prokka/G04868.fixedproducts
+[18:42:50] Deleting unwanted file: ./G04868_prokka/G04868.ecn
+[18:42:50] Deleting unwanted file: ./G04868_prokka/G04868.val
+[18:42:50] Repairing broken .GBK output that tbl2asn produces...
+[18:42:50] Running: sed 's/COORDINATES: profile/COORDINATES:profile/' < \.\/G04868_prokka\/G04868\.gbf > \.\/G04868_prokka\/G04868\.gbk
+[18:42:51] Deleting unwanted file: ./G04868_prokka/G04868.gbf
+[18:42:51] Output files:
+[18:42:51] ./G04868_prokka/G04868.log
+[18:42:51] ./G04868_prokka/G04868.fna
+[18:42:51] ./G04868_prokka/G04868.gff
+[18:42:51] ./G04868_prokka/G04868.faa
+[18:42:51] ./G04868_prokka/G04868.ffn
+[18:42:51] ./G04868_prokka/G04868.tbl
+[18:42:51] ./G04868_prokka/G04868.fsa
+[18:42:51] ./G04868_prokka/G04868.tsv
+[18:42:51] ./G04868_prokka/G04868.txt
+[18:42:51] ./G04868_prokka/G04868.sqn
+[18:42:51] ./G04868_prokka/G04868.err
+[18:42:51] ./G04868_prokka/G04868.gbk
+[18:42:51] Annotation finished successfully.
+[18:42:51] Walltime used: 2.58 minutes
+[18:42:51] If you use this result please cite the Prokka paper:
+[18:42:51] Seemann T (2014) Prokka: rapid prokaryotic genome annotation. Bioinformatics. 30(14):2068-9.
+[18:42:51] Type 'prokka --citation' for more details.
+[18:42:51] Share and enjoy!
+
+
+>>>>> gzip_compression <<<<<
+
+
+gzip -c G04868_1.fastq > G04868_1.fastq.gz
+
+
+
+
+
+
+
+>>>>> gzip_compression <<<<<
+
+
+gzip -c G04868_2.fastq > G04868_2.fastq.gz
+
+
+
+
+
+
+
+>>>>> snippy_command <<<<<
+
+
+snippy --cpus 1 --outdir G04868 --ref ./NC000962_3.gbk --R1 ./G04868_1.fastq.gz --R2 ./G04868_2.fastq.gz
+
+
+[18:46:50] This is snippy 3.2-dev
+[18:46:50] Written by Torsten Seemann <torsten.seemann@gmail.com>
+[18:46:50] Obtained from https://github.com/tseemann/snippy
+[18:46:50] Detected operating system: linux
+[18:46:50] Enabling bundled linux tools.
+[18:46:50] Found bwa - /opt/snippy/binaries/linux/bwa
+[18:46:50] Found samtools - /opt/snippy/binaries/linux/samtools
+[18:46:50] Found tabix - /opt/snippy/binaries/linux/tabix
+[18:46:50] Found bgzip - /opt/snippy/binaries/linux/bgzip
+[18:46:50] Found snpEff - /opt/snippy/binaries/noarch/snpEff
+[18:46:50] Found java - /usr/bin/java
+[18:46:50] Found gzip - /usr/bin/gzip
+[18:46:50] Found parallel - /opt/snippy/binaries/noarch/parallel
+[18:46:50] Found freebayes - /opt/snippy/binaries/linux/freebayes
+[18:46:50] Found freebayes-parallel - /opt/snippy/binaries/noarch/freebayes-parallel
+[18:46:50] Found fasta_generate_regions.py - /opt/snippy/binaries/noarch/fasta_generate_regions.py
+[18:46:50] Found vcfstreamsort - /opt/snippy/binaries/linux/vcfstreamsort
+[18:46:50] Found vcfuniq - /opt/snippy/binaries/linux/vcfuniq
+[18:46:50] Found vcffirstheader - /opt/snippy/binaries/noarch/vcffirstheader
+[18:46:50] Found vcf-consensus - /opt/snippy/binaries/noarch/vcf-consensus
+[18:46:50] Found snippy-vcf_to_tab - /opt/snippy/bin/snippy-vcf_to_tab
+[18:46:50] Found snippy-vcf_report - /opt/snippy/bin/snippy-vcf_report
+[18:46:50] Found snippy-vcf_filter - /opt/snippy/bin/snippy-vcf_filter
+[18:46:50] Checking version: samtools --version is >= 1.3 - ok, have 1.3
+[18:46:50] Using reference: /media/sf_test_genomes/test1/G04868_analysis/NC000962_3.gbk
+[18:46:50] Treating reference as 'genbank' format.
+[18:46:50] Will use 1 CPU cores.
+[18:46:50] Using read file: /media/sf_test_genomes/test1/G04868_analysis/G04868_1.fastq.gz
+[18:46:50] Using read file: /media/sf_test_genomes/test1/G04868_analysis/G04868_2.fastq.gz
+[18:46:50] Creating folder: G04868
+[18:46:50] Changing working directory: G04868
+[18:46:50] Creating reference folder: reference
+[18:46:50] Extracting FASTA and GFF from reference.
+[18:46:53] Wrote 1 sequences to ref.fa
+[18:46:53] Wrote 4416 features to ref.gff
+[18:46:53] Creating reference/snpeff.config
+[18:46:53] Freebayes will process 4 chunks of 1121279 bp, 1 chunks at a time.
+[18:46:53] Using BAM RG (Read Group) ID: snps
+[18:46:53] Running: samtools faidx reference/ref.fa 2>> snps.log
+[18:46:53] Running: bwa index reference/ref.fa 2>> snps.log
+[18:46:55] Running: mkdir reference/genomes && cp -f reference/ref.fa reference/genomes/ref.fa 2>> snps.log
+[18:46:55] Running: mkdir reference/ref && bgzip -c reference/ref.gff > reference/ref/genes.gff.gz 2>> snps.log
+[18:46:56] Running: snpEff build -c reference/snpeff.config -dataDir . -gff3 ref 2>> snps.log
+[18:47:00] Running: (bwa mem  -v 2 -M -R '@RG\tID:snps\tSM:snps' -t 1 reference/ref.fa /media/sf_test_genomes/test1/G04868_analysis/G04868_1.fastq.gz /media/sf_test_genomes/test1/G04868_analysis/G04868_2.fastq.gz | samtools sort --reference reference/ref.fa > snps.bam) 2>> snps.log
+[18:54:23] Running: samtools index snps.bam 2>> snps.log
+[18:54:34] Running: samtools depth -q 20 snps.bam | bgzip > snps.depth.gz 2>> snps.log
+[18:55:01] Running: tabix -s 1 -b 2 -e 2 snps.depth.gz 2>> snps.log
+[18:55:02] Running: fasta_generate_regions.py reference/ref.fa.fai 1121279 > reference/ref.txt 2>> snps.log
+[18:55:02] Running: freebayes-parallel reference/ref.txt 1 -p 1 -q 20 -m 60 --min-coverage 10 -V -f reference/ref.fa snps.bam > snps.raw.vcf 2>> snps.log
+^[[B^[[B
+
+
+
+
+
+
+
+
+[19:01:24] Running: /opt/snippy/bin/snippy-vcf_filter --minqual 10 --mincov 10 --minfrac 0.9  snps.raw.vcf > snps.filt.vcf 2>> snps.log
+[19:01:25] Running: snpEff ann -no-downstream -no-upstream -no-intergenic -no-utr -c reference/snpeff.config -dataDir . -noStats ref snps.filt.vcf > snps.vcf 2>> snps.log
+[19:01:30] Running: bgzip -c snps.vcf > snps.vcf.gz 2>> snps.log
+[19:01:30] Running: tabix -p vcf snps.vcf.gz 2>> snps.log
+[19:01:30] Running: /opt/snippy/bin/snippy-vcf_to_tab --gff reference/ref.gff --ref reference/ref.fa --vcf snps.vcf > snps.tab 2>> snps.log
+[19:01:33] Running: vcf-consensus snps.vcf.gz < reference/ref.fa > snps.consensus.fa 2>> snps.log
+[19:01:34] Running: /opt/snippy/bin/snippy-vcf_filter --subs snps.filt.vcf > snps.filt.subs.vcf 2>> snps.log
+[19:01:34] Running: bgzip -c snps.filt.subs.vcf > snps.filt.subs.vcf.gz 2>> snps.log
+[19:01:34] Running: tabix -p vcf snps.filt.subs.vcf.gz 2>> snps.log
+[19:01:34] Running: vcf-consensus snps.filt.subs.vcf.gz < reference/ref.fa > snps.consensus.subs.fa 2>> snps.log
+[19:01:35] Generating aligned/masked FASTA relative to reference: snps.aligned.fa
+[19:01:39] Creating extra output files: BED GFF CSV TXT HTML
+[19:01:39] Identified 2244 variants.
+[19:01:39] Result folder: G04868
+[19:01:39] Result files:
+[19:01:39] * G04868/snps.aligned.fa
+[19:01:39] * G04868/snps.bam
+[19:01:39] * G04868/snps.bam.bai
+[19:01:39] * G04868/snps.bed
+[19:01:39] * G04868/snps.consensus.fa
+[19:01:39] * G04868/snps.consensus.subs.fa
+[19:01:39] * G04868/snps.csv
+[19:01:39] * G04868/snps.depth.gz
+[19:01:39] * G04868/snps.depth.gz.tbi
+[19:01:39] * G04868/snps.filt.subs.vcf
+[19:01:39] * G04868/snps.filt.subs.vcf.gz
+[19:01:39] * G04868/snps.filt.subs.vcf.gz.tbi
+[19:01:39] * G04868/snps.filt.vcf
+[19:01:39] * G04868/snps.gff
+[19:01:39] * G04868/snps.html
+[19:01:39] * G04868/snps.log
+[19:01:39] * G04868/snps.raw.vcf
+[19:01:39] * G04868/snps.tab
+[19:01:39] * G04868/snps.txt
+[19:01:39] * G04868/snps.vcf
+[19:01:39] * G04868/snps.vcf.gz
+[19:01:39] * G04868/snps.vcf.gz.tbi
+[19:01:39] Walltime used: 14 minutes, 49 seconds
+[19:01:39] Found a bug? Post it at https://github.com/tseemann/snippy/issues
+[19:01:39] Done.
+
+
+>>>>> snippy_core <<<<<
+
+
+snippy-core  G04868 
+
+
+[19:01:39] Loading Snippy folders
+[19:01:39] Using ID 'G04868' for G04868
+[19:01:39] G04868: found 2109 variants totalling 2248 bp in G04868/snps.tab
+[19:01:39] Loaded 1 SNP tables.
+[19:01:39] Including 'Reference' in results.
+[19:01:39] Will write alignment statistics to core.txt
+[19:01:39] Loading pre-masked/aligned sequences...
+[19:01:39] 1/1	G04868 coverage 4379843/4411532 = 99.28%
+[19:01:39] Patching variant sites into whole genome alignment...
+[19:01:39] Constructing alignment object for core.full.aln
+[19:01:39] Writing 'fasta' alignment to core.full.aln
+[19:01:39] Writing core SNP table
+[19:01:39] Found 2172 core SNPs from 2248 variant sites.
+[19:01:39] Saved SNP table: core.tab
+[19:01:39] Constructing alignment object for core.aln
+[19:01:39] Writing 'fasta' alignment to core.aln
+[19:01:39] Done.
+
+
+>>>>> SNPtable <<<<<
+
+
+SNPtable_filter_Mtb.R core.tab
+
+
+SNPtable_filter_Mtb v1.0
+
+Author: João Perdigão
+
+Usage: SNPtable_filter_Mtb.R [snippy-core SNP tab file]
+
+Loading required package: ape
+Loading required package: seqinr
+
+Attaching package: ‘seqinr’
+
+The following objects are masked from ‘package:ape’:
+
+    as.alignment, consensus
+
+Reading M. tuberculosis library files...
+
+Reading M. tuberculosis library files...OK!
+
+PE/PPE Positions removed...
+
+Positions with mapping quality below k-mer 49/50 removed...
+
+Converting to multifasta format...
+
+Conversion to multifasta format... OK!
+
+Output FASTA file: coreSNP_alignment_filtered.fas
+
+
+>>>>> HammingFasta <<<<<
+
+
+HammingFasta.R coreSNP_alignment_filtered.fas
+
+
+HammingFasta v1.0
+
+Author: João Perdigão
+
+Usage: HammingFasta.R [FASTA alignment file]
+
+
+Loading required package: ape
+Loading required package: seqinr
+
+Attaching package: ‘seqinr’
+
+The following objects are masked from ‘package:ape’:
+
+    as.alignment, consensus
+
+       H37Rv
+G04868  2086
+
+Output Matrix File: dists_hamming.csv
+
+
+>>>>> move_out_of_genome_folder <<<<<
+
+
+
+
+>>>>> Current Directory => /media/sf_test_genomes/test1/G04868_analysis
+
+
+
+
+
