@@ -94,6 +94,22 @@ Using htslib 1.3
 Copyright (C) 2015 Genome Research Ltd.
 
 
+[eklavya@localhost G04868_analysis]$ samtools
+
+Program: samtools (Tools for alignments in the SAM format)
+Version: 1.6 (using htslib 1.6)
+
+NOTE: This samtools overrides the conda samtools and causes errors
+[eklavya@localhost G04868_analysis]$ which samtools
+~/Downloads/PAGIT.V1.64bit/PAGIT/bin/samtools
+
+
+[eklavya@localhost G04868_analysis]$ samtools 
+Program: samtools (Tools for alignments in the SAM format)
+Version: 0.1.18 (r982:295)
+
+
+
 ## ARTEMIS ( for visualization - maybe called art - doesn't seem like it!)
 
 http://www.sanger.ac.uk/science/tools/artemis
