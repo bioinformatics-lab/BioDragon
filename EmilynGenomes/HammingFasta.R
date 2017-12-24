@@ -1,4 +1,4 @@
-#!/usr/bin/env Rscript
+#!/home/eklavya/miniconda3/bin/Rscript
 
 cat("HammingFasta v1.0",sep="\n")
 cat("",sep="\n")

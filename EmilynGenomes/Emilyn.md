@@ -211,6 +211,43 @@ Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each sp
 
+## ASSEMBLATHON
+
+Needs a `FAlite.pm`  perl module
+
+Needs `perl-5.16`
+
+
+
+[centos@localhost ~]$ perl --version
+
+This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
+
+
+[centos@localhost ~]$ which perl
+/usr/bin/perl
+
+
+
+
+[eklavya@localhost EmilynGenomes]$ which perl
+~/miniconda3/bin/perl
+
+
+
+[eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
+
+This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
+
+
+
+[eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
+
+[eklavya@localhost EmilynGenomes]$ perl --version
+
+This is perl 5, version 22, subversion 0 (v5.22.0) built for x86_64-linux-thread-multi
+
+
 
 ## VELVET 
 

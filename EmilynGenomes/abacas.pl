@@ -1,4 +1,5 @@
-#!/usr/bin/perl
+#!/home/eklavya/miniconda3/bin/perl
+
 # Copyright (C) 2008-11 Genome Research Limited. All Rights Reserved.
 #
 # This program is free software; you can redistribute it and/or

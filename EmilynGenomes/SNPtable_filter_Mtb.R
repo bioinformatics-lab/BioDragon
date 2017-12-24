@@ -1,4 +1,4 @@
-#!/usr/bin/env Rscript
+#!/home/eklavya/miniconda3/bin/Rscript
 
 cat("SNPtable_filter_Mtb v1.0",sep="\n")
 cat("",sep="\n")
