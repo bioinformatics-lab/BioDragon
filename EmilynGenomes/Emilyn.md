@@ -367,12 +367,21 @@ R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
 
 
+##SNPTable
+NOTE: Move from the virtualbox image
 
 
 
+[centos@localhost ~]$ which SNPtable_filter_Mtb.R 
+/opt/Rexe/SNPtable_filter_Mtb.R
 
 
+## HammingFastaR
+NOTE: Move from the virtualbox image
 
+
+[centos@localhost ~]$ which HammingFasta.R 
+/opt/Rexe/HammingFasta.R
 
 
 
