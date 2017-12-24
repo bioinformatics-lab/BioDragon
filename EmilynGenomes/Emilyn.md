@@ -242,6 +242,73 @@ How I did it
 
 ```
 
+```
+[eklavya@localhost G04868_analysis]$ snpEff -no-downstream -no-upstream -v -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config  NC000962_3 G04868.filt.vcf > G04868.ann.vcf.gz
+```
+
+```
+snpEff -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config Mycobacterium_tuberculosis_h37rv G04868.filt.vcf > G04868.ann.vcf
+```
+
+
+
+
+### Finding the diff of two configs
+```diff
+[eklavya@localhost EmilynGenomes]$ diff ~/Desktop/BioDragon/virtualbox-snpEff.config ~/miniconda3/share/snpeff-4.3.1r-0/snpEff.config 
+55,60d54
+< # Mycobacterium tuberculosis H37Rv
+< NC000962_3.genome : Mycobacterium tuberculosis
+< 	NC000962_3.chromosomes : NC000962_3
+< 	NC000962_3.NC000962_3.codonTable : Bacterial_and_Plant_Plastid
+< 
+< 
+284a279
+> test_NC_031965.1.genome         : Test from NC_031965.1
+
+```
+
+```sh
+
+
+  503  cp  ~/miniconda3/share/snpeff-4.3.1r-0/snpEff.config snpEff-conda-backup.config
+  504  ls
+  505  rm  ~/miniconda3/share/snpeff-4.3.1r-0/snpEff.config 
+  506  cp virtualbox-snpEff.config ~/miniconda3/share/snpeff-4.3.1r-0/snpEff.config
+
+```
+
+
+
+This is what shows up on google with NC000962_3
+
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000962
+
+
+Need to download one of these 
+
+```sh
+[eklavya@localhost EmilynGenomes]$ cat snpEff_databases.txt | grep 'h37rv'
+Mycobacterium_tuberculosis_h37rv                            	Mycobacterium_tuberculosis_h37rv                            	          	ENSEMBL_BFMPP_32_235          	http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_ENSEMBL_BFMPP_32_235.zip
+Mycobacterium_tuberculosis_h37rv_gca_000277735              	Mycobacterium_tuberculosis_h37rv_gca_000277735              	          	ENSEMBL_BFMPP_32_235          	http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_ENSEMBL_BFMPP_32_235.zip
+Mycobacterium_tuberculosis_h37rv_gca_000667805              	Mycobacterium_tuberculosis_h37rv_gca_000667805              	          	ENSEMBL_BFMPP_32_235          	http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_ENSEMBL_BFMPP_32_235.zip
+Mycobacterium_tuberculosis_h37rv_gca_000831245              	Mycobacterium_tuberculosis_h37rv_gca_000831245              	          	ENSEMBL_BFMPP_32_235          	http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_ENSEMBL_BFMPP_32_235.zip
+Mycobacterium_tuberculosis_h37rvsiena                       	Mycobacterium_tuberculosis_h37rvsiena                       	          	ENSEMBL_BFMPP_32_235          	http://downloads.sourceforge.net/project/snpeff/databases/v4_3/snpEff_v4_3_ENSEMBL_BFMPP_32_235.zip
+
+```
+
+
+
+What I did 
+
+```sh
+
+[eklavya@localhost ~]$ snpEff download Mycobacterium_tuberculosis_h37rv 
+
+```
+
+
+Finally I copied and pasted the NC000962_3 from the virtualbox image - which works!
 
 
 ## ASSEMBLATHON
