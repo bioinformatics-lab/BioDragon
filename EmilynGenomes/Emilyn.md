@@ -223,7 +223,26 @@ Run 'java -jar snpEff.jar command' for help on each specific command
 SnpEff version SnpEff 4.3r (build 2017-09-06 16:41), by Pablo Cingolani
 Usage: snpEff [command] [options] [files]
 
-Run 'java -jar snpEff.jar command' for help on each sp
+Run 'java -jar snpEff.jar command' for help on each specific command
+
+
+#### We need to install the database for snpEff 
+
+Command in the virtualimage
+
+```sh
+ java -Xmx4g /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config Mycobacterium_tuberculosis_h37rv PT000033.filt.vcf > PT000033.ann.vcf
+
+```
+
+How I did it
+
+```sh
+[eklavya@localhost G04868_analysis]$ snpEff download Mycobacterium_tuberculosis_h37rv 
+
+```
+
+
 
 ## ASSEMBLATHON
 
