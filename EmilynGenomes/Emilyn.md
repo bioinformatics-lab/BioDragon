@@ -432,6 +432,12 @@ We assume that java and the tcsh-shell is installed
 NOTE: This should be done from the /usr/local/
 
 
+
+#### MUMMER ( req. by abacas.pl )
+
+conda install mummer
+
+
 ## PROKKA
 
 conda install prokka
@@ -570,6 +576,7 @@ Path for the Portugese BioInformatics virtualbox image
 
   524  cp abacas.pl ~/miniconda3/bin/
   525  cp assemblathon_stats.pl ~/miniconda3/bin/
+// TODO: change the location of perl module to ~/miniconda3/lib
   526  cp FAlite.pm ~/miniconda3/bin/
   527  cp HammingFasta.R ~/miniconda3/bin/
   528  cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
