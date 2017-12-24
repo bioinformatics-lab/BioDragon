@@ -338,6 +338,11 @@ snippy 3.2-dev
 [eklavya@localhost EmilynGenomes]$ snippy --version
   snippy 3.1 
 
+## Compiler toolchain 
+
+sudo yum group install "Development Tools" 
+
+
 
 ## R
 
@@ -385,7 +390,20 @@ NOTE: Move from the virtualbox image
 
 
 
-##### After install r - work setting up the "seqinr" and "ape" packages
+#### SEQINR package
+
+###### conda install r-seqinr
+
+
+
+#### APE package
+
+###### INSIDE R ( avoid tcl error )
+
+> options(menu.graphics=FALSE)
+
+
+> install.packages("ape")
 
 
 @@@@@@@@@@@@@@@@@@
