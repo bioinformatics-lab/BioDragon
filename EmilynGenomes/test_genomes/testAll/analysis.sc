@@ -745,8 +745,11 @@ def snpEff(reference_genome:String, genome_name:String) = {
 
   var ann_vcf_file_name = genome_name.split("\\.")(0) + ".ann.vcf.gz"
 
-  println("snpEff -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name + "\n\n")
-  var cmd_string = "snpEff -no-downstream -no-upstream -v -c /opt/snpEff/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
+// TODO: Correct the config file
+// snpEff -no-downstream -no-upstream -v -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config NC000962_3 G04868.filt.vcf > G04868.ann.vcf.gz
+
+  println("snpEff -no-downstream -no-upstream -v -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name + "\n\n")
+  var cmd_string = "snpEff -no-downstream -no-upstream -v -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
 
 
 %("bash", "-c", cmd_string)
@@ -979,6 +982,7 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 
 //  println("snippy --cpus 1 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second)
 
+//TODO: Need to make the num of cpus dynamic - lscpu
 //NOTE: Changed the number of cpus
   var cmd_string = "snippy --cpus 4 --outdir " +  genome_name + " --ref ./" + reference_genome_gbk + " --R1 ./" + genome_first + " --R2 ./" + genome_second
 
