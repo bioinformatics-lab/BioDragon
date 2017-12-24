@@ -385,6 +385,8 @@ NOTE: Move from the virtualbox image
 
 
 
+##### After install r - work setting up the "seqinr" and "ape" packages
+
 
 @@@@@@@@@@@@@@@@@@
 Path for the Portugese BioInformatics virtualbox image
