@@ -2706,15 +2706,6 @@ snippy --cpus 1 --outdir G04868 --ref ./NC000962_3.gbk --R1 ./G04868_1.fastq.gz 
 [18:55:01] Running: tabix -s 1 -b 2 -e 2 snps.depth.gz 2>> snps.log
 [18:55:02] Running: fasta_generate_regions.py reference/ref.fa.fai 1121279 > reference/ref.txt 2>> snps.log
 [18:55:02] Running: freebayes-parallel reference/ref.txt 1 -p 1 -q 20 -m 60 --min-coverage 10 -V -f reference/ref.fa snps.bam > snps.raw.vcf 2>> snps.log
-^[[B^[[B
-
-
-
-
-
-
-
-
 [19:01:24] Running: /opt/snippy/bin/snippy-vcf_filter --minqual 10 --mincov 10 --minfrac 0.9  snps.raw.vcf > snps.filt.vcf 2>> snps.log
 [19:01:25] Running: snpEff ann -no-downstream -no-upstream -no-intergenic -no-utr -c reference/snpeff.config -dataDir . -noStats ref snps.filt.vcf > snps.vcf 2>> snps.log
 [19:01:30] Running: bgzip -c snps.vcf > snps.vcf.gz 2>> snps.log

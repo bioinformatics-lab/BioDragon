@@ -576,3 +576,12 @@ Path for the Portugese BioInformatics virtualbox image
 
 conda install openjdk
 
+
+# added by Miniconda3 installer
+export PATH="/home/eklavya/miniconda3/bin:$PATH"
+
+
+#source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
+
+source /usr/local/PAGIT/sourceme.pagit
+

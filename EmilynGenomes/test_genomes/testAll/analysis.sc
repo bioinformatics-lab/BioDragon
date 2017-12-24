@@ -1,9 +1,11 @@
 // #!/usr/bin/env amm
 
 
-// TODO: Implement logging
+// TODO: Implement logging with timestamps
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
 // https://github.com/typesafehub/scala-logging
+
+
 
 // TODO: backups
 // https://github.com/restic/restic
@@ -29,6 +31,8 @@
 //import ammonite.ops._
 //import ammonite.ops.ImplicitWd._
 
+
+// TODO: Print out all the commands which need to be run for the entire analysis
 
 
 /*
@@ -200,7 +204,7 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
   cmd_string += " > " + output_file_name
   println(cmd_string + "\n\n")
 
-   %("bash" , "-c", cmd_string)
+   %%("bash" , "-c", cmd_string)
 
 }
 
@@ -407,7 +411,7 @@ def gzip_decompression(genome_name:String) = {
 // what works
 //  %("bash", "-c" , "gzip -dc /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq.gz > /media/sf_Genomes/2_trying_out_the_manual/course_files/PT000033_1.fastq")
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 //var cmd_string1 =  " " + fastqgz_name + " > " + fastq_name
 //  %("bash", "-c",  "gzip", "-dcf", cmd_string1)
@@ -466,7 +470,7 @@ def gzip_compression(genome_name:String) = {
 
   println(cmd_string  + "\n\n")
 
-   %("bash", "-c", cmd_string)
+   %%("bash", "-c", cmd_string)
 
 
   println("\n\n")
@@ -528,7 +532,7 @@ var cmd_string = "trimmomatic PE -phred33 " +  genome_first +  " " + genome_seco
   println(cmd_string + "\n\n")
 
 
-  %("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 
 
 
@@ -559,7 +563,7 @@ def bwa_index_reference_genome(reference_genome:String) = {
 
   var cmd_string = "bwa index " + reference_genome
 
-  %("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 
 }
 
@@ -578,7 +582,7 @@ def map_and_generate_sam_file(genome_name:String, reference_genome:String , geno
   var cmd_string = "bwa mem -R \"@RG\\tID:" + genome_name + "\\tSM:" + genome_name + "\\tPL:Illumina\" -M " + reference_genome + " " + genome_1_trimmed + " "+ genome_2_trimmed + " > " + sam_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -590,7 +594,7 @@ def samtools_faidx_reference_genome(reference_genome:String) = {
   var cmd_string = "samtools faidx " + reference_genome
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 }
 
 
@@ -608,7 +612,7 @@ def convert_sam_file_to_bam_file(reference_genome:String, genome_name:String) = 
   var cmd_string = "samtools view -bt " + fai_from_reference_genome + " " +  sam_file_name  + " > " + bam_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -630,7 +634,7 @@ def sort_bam_file(genome_name:String) = {
   var cmd_string = "samtools sort " + bam_file_name + " -o " + sorted_bam_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -643,7 +647,7 @@ def samtools_index_sorted_bam(genome_name:String) = {
   var cmd_string = "samtools index " + sorted_bam_file_name
 
 
-  %("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 }
 
 
@@ -659,7 +663,7 @@ def mapping_statistics(genome_name:String) = {
   var cmd_string = "samtools flagstat " + sorted_bam_file_name + " > " + stats_text_file
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 }
 
 
@@ -685,7 +689,7 @@ def samtools_mpileup(reference_genome:String, genome_name:String) = {
   var cmd_string = "samtools mpileup -Q 23 -d 2000 -C 50 -ugf " + reference_genome + ".fasta" + " " +  sorted_bam_file_name + " | bcftools call -O v -vm -o " + raw_vcf_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -701,7 +705,7 @@ def vcfutils_filter(genome_name:String) = {
   var cmd_string = "vcfutils.pl varFilter -d 10 -D 2000 " + raw_vcf_file_name + " > "  +  filt_vcf_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -717,7 +721,7 @@ def bgzip_filt_file(genome_name:String) = {
   var cmd_string = "bgzip -c " +  filt_vcf_file_name + " > "  + bgzip_vcf_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -731,7 +735,7 @@ def run_tabix(genome_name:String) = {
   var cmd_string = "tabix -p vcf " + bgzip_vcf_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -752,7 +756,7 @@ def snpEff(reference_genome:String, genome_name:String) = {
   var cmd_string = "snpEff -no-downstream -no-upstream -v -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config " + reference_genome + " " + filt_vcf_file_name + " > " + ann_vcf_file_name
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 }
 
 
@@ -799,7 +803,7 @@ def velveth_assembly(genome_name:String, k_mer:String) = {
   var cmd_string = "velveth " +  genome_k_mer_name +  " " + k_mer + " -fastq -shortPaired " + " " + generate_trimmed_name(genome_first) +  " " + generate_untrimmed_name(genome_first) +  " -fastq -short " + generate_trimmed_name(genome_second) +  " " + generate_untrimmed_name(genome_second)
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 
 }
@@ -819,7 +823,7 @@ def velvetg_produce_graph(genome_name:String, k_mer:String) = {
   var cmd_string = "velvetg " + genome_k_mer_name + " -exp_cov auto -cov_cutoff auto"
 
 
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -959,7 +963,7 @@ def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String)
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 
 }
 
@@ -988,7 +992,7 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 
   println(cmd_string + "\n\n")
 
- %("bash", "-c", cmd_string)
+ %%("bash", "-c", cmd_string)
 
 }
 
@@ -1010,7 +1014,7 @@ def snippy_core(list_of_genomes:List[String]) = {
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 
 }
 
@@ -1024,7 +1028,7 @@ def SNPtable() = {
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
  println(cmd_string + "\n\n")
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 
 }
 
@@ -1037,7 +1041,7 @@ def HammingFasta() = {
 var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
   println(cmd_string + "\n\n")
-%("bash", "-c", cmd_string)
+%%("bash", "-c", cmd_string)
 }
 
 

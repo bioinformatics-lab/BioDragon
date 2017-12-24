@@ -10,6 +10,8 @@
 # Last updated by: $Author: keith $
 # Last updated on: $Date: 2011/10/13 00:07:00 $
 
+use lib '/home/eklavya/miniconda3/bin';
+
 use strict;
 use warnings;
 use FAlite;
