@@ -125,11 +125,15 @@ Just download and run - it's a jar
 starting Artemis with flags: -mx500m -ms20m -noverify -Dartemis.environment=UNIX
 
 
+TODO: Need to fix `artemis` 
+
+
+
 Download the artemis tar directly to `/usr/local` and unzip it there
 
-sudo ln -s /usr/local/artemis/art /usr/bin/art
+[eklavya@localhost BioDragon]$ sudo ln -s /usr/local/artemis/art /usr/bin/art
 
-exec $SHELL
+[eklavya@localhost BioDragon]$ exec $SHELL
 
 
 ## BCFTOOLS
@@ -484,5 +488,5 @@ Path for the Portugese BioInformatics virtualbox image
   527  cp HammingFasta.R ~/miniconda3/bin/
   528  cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
 
-TODO: Need to fix `artemis` 
+conda install openjdk
 
