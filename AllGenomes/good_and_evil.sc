@@ -100,6 +100,7 @@ var bad_genomes = Array(
 )
 
 
+// TODO: mkdir good && bad
 
 for( g <- list_of_all_genomes ){
 
