@@ -1,5 +1,7 @@
 // #!/usr/bin/env amm
 
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
 
 // TODO: Implement logging
 // https://www.playframework.com/documentation/2.6.x/ScalaLogging
@@ -225,15 +227,17 @@ def copy_reference_genome(genome_name:String) = {
 
   var genome_dir_name = genome_name + "_analysis"
 
+  /*
   mkdir! pwd/genome_dir_name
 
-  cp.into(wd/"NC000962_3.fasta", wd/genome_dir_name)
+  cp.into(pwd/"NC000962_3.fasta", pwd/genome_dir_name)
 
-  cp.into(wd/"NC000962_3.gbk", wd/genome_dir_name)
+  cp.into(pwd/"NC000962_3.gbk", pwd/genome_dir_name)
+  */
 }
 
 
-
+/*
 def move_into_genome_folder(genome_name: String) = {
 
   var genome_dir_name = genome_name + "_analysis"
@@ -248,7 +252,7 @@ def move_out_of_genome_folder() = {
 }
 
 
-
+ */
 
 
 
@@ -742,7 +746,7 @@ def snpEff(reference_genome:String, genome_name:String) = {
 
   println(cmd_string + "\n\n")
 
-%("bash", "-c", cmd_string)
+// %("bash", "-c", cmd_string)
 }
 
 
@@ -832,7 +836,7 @@ def assemblathon_stats(genome_name:String , k_mer:String) = {
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
 
 }
@@ -918,7 +922,7 @@ def abacas_align_contigs(genome_name:String, k_mer:String) = {
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
 }
 
@@ -949,7 +953,7 @@ def prokka_annotation(genome_name:String, k_mer:String, reference_genome:String)
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
 }
 
@@ -978,7 +982,7 @@ def snippy_command(genome_name:String, reference_genome:String) = {
 
   println(cmd_string + "\n\n")
 
- %("bash", "-c", cmd_string)
+// %("bash", "-c", cmd_string)
 
 }
 
@@ -1000,7 +1004,7 @@ def snippy_core(list_of_genomes:List[String]) = {
 
   println(cmd_string + "\n\n")
 
-  %("bash", "-c", cmd_string)
+//  %("bash", "-c", cmd_string)
 
 }
 
@@ -1014,7 +1018,9 @@ def SNPtable() = {
 var cmd_string = "SNPtable_filter_Mtb.R core.tab"
 
  println(cmd_string + "\n\n")
-%("bash", "-c", cmd_string)
+
+
+//  %("bash", "-c", cmd_string)
 
 }
 
@@ -1027,7 +1033,9 @@ def HammingFasta() = {
 var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
   println(cmd_string + "\n\n")
-%("bash", "-c", cmd_string)
+
+  // %("bash", "-c", cmd_string)
+
 }
 
 
@@ -1050,13 +1058,13 @@ copy_reference_genome(genome_name)
   println("\n\n>>>>> merge_and_rename <<<<<\n\n")
 merge_and_rename(genome_name)
 
-  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
+  println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
 
-  println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
-move_into_genome_folder(genome_name)
+//  println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
+// move_into_genome_folder(genome_name)
 
 
-  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
+  println("\n\n>>>>> Current Directory => " + pwd +  "\n\n")
 
   println("\n\n>>>>> trimmomatic <<<<<\n\n")
 trimmomatic(genome_name)
@@ -1150,9 +1158,13 @@ assemblathon_stats(genome_name, "55")
 // analysis.prokka_annotation(genome_name, "49", "NC000962_3")
 
 
-
+/*
  var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
+
+  */
+// var highest_quality_k_mer = "55"
+
 abacas_align_contigs( genome_name, highest_quality_k_mer)
 
   println("\n\n>>>>> prokka_annotation <<<<<\n\n")
@@ -1178,9 +1190,9 @@ SNPtable()
   println("\n\n>>>>> HammingFasta <<<<<\n\n")
 HammingFasta()
 
-  println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
+  //  println("\n\n>>>>> move_out_of_genome_folder <<<<<\n\n")
 
-  println("\n\n>>>>> Current Directory => " + wd + "\n\n")
+ // println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
 
 // TODO: figure out the reason for the << non-existent reference genome >> error while moving to new genome in sequence
   //move_out_of_genome_folder()

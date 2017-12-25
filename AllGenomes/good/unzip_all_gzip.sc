@@ -1,3 +1,8 @@
+#!/usr/bin/env amm
+
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
 import scala.collection.mutable.ArrayBuffer
 
 def is_fastqgz_?(file_name:String) : Boolean = {
@@ -41,7 +46,7 @@ def gzip_decompression(genome_name:String) = {
   var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
 
   println(cmd_string + "\n\n")
-//  %%("bash", "-c", cmd_string)
+  %%("bash", "-c", cmd_string)
 
 }
 

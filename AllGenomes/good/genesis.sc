@@ -1,4 +1,9 @@
+#!/usr/bin/env amm
+
 // TODO: figure out why we're unable to simply do << amm genesis.sc >>
+
+
+///////////
 
 
 // Always execute this line in ammonite repl
