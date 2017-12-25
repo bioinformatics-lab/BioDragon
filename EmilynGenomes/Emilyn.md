@@ -138,6 +138,7 @@ Version: 0.7.12-r1039
 
 ```
 
+**With conda**
 
 
 
@@ -159,6 +160,8 @@ samtools 1.3
 Using htslib 1.3
 Copyright (C) 2015 Genome Research Ltd.
 ```
+**With conda**
+```
 
 [eklavya@localhost ]$ samtools
 
@@ -174,7 +177,7 @@ NOTE: This samtools overrides the conda samtools and causes errors
 Program: samtools (Tools for alignments in the SAM format)
 Version: 0.1.18 (r982:295)
 
-
+```
 
 ## ARTEMIS 
 
@@ -201,10 +204,11 @@ TODO: Need to fix `artemis`
 
 Download the artemis tar directly to `/usr/local` and unzip it there
 
+```
 [eklavya@localhost BioDragon]$ sudo ln -s /usr/local/artemis/art /usr/bin/art
 
 [eklavya@localhost BioDragon]$ exec $SHELL
-
+```
 
 ## BCFTOOLS
 
@@ -224,13 +228,15 @@ Using htslib 1.5-14-ge1380c8
 
 ```
 
+**With conda**
+```
 [eklavya@localhost BioDragon]$ which bcftools 
 ~/miniconda3/bin/bcftools
 
 [eklavya@localhost BioDragon]$ bcftools --version
 bcftools 1.6
 Using htslib 1.6
-
+```
 
 
 ##  VCFUTILS
@@ -252,7 +258,9 @@ conda install vcfutils
 Usage:   vcfutils.pl <command> [<arguments>]
 ```
 
+**With conda**
 
+```
 
 [eklavya@localhost ~]$ vcfutils.pl 
 
@@ -262,6 +270,7 @@ Usage:   vcfutils.pl <command> [<arguments>]
 [eklavya@localhost ~]$ which vcfutils.pl 
 ~/miniconda3/bin/vcfutils.pl
 
+```
 
 ## TABIX
 
@@ -281,14 +290,15 @@ conda install tabix
 Version: 1.3
 ```
 
-
+**With conda**
+```
 [eklavya@localhost EmilynGenomes]$ which tabix
 ~/miniconda3/bin/tabix
 
 [eklavya@localhost EmilynGenomes]$ tabix 
 Version: 1.3.2
 
-
+```
 
 ## SNPEFF
 ```
@@ -306,7 +316,9 @@ Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each specific command
 ```
+**With conda**
 
+```
 [eklavya@localhost EmilynGenomes]$ which tabix
 ~/miniconda3/bin/snpEff
 
@@ -316,11 +328,11 @@ SnpEff version SnpEff 4.3r (build 2017-09-06 16:41), by Pablo Cingolani
 Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each specific command
-
+```
 
 #### We need to install the database for snpEff 
 
-Command in the virtualimage
+Command in the virtual-image, which ***might*** have been used to install the database
 
 ```sh
  java -Xmx4g /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config Mycobacterium_tuberculosis_h37rv PT000033.filt.vcf > PT000033.ann.vcf
@@ -328,6 +340,7 @@ Command in the virtualimage
 ```
 
 How I did it
+
 
 ```sh
 [eklavya@localhost G04868_analysis]$ snpEff download Mycobacterium_tuberculosis_h37rv 
@@ -409,37 +422,39 @@ Needs a `FAlite.pm`  perl module
 Needs `perl-5.16`
 
 
+
+**Inside VirtualBox Image**
+
+
+```
 [centos@localhost ~]$ perl --version
 
 This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
 
-
-
-**Inside VirtualBox Image**
-```
 [centos@localhost ~]$ which perl
 /usr/bin/perl
 ```
 
+**With conda** 
 
-
+```
 [eklavya@localhost EmilynGenomes]$ which perl
 ~/miniconda3/bin/perl
 
 
+[eklavya@localhost EmilynGenomes]$ perl --version
 
+This is perl 5, version 22, subversion 0 (v5.22.0) built for x86_64-linux-thread-multi
+```
+
+**Default installation in linux**
+```
 [eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
 
 This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
 
 
-
-[eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
-
-[eklavya@localhost EmilynGenomes]$ perl --version
-
-This is perl 5, version 22, subversion 0 (v5.22.0) built for x86_64-linux-thread-multi
-
+```
 
 
 ## VELVET 
@@ -471,16 +486,22 @@ Version 1.2.10
 
 ```
 
+**With Conda**
+
+velveth
+```
 [eklavya@localhost EmilynGenomes]$ velveth 
 velveth - simple hashing program
 Version 1.1.06
+```
 
-
+velvetg
+```
 [eklavya@localhost EmilynGenomes]$ velvetg
 vvelvetg - de Bruijn graph construction, error removal and repeat resolution
 Version 1.1.06
 
-
+```
 
 ## ABACAS
 
@@ -515,8 +536,9 @@ ABACAS.1.3.2
 
 http://www.sanger.ac.uk/science/tools/pagit
 
+**On the new linux**
 
-
+```
 [eklavya@localhost PAGIT.V1.64bit]$ ./installme.sh 
 Installation successfully!
 
@@ -534,13 +556,14 @@ We assume that java and the tcsh-shell is installed
 ~/Downloads/PAGIT.V1.64bit/PAGIT/ABACAS/abacas.pl
 
 NOTE: This should be done from the /usr/local/
+```
 
 
+### MUMMER ( req. by abacas.pl )
 
-#### MUMMER ( req. by abacas.pl )
-
+```
 conda install mummer
-
+```
 
 ## PROKKA
 
@@ -561,6 +584,9 @@ prokka 1.12
 ```
 
 
+**With Conda**
+
+```
 [eklavya@localhost EmilynGenomes]$ which prokka
 ~/miniconda3/bin/prokka
 
@@ -569,6 +595,7 @@ prokka 1.12
 Name:
   Prokka 1.12 by Torsten Seemann <torsten.seemann@gmail.com>
 
+```
 
 ## SNIPPY
 
@@ -587,6 +614,7 @@ snippy 3.2-dev
 
 ```
 
+**With Conda**
 ```
 [eklavya@localhost EmilynGenomes]$ which snippy
 ~/miniconda3/bin/snippy
@@ -631,30 +659,33 @@ R version 3.4.1 (2017-06-30) -- "Single Candle"
 
 ```
 
+**With Conda**
+```
 [eklavya@localhost EmilynGenomes]$ which R
 ~/miniconda3/bin/R
 
 [eklavya@localhost EmilynGenomes]$ R --version
 R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
-
+```
 
 
 ##SNPTable
 NOTE: Move from the virtualbox image
 
-
+```
 [centos@localhost ~]$ which SNPtable_filter_Mtb.R 
 /opt/Rexe/SNPtable_filter_Mtb.R
+```
 
 
 ## HammingFastaR
 NOTE: Move from the virtualbox image
 
-
+```
 [centos@localhost ~]$ which HammingFasta.R 
 /opt/Rexe/HammingFasta.R
-
+```
 
 
 #### SEQINR package
@@ -696,19 +727,16 @@ Path for the Portugese BioInformatics virtualbox image
 
 ## SETUP
 
-  524  cp abacas.pl ~/miniconda3/bin/
-  525  cp assemblathon_stats.pl ~/miniconda3/bin/
+```
+cp abacas.pl ~/miniconda3/bin/
+cp assemblathon_stats.pl ~/miniconda3/bin/
 // TODO: change the location of perl module to ~/miniconda3/lib
-  526  cp FAlite.pm ~/miniconda3/bin/
-  527  cp HammingFasta.R ~/miniconda3/bin/
-  528  cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
+cp FAlite.pm ~/miniconda3/bin/
+cp HammingFasta.R ~/miniconda3/bin/
+cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
 
-conda install openjdk
+source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
 
+source /usr/local/PAGIT/sourceme.pagit
 
-
-#source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
-
-#source /usr/local/PAGIT/sourceme.pagit
-
-
+```
