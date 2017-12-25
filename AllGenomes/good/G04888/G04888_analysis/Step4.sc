@@ -233,13 +233,10 @@ def combine_all_r_code_files_for_genome(genome_name:String, r_code:String) = {
 def copy_reference_genome(genome_name:String) = {
 
 
-  var genome_dir_name = genome_name + "_analysis"
 
-  mkdir! pwd/genome_dir_name
+  cp.into(pwd/up/up/"NC000962_3.fasta", pwd)
 
-  cp.into(pwd/"NC000962_3.fasta", pwd/genome_dir_name)
-
-  cp.into(pwd/"NC000962_3.gbk", pwd/genome_dir_name)
+  cp.into(pwd/up/up/"NC000962_3.gbk", pwd)
 }
 
 
@@ -1050,8 +1047,8 @@ def analyse_all_genomes(genome_name:String) = {
 
 
 
-//  println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
-// copy_reference_genome(genome_name)
+  println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
+ copy_reference_genome(genome_name)
 
 //  println("\n\n>>>>> merge_and_rename <<<<<\n\n")
 // merge_and_rename(genome_name)
