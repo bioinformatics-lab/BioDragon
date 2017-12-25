@@ -70,7 +70,9 @@ For this we need to install `oracle virtualbox extensions`
 
 http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
 
-Be *very* careful that the *version* of virtualbox is the same as extension pack 
+Be *very* careful that the *version* of virtualbox is the same as extension pack. 
+
+Run this command in the Host Operating system
 
 ```
 
