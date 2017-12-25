@@ -75,52 +75,68 @@ conda install git git-lfs
 conda install fastqc
 ```
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which fastqc 
 /opt/FastQC/fastqc
 
 
 [centos@localhost ~]$ fastqc --version
 FastQC v0.11.5
+```
 
 
-
-
+**With conda**
+```
 [eklavya@localhost EmilynGenomes]$ which fastqc
 ~/miniconda3/bin/fastqc
 
+[eklavya@localhost EmilynGenomes]$ fastqc --version
+FastQC v0.11.5
+```
 
 
 ## TRIMMOMATIC
 
+```
 conda install trimmomatic 
+```
 
+
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which trimmomatic
 /usr/bin/which: no trimmomatic in (/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/centos/.local/bin:/home/centos/bin)
 
 [centos@localhost ~]$  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar -version
 0.36
+```
 
+**With conda**
 
-
-
+```
 [eklavya@localhost EmilynGenomes]$ which trimmomatic 
 ~/miniconda3/bin/trimmomatic
-
+```
 
 
 ## BWA
+
+```
 conda install bwa
+```
 
-
-
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which bwa
 /opt/snippy/binaries/linux/bwa
-
 
 [centos@localhost ~]$ bwa 
 
 Program: bwa (alignment via Burrows-Wheeler transformation)
 Version: 0.7.12-r1039
+
+```
 
 
 
@@ -629,4 +645,5 @@ export PATH="/home/eklavya/miniconda3/bin:$PATH"
 #source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
 
 #source /usr/local/PAGIT/sourceme.pagit
+
 
