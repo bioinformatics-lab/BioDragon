@@ -1,6 +1,14 @@
+// #!/usr/bin/env amm
+
+import ammonite.ops._
+import ammonite.ops.ImplicitWd._
+
+
 // Move all the genomes as per the division of good and bad genomes
 
 import scala.collection.mutable.ArrayBuffer
+
+
 
 var all_files = ls! pwd
 
@@ -101,6 +109,10 @@ var bad_genomes = Array(
 
 
 // TODO: mkdir good && bad
+
+
+mkdir! pwd/'good
+mkdir! pwd/'bad
 
 for( g <- list_of_all_genomes ){
 
