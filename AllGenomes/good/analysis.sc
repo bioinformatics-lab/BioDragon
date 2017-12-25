@@ -1042,9 +1042,8 @@ var cmd_string = "HammingFasta.R coreSNP_alignment_filtered.fas"
 
 
 
-def analyse_all_genomes(unique_genome_list:List[String]) = {
+def analyse_all_genomes(genome_name:String) = {
 
-for(genome_name <- unique_genome_list) {
 
 
   println("\n\n>>>>> GENOME => "  + genome_name + "\n\n")
@@ -1158,12 +1157,12 @@ assemblathon_stats(genome_name, "55")
 // analysis.prokka_annotation(genome_name, "49", "NC000962_3")
 
 
-/*
+
  var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
 
-  */
-  var highest_quality_k_mer = "55"
+  
+//  var highest_quality_k_mer = "55"
 
 abacas_align_contigs( genome_name, highest_quality_k_mer)
 
@@ -1199,5 +1198,5 @@ HammingFasta()
 
 
 }
-}
+
 
