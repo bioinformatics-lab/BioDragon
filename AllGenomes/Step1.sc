@@ -1,4 +1,13 @@
-// #!/usr/bin/env amm
+#!/usr/bin/env amm
+
+/*
+Step1 
+
+In this step we just separate out the good genomes from the bad genomes
+
+
+*/
+
 
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
