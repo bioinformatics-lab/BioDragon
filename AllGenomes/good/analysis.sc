@@ -1163,7 +1163,7 @@ assemblathon_stats(genome_name, "55")
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
 
   */
-// var highest_quality_k_mer = "55"
+  var highest_quality_k_mer = "55"
 
 abacas_align_contigs( genome_name, highest_quality_k_mer)
 
