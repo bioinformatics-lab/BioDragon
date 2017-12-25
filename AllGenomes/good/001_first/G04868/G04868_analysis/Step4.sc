@@ -1161,7 +1161,7 @@ assemblathon_stats(genome_name, "55")
 
 
 // TODO: Do the analysis for the other two k_mer as well
- var highest_quality_k_mer = analysis.best_assemblathon_stats(genome_name)
+ var highest_quality_k_mer = best_assemblathon_stats(genome_name)
   println("\n\n>>>>> abacas_align_contigs <<<<<\n\n")
 abacas_align_contigs( genome_name, highest_quality_k_mer)
 
@@ -1202,4 +1202,4 @@ HammingFasta()
 }
 
 
-var output =  analysis.analyse_all_genomes("G04868")
+var output =  analyse_all_genomes("G04868")
