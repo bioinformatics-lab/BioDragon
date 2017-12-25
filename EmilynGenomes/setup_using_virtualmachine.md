@@ -25,7 +25,10 @@ screenshot
         settings > region and language > input layout > US Keyboard
     ```
 - Install VirtualBox guest additions
-- 
+Go to the top menu, 
+```
+Devices -> Insert Guest additions CD image 
+```
 ##### Setup shared folder
 
 From inside the virtualbox image, run these commands in the terminal
@@ -33,7 +36,11 @@ From inside the virtualbox image, run these commands in the terminal
 sudo usermod -aG vboxsf $(whoami)
 
 sudo mount -t vboxsf -o rw,uid=1000,gid=1000 BioDragon ~/Desktop/BioDragon/
+
 ```
+
+Now you can see a `sf_BioDragon` folder in the virtualbox image
+
 ##### Setup the virtualmachine for connecting with external Hard disk
 
 
