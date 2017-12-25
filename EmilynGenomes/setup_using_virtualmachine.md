@@ -24,14 +24,15 @@ screenshot
     ```
         settings > region and language > input layout > US Keyboard
     ```
-
+- Install VirtualBox guest additions
+- 
 ##### Setup shared folder
 
 From inside the virtualbox image, run these commands in the terminal
 ```
 sudo usermod -aG vboxsf $(whoami)
 
-sudo mount -t vboxsf -o rw,uid=1000,gid=1000 Genesis ~/Desktop/BioDragon/
+sudo mount -t vboxsf -o rw,uid=1000,gid=1000 BioDragon ~/Desktop/BioDragon/
 ```
 ##### Setup the virtualmachine for connecting with external Hard disk
 
