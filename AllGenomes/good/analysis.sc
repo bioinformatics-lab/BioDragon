@@ -77,6 +77,15 @@ def is_fastq_?(file_name:String) : Boolean = {
 
 }
 
+def is_fastqgz_?(file_name:String) : Boolean = {
+
+  //  "ab c d e f".matches(".*f$")
+
+  return file_name.matches(".*fastq.gz$")
+
+}
+
+
 
 def file_name_has_genome_name_?(file_name:String, genome_name:String) : Boolean = {
 
@@ -94,6 +103,9 @@ var all_files = ls! pwd
 
 
 var all_fastq_files = all_files.filter( (f) => is_fastq_?(f.toString) ).map( (f) => f.toString)
+
+
+var all_fastqgz_files = all_files.filter( (f) => is_fastqgz_?(f.toString) ).map( (f) => f.toString)
 
 
 
@@ -383,7 +395,7 @@ def generate_fastq_names_from_fastqgz(fastqgz_name:String) : String = {
 // generate_fastq_names_from_fastqgz(all_fastq_files(0).toString)
 def gzip_decompression(genome_name:String) = {
 
-  var fastqgz_name = genome_name + ".fastq.gz"
+  var fastqgz_name = genome_name 
 
   var fastq_name = generate_fastq_names_from_fastqgz(fastqgz_name)
 
@@ -407,12 +419,25 @@ def gzip_decompression(genome_name:String) = {
 //  %("bash", "-c",  "gzip", "-dcf", cmd_string1)
 
 //  var cmd_string1 =  " " + fastqgz_name + " > " + fastq_name
-//    %("gzip", "-dc", cmd_string1)
+
+
+
+//    %("gzip", "-dc", cmd_string)
 
 
   println("\n\n")
 }
 
+
+def unzip_all_fastqgz_files() = {
+
+  for(f <- all_fastqgz_files){
+
+//println(f)
+gzip_decompression(f)
+
+}
+}
 
 
 // Apply gzip_decompression to all fastq.gz files in the directory
@@ -1051,14 +1076,16 @@ def analyse_all_genomes(genome_name:String) = {
 
 
 
-  println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
-copy_reference_genome(genome_name)
+//  println("\n\n>>>>> copy_reference_genome <<<<<\n\n")
+// copy_reference_genome(genome_name)
 
-  println("\n\n>>>>> merge_and_rename <<<<<\n\n")
-merge_and_rename(genome_name)
+//  println("\n\n>>>>> merge_and_rename <<<<<\n\n")
+// merge_and_rename(genome_name)
 
-  println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
+//  println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
 
+
+println("\n\n All the analysis should be done from within the genome_analysis folder\n\n")
 //  println("\n\n>>>>> move_into_genome_folder <<<<<\n\n")
 // move_into_genome_folder(genome_name)
 
