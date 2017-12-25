@@ -41,7 +41,7 @@ def gzip_decompression(genome_name:String) = {
   var cmd_string =  "gzip -dc " + fastqgz_name + " > " + fastq_name
 
   println(cmd_string + "\n\n")
-  %%("bash", "-c", cmd_string)
+//  %%("bash", "-c", cmd_string)
 
 }
 
