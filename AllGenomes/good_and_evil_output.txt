@@ -1,0 +1,1046 @@
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C7JREANXX_6_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C7JREANXX_7_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40813_C898AANXX_3_B9_G04868_LRu_261015_GCTACGCT_CTCTCTAT_S66_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C7JREANXX_6_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C7JREANXX_6_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C7JREANXX_7_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C7JREANXX_7_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C898AANXX_3_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40814_C898AANXX_3_C9_G04869_LRu_261015_GCTACGCT_TATCCTCT_S67_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C7JREANXX_6_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C7JREANXX_6_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C7JREANXX_7_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C7JREANXX_7_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C898AANXX_3_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40816_C898AANXX_3_E9_G04871_LRu_261015_GCTACGCT_GTAAGGAG_S69_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C7JREANXX_6_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C7JREANXX_6_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C7JREANXX_7_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C7JREANXX_7_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C898AANXX_3_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40817_C898AANXX_3_F9_G04872_LRu_261015_GCTACGCT_ACTGCATA_S70_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C7JREANXX_6_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C7JREANXX_6_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C7JREANXX_7_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C7JREANXX_7_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C898AANXX_3_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40818_C898AANXX_3_G9_G04873_LRu_261015_GCTACGCT_AAGGAGTA_S71_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C7JREANXX_6_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C7JREANXX_6_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C7JREANXX_7_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C7JREANXX_7_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C898AANXX_3_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40819_C898AANXX_3_H9_G04874_LRu_261015_GCTACGCT_CTAAGCCT_S72_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C7JREANXX_6_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C7JREANXX_6_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C7JREANXX_7_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C7JREANXX_7_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C898AANXX_3_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40820_C898AANXX_3_A10_G04875_LRu_261015_CGAGGCTG_GCGTAAGA_S73_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C7JREANXX_6_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C7JREANXX_6_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C7JREANXX_7_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C7JREANXX_7_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C898AANXX_3_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40821_C898AANXX_3_B10_G04876_LRu_261015_CGAGGCTG_CTCTCTAT_S74_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C7JREANXX_6_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C7JREANXX_6_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C7JREANXX_7_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C7JREANXX_7_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C898AANXX_3_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40822_C898AANXX_3_C10_G04877_LRu_261015_CGAGGCTG_TATCCTCT_S75_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C7JREANXX_6_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C7JREANXX_6_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C7JREANXX_7_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C7JREANXX_7_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C898AANXX_3_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40823_C898AANXX_3_D10_G04878_LRu_261015_CGAGGCTG_AGAGTAGA_S76_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C7JREANXX_6_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C7JREANXX_6_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C7JREANXX_7_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C7JREANXX_7_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C898AANXX_3_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40824_C898AANXX_3_E10_G04879_LRu_261015_CGAGGCTG_GTAAGGAG_S77_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C7JREANXX_6_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C7JREANXX_6_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C7JREANXX_7_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C7JREANXX_7_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C898AANXX_3_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40826_C898AANXX_3_G10_G04881_LRu_261015_CGAGGCTG_AAGGAGTA_S79_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C7JREANXX_6_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C7JREANXX_6_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C7JREANXX_7_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C7JREANXX_7_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C898AANXX_3_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40827_C898AANXX_3_H10_G04882_LRu_261015_CGAGGCTG_CTAAGCCT_S80_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C7JREANXX_6_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C7JREANXX_6_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C7JREANXX_7_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C7JREANXX_7_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C898AANXX_3_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40828_C898AANXX_3_A11_G04883_LRu_261015_AAGAGGCA_GCGTAAGA_S81_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C7JREANXX_6_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C7JREANXX_6_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C7JREANXX_7_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C7JREANXX_7_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C898AANXX_3_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40829_C898AANXX_3_B11_G04884_LRu_261015_AAGAGGCA_CTCTCTAT_S82_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C7JREANXX_6_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C7JREANXX_6_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C7JREANXX_7_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C7JREANXX_7_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C898AANXX_3_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40830_C898AANXX_3_C11_G04885_LRu_261015_AAGAGGCA_TATCCTCT_S83_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C7JREANXX_6_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C7JREANXX_6_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C7JREANXX_7_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C7JREANXX_7_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C898AANXX_3_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40832_C898AANXX_3_E11_G04887_LRu_261015_AAGAGGCA_GTAAGGAG_S85_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C7JREANXX_6_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C7JREANXX_6_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C7JREANXX_7_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C7JREANXX_7_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C898AANXX_3_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40833_C898AANXX_3_F11_G04888_LRu_261015_AAGAGGCA_ACTGCATA_S86_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C7JREANXX_6_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C7JREANXX_6_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C7JREANXX_7_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C7JREANXX_7_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C898AANXX_3_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40834_C898AANXX_3_G11_G04889_LRu_261015_AAGAGGCA_AAGGAGTA_S87_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C7JREANXX_6_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C7JREANXX_6_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C7JREANXX_7_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C7JREANXX_7_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C898AANXX_3_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40835_C898AANXX_3_H11_G04890_LRu_261015_AAGAGGCA_CTAAGCCT_S88_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C7JREANXX_6_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C7JREANXX_6_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C7JREANXX_7_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C7JREANXX_7_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C898AANXX_3_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40836_C898AANXX_3_A12_G04891_LRu_261015_GTAGAGGA_GCGTAAGA_S89_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C7JREANXX_6_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C7JREANXX_6_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C7JREANXX_7_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C7JREANXX_7_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C898AANXX_3_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40837_C898AANXX_3_B12_G04892_LRu_261015_GTAGAGGA_CTCTCTAT_S90_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C7JREANXX_6_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C7JREANXX_6_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C7JREANXX_7_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C7JREANXX_7_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C898AANXX_3_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40838_C898AANXX_3_C12_G04893_LRu_261015_GTAGAGGA_TATCCTCT_S91_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C7JREANXX_6_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C7JREANXX_6_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C7JREANXX_7_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C7JREANXX_7_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C898AANXX_3_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40839_C898AANXX_3_D12_G04894_LRu_261015_GTAGAGGA_AGAGTAGA_S92_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C7JREANXX_6_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C7JREANXX_6_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C7JREANXX_7_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C7JREANXX_7_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C898AANXX_3_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40840_C898AANXX_3_E12_G04895_LRu_261015_GTAGAGGA_GTAAGGAG_S93_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C7JREANXX_6_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C7JREANXX_6_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C7JREANXX_7_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C7JREANXX_7_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C898AANXX_3_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40841_C898AANXX_3_F12_G04896_LRu_261015_GTAGAGGA_ACTGCATA_S94_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C7JREANXX_6_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L006_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C7JREANXX_6_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L006_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C7JREANXX_7_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L007_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C7JREANXX_7_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L007_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C898AANXX_3_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L003_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40842_C898AANXX_3_G12_G04897_LRu_261015_GTAGAGGA_AAGGAGTA_S95_L003_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/bad
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40845_C7JREANXX_8_A1_G049162_LRu_181115_TAAGGCGA_GCGTAAGA_S1_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40845_C7JREANXX_8_A1_G049162_LRu_181115_TAAGGCGA_GCGTAAGA_S1_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40845_C898AANXX_4_A1_G049162_LRu_181115_TAAGGCGA_GCGTAAGA_S1_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40845_C898AANXX_4_A1_G049162_LRu_181115_TAAGGCGA_GCGTAAGA_S1_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40846_C7JREANXX_8_B1_G049172_LRu_181115_TAAGGCGA_CTCTCTAT_S2_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40846_C7JREANXX_8_B1_G049172_LRu_181115_TAAGGCGA_CTCTCTAT_S2_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40846_C898AANXX_4_B1_G049172_LRu_181115_TAAGGCGA_CTCTCTAT_S2_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40846_C898AANXX_4_B1_G049172_LRu_181115_TAAGGCGA_CTCTCTAT_S2_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40847_C7JREANXX_8_C1_G049182_LRu_181115_TAAGGCGA_TATCCTCT_S3_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40847_C7JREANXX_8_C1_G049182_LRu_181115_TAAGGCGA_TATCCTCT_S3_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40847_C898AANXX_4_C1_G049182_LRu_181115_TAAGGCGA_TATCCTCT_S3_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40847_C898AANXX_4_C1_G049182_LRu_181115_TAAGGCGA_TATCCTCT_S3_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40848_C7JREANXX_8_D1_G049192_LRu_181115_TAAGGCGA_AGAGTAGA_S4_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40848_C7JREANXX_8_D1_G049192_LRu_181115_TAAGGCGA_AGAGTAGA_S4_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40848_C898AANXX_4_D1_G049192_LRu_181115_TAAGGCGA_AGAGTAGA_S4_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40848_C898AANXX_4_D1_G049192_LRu_181115_TAAGGCGA_AGAGTAGA_S4_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40849_C7JREANXX_8_E1_G049202_LRu_181115_TAAGGCGA_GTAAGGAG_S5_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40849_C7JREANXX_8_E1_G049202_LRu_181115_TAAGGCGA_GTAAGGAG_S5_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40849_C898AANXX_4_E1_G049202_LRu_181115_TAAGGCGA_GTAAGGAG_S5_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40849_C898AANXX_4_E1_G049202_LRu_181115_TAAGGCGA_GTAAGGAG_S5_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40850_C7JREANXX_8_F1_G049212_LRu_181115_TAAGGCGA_ACTGCATA_S6_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40850_C7JREANXX_8_F1_G049212_LRu_181115_TAAGGCGA_ACTGCATA_S6_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40850_C898AANXX_4_F1_G049212_LRu_181115_TAAGGCGA_ACTGCATA_S6_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40850_C898AANXX_4_F1_G049212_LRu_181115_TAAGGCGA_ACTGCATA_S6_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40851_C7JREANXX_8_G1_G049222_LRu_181115_TAAGGCGA_AAGGAGTA_S7_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40851_C7JREANXX_8_G1_G049222_LRu_181115_TAAGGCGA_AAGGAGTA_S7_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40851_C898AANXX_4_G1_G049222_LRu_181115_TAAGGCGA_AAGGAGTA_S7_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40851_C898AANXX_4_G1_G049222_LRu_181115_TAAGGCGA_AAGGAGTA_S7_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40852_C7JREANXX_8_H1_G049232_LRu_181115_TAAGGCGA_CTAAGCCT_S8_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40852_C7JREANXX_8_H1_G049232_LRu_181115_TAAGGCGA_CTAAGCCT_S8_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40852_C898AANXX_4_H1_G049232_LRu_181115_TAAGGCGA_CTAAGCCT_S8_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40852_C898AANXX_4_H1_G049232_LRu_181115_TAAGGCGA_CTAAGCCT_S8_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40853_C7JREANXX_8_A2_G049242_LRu_181115_CGTACTAG_GCGTAAGA_S9_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40853_C7JREANXX_8_A2_G049242_LRu_181115_CGTACTAG_GCGTAAGA_S9_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40853_C898AANXX_4_A2_G049242_LRu_181115_CGTACTAG_GCGTAAGA_S9_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40853_C898AANXX_4_A2_G049242_LRu_181115_CGTACTAG_GCGTAAGA_S9_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40854_C7JREANXX_8_B2_G049252_LRu_181115_CGTACTAG_CTCTCTAT_S10_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40854_C7JREANXX_8_B2_G049252_LRu_181115_CGTACTAG_CTCTCTAT_S10_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40854_C898AANXX_4_B2_G049252_LRu_181115_CGTACTAG_CTCTCTAT_S10_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40854_C898AANXX_4_B2_G049252_LRu_181115_CGTACTAG_CTCTCTAT_S10_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40855_C7JREANXX_8_C2_G049262_LRu_181115_CGTACTAG_TATCCTCT_S11_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40855_C7JREANXX_8_C2_G049262_LRu_181115_CGTACTAG_TATCCTCT_S11_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40855_C898AANXX_4_C2_G049262_LRu_181115_CGTACTAG_TATCCTCT_S11_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40855_C898AANXX_4_C2_G049262_LRu_181115_CGTACTAG_TATCCTCT_S11_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40856_C7JREANXX_8_D2_G049272_LRu_181115_CGTACTAG_AGAGTAGA_S12_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40856_C7JREANXX_8_D2_G049272_LRu_181115_CGTACTAG_AGAGTAGA_S12_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40856_C898AANXX_4_D2_G049272_LRu_181115_CGTACTAG_AGAGTAGA_S12_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40856_C898AANXX_4_D2_G049272_LRu_181115_CGTACTAG_AGAGTAGA_S12_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40857_C7JREANXX_8_E2_G049282_LRu_181115_CGTACTAG_GTAAGGAG_S13_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40857_C7JREANXX_8_E2_G049282_LRu_181115_CGTACTAG_GTAAGGAG_S13_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40857_C898AANXX_4_E2_G049282_LRu_181115_CGTACTAG_GTAAGGAG_S13_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40857_C898AANXX_4_E2_G049282_LRu_181115_CGTACTAG_GTAAGGAG_S13_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40858_C7JREANXX_8_F2_G049292_LRu_181115_CGTACTAG_ACTGCATA_S14_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40858_C7JREANXX_8_F2_G049292_LRu_181115_CGTACTAG_ACTGCATA_S14_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40858_C898AANXX_4_F2_G049292_LRu_181115_CGTACTAG_ACTGCATA_S14_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40858_C898AANXX_4_F2_G049292_LRu_181115_CGTACTAG_ACTGCATA_S14_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40859_C7JREANXX_8_G2_G049302_LRu_181115_CGTACTAG_AAGGAGTA_S15_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40859_C7JREANXX_8_G2_G049302_LRu_181115_CGTACTAG_AAGGAGTA_S15_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40859_C898AANXX_4_G2_G049302_LRu_181115_CGTACTAG_AAGGAGTA_S15_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40859_C898AANXX_4_G2_G049302_LRu_181115_CGTACTAG_AAGGAGTA_S15_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40860_C7JREANXX_8_H2_G049312_LRu_181115_CGTACTAG_CTAAGCCT_S16_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40860_C7JREANXX_8_H2_G049312_LRu_181115_CGTACTAG_CTAAGCCT_S16_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40860_C898AANXX_4_H2_G049312_LRu_181115_CGTACTAG_CTAAGCCT_S16_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40860_C898AANXX_4_H2_G049312_LRu_181115_CGTACTAG_CTAAGCCT_S16_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40861_C7JREANXX_8_A3_G049322_LRu_181115_AGGCAGAA_GCGTAAGA_S17_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40861_C7JREANXX_8_A3_G049322_LRu_181115_AGGCAGAA_GCGTAAGA_S17_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40861_C898AANXX_4_A3_G049322_LRu_181115_AGGCAGAA_GCGTAAGA_S17_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40861_C898AANXX_4_A3_G049322_LRu_181115_AGGCAGAA_GCGTAAGA_S17_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40862_C7JREANXX_8_B3_G049332_LRu_181115_AGGCAGAA_CTCTCTAT_S18_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40862_C7JREANXX_8_B3_G049332_LRu_181115_AGGCAGAA_CTCTCTAT_S18_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40862_C898AANXX_4_B3_G049332_LRu_181115_AGGCAGAA_CTCTCTAT_S18_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40862_C898AANXX_4_B3_G049332_LRu_181115_AGGCAGAA_CTCTCTAT_S18_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40863_C7JREANXX_8_C3_G049342_LRu_181115_AGGCAGAA_TATCCTCT_S19_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40863_C7JREANXX_8_C3_G049342_LRu_181115_AGGCAGAA_TATCCTCT_S19_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40863_C898AANXX_4_C3_G049342_LRu_181115_AGGCAGAA_TATCCTCT_S19_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40863_C898AANXX_4_C3_G049342_LRu_181115_AGGCAGAA_TATCCTCT_S19_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40864_C7JREANXX_8_D3_G049352_LRu_181115_AGGCAGAA_AGAGTAGA_S20_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40864_C7JREANXX_8_D3_G049352_LRu_181115_AGGCAGAA_AGAGTAGA_S20_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40864_C898AANXX_4_D3_G049352_LRu_181115_AGGCAGAA_AGAGTAGA_S20_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40864_C898AANXX_4_D3_G049352_LRu_181115_AGGCAGAA_AGAGTAGA_S20_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40865_C7JREANXX_8_E3_G049362_LRu_181115_AGGCAGAA_GTAAGGAG_S21_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40865_C7JREANXX_8_E3_G049362_LRu_181115_AGGCAGAA_GTAAGGAG_S21_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40865_C898AANXX_4_E3_G049362_LRu_181115_AGGCAGAA_GTAAGGAG_S21_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40865_C898AANXX_4_E3_G049362_LRu_181115_AGGCAGAA_GTAAGGAG_S21_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40866_C7JREANXX_8_F3_G049372_LRu_181115_AGGCAGAA_ACTGCATA_S22_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40866_C7JREANXX_8_F3_G049372_LRu_181115_AGGCAGAA_ACTGCATA_S22_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40866_C898AANXX_4_F3_G049372_LRu_181115_AGGCAGAA_ACTGCATA_S22_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40866_C898AANXX_4_F3_G049372_LRu_181115_AGGCAGAA_ACTGCATA_S22_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40867_C7JREANXX_8_G3_G049382_LRu_181115_AGGCAGAA_AAGGAGTA_S23_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40867_C7JREANXX_8_G3_G049382_LRu_181115_AGGCAGAA_AAGGAGTA_S23_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40867_C898AANXX_4_G3_G049382_LRu_181115_AGGCAGAA_AAGGAGTA_S23_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40867_C898AANXX_4_G3_G049382_LRu_181115_AGGCAGAA_AAGGAGTA_S23_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40868_C7JREANXX_8_H3_G049392_LRu_181115_AGGCAGAA_CTAAGCCT_S24_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40868_C7JREANXX_8_H3_G049392_LRu_181115_AGGCAGAA_CTAAGCCT_S24_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40868_C898AANXX_4_H3_G049392_LRu_181115_AGGCAGAA_CTAAGCCT_S24_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40868_C898AANXX_4_H3_G049392_LRu_181115_AGGCAGAA_CTAAGCCT_S24_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40869_C7JREANXX_8_A4_G049402_LRu_181115_TCCTGAGC_GCGTAAGA_S25_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40869_C7JREANXX_8_A4_G049402_LRu_181115_TCCTGAGC_GCGTAAGA_S25_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40869_C898AANXX_4_A4_G049402_LRu_181115_TCCTGAGC_GCGTAAGA_S25_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40869_C898AANXX_4_A4_G049402_LRu_181115_TCCTGAGC_GCGTAAGA_S25_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40870_C7JREANXX_8_B4_G049412_LRu_181115_TCCTGAGC_CTCTCTAT_S26_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40870_C7JREANXX_8_B4_G049412_LRu_181115_TCCTGAGC_CTCTCTAT_S26_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40870_C898AANXX_4_B4_G049412_LRu_181115_TCCTGAGC_CTCTCTAT_S26_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40870_C898AANXX_4_B4_G049412_LRu_181115_TCCTGAGC_CTCTCTAT_S26_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40871_C7JREANXX_8_C4_G049422_LRu_181115_TCCTGAGC_TATCCTCT_S27_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40871_C7JREANXX_8_C4_G049422_LRu_181115_TCCTGAGC_TATCCTCT_S27_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40871_C898AANXX_4_C4_G049422_LRu_181115_TCCTGAGC_TATCCTCT_S27_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40871_C898AANXX_4_C4_G049422_LRu_181115_TCCTGAGC_TATCCTCT_S27_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40872_C7JREANXX_8_D4_G049432_LRu_181115_TCCTGAGC_AGAGTAGA_S28_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40872_C7JREANXX_8_D4_G049432_LRu_181115_TCCTGAGC_AGAGTAGA_S28_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40872_C898AANXX_4_D4_G049432_LRu_181115_TCCTGAGC_AGAGTAGA_S28_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40872_C898AANXX_4_D4_G049432_LRu_181115_TCCTGAGC_AGAGTAGA_S28_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40873_C7JREANXX_8_E4_G049442_LRu_181115_TCCTGAGC_GTAAGGAG_S29_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40873_C7JREANXX_8_E4_G049442_LRu_181115_TCCTGAGC_GTAAGGAG_S29_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40873_C898AANXX_4_E4_G049442_LRu_181115_TCCTGAGC_GTAAGGAG_S29_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40873_C898AANXX_4_E4_G049442_LRu_181115_TCCTGAGC_GTAAGGAG_S29_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40874_C7JREANXX_8_F4_G049452_LRu_181115_TCCTGAGC_ACTGCATA_S30_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40874_C7JREANXX_8_F4_G049452_LRu_181115_TCCTGAGC_ACTGCATA_S30_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40874_C898AANXX_4_F4_G049452_LRu_181115_TCCTGAGC_ACTGCATA_S30_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40874_C898AANXX_4_F4_G049452_LRu_181115_TCCTGAGC_ACTGCATA_S30_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40875_C7JREANXX_8_G4_G049462_LRu_181115_TCCTGAGC_AAGGAGTA_S31_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40875_C7JREANXX_8_G4_G049462_LRu_181115_TCCTGAGC_AAGGAGTA_S31_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40875_C898AANXX_4_G4_G049462_LRu_181115_TCCTGAGC_AAGGAGTA_S31_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40875_C898AANXX_4_G4_G049462_LRu_181115_TCCTGAGC_AAGGAGTA_S31_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40876_C7JREANXX_8_H4_G049472_LRu_181115_TCCTGAGC_CTAAGCCT_S32_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40876_C7JREANXX_8_H4_G049472_LRu_181115_TCCTGAGC_CTAAGCCT_S32_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40876_C898AANXX_4_H4_G049472_LRu_181115_TCCTGAGC_CTAAGCCT_S32_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40876_C898AANXX_4_H4_G049472_LRu_181115_TCCTGAGC_CTAAGCCT_S32_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40877_C7JREANXX_8_A5_G049482_LRu_181115_GGACTCCT_GCGTAAGA_S33_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40877_C7JREANXX_8_A5_G049482_LRu_181115_GGACTCCT_GCGTAAGA_S33_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40877_C898AANXX_4_A5_G049482_LRu_181115_GGACTCCT_GCGTAAGA_S33_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40877_C898AANXX_4_A5_G049482_LRu_181115_GGACTCCT_GCGTAAGA_S33_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40878_C7JREANXX_8_B5_G049492_LRu_181115_GGACTCCT_CTCTCTAT_S34_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40878_C7JREANXX_8_B5_G049492_LRu_181115_GGACTCCT_CTCTCTAT_S34_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40878_C898AANXX_4_B5_G049492_LRu_181115_GGACTCCT_CTCTCTAT_S34_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40878_C898AANXX_4_B5_G049492_LRu_181115_GGACTCCT_CTCTCTAT_S34_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40879_C7JREANXX_8_C5_G049502_LRu_181115_GGACTCCT_TATCCTCT_S35_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40879_C7JREANXX_8_C5_G049502_LRu_181115_GGACTCCT_TATCCTCT_S35_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40879_C898AANXX_4_C5_G049502_LRu_181115_GGACTCCT_TATCCTCT_S35_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40879_C898AANXX_4_C5_G049502_LRu_181115_GGACTCCT_TATCCTCT_S35_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40880_C7JREANXX_8_D5_G049512_LRu_181115_GGACTCCT_AGAGTAGA_S36_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40880_C7JREANXX_8_D5_G049512_LRu_181115_GGACTCCT_AGAGTAGA_S36_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40880_C898AANXX_4_D5_G049512_LRu_181115_GGACTCCT_AGAGTAGA_S36_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40880_C898AANXX_4_D5_G049512_LRu_181115_GGACTCCT_AGAGTAGA_S36_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40881_C7JREANXX_8_E5_G049522_LRu_181115_GGACTCCT_GTAAGGAG_S37_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40881_C7JREANXX_8_E5_G049522_LRu_181115_GGACTCCT_GTAAGGAG_S37_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40881_C898AANXX_4_E5_G049522_LRu_181115_GGACTCCT_GTAAGGAG_S37_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40881_C898AANXX_4_E5_G049522_LRu_181115_GGACTCCT_GTAAGGAG_S37_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40882_C7JREANXX_8_F5_G049532_LRu_181115_GGACTCCT_ACTGCATA_S38_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40882_C7JREANXX_8_F5_G049532_LRu_181115_GGACTCCT_ACTGCATA_S38_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40882_C898AANXX_4_F5_G049532_LRu_181115_GGACTCCT_ACTGCATA_S38_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40882_C898AANXX_4_F5_G049532_LRu_181115_GGACTCCT_ACTGCATA_S38_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40883_C7JREANXX_8_G5_G049542_LRu_181115_GGACTCCT_AAGGAGTA_S39_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40883_C7JREANXX_8_G5_G049542_LRu_181115_GGACTCCT_AAGGAGTA_S39_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40883_C898AANXX_4_G5_G049542_LRu_181115_GGACTCCT_AAGGAGTA_S39_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40883_C898AANXX_4_G5_G049542_LRu_181115_GGACTCCT_AAGGAGTA_S39_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40884_C7JREANXX_8_H5_G049552_LRu_181115_GGACTCCT_CTAAGCCT_S40_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40884_C7JREANXX_8_H5_G049552_LRu_181115_GGACTCCT_CTAAGCCT_S40_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40884_C898AANXX_4_H5_G049552_LRu_181115_GGACTCCT_CTAAGCCT_S40_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40884_C898AANXX_4_H5_G049552_LRu_181115_GGACTCCT_CTAAGCCT_S40_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40885_C7JREANXX_8_A6_G049562_LRu_181115_TAGGCATG_GCGTAAGA_S41_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40885_C7JREANXX_8_A6_G049562_LRu_181115_TAGGCATG_GCGTAAGA_S41_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40885_C898AANXX_4_A6_G049562_LRu_181115_TAGGCATG_GCGTAAGA_S41_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40885_C898AANXX_4_A6_G049562_LRu_181115_TAGGCATG_GCGTAAGA_S41_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40886_C7JREANXX_8_B6_G049572_LRu_181115_TAGGCATG_CTCTCTAT_S42_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40886_C7JREANXX_8_B6_G049572_LRu_181115_TAGGCATG_CTCTCTAT_S42_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40886_C898AANXX_4_B6_G049572_LRu_181115_TAGGCATG_CTCTCTAT_S42_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40886_C898AANXX_4_B6_G049572_LRu_181115_TAGGCATG_CTCTCTAT_S42_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40887_C7JREANXX_8_C6_G049582_LRu_181115_TAGGCATG_TATCCTCT_S43_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40887_C7JREANXX_8_C6_G049582_LRu_181115_TAGGCATG_TATCCTCT_S43_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40887_C898AANXX_4_C6_G049582_LRu_181115_TAGGCATG_TATCCTCT_S43_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40887_C898AANXX_4_C6_G049582_LRu_181115_TAGGCATG_TATCCTCT_S43_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40888_C7JREANXX_8_D6_G049592_LRu_181115_TAGGCATG_AGAGTAGA_S44_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40888_C7JREANXX_8_D6_G049592_LRu_181115_TAGGCATG_AGAGTAGA_S44_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40888_C898AANXX_4_D6_G049592_LRu_181115_TAGGCATG_AGAGTAGA_S44_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40888_C898AANXX_4_D6_G049592_LRu_181115_TAGGCATG_AGAGTAGA_S44_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40889_C7JREANXX_8_E6_G049602_LRu_181115_TAGGCATG_GTAAGGAG_S45_L008_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40889_C7JREANXX_8_E6_G049602_LRu_181115_TAGGCATG_GTAAGGAG_S45_L008_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40889_C898AANXX_4_E6_G049602_LRu_181115_TAGGCATG_GTAAGGAG_S45_L004_R1_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+mv /run/media/centos/RedElem/ALL_Genomes/BSSE_QGF_40889_C898AANXX_4_E6_G049602_LRu_181115_TAGGCATG_GTAAGGAG_S45_L004_R2_001.fastq.gz /run/media/centos/RedElem/ALL_Genomes/good
+
+
+
+
