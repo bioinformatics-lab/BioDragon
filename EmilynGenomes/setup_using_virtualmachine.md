@@ -15,7 +15,9 @@ screenshot
 
 - Before starting
     - Processor
+    Set it to `green` levels like so
     - RAM
+    Set it to `green` levels like so
 
 - After starting
     -  Change the keyboard layout
