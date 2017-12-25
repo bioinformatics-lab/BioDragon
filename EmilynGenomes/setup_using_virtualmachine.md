@@ -63,8 +63,22 @@ sudo mount -t vboxsf -o rw,uid=1000,gid=1000 BioDragon ~/Desktop/BioDragon/
 
 Now you can see a `sf_BioDragon` folder in the virtualbox image
 
-##### Setup the virtualmachine for connecting with external Hard disk
+Restart the virtualbox image to have normal usage of `BioDragon` folder.
 
+##### Setup the virtualmachine for connecting with external Hard disk
+For this we need to install `oracle virtualbox extensions` 
+
+http://download.virtualbox.org/virtualbox/5.2.4/Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
+
+Be *very* careful that the *version* of virtualbox is the same as extension pack. 
+
+Run this command in the Host Operating system
+
+```
+
+sudo VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-5.2.4-119785.vbox-extpack 
+
+```
 
 
 ##### Setup scala-ammonite shell

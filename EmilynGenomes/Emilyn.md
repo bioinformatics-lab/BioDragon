@@ -1,89 +1,157 @@
-# History of commands which need to be run for setting up centos or any linux
+# History of commands which need to be run for setting up centos or any linux for Mily's analysis
 
 
-python
-NOTE: This should now display `python-2.7.x` 
+# NOTE: This assumes a fresh linux installation
 
+
+## Test before installing conda 
+
+The following command should display `python-2.7.x` 
+
+```
+python --version
+
+```
+
+## Install conda using the following link 
+
+
+https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Run the following commands from the location you've downloaded miniconda3
+```
 bash ./Miniconda3-latest-Linux-x86_64.sh 
 exec $SHELL
+```
 
-python
-NOTE: This should now display `python-3.6` 
+## If conda is correctly installed 
+
+Open your `~/.bashrc` using `gedit`
+
+```
+gedit ~/.bashrc
+
+```
+
+Check if it has the following line at the end - if it's not there then please add it there 
+
+```
+# added by Miniconda3 installer
+export PATH="/home/eklavya/miniconda3/bin:$PATH"
+```
+## Test after installing conda 
 
 
+This should now display `python-3.6` 
+
+```
+python --version
+
+```
+
+
+## Add the conda channels 
+
+```sh
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
-
+```
 
 
 
 ## Git / Git lfs
 
+This will be useful later
+
+```
 conda install git git-lfs
-
-
+```
 
 
 
 ## FASTQC
 
+```
 conda install fastqc
+```
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which fastqc 
 /opt/FastQC/fastqc
 
 
 [centos@localhost ~]$ fastqc --version
 FastQC v0.11.5
+```
 
 
-
-
+**With conda**
+```
 [eklavya@localhost EmilynGenomes]$ which fastqc
 ~/miniconda3/bin/fastqc
 
+[eklavya@localhost EmilynGenomes]$ fastqc --version
+FastQC v0.11.5
+```
 
 
 ## TRIMMOMATIC
 
+```
 conda install trimmomatic 
+```
 
+
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which trimmomatic
 /usr/bin/which: no trimmomatic in (/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/centos/.local/bin:/home/centos/bin)
 
 [centos@localhost ~]$  java -jar /opt/Trimmomatic-0.36/trimmomatic-0.36.jar -version
 0.36
+```
 
+**With conda**
 
-
-
+```
 [eklavya@localhost EmilynGenomes]$ which trimmomatic 
 ~/miniconda3/bin/trimmomatic
-
+```
 
 
 ## BWA
+
+```
 conda install bwa
+```
 
-
-
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which bwa
 /opt/snippy/binaries/linux/bwa
-
 
 [centos@localhost ~]$ bwa 
 
 Program: bwa (alignment via Burrows-Wheeler transformation)
 Version: 0.7.12-r1039
 
+```
+
+**With conda**
 
 
 
 ## SAMTOOLS
+
+```
 conda install samtools
+```
 
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which samtools 
 /opt/snippy/binaries/linux/samtools
 
@@ -92,9 +160,11 @@ conda install samtools
 samtools 1.3
 Using htslib 1.3
 Copyright (C) 2015 Genome Research Ltd.
+```
+**With conda**
+```
 
-
-[eklavya@localhost G04868_analysis]$ samtools
+[eklavya@localhost ]$ samtools
 
 Program: samtools (Tools for alignments in the SAM format)
 Version: 1.6 (using htslib 1.6)
@@ -108,22 +178,26 @@ NOTE: This samtools overrides the conda samtools and causes errors
 Program: samtools (Tools for alignments in the SAM format)
 Version: 0.1.18 (r982:295)
 
+```
 
+## ARTEMIS 
 
-## ARTEMIS ( for visualization - maybe called art - doesn't seem like it!)
+This can be downloaded from the following link
 
 http://www.sanger.ac.uk/science/tools/artemis
 
 Just download and run - it's a jar
 
+**Inside VirtualBox Image**
 
+```
 [centos@localhost ~]$ which art
 /opt/artemis/art
 
 
 [centos@localhost ~]$ art 
 starting Artemis with flags: -mx500m -ms20m -noverify -Dartemis.environment=UNIX
-
+```
 
 TODO: Need to fix `artemis` 
 
@@ -131,15 +205,21 @@ TODO: Need to fix `artemis`
 
 Download the artemis tar directly to `/usr/local` and unzip it there
 
+```
 [eklavya@localhost BioDragon]$ sudo ln -s /usr/local/artemis/art /usr/bin/art
 
 [eklavya@localhost BioDragon]$ exec $SHELL
-
+```
 
 ## BCFTOOLS
+
+```
 conda install bcftools
+```
 
+**Inside VirtualBox Image**
 
+```
 [centos@localhost ~]$ which bcftools 
 /opt/bcftools/bcftools
 
@@ -147,30 +227,41 @@ conda install bcftools
 bcftools 1.5-26-g81c6dd3
 Using htslib 1.5-14-ge1380c8
 
+```
 
-
+**With conda**
+```
 [eklavya@localhost BioDragon]$ which bcftools 
 ~/miniconda3/bin/bcftools
 
 [eklavya@localhost BioDragon]$ bcftools --version
 bcftools 1.6
 Using htslib 1.6
-
+```
 
 
 ##  VCFUTILS
-conda install vcfutils
 
+```
+conda install vcfutils
+```
+
+
+
+**Inside VirtualBox Image**
+
+```
 [centos@localhost ~]$ which vcfutils.pl 
 /opt/bcftools/misc/vcfutils.pl
-
-
 
 [centos@localhost ~]$ vcfutils.pl 
 
 Usage:   vcfutils.pl <command> [<arguments>]
+```
 
+**With conda**
 
+```
 
 [eklavya@localhost ~]$ vcfutils.pl 
 
@@ -180,11 +271,17 @@ Usage:   vcfutils.pl <command> [<arguments>]
 [eklavya@localhost ~]$ which vcfutils.pl 
 ~/miniconda3/bin/vcfutils.pl
 
+```
 
 ## TABIX
+
+```
 conda install tabix
+```
 
+**Inside VirtualBox Image**
 
+```
 [centos@localhost ~]$ which tabix
 /opt/snippy/binaries/linux/tabix
 
@@ -192,20 +289,25 @@ conda install tabix
 [centos@localhost ~]$ tabix
 
 Version: 1.3
+```
 
-
-
+**With conda**
+```
 [eklavya@localhost EmilynGenomes]$ which tabix
 ~/miniconda3/bin/tabix
 
 [eklavya@localhost EmilynGenomes]$ tabix 
 Version: 1.3.2
 
-
+```
 
 ## SNPEFF
+```
 conda install snpeff
+```
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which snpEff 
 /opt/snippy/binaries/noarch/snpEff
 
@@ -214,7 +316,10 @@ SnpEff version SnpEff 4.1l (build 2015-10-03), by Pablo Cingolani
 Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each specific command
+```
+**With conda**
 
+```
 [eklavya@localhost EmilynGenomes]$ which tabix
 ~/miniconda3/bin/snpEff
 
@@ -224,11 +329,11 @@ SnpEff version SnpEff 4.3r (build 2017-09-06 16:41), by Pablo Cingolani
 Usage: snpEff [command] [options] [files]
 
 Run 'java -jar snpEff.jar command' for help on each specific command
-
+```
 
 #### We need to install the database for snpEff 
 
-Command in the virtualimage
+Command in the virtual-image, which ***might*** have been used to install the database
 
 ```sh
  java -Xmx4g /opt/snpEff/snpEff.jar -c /opt/snpEff/snpEff.config Mycobacterium_tuberculosis_h37rv PT000033.filt.vcf > PT000033.ann.vcf
@@ -236,6 +341,7 @@ Command in the virtualimage
 ```
 
 How I did it
+
 
 ```sh
 [eklavya@localhost G04868_analysis]$ snpEff download Mycobacterium_tuberculosis_h37rv 
@@ -269,7 +375,6 @@ snpEff -c /home/eklavya/miniconda3/share/snpeff-4.3.1r-0/snpEff.config Mycobacte
 ```
 
 ```sh
-
 
   503  cp  ~/miniconda3/share/snpeff-4.3.1r-0/snpEff.config snpEff-conda-backup.config
   504  ls
@@ -319,66 +424,85 @@ Needs `perl-5.16`
 
 
 
+**Inside VirtualBox Image**
+
+
+```
 [centos@localhost ~]$ perl --version
 
 This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
 
-
 [centos@localhost ~]$ which perl
 /usr/bin/perl
+```
 
+**With conda** 
 
-
-
+```
 [eklavya@localhost EmilynGenomes]$ which perl
 ~/miniconda3/bin/perl
 
 
+[eklavya@localhost EmilynGenomes]$ perl --version
 
+This is perl 5, version 22, subversion 0 (v5.22.0) built for x86_64-linux-thread-multi
+```
+
+**Default installation in linux**
+```
 [eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
 
 This is perl 5, version 16, subversion 3 (v5.16.3) built for x86_64-linux-thread-multi
 
 
-
-[eklavya@localhost EmilynGenomes]$ /usr/bin/perl --version
-
-[eklavya@localhost EmilynGenomes]$ perl --version
-
-This is perl 5, version 22, subversion 0 (v5.22.0) built for x86_64-linux-thread-multi
-
+```
 
 
 ## VELVET 
 
+```
 conda install velvet
+```
 
+**Inside VirtualBox Image**
+
+```
 [centos@localhost ~]$ which velvet
 /usr/bin/which: no velvet in (/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/centos/.local/bin:/home/centos/bin)
+```
 
+velveth 
+
+```
 
 [centos@localhost ~]$ velveth 
 velveth - simple hashing program
 Version 1.2.10
-
-
-
+```
+velvetg
+```
 [centos@localhost ~]$ velvetg 
 velvetg - de Bruijn graph construction, error removal and repeat resolution
 Version 1.2.10
 
+```
 
+**With Conda**
 
+velveth
+```
 [eklavya@localhost EmilynGenomes]$ velveth 
 velveth - simple hashing program
 Version 1.1.06
+```
 
-
+velvetg
+```
 [eklavya@localhost EmilynGenomes]$ velvetg
 vvelvetg - de Bruijn graph construction, error removal and repeat resolution
 Version 1.1.06
 
-
+```
 
 ## ABACAS
 
@@ -392,6 +516,8 @@ https://github.com/sanger-pathogens/ABACAS2
 
 
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which abacas
 /usr/bin/which: no abacas in (/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/centos/.local/bin:/home/centos/bin)
 
@@ -407,12 +533,13 @@ ABACAS.1.3.2
 [centos@localhost ~]$ which abacas.pl 
 /opt/PAGIT/ABACAS/abacas.pl
 
-
+```
 
 http://www.sanger.ac.uk/science/tools/pagit
 
+**On the new linux**
 
-
+```
 [eklavya@localhost PAGIT.V1.64bit]$ ./installme.sh 
 Installation successfully!
 
@@ -430,28 +557,37 @@ We assume that java and the tcsh-shell is installed
 ~/Downloads/PAGIT.V1.64bit/PAGIT/ABACAS/abacas.pl
 
 NOTE: This should be done from the /usr/local/
+```
 
 
+### MUMMER ( req. by abacas.pl )
 
-#### MUMMER ( req. by abacas.pl )
-
+```
 conda install mummer
-
+```
 
 ## PROKKA
 
+```
 conda install prokka
+```
 
 
+**Inside VirtualBox Image**
+
+```
 [centos@localhost ~]$ which prokka
 /opt/prokka/bin/prokka
-
-
 
 [centos@localhost ~]$ prokka --version
 prokka 1.12
 
+```
 
+
+**With Conda**
+
+```
 [eklavya@localhost EmilynGenomes]$ which prokka
 ~/miniconda3/bin/prokka
 
@@ -460,11 +596,16 @@ prokka 1.12
 Name:
   Prokka 1.12 by Torsten Seemann <torsten.seemann@gmail.com>
 
+```
 
 ## SNIPPY
 
+```
 conda install snippy
+```
 
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ which snippy
 /opt/snippy/bin/snippy
 
@@ -472,24 +613,32 @@ conda install snippy
 [centos@localhost ~]$ snippy --version
 snippy 3.2-dev
 
+```
 
-
+**With Conda**
+```
 [eklavya@localhost EmilynGenomes]$ which snippy
 ~/miniconda3/bin/snippy
 
 
 [eklavya@localhost EmilynGenomes]$ snippy --version
   snippy 3.1 
+```
 
 ## Compiler toolchain 
 
-sudo yum group install "Development Tools" 
+Need to install the compiler toolchain for R packages 
 
+```
+sudo yum group install "Development Tools" 
+```
 
 
 ## R
 
+```
 conda install R
+```
 
 The installation of R would raise `libreadline`	 and `symbol PC ` issues.
 
@@ -498,6 +647,10 @@ conda install -c conda-forge readline=6.2
 
 ```
 
+
+**Inside VirtualBox Image**
+
+```
 [centos@localhost ~]$ which R
 /usr/bin/R
 
@@ -505,37 +658,42 @@ conda install -c conda-forge readline=6.2
 [centos@localhost ~]$ R --version
 R version 3.4.1 (2017-06-30) -- "Single Candle"
 
+```
 
+**With Conda**
+```
 [eklavya@localhost EmilynGenomes]$ which R
 ~/miniconda3/bin/R
 
 [eklavya@localhost EmilynGenomes]$ R --version
 R version 3.3.2 (2016-10-31) -- "Sincere Pumpkin Patch"
 
-
+```
 
 
 ##SNPTable
 NOTE: Move from the virtualbox image
 
-
-
+```
 [centos@localhost ~]$ which SNPtable_filter_Mtb.R 
 /opt/Rexe/SNPtable_filter_Mtb.R
+```
 
 
 ## HammingFastaR
 NOTE: Move from the virtualbox image
 
-
+```
 [centos@localhost ~]$ which HammingFasta.R 
 /opt/Rexe/HammingFasta.R
-
+```
 
 
 #### SEQINR package
 
-###### conda install r-seqinr
+```
+ conda install r-seqinr
+```
 
 
 
@@ -549,23 +707,19 @@ NOTE: Move from the virtualbox image
 > install.packages("ape")
 
 
-@@@@@@@@@@@@@@@@@@
+
+## Path Variables
+
 Path for the Portugese BioInformatics virtualbox image
 
 
-
+**Inside VirtualBox Image**
+```
 [centos@localhost ~]$ echo $PATH
 /opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/opt/Rexe:/opt/velvet-stats:/opt/Bandage:/opt/velvet/contrib/VelvetOptimiser-2.2.4:/opt/snippy/bin:/opt/snippy/binaries/linux/:/opt/snippy/binaries/noarch:/opt/bcftools/misc:/opt/Trimmomatic-0.36:/opt/artemis:/opt/bcftools:/opt/bwa:/opt/htslib:/opt/GenomeAnalysisTK-3.8-0-ge9d806836:/opt/samtools:/opt/Trimmomatic-0.36:/opt/FastQC:/opt/seaview:/opt/jmodeltest2-2.1.9r20160115/dist:/opt/velvet:/opt/SPAdes-3.10.1-Linux/bin:/opt/prokka/bin:/opt/prokka/binaries/common:/opt/prokka/binaries/linux:/opt/PAGIT/bin/:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/bin/pileup_v0.5/ssaha2:/opt/PAGIT/bin/pileup_v0.5/:/opt/PAGIT/IMAGE/:/opt/PAGIT/ABACAS:/opt/PAGIT/ICORN/:/opt/PAGIT/RATT/:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/centos/.local/bin:/home/centos/bin
 
 
-
-
-
-
-
-
-
-
+```
 
 
 
@@ -574,21 +728,21 @@ Path for the Portugese BioInformatics virtualbox image
 
 ## SETUP
 
-  524  cp abacas.pl ~/miniconda3/bin/
-  525  cp assemblathon_stats.pl ~/miniconda3/bin/
+```
+cp abacas.pl ~/miniconda3/bin/
+cp assemblathon_stats.pl ~/miniconda3/bin/
 // TODO: change the location of perl module to ~/miniconda3/lib
-  526  cp FAlite.pm ~/miniconda3/bin/
-  527  cp HammingFasta.R ~/miniconda3/bin/
-  528  cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
+cp FAlite.pm ~/miniconda3/bin/
+cp HammingFasta.R ~/miniconda3/bin/
+cp SNPtable_filter_Mtb.R ~/miniconda3/bin/
 
-conda install openjdk
-
-
-# added by Miniconda3 installer
-export PATH="/home/eklavya/miniconda3/bin:$PATH"
-
-
-#source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
+source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
 
 source /usr/local/PAGIT/sourceme.pagit
 
+```
+
+
+## References 
+
+https://stackedit.io/editor 
