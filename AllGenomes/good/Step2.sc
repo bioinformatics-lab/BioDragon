@@ -140,9 +140,6 @@ def bundle_all_files_for_a_genome(genome_name:String) = {
 
 
 
-
-decompress_all(all_fastqgz_files)
-
 var unique_genome_list = find_unique_genomes_fastq(all_fastqgz_files).toList
 
 
