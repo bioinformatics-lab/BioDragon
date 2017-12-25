@@ -1,34 +1,79 @@
-# History of commands which need to be run for setting up centos or any linux
+# History of commands which need to be run for setting up centos or any linux for Mily's analysis
+
+# NOTE: This assumes a fresh linux installation
 
 
-python
-NOTE: This should now display `python-2.7.x` 
+## Test before installing conda 
 
+The following command should display `python-2.7.x` 
+
+```
+python --version
+
+```
+
+## Install conda using the following link 
+
+
+https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Run the following commands from the location you've downloaded miniconda3
+```
 bash ./Miniconda3-latest-Linux-x86_64.sh 
 exec $SHELL
+```
 
-python
-NOTE: This should now display `python-3.6` 
+## If conda is correctly installed 
+
+Open your `~/.bashrc` using `gedit`
+
+```
+gedit ~/.bashrc
+
+```
+
+Check if it has the following line at the end - if it's not there then please add it there 
+
+```
+# added by Miniconda3 installer
+export PATH="/home/eklavya/miniconda3/bin:$PATH"
+```
+## Test after installing conda 
 
 
+This should now display `python-3.6` 
+
+```
+python --version
+
+```
+
+
+## Add the conda channels 
+
+```sh
 conda config --add channels defaults
 conda config --add channels conda-forge
 conda config --add channels bioconda
-
+```
 
 
 
 ## Git / Git lfs
 
+This will be useful later
+
+```
 conda install git git-lfs
-
-
+```
 
 
 
 ## FASTQC
 
+```
 conda install fastqc
+```
 
 [centos@localhost ~]$ which fastqc 
 /opt/FastQC/fastqc
@@ -563,13 +608,6 @@ Path for the Portugese BioInformatics virtualbox image
 
 
 
-
-
-
-
-
-
-
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
 
 ## SETUP
@@ -590,5 +628,5 @@ export PATH="/home/eklavya/miniconda3/bin:$PATH"
 
 #source /home/eklavya/Downloads/PAGIT.V1.64bit/PAGIT/sourceme.pagit
 
-source /usr/local/PAGIT/sourceme.pagit
+#source /usr/local/PAGIT/sourceme.pagit
 
