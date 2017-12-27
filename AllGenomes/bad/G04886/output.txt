@@ -1,0 +1,55 @@
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R1_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R1_001.fastq
+
+
+
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R2_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R2_001.fastq
+
+
+
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R1_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R1_001.fastq
+
+
+
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R2_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R2_001.fastq
+
+
+
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R1_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R1_001.fastq
+
+
+
+gzip -dc /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R2_001.fastq.gz > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R2_001.fastq
+
+
+
+
+
+ ~~~~~~~~~~~~~~~~~~~~~ 
+
+working on the G04886 files
+
+
+
+>>>>       R1      <<<<
+
+
+cat /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R1_001.fastq /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R1_001.fastq /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R1_001.fastq  > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/G04886_analysis/G04886_1.fastq
+
+
+
+
+
+
+>>>>       R2      <<<<
+
+
+cat /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_6_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L006_R2_001.fastq /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C7JREANXX_7_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L007_R2_001.fastq /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/BSSE_QGF_40831_C898AANXX_3_D11_G04886_LRu_261015_AAGAGGCA_AGAGTAGA_S84_L003_R2_001.fastq  > /Users/eklavya/Projects/ProjectEklavya/Eklavya/Code/BioDragon/AllGenomes/bad/G04886/G04886_analysis/G04886_2.fastq
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+All Done!
