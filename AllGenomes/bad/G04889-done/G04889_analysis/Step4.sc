@@ -1202,6 +1202,6 @@ HammingFasta()
 }
 
 
-var genome_name = all_fastq_files(0).split("_")(0).split("/").last
+//var genome_name = all_fastq_files(0).split("_")(0).split("/").last
 
-var output =  analyse_all_genomes(genome_name)
+var output =  analyse_all_genomes("G04889")

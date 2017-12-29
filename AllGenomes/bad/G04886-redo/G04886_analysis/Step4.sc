@@ -1062,43 +1062,43 @@ def analyse_all_genomes(genome_name:String) = {
 //move_into_genome_folder(genome_name)
 
 
-  println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
+//  println("\n\n>>>>> Current Directory => " + pwd + "\n\n")
 
 
-  println("\n\n>>>>> Files in the directory => " + "\n\n")
-  (ls!).toString
+//  println("\n\n>>>>> Files in the directory => " + "\n\n")
+ // (ls!).toString
 
-  println("\n\n>>>>> trimmomatic <<<<<\n\n")
-trimmomatic(genome_name)
-
-
-  println("\n\n>>>>> bwa_index_reference_genome <<<<<\n\n")
-bwa_index_reference_genome("NC000962_3.fasta")
-
- var genome_trimmed_name_first = genome_name + "_1_trimmed_paired.fastq"
- var genome_trimmed_name_second = genome_name + "_2_trimmed_paired.fastq"
-
-  println("\n\n>>>>> map_and_generate_sam_file <<<<<\n\n")
-map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
+ // println("\n\n>>>>> trimmomatic <<<<<\n\n")
+//trimmomatic(genome_name)
 
 
-  println("\n\n>>>>> samtools_faidx_reference_genome <<<<<\n\n")
-samtools_faidx_reference_genome("NC000962_3.fasta")
+//  println("\n\n>>>>> bwa_index_reference_genome <<<<<\n\n")
+//bwa_index_reference_genome("NC000962_3.fasta")
+
+// var genome_trimmed_name_first = genome_name + "_1_trimmed_paired.fastq"
+// var genome_trimmed_name_second = genome_name + "_2_trimmed_paired.fastq"
+
+//  println("\n\n>>>>> map_and_generate_sam_file <<<<<\n\n")
+//map_and_generate_sam_file( genome_name , "NC000962_3.fasta", genome_trimmed_name_first, genome_trimmed_name_second)
 
 
-  println("\n\n>>>>> convert_sam_file_to_bam_file <<<<<\n\n")
-convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
+//  println("\n\n>>>>> samtools_faidx_reference_genome <<<<<\n\n")
+//samtools_faidx_reference_genome("NC000962_3.fasta")
 
 
-  println("\n\n>>>>> sort_bam_file <<<<<\n\n")
-sort_bam_file(genome_name)
-
-  println("\n\n>>>>> samtools_index_sorted_bam <<<<<\n\n")
-samtools_index_sorted_bam(genome_name)
+//  println("\n\n>>>>> convert_sam_file_to_bam_file <<<<<\n\n")
+//convert_sam_file_to_bam_file( "NC000962_3.fasta", genome_name)
 
 
-  println("\n\n>>>>> mapping_statistics <<<<<\n\n")
-mapping_statistics(genome_name)
+//  println("\n\n>>>>> sort_bam_file <<<<<\n\n")
+//sort_bam_file(genome_name)
+
+//  println("\n\n>>>>> samtools_index_sorted_bam <<<<<\n\n")
+//samtools_index_sorted_bam(genome_name)
+
+
+ // println("\n\n>>>>> mapping_statistics <<<<<\n\n")
+//mapping_statistics(genome_name)
 
 
   println("\n\n>>>>> samtools_mpileup <<<<<\n\n")
@@ -1202,6 +1202,6 @@ HammingFasta()
 }
 
 
-var genome_name = all_fastq_files(0).split("_")(0).split("/").last
+//var genome_name = all_fastq_files(0).split("_")(0).split("/").last
 
-var output =  analyse_all_genomes(genome_name)
+var output =  analyse_all_genomes("G04886")
